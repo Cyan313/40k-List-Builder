@@ -10,6 +10,7 @@ namespace Final
     {
         static void Main(string[] args)
         {
+            int hqs, troops, elites, fasts, heavys, flyers, transports;
             int menu = 0;
             List<string> hq = new List<string>();
             List<string> troop = new List<string>();
@@ -33,7 +34,6 @@ namespace Final
                 Console.WriteLine("3 - Adeptus Custodes\n");
                 Console.WriteLine("4 - Adetus Mechanicus\n");
                 Console.WriteLine("5 - Astra Millitarum\n");
-                Console.WriteLine("6 - Imperial Knights\n");
                 army1.Faction = Convert.ToInt32(Console.ReadLine());
                 
                 Console.WriteLine("What Detachment would you like?");
@@ -175,9 +175,9 @@ namespace Final
                     if (army1.Faction == 6)
                         Console.WriteLine("Imperial Knights");
 
-                    Console.WriteLine(army1.CP);
-                    Console.WriteLine(army1.Points);
-                    Console.WriteLine(army1.PL);
+                    Console.WriteLine(army1.CP + " Command Points");
+                    Console.WriteLine(army1.Points + " Points");
+                    Console.WriteLine(army1.PL + " PL");
                     Console.WriteLine("\n");
                     Console.WriteLine("\n");
                     Console.WriteLine("HQs");
@@ -241,9 +241,9 @@ namespace Final
                     if (army2.Faction == 3)
                         Console.WriteLine("Chaos Space Marines");
 
-                    Console.WriteLine(army2.CP);
-                    Console.WriteLine(army2.Points);
-                    Console.WriteLine(army2.PL);
+                    Console.WriteLine(army2.CP + " Command Points");
+                    Console.WriteLine(army2.Points + " Points");
+                    Console.WriteLine(army2.PL + " PL");
                     Console.WriteLine("\n");
                     Console.WriteLine("\n");
                     Console.WriteLine("HQs");
@@ -319,9 +319,9 @@ namespace Final
                     if (army3.Faction == 9)
                         Console.WriteLine("Ynnari");
 
-                    Console.WriteLine(army3.CP);
-                    Console.WriteLine(army3.Points);
-                    Console.WriteLine(army3.PL);
+                    Console.WriteLine(army3.CP + " Command Points");
+                    Console.WriteLine(army3.Points + " Points");
+                    Console.WriteLine(army3.PL + " PL");
                     Console.WriteLine("\n");
                     Console.WriteLine("\n");
                     Console.WriteLine("HQs");
@@ -375,11 +375,871 @@ namespace Final
                 Console.WriteLine("5 - Add a Heavy Support");
                 Console.WriteLine("6 - Add a Flyer");
                 Console.WriteLine("7 - Add a Dedicated Transport");
-                Console.WriteLine("8 - Exit");
+                Console.WriteLine("8 - Remove a Unit");
+                Console.WriteLine("9 - Exit");
                 menu = Convert.ToInt32(Console.ReadLine());
                 switch (menu)
-                { 
+                {
+                    case 1:
+                        Console.Clear();
+                        if(choice == 1)
+                        {
+                            if(army1.Faction == 1)
+                            {
+                                Console.WriteLine("1 - Canoness\n");
+                                Console.WriteLine("2 - Palatine\n");
+                                Console.WriteLine("3 - Missionary with Chainsword\n");
+                                Console.WriteLine("4 - Canoness Veridyan\n");
+                                Console.WriteLine("5 - Junith Eruita\n");
+                                Console.WriteLine("6 - Ephrael Stern & Kyganil\n");
+                                Console.WriteLine("7 - Celestine, the Living Saint\n");
+                                Console.WriteLine("8 - The Triumph of Saint Katherine\n");
+                                Console.WriteLine("9 - Morvenn Vahl, Abbess Sanctorum of the Adepta Sororitas\n");
+                                hqs = Convert.ToInt32(Console.ReadLine());
+
+                                if(army1.detachment == 1)
+                                {
+                                    if(hq.Count < 2)
+                                    {
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Canoness");
+                                        }
+                                        if (hqs == 2)
+                                        {
+                                            hq.Add("Palatine");
+                                        }
+                                        if (hqs == 3)
+                                        {
+                                            hq.Add("Missionary with Chainsword");
+                                        }
+                                        if (hqs == 4)
+                                        {
+                                            hq.Add("Canoness Veridyan");
+                                        }
+                                        if (hqs == 5)
+                                        {
+                                            hq.Add("Junith Eruita");
+                                        }
+                                        if (hqs == 6)
+                                        {
+                                            hq.Add("Ephrael Stern & Kyganil");
+                                        }
+                                        if (hqs == 7)
+                                        {
+                                            hq.Add("Celestine, the Living Saint");
+                                        }
+                                        if (hqs == 8)
+                                        {
+                                            hq.Add("The Triumph of Saint Katherine");
+                                        }
+                                        if (hqs == 9)
+                                        {
+                                            hq.Add("Morvenn Vahl, Abbess Sanctorum of the Adepta Sororitas");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("There are too many HQs in your list");
+                                        break;
+                                    }
+                                }
+                                if(army1.detachment == 2)
+                                {
+                                    if(hq.Count < 3)
+                                    {
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Canoness");
+                                        }
+                                        if (hqs == 2)
+                                        {
+                                            hq.Add("Palatine");
+                                        }
+                                        if (hqs == 3)
+                                        {
+                                            hq.Add("Missionary with Chainsword");
+                                        }
+                                        if (hqs == 4)
+                                        {
+                                            hq.Add("Canoness Veridyan");
+                                        }
+                                        if (hqs == 5)
+                                        {
+                                            hq.Add("Junith Eruita");
+                                        }
+                                        if (hqs == 6)
+                                        {
+                                            hq.Add("Ephrael Stern & Kyganil");
+                                        }
+                                        if (hqs == 7)
+                                        {
+                                            hq.Add("Celestine, the Living Saint");
+                                        }
+                                        if (hqs == 8)
+                                        {
+                                            hq.Add("The Triumph of Saint Katherine");
+                                        }
+                                        if (hqs == 9)
+                                        {
+                                            hq.Add("Morvenn Vahl, Abbess Sanctorum of the Adepta Sororitas");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("There are too many HQs in your list");
+                                        break;
+                                    }
+                                }
+                                if(army1.detachment == 3)
+                                {
+                                    if(hq.Count < 5)
+                                    {
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Canoness");
+                                        }
+                                        if (hqs == 2)
+                                        {
+                                            hq.Add("Palatine");
+                                        }
+                                        if (hqs == 3)
+                                        {
+                                            hq.Add("Missionary with Chainsword");
+                                        }
+                                        if (hqs == 4)
+                                        {
+                                            hq.Add("Canoness Veridyan");
+                                        }
+                                        if (hqs == 5)
+                                        {
+                                            hq.Add("Junith Eruita");
+                                        }
+                                        if (hqs == 6)
+                                        {
+                                            hq.Add("Ephrael Stern & Kyganil");
+                                        }
+                                        if (hqs == 7)
+                                        {
+                                            hq.Add("Celestine, the Living Saint");
+                                        }
+                                        if (hqs == 8)
+                                        {
+                                            hq.Add("The Triumph of Saint Katherine");
+                                        }
+                                        if (hqs == 9)
+                                        {
+                                            hq.Add("Morvenn Vahl, Abbess Sanctorum of the Adepta Sororitas");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("There are too many HQs in your list");
+                                        break;
+                                    }
+                                }
+                            }
+                            if(army1.Faction == 2)
+                            {
+                                Console.WriteLine("1 - Captain with Master-crafter Heavy Bolt Rifle");
+                                Console.WriteLine("2 - Techmarine");
+                                Console.WriteLine("3 - Space Marine Captain: Lord Executioner");
+                                Console.WriteLine("4 - Chaplain with Jump Pack");
+                                Console.WriteLine("5 - Space Marine Commander");
+                                Console.WriteLine("6 - Space Marine Captain");
+                                Console.WriteLine("7 - Librarian in Terminator Armour");
+                                Console.WriteLine("8 - Masters of the Chapter");
+                                Console.WriteLine("9 - Librarian");
+                                Console.WriteLine("10 - Primaris Lieutenant in Reiver Armour");
+                                Console.WriteLine("11 - Primaris Chaplain");
+                                Console.WriteLine("12 - Primaris Librarian in Phobos Armour");
+                                Console.WriteLine("13 - Primaris Lieutenant with Power Sword");
+                                Console.WriteLine("14 - Primaris Librarian");
+                                Console.WriteLine("15 - Spce Marines Chaplain");
+                                Console.WriteLine("16 - Primaris Captain");
+                                Console.WriteLine("17 - Primaris Techmarine");
+                                Console.WriteLine("18 - Captain in Phobos Armour");
+                                Console.WriteLine("19 - Primaris Chaplain on Bike");
+                                Console.WriteLine("20 - Space Marine Heroes");
+                                Console.WriteLine("21 - Company Command");
+                                Console.WriteLine("22 - Heroes of the Chapter");
+                                Console.WriteLine("23 - Space Marines: Honoured of the Chapter");
+                                hqs = Convert.ToInt32(Console.ReadLine());
+                                if (army1.detachment == 1)
+                                {
+                                    if (hq.Count < 2)
+                                    {
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Captain with Master-crafter Heavy Bolt Rifle");
+                                        }
+                                        if (hqs == 2)
+                                        {
+                                            hq.Add("Techmarine");
+                                        }
+                                        if (hqs == 3)
+                                        {
+                                            hq.Add("Space Marine Captain: Lord Executioner");
+                                        }
+                                        if (hqs == 4)
+                                        {
+                                            hq.Add("Chaplain with Jump Pack");
+                                        }
+                                        if (hqs == 5)
+                                        {
+                                            hq.Add("Space Marine Commander");
+                                        }
+                                        if (hqs == 6)
+                                        {
+                                            hq.Add("Space Marine Captain");
+                                        }
+                                        if (hqs == 7)
+                                        {
+                                            hq.Add("Librarian in Terminator Armour");
+                                        }
+                                        if (hqs == 8)
+                                        {
+                                            hq.Add("Masters of the Chapter");
+                                        }
+                                        if (hqs == 9)
+                                        {
+                                            hq.Add("Librarian");
+                                        }
+                                        if (hqs == 10)
+                                        {
+                                            hq.Add("Primaris Lieutenant in Reiver Armour");
+                                        }
+                                        if (hqs == 11)
+                                        {
+                                            hq.Add("Primaris Chaplain");
+                                        }
+                                        if (hqs == 12)
+                                        {
+                                            hq.Add("Primaris Librarian in Phobos Armour");
+                                        }
+                                        if (hqs == 13)
+                                        {
+                                            hq.Add("Primaris Lieutenant with Power Sword");
+                                        }
+                                        if (hqs == 14)
+                                        {
+                                            hq.Add("Primaris Librarian");
+                                        }
+                                        if (hqs == 15)
+                                        {
+                                            hq.Add("Spce Marines Chaplain");
+                                        }
+                                        if (hqs == 16)
+                                        {
+                                            hq.Add("Primaris Captain");
+                                        }
+                                        if (hqs == 17)
+                                        {
+                                            hq.Add("Primaris Techmarine");
+                                        }
+                                        if (hqs == 18)
+                                        {
+                                            hq.Add("Captain in Phobos Armour");
+                                        }
+                                        if (hqs == 19)
+                                        {
+                                            hq.Add("Primaris Chaplain on Bike");
+                                        }
+                                        if (hqs == 20)
+                                        {
+                                            hq.Add("Space Marine Heroes");
+                                        }
+                                        if (hqs == 21)
+                                        {
+                                            hq.Add("Company Command");
+                                        }
+                                        if (hqs == 22)
+                                        {
+                                            hq.Add("Heroes of the Chapter");
+                                        }
+                                        if (hqs == 23)
+                                        {
+                                            hq.Add("Space Marines: Honoured of the Chapter");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("There are too many HQs in your list");
+                                        break;
+                                    }
+                                }
+                                if (army1.detachment == 2)
+                                {
+                                    if (hq.Count < 3)
+                                    {
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Captain with Master-crafter Heavy Bolt Rifle");
+                                        }
+                                        if (hqs == 2)
+                                        {
+                                            hq.Add("Techmarine");
+                                        }
+                                        if (hqs == 3)
+                                        {
+                                            hq.Add("Space Marine Captain: Lord Executioner");
+                                        }
+                                        if (hqs == 4)
+                                        {
+                                            hq.Add("Chaplain with Jump Pack");
+                                        }
+                                        if (hqs == 5)
+                                        {
+                                            hq.Add("Space Marine Commander");
+                                        }
+                                        if (hqs == 6)
+                                        {
+                                            hq.Add("Space Marine Captain");
+                                        }
+                                        if (hqs == 7)
+                                        {
+                                            hq.Add("Librarian in Terminator Armour");
+                                        }
+                                        if (hqs == 8)
+                                        {
+                                            hq.Add("Masters of the Chapter");
+                                        }
+                                        if (hqs == 9)
+                                        {
+                                            hq.Add("Librarian");
+                                        }
+                                        if (hqs == 10)
+                                        {
+                                            hq.Add("Primaris Lieutenant in Reiver Armour");
+                                        }
+                                        if (hqs == 11)
+                                        {
+                                            hq.Add("Primaris Chaplain");
+                                        }
+                                        if (hqs == 12)
+                                        {
+                                            hq.Add("Primaris Librarian in Phobos Armour");
+                                        }
+                                        if (hqs == 13)
+                                        {
+                                            hq.Add("Primaris Lieutenant with Power Sword");
+                                        }
+                                        if (hqs == 14)
+                                        {
+                                            hq.Add("Primaris Librarian");
+                                        }
+                                        if (hqs == 15)
+                                        {
+                                            hq.Add("Spce Marines Chaplain");
+                                        }
+                                        if (hqs == 16)
+                                        {
+                                            hq.Add("Primaris Captain");
+                                        }
+                                        if (hqs == 17)
+                                        {
+                                            hq.Add("Primaris Techmarine");
+                                        }
+                                        if (hqs == 18)
+                                        {
+                                            hq.Add("Captain in Phobos Armour");
+                                        }
+                                        if (hqs == 19)
+                                        {
+                                            hq.Add("Primaris Chaplain on Bike");
+                                        }
+                                        if (hqs == 20)
+                                        {
+                                            hq.Add("Space Marine Heroes");
+                                        }
+                                        if (hqs == 21)
+                                        {
+                                            hq.Add("Company Command");
+                                        }
+                                        if (hqs == 22)
+                                        {
+                                            hq.Add("Heroes of the Chapter");
+                                        }
+                                        if (hqs == 23)
+                                        {
+                                            hq.Add("Space Marines: Honoured of the Chapter");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("There are too many HQs in your list");
+                                        break;
+                                    }
+                                }
+                                if (army1.detachment == 3)
+                                {
+                                    if (hq.Count < 5)
+                                    {
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Captain with Master-crafter Heavy Bolt Rifle");
+                                        }
+                                        if (hqs == 2)
+                                        {
+                                            hq.Add("Techmarine");
+                                        }
+                                        if (hqs == 3)
+                                        {
+                                            hq.Add("Space Marine Captain: Lord Executioner");
+                                        }
+                                        if (hqs == 4)
+                                        {
+                                            hq.Add("Chaplain with Jump Pack");
+                                        }
+                                        if (hqs == 5)
+                                        {
+                                            hq.Add("Space Marine Commander");
+                                        }
+                                        if (hqs == 6)
+                                        {
+                                            hq.Add("Space Marine Captain");
+                                        }
+                                        if (hqs == 7)
+                                        {
+                                            hq.Add("Librarian in Terminator Armour");
+                                        }
+                                        if (hqs == 8)
+                                        {
+                                            hq.Add("Masters of the Chapter");
+                                        }
+                                        if (hqs == 9)
+                                        {
+                                            hq.Add("Librarian");
+                                        }
+                                        if (hqs == 10)
+                                        {
+                                            hq.Add("Primaris Lieutenant in Reiver Armour");
+                                        }
+                                        if (hqs == 11)
+                                        {
+                                            hq.Add("Primaris Chaplain");
+                                        }
+                                        if (hqs == 12)
+                                        {
+                                            hq.Add("Primaris Librarian in Phobos Armour");
+                                        }
+                                        if (hqs == 13)
+                                        {
+                                            hq.Add("Primaris Lieutenant with Power Sword");
+                                        }
+                                        if (hqs == 14)
+                                        {
+                                            hq.Add("Primaris Librarian");
+                                        }
+                                        if (hqs == 15)
+                                        {
+                                            hq.Add("Spce Marines Chaplain");
+                                        }
+                                        if (hqs == 16)
+                                        {
+                                            hq.Add("Primaris Captain");
+                                        }
+                                        if (hqs == 17)
+                                        {
+                                            hq.Add("Primaris Techmarine");
+                                        }
+                                        if (hqs == 18)
+                                        {
+                                            hq.Add("Captain in Phobos Armour");
+                                        }
+                                        if (hqs == 19)
+                                        {
+                                            hq.Add("Primaris Chaplain on Bike");
+                                        }
+                                        if (hqs == 20)
+                                        {
+                                            hq.Add("Space Marine Heroes");
+                                        }
+                                        if (hqs == 21)
+                                        {
+                                            hq.Add("Company Command");
+                                        }
+                                        if (hqs == 22)
+                                        {
+                                            hq.Add("Heroes of the Chapter");
+                                        }
+                                        if (hqs == 23)
+                                        {
+                                            hq.Add("Space Marines: Honoured of the Chapter");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("There are too many HQs in your list");
+                                        break;
+                                    }
+                                }
+                            }
+                            if (army1.Faction == 3)
+                            {
+                                Console.WriteLine("1 - Valerian and Aleya");
+                                Console.WriteLine("2 - Allarus Custodians");
+                                Console.WriteLine("3 - Vexilus Praetor in Allarus Terminator Armour");
+                                Console.WriteLine("4 - Shield-Captain in Allarus Terminator Armour");
+                                hqs = Convert.ToInt32(Console.ReadLine());
+                                if(army1.detachment == 1)
+                                {
+                                    if(hq.Count < 2)
+                                    {
+                                        if(hqs == 1)
+                                        {
+                                            hq.Add("Valerian and Aleya");
+                                        }
+                                        if (hqs == 2)
+                                        {
+                                            hq.Add("Allarus Custodians");
+                                        }
+                                        if (hqs == 3)
+                                        {
+                                            hq.Add("Vexilus Praetor in Allarus Terminator Armour");
+                                        }
+                                        if (hqs == 4)
+                                        {
+                                            hq.Add("Shield-Captain in Allarus Terminator Armour");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("There are too many HQs in your list");
+                                        break;
+                                    }
+                                }
+                                if(army1.detachment == 2)
+                                {
+                                    if(hq.Count < 3)
+                                    {
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Valerian and Aleya");
+                                        }
+                                        if (hqs == 2)
+                                        {
+                                            hq.Add("Allarus Custodians");
+                                        }
+                                        if (hqs == 3)
+                                        {
+                                            hq.Add("Vexilus Praetor in Allarus Terminator Armour");
+                                        }
+                                        if (hqs == 4)
+                                        {
+                                            hq.Add("Shield-Captain in Allarus Terminator Armour");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("There are too many HQs in your list");
+                                        break;
+                                    }
+                                }
+                                if(army1.detachment == 3)
+                                {
+                                    if(hq.Count < 5)
+                                    {
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Valerian and Aleya");
+                                        }
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Allarus Custodians");
+                                        }
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Vexilus Praetor in Allarus Terminator Armour");
+                                        }
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Shield-Captain in Allarus Terminator Armour");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("There are too many HQs in your list");
+                                        break;
+                                    }
+                                }
+                            }
+                            if (army1.Faction == 4)
+                            {
+                                Console.WriteLine("1 - Skitarii Marshal");
+                                Console.WriteLine("2 - Tech-Priest Manipulus");
+                                Console.WriteLine("3 - Tech-Priest Dominus");
+                                Console.WriteLine("4 - Tech-Priest Enginseer");
+                                Console.WriteLine("5 - Belisarius Cawl");
+                                hqs = Convert.ToInt32(Console.ReadLine());
+                                if (army1.detachment == 1)
+                                {
+                                    if(hq.Count < 2)
+                                    {
+                                        if(hqs == 1)
+                                        {
+                                            hq.Add("Skitarii Marshal");
+                                        }
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Tech-Priest Manipulus");
+                                        }
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Tech-Priest Dominus");
+                                        }
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Tech-Priest Enginseer");
+                                        }
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Belisarius Cawl");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("There are too many HQs in your list");
+                                        break;
+                                    }
+                                }
+                                if (army1.detachment == 2)
+                                {
+                                    if (hq.Count < 3)
+                                    {
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Skitarii Marshal");
+                                        }
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Tech-Priest Manipulus");
+                                        }
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Tech-Priest Dominus");
+                                        }
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Tech-Priest Enginseer");
+                                        }
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Belisarius Cawl");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("There are too many HQs in your list");
+                                        break;
+                                    }
+                                }
+                                if (army1.detachment == 3)
+                                {
+                                    if (hq.Count < 5)
+                                    {
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Skitarii Marshal");
+                                        }
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Tech-Priest Manipulus");
+                                        }
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Tech-Priest Dominus");
+                                        }
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Tech-Priest Enginseer");
+                                        }
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Belisarius Cawl");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("There are too many HQs in your list");
+                                        break;
+                                    }
+                                }
+                            }
+                            if (army1.Faction == 5)
+                            { 
+                                Console.WriteLine("1 - Commisar Yarrik");
+                                Console.WriteLine("2 - Company Commander");
+                                Console.WriteLine("3 - Primaris Psyker");
+                                Console.WriteLine("4 - Tank Commander");
+                                Console.WriteLine("5 - Colonel 'Iron Hand' Straken");
+                                Console.WriteLine("6 - Lord Castellan Creed");
+                                Console.WriteLine("7 - Tech-Priest Enginseer");
+                                Console.WriteLine("8 - Gaunt's Ghosts");
+                                hqs = Convert.ToInt32(Console.ReadLine());
+                                if(army1.detachment == 1)
+                                {
+                                    if(hq.Count < 2)
+                                    {
+                                        if(hqs == 1)
+                                        {
+                                            hq.Add("Commisar Yarrik");
+                                        }
+                                        if (hqs == 2)
+                                        {
+                                            hq.Add("Company Commander");
+                                        }
+                                        if (hqs == 3)
+                                        {
+                                            hq.Add("Primaris Psyker");
+                                        }
+                                        if (hqs == 4)
+                                        {
+                                            hq.Add("Tank Commander");
+                                        }
+                                        if (hqs == 5)
+                                        {
+                                            hq.Add("Colonel 'Iron Hand' Straken");
+                                        }
+                                        if (hqs == 6)
+                                        {
+                                            hq.Add("Lord Castellan Creed");
+                                        }
+                                        if (hqs == 7)
+                                        {
+                                            hq.Add("Tech-Priest Enginseer");
+                                        }
+                                        if (hqs == 8)
+                                        {
+                                            hq.Add("Gaunt's Ghost");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("There are too many HQs in your list");
+                                        break;
+                                    }
+                                }
+                                if (army1.detachment == 2)
+                                {
+                                    if (hq.Count < 3)
+                                    {
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Commisar Yarrik");
+                                        }
+                                        if (hqs == 2)
+                                        {
+                                            hq.Add("Company Commander");
+                                        }
+                                        if (hqs == 3)
+                                        {
+                                            hq.Add("Primaris Psyker");
+                                        }
+                                        if (hqs == 4)
+                                        {
+                                            hq.Add("Tank Commander");
+                                        }
+                                        if (hqs == 5)
+                                        {
+                                            hq.Add("Colonel 'Iron Hand' Straken");
+                                        }
+                                        if (hqs == 6)
+                                        {
+                                            hq.Add("Lord Castellan Creed");
+                                        }
+                                        if (hqs == 7)
+                                        {
+                                            hq.Add("Tech-Priest Enginseer");
+                                        }
+                                        if (hqs == 8)
+                                        {
+                                            hq.Add("Gaunt's Ghost");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("There are too many HQs in your list");
+                                        break;
+                                    }
+                                }
+                                if (army1.detachment == 3)
+                                {
+                                    if (hq.Count < 5)
+                                    {
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Commisar Yarrik");
+                                        }
+                                        if (hqs == 2)
+                                        {
+                                            hq.Add("Company Commander");
+                                        }
+                                        if (hqs == 3)
+                                        {
+                                            hq.Add("Primaris Psyker");
+                                        }
+                                        if (hqs == 4)
+                                        {
+                                            hq.Add("Tank Commander");
+                                        }
+                                        if (hqs == 5)
+                                        {
+                                            hq.Add("Colonel 'Iron Hand' Straken");
+                                        }
+                                        if (hqs == 6)
+                                        {
+                                            hq.Add("Lord Castellan Creed");
+                                        }
+                                        if (hqs == 7)
+                                        {
+                                            hq.Add("Tech-Priest Enginseer");
+                                        }
+                                        if (hqs == 8)
+                                        {
+                                            hq.Add("Gaunt's Ghost");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("There are too many HQs in your list");
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                        if (choice == 2)
+                        {
+
+                        }
+                        if (choice == 3)
+                        {
+
+                        }
+                        break;
+
+                    case 2:
+
+                        break;
+                    case 3:
+
+                        break;
+                    case 4:
+
+                        break;
+                    case 5:
+
+                        break;
                     case 6:
+
+                        break;
+                    case 7:
+
+                        break;
+                    case 8:
+
+                        break;
+                    case 9:
                         Console.WriteLine("Goodbye");
                         break;
 
@@ -387,8 +1247,7 @@ namespace Final
                         Console.WriteLine("Not a valid Choice");
                         break;
                 }
-                Console.Clear();
-            } while (menu != 8);
+            } while (menu != 9);
         }
     }
 }
