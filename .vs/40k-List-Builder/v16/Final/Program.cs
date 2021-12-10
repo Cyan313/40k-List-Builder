@@ -10,7 +10,7 @@ namespace Final
     {
         static void Main(string[] args)
         {
-            int hqs, troops, elites, fasts, heavys, flyers, transports;
+            int hqs, troops, elites, fasts, heavys, flyers, transports, remove;
             int menu = 0;
             List<string> hq = new List<string>();
             List<string> troop = new List<string>();
@@ -19,6 +19,20 @@ namespace Final
             List<string> heavy = new List<string>();
             List<string> flyer = new List<string>();
             List<string> transport = new List<string>();
+            List<int> hqp = new List<int>();
+            List<int> troopp = new List<int>();
+            List<int> elitep = new List<int>();
+            List<int> fastp = new List<int>();
+            List<int> heavyp = new List<int>();
+            List<int> flyerp = new List<int>();
+            List<int> transportp = new List<int>();
+            List<int> hpl = new List<int>();
+            List<int> tpl = new List<int>();
+            List<int> epl = new List<int>();
+            List<int> fpl = new List<int>();
+            List<int> hepl = new List<int>();
+            List<int> flpl = new List<int>();
+            List<int> trpl = new List<int>();
             Console.WriteLine("Select an Army (1 for imperium, 2 for Chaos, 3 for Xenos).");
             int choice = Convert.ToInt32(Console.ReadLine());
             var army1 = new Imperium();
@@ -409,54 +423,72 @@ namespace Final
                                             hq.Add("Canoness");
                                             army1.Points = army1.Points + 50;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(50);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Palatine");
                                             army1.Points = army1.Points + 45;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(45);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Missionary with Chainsword");
                                             army1.Points = army1.Points + 40;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(40);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Canoness Veridyan");
                                             army1.Points = army1.Points + 45;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(45);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Junith Eruita");
                                             army1.Points = army1.Points + 130;
                                             army1.PL = army1.PL + 7;
+                                            hqp.Add(130);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Ephrael Stern & Kyganil");
                                             army1.Points = army1.Points + 120;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(120);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Celestine, the Living Saint");
                                             army1.Points = army1.Points + 200;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(200);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("The Triumph of Saint Katherine");
-                                            army1.Points = army1.Points + 221;
+                                            army1.Points = army1.Points + 220;
                                             army1.PL = army1.PL + 11;
+                                            hqp.Add(220);
+                                            hpl.Add(11);
                                         }
                                         if (hqs == 9)
                                         {
                                             hq.Add("Morvenn Vahl, Abbess Sanctorum of the Adepta Sororitas");
                                             army1.Points = army1.Points + 265;
                                             army1.PL = army1.PL + 13;
+                                            hqp.Add(265);
+                                            hpl.Add(13);
                                         }
                                     }
                                     else
@@ -474,54 +506,72 @@ namespace Final
                                             hq.Add("Canoness");
                                             army1.Points = army1.Points + 50;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(50);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Palatine");
                                             army1.Points = army1.Points + 45;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(45);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Missionary with Chainsword");
                                             army1.Points = army1.Points + 40;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(40);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Canoness Veridyan");
                                             army1.Points = army1.Points + 45;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(45);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Junith Eruita");
                                             army1.Points = army1.Points + 130;
                                             army1.PL = army1.PL + 7;
+                                            hqp.Add(130);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Ephrael Stern & Kyganil");
                                             army1.Points = army1.Points + 120;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(120);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Celestine, the Living Saint");
                                             army1.Points = army1.Points + 200;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(200);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("The Triumph of Saint Katherine");
-                                            army1.Points = army1.Points + 221;
+                                            army1.Points = army1.Points + 220;
                                             army1.PL = army1.PL + 11;
+                                            hqp.Add(220);
+                                            hpl.Add(11);
                                         }
                                         if (hqs == 9)
                                         {
                                             hq.Add("Morvenn Vahl, Abbess Sanctorum of the Adepta Sororitas");
                                             army1.Points = army1.Points + 265;
                                             army1.PL = army1.PL + 13;
+                                            hqp.Add(265);
+                                            hpl.Add(13);
                                         }
                                     }
                                     else
@@ -539,54 +589,72 @@ namespace Final
                                             hq.Add("Canoness");
                                             army1.Points = army1.Points + 50;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(50);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Palatine");
                                             army1.Points = army1.Points + 45;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(45);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Missionary with Chainsword");
                                             army1.Points = army1.Points + 40;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(40);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Canoness Veridyan");
                                             army1.Points = army1.Points + 45;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(45);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Junith Eruita");
                                             army1.Points = army1.Points + 130;
                                             army1.PL = army1.PL + 7;
+                                            hqp.Add(130);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Ephrael Stern & Kyganil");
                                             army1.Points = army1.Points + 120;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(120);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Celestine, the Living Saint");
                                             army1.Points = army1.Points + 200;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(200);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("The Triumph of Saint Katherine");
-                                            army1.Points = army1.Points + 221;
+                                            army1.Points = army1.Points + 220;
                                             army1.PL = army1.PL + 11;
+                                            hqp.Add(220);
+                                            hpl.Add(11);
                                         }
                                         if (hqs == 9)
                                         {
                                             hq.Add("Morvenn Vahl, Abbess Sanctorum of the Adepta Sororitas");
                                             army1.Points = army1.Points + 265;
                                             army1.PL = army1.PL + 13;
+                                            hqp.Add(265);
+                                            hpl.Add(13);
                                         }
                                     }
                                     else
@@ -631,138 +699,184 @@ namespace Final
                                             hq.Add("Captain with Master-crafter Heavy Bolt Rifle");
                                             army1.Points = army1.Points + 105;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Techmarine");
                                             army1.Points = army1.Points + 70;
                                             army1.PL = army1.PL + 4;
+                                            hqp.Add(70);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Space Marine Captain: Lord Executioner");
                                             army1.Points = army1.Points + 100;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(100);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Chaplain with Jump Pack");
                                             army1.Points = army1.Points + 80;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(80);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Space Marine Commander");
                                             army1.Points = army1.Points + 165;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(165);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Space Marine Captain");
                                             army1.Points = army1.Points + 115;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(115);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Librarian in Terminator Armour");
                                             army1.Points = army1.Points + 105;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("Masters of the Chapter");
                                             army1.Points = army1.Points + 200;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(200);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 9)
                                         {
                                             hq.Add("Librarian");
                                             army1.Points = army1.Points + 90;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(90);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 10)
                                         {
                                             hq.Add("Primaris Lieutenant in Reiver Armour");
                                             army1.Points = army1.Points + 75;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(75);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 11)
                                         {
                                             hq.Add("Primaris Chaplain");
                                             army1.Points = army1.Points + 85;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(85);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 12)
                                         {
                                             hq.Add("Primaris Librarian in Phobos Armour");
                                             army1.Points = army1.Points + 95;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(95);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 13)
                                         {
                                             hq.Add("Primaris Lieutenant with Power Sword");
                                             army1.Points = army1.Points + 85;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(85);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 14)
                                         {
                                             hq.Add("Primaris Librarian");
                                             army1.Points = army1.Points + 95;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(95);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 15)
                                         {
                                             hq.Add("Space Marines Chaplain");
                                             army1.Points = army1.Points + 80;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(80);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 16)
                                         {
                                             hq.Add("Primaris Captain");
                                             army1.Points = army1.Points + 90;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(90);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 17)
                                         {
                                             hq.Add("Primaris Techmarine");
                                             army1.Points = army1.Points + 80;
                                             army1.PL = army1.PL + 4;
+                                            hqp.Add(80);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 18)
                                         {
                                             hq.Add("Captain in Phobos Armour");
                                             army1.Points = army1.Points + 95;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(95);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 19)
                                         {
                                             hq.Add("Primaris Chaplain on Bike");
                                             army1.Points = army1.Points + 115;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(115);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 20)
                                         {
                                             hq.Add("Space Marine Heroes");
                                             army1.Points = army1.Points + 115;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(115);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 21)
                                         {
                                             hq.Add("Company Command");
                                             army1.Points = army1.Points + 100;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(100);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 22)
                                         {
                                             hq.Add("Heroes of the Chapter");
                                             army1.Points = army1.Points + 120;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(120);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 23)
                                         {
                                             hq.Add("Space Marines: Honoured of the Chapter");
                                             army1.Points = army1.Points + 120;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(120);
+                                            hpl.Add(5);
                                         }
                                     }
                                     else
@@ -780,138 +894,184 @@ namespace Final
                                             hq.Add("Captain with Master-crafter Heavy Bolt Rifle");
                                             army1.Points = army1.Points + 105;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Techmarine");
                                             army1.Points = army1.Points + 70;
                                             army1.PL = army1.PL + 4;
+                                            hqp.Add(70);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Space Marine Captain: Lord Executioner");
                                             army1.Points = army1.Points + 100;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(100);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Chaplain with Jump Pack");
                                             army1.Points = army1.Points + 80;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(80);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Space Marine Commander");
                                             army1.Points = army1.Points + 165;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(165);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Space Marine Captain");
                                             army1.Points = army1.Points + 115;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(115);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Librarian in Terminator Armour");
                                             army1.Points = army1.Points + 105;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("Masters of the Chapter");
                                             army1.Points = army1.Points + 200;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(200);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 9)
                                         {
                                             hq.Add("Librarian");
                                             army1.Points = army1.Points + 90;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(90);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 10)
                                         {
                                             hq.Add("Primaris Lieutenant in Reiver Armour");
                                             army1.Points = army1.Points + 75;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(75);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 11)
                                         {
                                             hq.Add("Primaris Chaplain");
                                             army1.Points = army1.Points + 85;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(85);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 12)
                                         {
                                             hq.Add("Primaris Librarian in Phobos Armour");
                                             army1.Points = army1.Points + 95;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(95);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 13)
                                         {
                                             hq.Add("Primaris Lieutenant with Power Sword");
                                             army1.Points = army1.Points + 85;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(85);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 14)
                                         {
                                             hq.Add("Primaris Librarian");
                                             army1.Points = army1.Points + 95;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(95);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 15)
                                         {
                                             hq.Add("Space Marines Chaplain");
                                             army1.Points = army1.Points + 80;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(80);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 16)
                                         {
                                             hq.Add("Primaris Captain");
                                             army1.Points = army1.Points + 90;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(90);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 17)
                                         {
                                             hq.Add("Primaris Techmarine");
                                             army1.Points = army1.Points + 80;
                                             army1.PL = army1.PL + 4;
+                                            hqp.Add(80);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 18)
                                         {
                                             hq.Add("Captain in Phobos Armour");
                                             army1.Points = army1.Points + 95;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(95);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 19)
                                         {
                                             hq.Add("Primaris Chaplain on Bike");
                                             army1.Points = army1.Points + 115;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(115);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 20)
                                         {
                                             hq.Add("Space Marine Heroes");
                                             army1.Points = army1.Points + 115;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(115);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 21)
                                         {
                                             hq.Add("Company Command");
                                             army1.Points = army1.Points + 100;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(100);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 22)
                                         {
                                             hq.Add("Heroes of the Chapter");
                                             army1.Points = army1.Points + 120;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(120);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 23)
                                         {
                                             hq.Add("Space Marines: Honoured of the Chapter");
                                             army1.Points = army1.Points + 120;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(120);
+                                            hpl.Add(5);
                                         }
                                     }
                                     else
@@ -929,138 +1089,184 @@ namespace Final
                                             hq.Add("Captain with Master-crafter Heavy Bolt Rifle");
                                             army1.Points = army1.Points + 105;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Techmarine");
                                             army1.Points = army1.Points + 70;
                                             army1.PL = army1.PL + 4;
+                                            hqp.Add(70);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Space Marine Captain: Lord Executioner");
                                             army1.Points = army1.Points + 100;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(100);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Chaplain with Jump Pack");
                                             army1.Points = army1.Points + 80;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(80);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Space Marine Commander");
                                             army1.Points = army1.Points + 165;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(165);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Space Marine Captain");
                                             army1.Points = army1.Points + 115;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(115);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Librarian in Terminator Armour");
                                             army1.Points = army1.Points + 105;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("Masters of the Chapter");
                                             army1.Points = army1.Points + 200;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(200);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 9)
                                         {
                                             hq.Add("Librarian");
                                             army1.Points = army1.Points + 90;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(90);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 10)
                                         {
                                             hq.Add("Primaris Lieutenant in Reiver Armour");
                                             army1.Points = army1.Points + 75;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(75);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 11)
                                         {
                                             hq.Add("Primaris Chaplain");
                                             army1.Points = army1.Points + 85;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(85);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 12)
                                         {
                                             hq.Add("Primaris Librarian in Phobos Armour");
                                             army1.Points = army1.Points + 95;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(95);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 13)
                                         {
                                             hq.Add("Primaris Lieutenant with Power Sword");
                                             army1.Points = army1.Points + 85;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(85);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 14)
                                         {
                                             hq.Add("Primaris Librarian");
                                             army1.Points = army1.Points + 95;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(95);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 15)
                                         {
                                             hq.Add("Space Marines Chaplain");
                                             army1.Points = army1.Points + 80;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(80);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 16)
                                         {
                                             hq.Add("Primaris Captain");
                                             army1.Points = army1.Points + 90;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(90);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 17)
                                         {
                                             hq.Add("Primaris Techmarine");
                                             army1.Points = army1.Points + 80;
                                             army1.PL = army1.PL + 4;
+                                            hqp.Add(80);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 18)
                                         {
                                             hq.Add("Captain in Phobos Armour");
                                             army1.Points = army1.Points + 95;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(95);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 19)
                                         {
                                             hq.Add("Primaris Chaplain on Bike");
                                             army1.Points = army1.Points + 115;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(115);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 20)
                                         {
                                             hq.Add("Space Marine Heroes");
                                             army1.Points = army1.Points + 115;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(115);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 21)
                                         {
                                             hq.Add("Company Command");
                                             army1.Points = army1.Points + 100;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(100);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 22)
                                         {
                                             hq.Add("Heroes of the Chapter");
                                             army1.Points = army1.Points + 120;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(120);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 23)
                                         {
                                             hq.Add("Space Marines: Honoured of the Chapter");
                                             army1.Points = army1.Points + 120;
                                             army1.PL = army1.PL + 5;
+                                            hqp.Add(120);
+                                            hpl.Add(5);
                                         }
                                     }
                                     else
@@ -1085,6 +1291,8 @@ namespace Final
                                             hq.Add("Valerian and Aleya");
                                             army1.Points = army1.Points +  200;
                                             army1.PL = army1.PL + 10;
+                                            hqp.Add(200);
+                                            hpl.Add(10);
                                         }
 
                                         if (hqs == 2)
@@ -1092,12 +1300,16 @@ namespace Final
                                             hq.Add("Vexilus Praetor in Allarus Terminator Armour");
                                             army1.Points = army1.Points +  110;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(110);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Shield-Captain in Allarus Terminator Armour");
                                             army1.Points = army1.Points +  110;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(110);
+                                            hpl.Add(6);
                                         }
                                     }
                                     else
@@ -1115,6 +1327,8 @@ namespace Final
                                             hq.Add("Valerian and Aleya");
                                             army1.Points = army1.Points + 200;
                                             army1.PL = army1.PL + 10;
+                                            hqp.Add(200);
+                                            hpl.Add(10);
                                         }
 
                                         if (hqs == 2)
@@ -1122,12 +1336,16 @@ namespace Final
                                             hq.Add("Vexilus Praetor in Allarus Terminator Armour");
                                             army1.Points = army1.Points + 110;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(110);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Shield-Captain in Allarus Terminator Armour");
                                             army1.Points = army1.Points + 110;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(110);
+                                            hpl.Add(6);
                                         }
                                     }
                                     else
@@ -1145,6 +1363,8 @@ namespace Final
                                             hq.Add("Valerian and Aleya");
                                             army1.Points = army1.Points + 200;
                                             army1.PL = army1.PL + 10;
+                                            hqp.Add(200);
+                                            hpl.Add(10);
                                         }
 
                                         if (hqs == 2)
@@ -1152,12 +1372,16 @@ namespace Final
                                             hq.Add("Vexilus Praetor in Allarus Terminator Armour");
                                             army1.Points = army1.Points + 110;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(110);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Shield-Captain in Allarus Terminator Armour");
                                             army1.Points = army1.Points + 110;
                                             army1.PL = army1.PL + 6;
+                                            hqp.Add(110);
+                                            hpl.Add(6);
                                         }
                                     }
                                     else
@@ -1184,30 +1408,40 @@ namespace Final
                                             hq.Add("Skitarii Marshal");
                                             army1.Points = army1.Points + 55;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(55);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Tech-Priest Manipulus");
                                             army1.Points = army1.Points + 80;
                                             army1.PL = army1.PL + 4;
+                                            hqp.Add(80);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Tech-Priest Dominus");
                                             army1.Points = army1.Points + 75;
                                             army1.PL = army1.PL + 4;
+                                            hqp.Add(75);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Tech-Priest Enginseer");
                                             army1.Points = army1.Points + 55;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(55);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Belisarius Cawl");
                                             army1.Points = army1.Points + 180;
                                             army1.PL = army1.PL + 9;
+                                            hqp.Add(180);
+                                            hpl.Add(9);
                                         }
                                     }
                                     else
@@ -1225,30 +1459,40 @@ namespace Final
                                             hq.Add("Skitarii Marshal");
                                             army1.Points = army1.Points + 55;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(55);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Tech-Priest Manipulus");
                                             army1.Points = army1.Points + 80;
                                             army1.PL = army1.PL + 4;
+                                            hqp.Add(80);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Tech-Priest Dominus");
                                             army1.Points = army1.Points + 75;
                                             army1.PL = army1.PL + 4;
+                                            hqp.Add(75);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Tech-Priest Enginseer");
                                             army1.Points = army1.Points + 55;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(55);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Belisarius Cawl");
                                             army1.Points = army1.Points + 180;
                                             army1.PL = army1.PL + 9;
+                                            hqp.Add(180);
+                                            hpl.Add(9);
                                         }
                                     }
                                     else
@@ -1266,30 +1510,40 @@ namespace Final
                                             hq.Add("Skitarii Marshal");
                                             army1.Points = army1.Points + 55;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(55);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Tech-Priest Manipulus");
                                             army1.Points = army1.Points + 80;
                                             army1.PL = army1.PL + 4;
+                                            hqp.Add(80);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Tech-Priest Dominus");
                                             army1.Points = army1.Points + 75;
                                             army1.PL = army1.PL + 4;
+                                            hqp.Add(75);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Tech-Priest Enginseer");
                                             army1.Points = army1.Points + 55;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(55);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Belisarius Cawl");
                                             army1.Points = army1.Points + 180;
                                             army1.PL = army1.PL + 9;
+                                            hqp.Add(180);
+                                            hpl.Add(9);
                                         }
                                     }
                                     else
@@ -1318,49 +1572,65 @@ namespace Final
                                         {
                                             hq.Add("Commisar Yarrik");
                                             army1.Points = army1.Points + 105;
-                                            army1.PL = army1.PL + 105;
+                                            army1.PL = army1.PL + 3;
+                                            hqp.Add(105);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Company Commander");
                                             army1.Points = army1.Points + 35;
                                             army1.PL = army1.PL + 2;
+                                            hqp.Add(35);
+                                            hpl.Add(2);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Primaris Psyker");
                                             army1.Points = army1.Points + 50;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(50);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Tank Commander");
                                             army1.Points = army1.Points + 195;
                                             army1.PL = army1.PL + 12;
+                                            hqp.Add(195);
+                                            hpl.Add(12);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Colonel 'Iron Hand' Straken");
                                             army1.Points = army1.Points + 80;
                                             army1.PL = army1.PL + 4;
+                                            hqp.Add(80);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Lord Castellan Creed");
                                             army1.Points = army1.Points + 60;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(60);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Tech-Priest Enginseer");
                                             army1.Points = army1.Points + 55;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(55);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("Gaunt's Ghost");
                                             army1.Points = army1.Points + 135;
                                             army1.PL = army1.PL + 7;
+                                            hqp.Add(135);
+                                            hpl.Add(7);
                                         }
                                     }
                                     else
@@ -1377,49 +1647,65 @@ namespace Final
                                         {
                                             hq.Add("Commisar Yarrik");
                                             army1.Points = army1.Points + 105;
-                                            army1.PL = army1.PL + 105;
+                                            army1.PL = army1.PL + 3;
+                                            hqp.Add(105);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Company Commander");
                                             army1.Points = army1.Points + 35;
                                             army1.PL = army1.PL + 2;
+                                            hqp.Add(35);
+                                            hpl.Add(2);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Primaris Psyker");
                                             army1.Points = army1.Points + 50;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(50);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Tank Commander");
                                             army1.Points = army1.Points + 195;
                                             army1.PL = army1.PL + 12;
+                                            hqp.Add(195);
+                                            hpl.Add(12);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Colonel 'Iron Hand' Straken");
                                             army1.Points = army1.Points + 80;
                                             army1.PL = army1.PL + 4;
+                                            hqp.Add(80);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Lord Castellan Creed");
                                             army1.Points = army1.Points + 60;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(60);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Tech-Priest Enginseer");
                                             army1.Points = army1.Points + 55;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(55);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("Gaunt's Ghost");
                                             army1.Points = army1.Points + 135;
                                             army1.PL = army1.PL + 7;
+                                            hqp.Add(135);
+                                            hpl.Add(7);
                                         }
                                     }
                                     else
@@ -1436,49 +1722,65 @@ namespace Final
                                         {
                                             hq.Add("Commisar Yarrik");
                                             army1.Points = army1.Points + 105;
-                                            army1.PL = army1.PL + 105;
+                                            army1.PL = army1.PL + 3;
+                                            hqp.Add(105);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Company Commander");
                                             army1.Points = army1.Points + 35;
                                             army1.PL = army1.PL + 2;
+                                            hqp.Add(35);
+                                            hpl.Add(2);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Primaris Psyker");
                                             army1.Points = army1.Points + 50;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(50);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Tank Commander");
                                             army1.Points = army1.Points + 195;
                                             army1.PL = army1.PL + 12;
+                                            hqp.Add(195);
+                                            hpl.Add(12);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Colonel 'Iron Hand' Straken");
                                             army1.Points = army1.Points + 80;
                                             army1.PL = army1.PL + 4;
+                                            hqp.Add(80);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Lord Castellan Creed");
                                             army1.Points = army1.Points + 60;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(60);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Tech-Priest Enginseer");
                                             army1.Points = army1.Points + 55;
                                             army1.PL = army1.PL + 3;
+                                            hqp.Add(55);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("Gaunt's Ghost");
                                             army1.Points = army1.Points + 135;
                                             army1.PL = army1.PL + 7;
+                                            hqp.Add(135);
+                                            hpl.Add(7);
                                         }
                                     }
                                     else
@@ -1529,156 +1831,208 @@ namespace Final
                                             hq.Add("Lord of Change");
                                             army2.Points = army2.Points + 290;
                                             army2.PL = army2.PL + 14;
+                                            hqp.Add(290);
+                                            hpl.Add(14);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Great Unclean One");
                                             army2.Points = army2.Points + 260;
                                             army2.PL = army2.PL + 14;
+                                            hqp.Add(260);
+                                            hpl.Add(14);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Keeper of Secrets");
                                             army2.Points = army2.Points + 230;
                                             army2.PL = army2.PL + 12;
+                                            hqp.Add(230);
+                                            hpl.Add(12);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Daemons of Khrne Bloodthirster");
                                             army2.Points = army2.Points + 250;
                                             army2.PL = army2.PL + 13;
+                                            hqp.Add(250);
+                                            hpl.Add(13);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Kairos Fateweaver");
                                             army2.Points = army2.Points + 270;
                                             army2.PL = army2.PL + 14;
+                                            hqp.Add(270);
+                                            hpl.Add(14);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Herald of Slaanesh");
                                             army2.Points = army2.Points + 55;
                                             army2.PL = army2.PL + 3;
+                                            hqp.Add(55);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Bloodmaster, Herald of Khorne");
                                             army2.Points = army2.Points + 60;
                                             army2.PL = army2.PL + 3;
+                                            hqp.Add(60);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("Poxbringer");
                                             army2.Points = army2.Points + 75;
                                             army2.PL = army2.PL + 4;
+                                            hqp.Add(75);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 9)
                                         {
                                             hq.Add("The Masque");
                                             army2.Points = army2.Points + 85;
                                             army2.PL = army2.PL + 5;
+                                            hqp.Add(85);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 10)
                                         {
                                             hq.Add("Sloppity Bilepiper");
                                             army2.Points = army2.Points + 65;
                                             army2.PL = army2.PL + 4;
+                                            hqp.Add(65);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 11)
                                         {
                                             hq.Add("Spoilpox Scrivener");
                                             army2.Points = army2.Points + 100;
                                             army2.PL = army2.PL + 5;
+                                            hqp.Add(100);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 12)
                                         {
                                             hq.Add("The Changeling");
                                             army2.Points = army2.Points + 105;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 13)
                                         {
                                             hq.Add("Skulltaker");
                                             army2.Points = army2.Points + 90;
                                             army2.PL = army2.PL + 5;
+                                            hqp.Add(90);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 14)
                                         {
                                             hq.Add("The Blue Scribes");
                                             army2.Points = army2.Points + 90;
                                             army2.PL = army2.PL + 5;
+                                            hqp.Add(90);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 15)
                                         {
                                             hq.Add("Fluxmaster, Herald of Tzeentch");
                                             army2.Points = army2.Points + 105;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 16)
                                         {
                                             hq.Add("Daemons of Khorne Bloodthrone");
                                             army2.Points = army2.Points + 115;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(115);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 17)
                                         {
                                             hq.Add("Herald of Khorne on Juggernaut");
                                             army2.Points = army2.Points + 105;
                                             army2.PL = army2.PL + 10;
+                                            hqp.Add(105);
+                                            hpl.Add(10);
                                         }
                                         if (hqs == 18)
                                         {
                                             hq.Add("Fateskimmer, Herald of Tzeentch on Burning Chariot");
                                             army2.Points = army2.Points + 160;
                                             army2.PL = army2.PL + 9;
+                                            hqp.Add(160);
+                                            hpl.Add(9);
                                         }
                                         if (hqs == 19)
                                         {
                                             hq.Add("Daemon Prince");
                                             army2.Points = army2.Points + 150;
                                             army2.PL = army2.PL + 8;
+                                            hqp.Add(150);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 20)
                                         {
                                             hq.Add("Epidemius");
                                             army2.Points = army2.Points + 105;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 21)
                                         {
                                             hq.Add("Syll'Esske: The Vengeful Allegiance");
                                             army2.Points = army2.Points + 230;
                                             army2.PL = army2.PL + 12;
+                                            hqp.Add(230);
+                                            hpl.Add(12);
                                         }
                                         if (hqs == 22)
                                         {
                                             hq.Add("Horticulous Slimux");
                                             army2.Points = army2.Points + 160;
                                             army2.PL = army2.PL + 8;
+                                            hqp.Add(160);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 23)
                                         {
                                             hq.Add("Skarbrand");
                                             army2.Points = army2.Points + 310;
                                             army2.PL = army2.PL + 16;
+                                            hqp.Add(310);
+                                            hpl.Add(16);
                                         }
                                         if (hqs == 24)
                                         {
                                             hq.Add("Rotigus");
                                             army2.Points = army2.Points + 270;
                                             army2.PL = army2.PL + 14;
+                                            hqp.Add(270);
+                                            hpl.Add(14);
                                         }
                                         if (hqs == 25)
                                         {
                                             hq.Add("Karanak, The Hound of Vengeance");
                                             army2.Points = army2.Points + 75;
                                             army2.PL = army2.PL + 4;
+                                            hqp.Add(75);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 26)
                                         {
                                             hq.Add("Infernal Enrapuress");
                                             army2.Points = army2.Points + 75;
                                             army2.PL = army2.PL + 4;
+                                            hqp.Add(75);
+                                            hpl.Add(4);
                                         }
                                     }
                                 }
@@ -1691,156 +2045,208 @@ namespace Final
                                             hq.Add("Lord of Change");
                                             army2.Points = army2.Points + 290;
                                             army2.PL = army2.PL + 14;
+                                            hqp.Add(290);
+                                            hpl.Add(14);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Great Unclean One");
                                             army2.Points = army2.Points + 260;
                                             army2.PL = army2.PL + 14;
+                                            hqp.Add(260);
+                                            hpl.Add(14);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Keeper of Secrets");
                                             army2.Points = army2.Points + 230;
                                             army2.PL = army2.PL + 12;
+                                            hqp.Add(230);
+                                            hpl.Add(12);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Daemons of Khrne Bloodthirster");
                                             army2.Points = army2.Points + 250;
                                             army2.PL = army2.PL + 13;
+                                            hqp.Add(250);
+                                            hpl.Add(13);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Kairos Fateweaver");
                                             army2.Points = army2.Points + 270;
                                             army2.PL = army2.PL + 14;
+                                            hqp.Add(270);
+                                            hpl.Add(14);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Herald of Slaanesh");
                                             army2.Points = army2.Points + 55;
                                             army2.PL = army2.PL + 3;
+                                            hqp.Add(55);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Bloodmaster, Herald of Khorne");
                                             army2.Points = army2.Points + 60;
                                             army2.PL = army2.PL + 3;
+                                            hqp.Add(60);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("Poxbringer");
                                             army2.Points = army2.Points + 75;
                                             army2.PL = army2.PL + 4;
+                                            hqp.Add(75);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 9)
                                         {
                                             hq.Add("The Masque");
                                             army2.Points = army2.Points + 85;
                                             army2.PL = army2.PL + 5;
+                                            hqp.Add(85);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 10)
                                         {
                                             hq.Add("Sloppity Bilepiper");
                                             army2.Points = army2.Points + 65;
                                             army2.PL = army2.PL + 4;
+                                            hqp.Add(65);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 11)
                                         {
                                             hq.Add("Spoilpox Scrivener");
                                             army2.Points = army2.Points + 100;
                                             army2.PL = army2.PL + 5;
+                                            hqp.Add(100);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 12)
                                         {
                                             hq.Add("The Changeling");
                                             army2.Points = army2.Points + 105;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 13)
                                         {
                                             hq.Add("Skulltaker");
                                             army2.Points = army2.Points + 90;
                                             army2.PL = army2.PL + 5;
+                                            hqp.Add(90);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 14)
                                         {
                                             hq.Add("The Blue Scribes");
                                             army2.Points = army2.Points + 90;
                                             army2.PL = army2.PL + 5;
+                                            hqp.Add(90);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 15)
                                         {
                                             hq.Add("Fluxmaster, Herald of Tzeentch");
                                             army2.Points = army2.Points + 105;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 16)
                                         {
                                             hq.Add("Daemons of Khorne Bloodthrone");
                                             army2.Points = army2.Points + 115;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(115);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 17)
                                         {
                                             hq.Add("Herald of Khorne on Juggernaut");
                                             army2.Points = army2.Points + 105;
                                             army2.PL = army2.PL + 10;
+                                            hqp.Add(105);
+                                            hpl.Add(10);
                                         }
                                         if (hqs == 18)
                                         {
                                             hq.Add("Fateskimmer, Herald of Tzeentch on Burning Chariot");
                                             army2.Points = army2.Points + 160;
                                             army2.PL = army2.PL + 9;
+                                            hqp.Add(160);
+                                            hpl.Add(9);
                                         }
                                         if (hqs == 19)
                                         {
                                             hq.Add("Daemon Prince");
                                             army2.Points = army2.Points + 150;
                                             army2.PL = army2.PL + 8;
+                                            hqp.Add(150);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 20)
                                         {
                                             hq.Add("Epidemius");
                                             army2.Points = army2.Points + 105;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 21)
                                         {
                                             hq.Add("Syll'Esske: The Vengeful Allegiance");
                                             army2.Points = army2.Points + 230;
                                             army2.PL = army2.PL + 12;
+                                            hqp.Add(230);
+                                            hpl.Add(12);
                                         }
                                         if (hqs == 22)
                                         {
                                             hq.Add("Horticulous Slimux");
                                             army2.Points = army2.Points + 160;
                                             army2.PL = army2.PL + 8;
+                                            hqp.Add(160);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 23)
                                         {
                                             hq.Add("Skarbrand");
                                             army2.Points = army2.Points + 310;
                                             army2.PL = army2.PL + 16;
+                                            hqp.Add(310);
+                                            hpl.Add(16);
                                         }
                                         if (hqs == 24)
                                         {
                                             hq.Add("Rotigus");
                                             army2.Points = army2.Points + 270;
                                             army2.PL = army2.PL + 14;
+                                            hqp.Add(270);
+                                            hpl.Add(14);
                                         }
                                         if (hqs == 25)
                                         {
                                             hq.Add("Karanak, The Hound of Vengeance");
                                             army2.Points = army2.Points + 75;
                                             army2.PL = army2.PL + 4;
+                                            hqp.Add(75);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 26)
                                         {
                                             hq.Add("Infernal Enrapuress");
                                             army2.Points = army2.Points + 75;
                                             army2.PL = army2.PL + 4;
+                                            hqp.Add(75);
+                                            hpl.Add(4);
                                         }
                                     }
                                 }
@@ -1853,156 +2259,208 @@ namespace Final
                                             hq.Add("Lord of Change");
                                             army2.Points = army2.Points + 290;
                                             army2.PL = army2.PL + 14;
+                                            hqp.Add(290);
+                                            hpl.Add(14);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Great Unclean One");
                                             army2.Points = army2.Points + 260;
                                             army2.PL = army2.PL + 14;
+                                            hqp.Add(260);
+                                            hpl.Add(14);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Keeper of Secrets");
                                             army2.Points = army2.Points + 230;
                                             army2.PL = army2.PL + 12;
+                                            hqp.Add(230);
+                                            hpl.Add(12);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Daemons of Khrne Bloodthirster");
                                             army2.Points = army2.Points + 250;
                                             army2.PL = army2.PL + 13;
+                                            hqp.Add(250);
+                                            hpl.Add(13);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Kairos Fateweaver");
                                             army2.Points = army2.Points + 270;
                                             army2.PL = army2.PL + 14;
+                                            hqp.Add(270);
+                                            hpl.Add(14);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Herald of Slaanesh");
                                             army2.Points = army2.Points + 55;
                                             army2.PL = army2.PL + 3;
+                                            hqp.Add(55);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Bloodmaster, Herald of Khorne");
                                             army2.Points = army2.Points + 60;
                                             army2.PL = army2.PL + 3;
+                                            hqp.Add(60);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("Poxbringer");
                                             army2.Points = army2.Points + 75;
                                             army2.PL = army2.PL + 4;
+                                            hqp.Add(75);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 9)
                                         {
                                             hq.Add("The Masque");
                                             army2.Points = army2.Points + 85;
                                             army2.PL = army2.PL + 5;
+                                            hqp.Add(85);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 10)
                                         {
                                             hq.Add("Sloppity Bilepiper");
                                             army2.Points = army2.Points + 65;
                                             army2.PL = army2.PL + 4;
+                                            hqp.Add(65);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 11)
                                         {
                                             hq.Add("Spoilpox Scrivener");
                                             army2.Points = army2.Points + 100;
                                             army2.PL = army2.PL + 5;
+                                            hqp.Add(100);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 12)
                                         {
                                             hq.Add("The Changeling");
                                             army2.Points = army2.Points + 105;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 13)
                                         {
                                             hq.Add("Skulltaker");
                                             army2.Points = army2.Points + 90;
                                             army2.PL = army2.PL + 5;
+                                            hqp.Add(90);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 14)
                                         {
                                             hq.Add("The Blue Scribes");
                                             army2.Points = army2.Points + 90;
                                             army2.PL = army2.PL + 5;
+                                            hqp.Add(90);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 15)
                                         {
                                             hq.Add("Fluxmaster, Herald of Tzeentch");
                                             army2.Points = army2.Points + 105;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 16)
                                         {
                                             hq.Add("Daemons of Khorne Bloodthrone");
                                             army2.Points = army2.Points + 115;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(115);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 17)
                                         {
                                             hq.Add("Herald of Khorne on Juggernaut");
                                             army2.Points = army2.Points + 105;
                                             army2.PL = army2.PL + 10;
+                                            hqp.Add(105);
+                                            hpl.Add(10);
                                         }
                                         if (hqs == 18)
                                         {
                                             hq.Add("Fateskimmer, Herald of Tzeentch on Burning Chariot");
                                             army2.Points = army2.Points + 160;
                                             army2.PL = army2.PL + 9;
+                                            hqp.Add(160);
+                                            hpl.Add(9);
                                         }
                                         if (hqs == 19)
                                         {
                                             hq.Add("Daemon Prince");
                                             army2.Points = army2.Points + 150;
                                             army2.PL = army2.PL + 8;
+                                            hqp.Add(150);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 20)
                                         {
                                             hq.Add("Epidemius");
                                             army2.Points = army2.Points + 105;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 21)
                                         {
                                             hq.Add("Syll'Esske: The Vengeful Allegiance");
                                             army2.Points = army2.Points + 230;
                                             army2.PL = army2.PL + 12;
+                                            hqp.Add(230);
+                                            hpl.Add(12);
                                         }
                                         if (hqs == 22)
                                         {
                                             hq.Add("Horticulous Slimux");
                                             army2.Points = army2.Points + 160;
                                             army2.PL = army2.PL + 8;
+                                            hqp.Add(160);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 23)
                                         {
                                             hq.Add("Skarbrand");
                                             army2.Points = army2.Points + 310;
                                             army2.PL = army2.PL + 16;
+                                            hqp.Add(310);
+                                            hpl.Add(16);
                                         }
                                         if (hqs == 24)
                                         {
                                             hq.Add("Rotigus");
                                             army2.Points = army2.Points + 270;
                                             army2.PL = army2.PL + 14;
+                                            hqp.Add(270);
+                                            hpl.Add(14);
                                         }
                                         if (hqs == 25)
                                         {
                                             hq.Add("Karanak, The Hound of Vengeance");
                                             army2.Points = army2.Points + 75;
                                             army2.PL = army2.PL + 4;
+                                            hqp.Add(75);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 26)
                                         {
                                             hq.Add("Infernal Enrapuress");
                                             army2.Points = army2.Points + 75;
                                             army2.PL = army2.PL + 4;
+                                            hqp.Add(75);
+                                            hpl.Add(4);
                                         }
                                     }
                                 }
@@ -2025,36 +2483,48 @@ namespace Final
                                             hq.Add("Lord Felthius");
                                             army2.Points = army2.Points + 120;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(120);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Lord of Virulence");
                                             army2.Points = army2.Points + 120;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(120);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Daemon Prince");
                                             army2.Points = army2.Points + 150;
                                             army2.PL = army2.PL + 8;
+                                            hqp.Add(150);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Typhus - Herald of the Plague God");
                                             army2.Points = army2.Points + 165;
                                             army2.PL = army2.PL + 9;
+                                            hqp.Add(165);
+                                            hpl.Add(9);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Nurgle Daemon Prince");
                                             army2.Points = army2.Points + 150;
                                             army2.PL = army2.PL + 8;
+                                            hqp.Add(150);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Chaos Space Marines Terminator Lord");
                                             army2.Points = army2.Points + 100;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(100);
+                                            hpl.Add(6);
                                         }
                                     }
                                 }
@@ -2067,36 +2537,48 @@ namespace Final
                                             hq.Add("Lord Felthius");
                                             army2.Points = army2.Points + 120;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(120);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Lord of Virulence");
                                             army2.Points = army2.Points + 120;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(120);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Daemon Prince");
                                             army2.Points = army2.Points + 150;
                                             army2.PL = army2.PL + 8;
+                                            hqp.Add(150);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Typhus - Herald of the Plague God");
                                             army2.Points = army2.Points + 165;
                                             army2.PL = army2.PL + 9;
+                                            hqp.Add(165);
+                                            hpl.Add(9);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Nurgle Daemon Prince");
                                             army2.Points = army2.Points + 150;
                                             army2.PL = army2.PL + 8;
+                                            hqp.Add(150);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Chaos Space Marines Terminator Lord");
                                             army2.Points = army2.Points + 100;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(100);
+                                            hpl.Add(6);
                                         }
                                     }
                                 }
@@ -2109,36 +2591,48 @@ namespace Final
                                             hq.Add("Lord Felthius");
                                             army2.Points = army2.Points + 120;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(120);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Lord of Virulence");
                                             army2.Points = army2.Points + 120;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(120);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Daemon Prince");
                                             army2.Points = army2.Points + 150;
                                             army2.PL = army2.PL + 8;
+                                            hqp.Add(150);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Typhus - Herald of the Plague God");
                                             army2.Points = army2.Points + 165;
                                             army2.PL = army2.PL + 9;
+                                            hqp.Add(165);
+                                            hpl.Add(9);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Nurgle Daemon Prince");
                                             army2.Points = army2.Points + 150;
                                             army2.PL = army2.PL + 8;
+                                            hqp.Add(150);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Chaos Space Marines Terminator Lord");
                                             army2.Points = army2.Points + 100;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(100);
+                                            hpl.Add(6);
                                         }
                                     }
                                 }
@@ -2174,114 +2668,152 @@ namespace Final
                                             hq.Add("Abaddon the Despoiler");
                                             army2.Points = army2.Points + 220;
                                             army2.PL = army2.PL + 11;
+                                            hqp.Add(220);
+                                            hpl.Add(11);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Fabius Bile");
                                             army2.Points = army2.Points + 90;
                                             army2.PL = army2.PL + 5;
+                                            hqp.Add(90);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Chaos Space Marines Sorcerer");
                                             army2.Points = army2.Points + 90;
                                             army2.PL = army2.PL + 5;
+                                            hqp.Add(90);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Dark Apostle");
                                             army2.Points = army2.Points + 80;
                                             army2.PL = army2.PL + 4;
+                                            hqp.Add(80);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Vex Machinaotr, Arch-Lord Discordant");
                                             army2.Points = army2.Points + 195;
                                             army2.PL = army2.PL + 10;
+                                            hqp.Add(195);
+                                            hpl.Add(10);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Night Lords Chaos Lord");
                                             army2.Points = army2.Points + 80;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(80);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Chaos Lord with Jump Pack");
                                             army2.Points = army2.Points + 105;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("Emperor's Children Lucius The Eternal");
                                             army2.Points = army2.Points + 95;
                                             army2.PL = army2.PL + 5;
+                                            hqp.Add(95);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 9)
                                         {
                                             hq.Add("Red Corsairs Huron Blackheart");
                                             army2.Points = army2.Points + 110;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(110);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 10)
                                         {
                                             hq.Add("Chaos Space Marines Terminator Lord");
                                             army2.Points = army2.Points + 100;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(100);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 11)
                                         {
                                             hq.Add("Warpsmith");
                                             army2.Points = army2.Points + 70;
                                             army2.PL = army2.PL + 4;
+                                            hqp.Add(70);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 12)
                                         {
                                             hq.Add("Sorcerer Lord in Terminator Armour");
                                             army2.Points = army2.Points + 105;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 13)
                                         {
                                             hq.Add("Chaos Lord");
                                             army2.Points = army2.Points + 80;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(80);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 14)
                                         {
                                             hq.Add("Master of Executions");
                                             army2.Points = army2.Points + 65;
                                             army2.PL = army2.PL + 4;
+                                            hqp.Add(65);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 15)
                                         {
                                             hq.Add("World Eaters Khârn the Betrayer");
                                             army2.Points = army2.Points + 115;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(115);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 16)
                                         {
                                             hq.Add("Cypher");
                                             army2.Points = army2.Points + 85;
                                             army2.PL = army2.PL + 5;
+                                            hqp.Add(85);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 17)
                                         {
                                             hq.Add("Haarken Worldclaimer, Herald of the Apocalypse");
                                             army2.Points = army2.Points + 95;
                                             army2.PL = army2.PL + 5;
+                                            hqp.Add(95);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 18)
                                         {
                                             hq.Add("Nurgle Daemon Prince");
                                             army2.Points = army2.Points + 150;
                                             army2.PL = army2.PL + 8;
+                                            hqp.Add(150);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 19)
                                         {
                                             hq.Add("Daemon Prince");
                                             army2.Points = army2.Points + 150;
                                             army2.PL = army2.PL + 8;
+                                            hqp.Add(150);
+                                            hpl.Add(8);
                                         }
                                     }
                                 }
@@ -2294,114 +2826,152 @@ namespace Final
                                             hq.Add("Abaddon the Despoiler");
                                             army2.Points = army2.Points + 220;
                                             army2.PL = army2.PL + 11;
+                                            hqp.Add(220);
+                                            hpl.Add(11);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Fabius Bile");
                                             army2.Points = army2.Points + 90;
                                             army2.PL = army2.PL + 5;
+                                            hqp.Add(90);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Chaos Space Marines Sorcerer");
                                             army2.Points = army2.Points + 90;
                                             army2.PL = army2.PL + 5;
+                                            hqp.Add(90);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Dark Apostle");
                                             army2.Points = army2.Points + 80;
                                             army2.PL = army2.PL + 4;
+                                            hqp.Add(80);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Vex Machinaotr, Arch-Lord Discordant");
                                             army2.Points = army2.Points + 195;
                                             army2.PL = army2.PL + 10;
+                                            hqp.Add(195);
+                                            hpl.Add(10);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Night Lords Chaos Lord");
                                             army2.Points = army2.Points + 80;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(80);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Chaos Lord with Jump Pack");
                                             army2.Points = army2.Points + 105;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("Emperor's Children Lucius The Eternal");
                                             army2.Points = army2.Points + 95;
                                             army2.PL = army2.PL + 5;
+                                            hqp.Add(95);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 9)
                                         {
                                             hq.Add("Red Corsairs Huron Blackheart");
                                             army2.Points = army2.Points + 110;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(110);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 10)
                                         {
                                             hq.Add("Chaos Space Marines Terminator Lord");
                                             army2.Points = army2.Points + 100;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(100);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 11)
                                         {
                                             hq.Add("Warpsmith");
                                             army2.Points = army2.Points + 70;
                                             army2.PL = army2.PL + 4;
+                                            hqp.Add(70);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 12)
                                         {
                                             hq.Add("Sorcerer Lord in Terminator Armour");
                                             army2.Points = army2.Points + 105;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 13)
                                         {
                                             hq.Add("Chaos Lord");
                                             army2.Points = army2.Points + 80;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(80);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 14)
                                         {
                                             hq.Add("Master of Executions");
                                             army2.Points = army2.Points + 65;
                                             army2.PL = army2.PL + 4;
+                                            hqp.Add(65);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 15)
                                         {
                                             hq.Add("World Eaters Khârn the Betrayer");
                                             army2.Points = army2.Points + 115;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(115);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 16)
                                         {
                                             hq.Add("Cypher");
                                             army2.Points = army2.Points + 85;
                                             army2.PL = army2.PL + 5;
+                                            hqp.Add(85);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 17)
                                         {
                                             hq.Add("Haarken Worldclaimer, Herald of the Apocalypse");
                                             army2.Points = army2.Points + 95;
                                             army2.PL = army2.PL + 5;
+                                            hqp.Add(95);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 18)
                                         {
                                             hq.Add("Nurgle Daemon Prince");
                                             army2.Points = army2.Points + 150;
                                             army2.PL = army2.PL + 8;
+                                            hqp.Add(150);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 19)
                                         {
                                             hq.Add("Daemon Prince");
                                             army2.Points = army2.Points + 150;
                                             army2.PL = army2.PL + 8;
+                                            hqp.Add(150);
+                                            hpl.Add(8);
                                         }
                                     }
                                 }
@@ -2414,114 +2984,152 @@ namespace Final
                                             hq.Add("Abaddon the Despoiler");
                                             army2.Points = army2.Points + 220;
                                             army2.PL = army2.PL + 11;
+                                            hqp.Add(220);
+                                            hpl.Add(11);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Fabius Bile");
                                             army2.Points = army2.Points + 90;
                                             army2.PL = army2.PL + 5;
+                                            hqp.Add(90);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Chaos Space Marines Sorcerer");
                                             army2.Points = army2.Points + 90;
                                             army2.PL = army2.PL + 5;
+                                            hqp.Add(90);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Dark Apostle");
                                             army2.Points = army2.Points + 80;
                                             army2.PL = army2.PL + 4;
+                                            hqp.Add(80);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Vex Machinaotr, Arch-Lord Discordant");
                                             army2.Points = army2.Points + 195;
                                             army2.PL = army2.PL + 10;
+                                            hqp.Add(195);
+                                            hpl.Add(10);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Night Lords Chaos Lord");
                                             army2.Points = army2.Points + 80;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(80);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Chaos Lord with Jump Pack");
                                             army2.Points = army2.Points + 105;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("Emperor's Children Lucius The Eternal");
                                             army2.Points = army2.Points + 95;
                                             army2.PL = army2.PL + 5;
+                                            hqp.Add(95);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 9)
                                         {
                                             hq.Add("Red Corsairs Huron Blackheart");
                                             army2.Points = army2.Points + 110;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(110);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 10)
                                         {
                                             hq.Add("Chaos Space Marines Terminator Lord");
                                             army2.Points = army2.Points + 100;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(100);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 11)
                                         {
                                             hq.Add("Warpsmith");
                                             army2.Points = army2.Points + 70;
                                             army2.PL = army2.PL + 4;
+                                            hqp.Add(70);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 12)
                                         {
                                             hq.Add("Sorcerer Lord in Terminator Armour");
                                             army2.Points = army2.Points + 105;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 13)
                                         {
                                             hq.Add("Chaos Lord");
                                             army2.Points = army2.Points + 80;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(80);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 14)
                                         {
                                             hq.Add("Master of Executions");
                                             army2.Points = army2.Points + 65;
                                             army2.PL = army2.PL + 4;
+                                            hqp.Add(65);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 15)
                                         {
                                             hq.Add("World Eaters Khârn the Betrayer");
                                             army2.Points = army2.Points + 115;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(115);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 16)
                                         {
                                             hq.Add("Cypher");
                                             army2.Points = army2.Points + 85;
                                             army2.PL = army2.PL + 5;
+                                            hqp.Add(85);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 17)
                                         {
                                             hq.Add("Haarken Worldclaimer, Herald of the Apocalypse");
                                             army2.Points = army2.Points + 95;
                                             army2.PL = army2.PL + 5;
+                                            hqp.Add(95);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 18)
                                         {
                                             hq.Add("Nurgle Daemon Prince");
                                             army2.Points = army2.Points + 150;
                                             army2.PL = army2.PL + 8;
+                                            hqp.Add(150);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 19)
                                         {
                                             hq.Add("Daemon Prince");
                                             army2.Points = army2.Points + 150;
                                             army2.PL = army2.PL + 8;
+                                            hqp.Add(150);
+                                            hpl.Add(8);
                                         }
                                     }
                                 }
@@ -2542,24 +3150,32 @@ namespace Final
                                             hq.Add("Ahriman");
                                             army2.Points = army2.Points + 160;
                                             army2.PL = army2.PL + 8;
+                                            hqp.Add(160);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Exalted Sorcerers");
                                             army2.Points = army2.Points + 100;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(100);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Sorcerer Lord in Terminator Armour");
                                             army2.Points = army2.Points + 105;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Daemon Prince");
                                             army2.Points = army2.Points + 150;
                                             army2.PL = army2.PL + 8;
+                                            hqp.Add(150);
+                                            hpl.Add(8);
                                         }
                                     }
                                 }
@@ -2572,24 +3188,32 @@ namespace Final
                                             hq.Add("Ahriman");
                                             army2.Points = army2.Points + 160;
                                             army2.PL = army2.PL + 8;
+                                            hqp.Add(160);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Exalted Sorcerers");
                                             army2.Points = army2.Points + 100;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(100);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Sorcerer Lord in Terminator Armour");
                                             army2.Points = army2.Points + 105;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Daemon Prince");
                                             army2.Points = army2.Points + 150;
                                             army2.PL = army2.PL + 8;
+                                            hqp.Add(150);
+                                            hpl.Add(8);
                                         }
                                     }
                                 }
@@ -2602,24 +3226,32 @@ namespace Final
                                             hq.Add("Ahriman");
                                             army2.Points = army2.Points + 160;
                                             army2.PL = army2.PL + 8;
+                                            hqp.Add(160);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Exalted Sorcerers");
                                             army2.Points = army2.Points + 100;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(100);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Sorcerer Lord in Terminator Armour");
                                             army2.Points = army2.Points + 105;
                                             army2.PL = army2.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Daemon Prince");
                                             army2.Points = army2.Points + 150;
                                             army2.PL = army2.PL + 8;
+                                            hqp.Add(150);
+                                            hpl.Add(8);
                                         }
                                     }
                                 }
@@ -2657,108 +3289,144 @@ namespace Final
                                             hq.Add("Jain Zar");
                                             army3.Points = army3.Points + 125;
                                             army3.PL = army3.PL + 7;
+                                            hqp.Add(125);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Spiritseer");
                                             army3.Points = army3.Points + 60;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(60);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Farseer");
                                             army3.Points = army3.Points + 115;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(115);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Autarch");
                                             army3.Points = army3.Points + 80;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(80);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Avatar of Khaine");
                                             army3.Points = army3.Points + 200;
                                             army3.PL = army3.PL + 12;
+                                            hqp.Add(200);
+                                            hpl.Add(12);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Warlock Skyrunner");
                                             army3.Points = army3.Points + 65;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(65);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Eldar Farseer Skyrunner");
                                             army3.Points = army3.Points + 135;
                                             army3.PL = army3.PL + 7;
+                                            hqp.Add(135);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("Eldrad Ulthran");
                                             army3.Points = army3.Points + 155;
                                             army3.PL = army3.PL + 8;
+                                            hqp.Add(155);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 9)
                                         {
                                             hq.Add("Farseer and Warlocks");
                                             army3.Points = army3.Points + 235;
                                             army3.PL = army3.PL + 15;
+                                            hqp.Add(235);
+                                            hpl.Add(15);
                                         }
                                         if (hqs == 10)
                                         {
                                             hq.Add("Autarch Skyrunner");
                                             army3.Points = army3.Points + 105;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 11)
                                         {
                                             hq.Add("Phoenix Lord Baharroth");
                                             army3.Points = army3.Points + 120;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(120);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 12)
                                         {
                                             hq.Add("Phoenix Lord Fuegan");
                                             army3.Points = army3.Points + 135;
                                             army3.PL = army3.PL + 7;
+                                            hqp.Add(135);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 13)
                                         {
                                             hq.Add("Prince Yriel");
                                             army3.Points = army3.Points + 85;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(85);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 14)
                                         {
                                             hq.Add("Illic Nightspear");
                                             army3.Points = army3.Points + 70;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(70);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 15)
                                         {
                                             hq.Add("Phoenix Lord Maugan Ra");
                                             army3.Points = army3.Points + 150;
                                             army3.PL = army3.PL + 8;
+                                            hqp.Add(150);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 16)
                                         {
                                             hq.Add("Phoenix Lord Karandras");
                                             army3.Points = army3.Points + 135;
                                             army3.PL = army3.PL + 7;
+                                            hqp.Add(135);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 17)
                                         {
                                             hq.Add("Phoenix Lord Asurmen");
                                             army3.Points = army3.Points + 160;
                                             army3.PL = army3.PL + 8;
+                                            hqp.Add(160);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 18)
                                         {
                                             hq.Add("Warlock with Witch Blade and Shuriken Pistol");
                                             army3.Points = army3.Points + 50;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(50);
+                                            hpl.Add(3);
                                         }
                                     }
                                 }
@@ -2771,108 +3439,144 @@ namespace Final
                                             hq.Add("Jain Zar");
                                             army3.Points = army3.Points + 125;
                                             army3.PL = army3.PL + 7;
+                                            hqp.Add(125);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Spiritseer");
                                             army3.Points = army3.Points + 60;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(60);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Farseer");
                                             army3.Points = army3.Points + 115;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(115);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Autarch");
                                             army3.Points = army3.Points + 80;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(80);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Avatar of Khaine");
                                             army3.Points = army3.Points + 200;
                                             army3.PL = army3.PL + 12;
+                                            hqp.Add(200);
+                                            hpl.Add(12);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Warlock Skyrunner");
                                             army3.Points = army3.Points + 65;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(65);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Eldar Farseer Skyrunner");
                                             army3.Points = army3.Points + 135;
                                             army3.PL = army3.PL + 7;
+                                            hqp.Add(135);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("Eldrad Ulthran");
                                             army3.Points = army3.Points + 155;
                                             army3.PL = army3.PL + 8;
+                                            hqp.Add(155);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 9)
                                         {
                                             hq.Add("Farseer and Warlocks");
                                             army3.Points = army3.Points + 235;
                                             army3.PL = army3.PL + 15;
+                                            hqp.Add(235);
+                                            hpl.Add(15);
                                         }
                                         if (hqs == 10)
                                         {
                                             hq.Add("Autarch Skyrunner");
                                             army3.Points = army3.Points + 105;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 11)
                                         {
                                             hq.Add("Phoenix Lord Baharroth");
                                             army3.Points = army3.Points + 120;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(120);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 12)
                                         {
                                             hq.Add("Phoenix Lord Fuegan");
                                             army3.Points = army3.Points + 135;
                                             army3.PL = army3.PL + 7;
+                                            hqp.Add(135);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 13)
                                         {
                                             hq.Add("Prince Yriel");
                                             army3.Points = army3.Points + 85;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(85);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 14)
                                         {
                                             hq.Add("Illic Nightspear");
                                             army3.Points = army3.Points + 70;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(70);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 15)
                                         {
                                             hq.Add("Phoenix Lord Maugan Ra");
                                             army3.Points = army3.Points + 150;
                                             army3.PL = army3.PL + 8;
+                                            hqp.Add(150);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 16)
                                         {
                                             hq.Add("Phoenix Lord Karandras");
                                             army3.Points = army3.Points + 135;
                                             army3.PL = army3.PL + 7;
+                                            hqp.Add(135);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 17)
                                         {
                                             hq.Add("Phoenix Lord Asurmen");
                                             army3.Points = army3.Points + 160;
                                             army3.PL = army3.PL + 8;
+                                            hqp.Add(160);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 18)
                                         {
                                             hq.Add("Warlock with Witch Blade and Shuriken Pistol");
                                             army3.Points = army3.Points + 50;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(50);
+                                            hpl.Add(3);
                                         }
                                     }
                                 }
@@ -2885,108 +3589,144 @@ namespace Final
                                             hq.Add("Jain Zar");
                                             army3.Points = army3.Points + 125;
                                             army3.PL = army3.PL + 7;
+                                            hqp.Add(125);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Spiritseer");
                                             army3.Points = army3.Points + 60;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(60);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Farseer");
                                             army3.Points = army3.Points + 115;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(115);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Autarch");
                                             army3.Points = army3.Points + 80;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(80);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Avatar of Khaine");
                                             army3.Points = army3.Points + 200;
                                             army3.PL = army3.PL + 12;
+                                            hqp.Add(200);
+                                            hpl.Add(12);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Warlock Skyrunner");
                                             army3.Points = army3.Points + 65;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(65);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Eldar Farseer Skyrunner");
                                             army3.Points = army3.Points + 135;
                                             army3.PL = army3.PL + 7;
+                                            hqp.Add(135);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("Eldrad Ulthran");
                                             army3.Points = army3.Points + 155;
                                             army3.PL = army3.PL + 8;
+                                            hqp.Add(155);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 9)
                                         {
                                             hq.Add("Farseer and Warlocks");
                                             army3.Points = army3.Points + 235;
                                             army3.PL = army3.PL + 15;
+                                            hqp.Add(235);
+                                            hpl.Add(15);
                                         }
                                         if (hqs == 10)
                                         {
                                             hq.Add("Autarch Skyrunner");
                                             army3.Points = army3.Points + 105;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 11)
                                         {
                                             hq.Add("Phoenix Lord Baharroth");
                                             army3.Points = army3.Points + 120;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(120);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 12)
                                         {
                                             hq.Add("Phoenix Lord Fuegan");
                                             army3.Points = army3.Points + 135;
                                             army3.PL = army3.PL + 7;
+                                            hqp.Add(135);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 13)
                                         {
                                             hq.Add("Prince Yriel");
                                             army3.Points = army3.Points + 85;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(85);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 14)
                                         {
                                             hq.Add("Illic Nightspear");
                                             army3.Points = army3.Points + 70;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(70);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 15)
                                         {
                                             hq.Add("Phoenix Lord Maugan Ra");
                                             army3.Points = army3.Points + 150;
                                             army3.PL = army3.PL + 8;
+                                            hqp.Add(150);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 16)
                                         {
                                             hq.Add("Phoenix Lord Karandras");
                                             army3.Points = army3.Points + 135;
                                             army3.PL = army3.PL + 7;
+                                            hqp.Add(135);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 17)
                                         {
                                             hq.Add("Phoenix Lord Asurmen");
                                             army3.Points = army3.Points + 160;
                                             army3.PL = army3.PL + 8;
+                                            hqp.Add(160);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 18)
                                         {
                                             hq.Add("Warlock with Witch Blade and Shuriken Pistol");
                                             army3.Points = army3.Points + 50;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(50);
+                                            hpl.Add(3);
                                         }
                                     }
                                 }
@@ -3009,36 +3749,48 @@ namespace Final
                                             hq.Add("Lelith Hesperax");
                                             army3.Points = army3.Points +  90;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(90);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Drazhar");
                                             army3.Points = army3.Points +  145;
                                             army3.PL = army3.PL + 8;
+                                            hqp.Add(145);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Succbus");
                                             army3.Points = army3.Points +  80;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(80);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Urien Rakarth");
                                             army3.Points = army3.Points +  100;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(100);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Haemonculus");
                                             army3.Points = army3.Points +  70;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(70);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Archon");
                                             army3.Points = army3.Points +  75;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(75);
+                                            hpl.Add(4);
                                         }
                                     }
                                 }
@@ -3051,36 +3803,48 @@ namespace Final
                                             hq.Add("Lelith Hesperax");
                                             army3.Points = army3.Points + 90;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(90);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Drazhar");
                                             army3.Points = army3.Points + 145;
                                             army3.PL = army3.PL + 8;
+                                            hqp.Add(145);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Succbus");
                                             army3.Points = army3.Points + 80;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(80);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Urien Rakarth");
                                             army3.Points = army3.Points + 100;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(100);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Haemonculus");
                                             army3.Points = army3.Points + 70;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(70);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Archon");
                                             army3.Points = army3.Points + 75;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(75);
+                                            hpl.Add(4);
                                         }
                                     }
                                 }
@@ -3093,36 +3857,48 @@ namespace Final
                                             hq.Add("Lelith Hesperax");
                                             army3.Points = army3.Points + 90;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(90);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Drazhar");
                                             army3.Points = army3.Points + 145;
                                             army3.PL = army3.PL + 8;
+                                            hqp.Add(145);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Succbus");
                                             army3.Points = army3.Points + 80;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(80);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Urien Rakarth");
                                             army3.Points = army3.Points + 100;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(100);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Haemonculus");
                                             army3.Points = army3.Points + 70;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(70);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Archon");
                                             army3.Points = army3.Points + 75;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(75);
+                                            hpl.Add(4);
                                         }
                                     }
                                 }
@@ -3143,24 +3919,32 @@ namespace Final
                                             hq.Add("Jackal Alphus");
                                             army3.Points = army3.Points +  75;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(75);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Abominant");
                                             army3.Points = army3.Points +  110;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(110);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Magus");
                                             army3.Points = army3.Points +  85;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(85);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Acolyte Iconward");
                                             army3.Points = army3.Points +  60;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(60);
+                                            hpl.Add(3);
                                         }
                                     }
                                 }
@@ -3173,24 +3957,32 @@ namespace Final
                                             hq.Add("Jackal Alphus");
                                             army3.Points = army3.Points + 75;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(75);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Abominant");
                                             army3.Points = army3.Points + 110;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(110);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Magus");
                                             army3.Points = army3.Points + 85;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(85);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Acolyte Iconward");
                                             army3.Points = army3.Points + 60;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(60);
+                                            hpl.Add(3);
                                         }
                                     }
                                 }
@@ -3203,24 +3995,32 @@ namespace Final
                                             hq.Add("Jackal Alphus");
                                             army3.Points = army3.Points + 75;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(75);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Abominant");
                                             army3.Points = army3.Points + 110;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(110);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Magus");
                                             army3.Points = army3.Points + 85;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(85);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Acolyte Iconward");
                                             army3.Points = army3.Points + 60;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(60);
+                                            hpl.Add(3);
                                         }
                                     }
                                 }
@@ -3239,12 +4039,16 @@ namespace Final
                                             hq.Add("Shadowseer");
                                             army3.Points = army3.Points +  115;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(115);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Troupe Master");
                                             army3.Points = army3.Points +  65;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(65);
+                                            hpl.Add(4);
                                         }
                                     }
                                 }
@@ -3255,14 +4059,18 @@ namespace Final
                                         if (hqs == 1)
                                         {
                                             hq.Add("Shadowseer");
-                                            army3.Points = army3.Points +  115;
+                                            army3.Points = army3.Points + 115;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(115);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Troupe Master");
-                                            army3.Points = army3.Points +  65;
+                                            army3.Points = army3.Points + 65;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(65);
+                                            hpl.Add(4);
                                         }
                                     }
                                 }
@@ -3273,14 +4081,18 @@ namespace Final
                                         if (hqs == 1)
                                         {
                                             hq.Add("Shadowseer");
-                                            army3.Points = army3.Points +  115;
+                                            army3.Points = army3.Points + 115;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(115);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Troupe Master");
-                                            army3.Points = army3.Points +  65;
+                                            army3.Points = army3.Points + 65;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(65);
+                                            hpl.Add(4);
                                         }
                                     }
                                 }
@@ -3313,96 +4125,128 @@ namespace Final
                                             hq.Add("Chronomancer");
                                             army3.Points = army3.Points + 80;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(80);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Necron Catacomb Command Barge");
                                             army3.Points = army3.Points + 160;
                                             army3.PL = army3.PL + 9;
+                                            hqp.Add(160);
+                                            hpl.Add(9);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Necron Destroyer Lord");
                                             army3.Points = army3.Points + 105;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(105);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Vargard Obyron");
                                             army3.Points = army3.Points + 100;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(100);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Necron Lord with Resurrection Orb");
                                             army3.Points = army3.Points + 100;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(100);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Cryptek");
                                             army3.Points = army3.Points + 75;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(75);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Anrakyr the Traveller");
                                             army3.Points = army3.Points + 140;
                                             army3.PL = army3.PL + 7;
+                                            hqp.Add(140);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("Imotekh the Stormlord");
                                             army3.Points = army3.Points + 145;
                                             army3.PL = army3.PL + 8;
+                                            hqp.Add(145);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 9)
                                         {
                                             hq.Add("Necron Overlord with Warscythe");
                                             army3.Points = army3.Points + 100;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(100);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 10)
                                         {
                                             hq.Add("Orikan the Diviner");
                                             army3.Points = army3.Points + 110;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(110);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 11)
                                         {
                                             hq.Add("Nemesor Zahndrekh");
                                             army3.Points = army3.Points + 135;
                                             army3.PL = army3.PL + 7;
+                                            hqp.Add(135);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 12)
                                         {
                                             hq.Add("Trazyn the Infinite");
                                             army3.Points = army3.Points + 100;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(100);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 13)
                                         {
                                             hq.Add("Overlord");
                                             army3.Points = army3.Points + 100;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(100);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 14)
                                         {
                                             hq.Add("Technomancer");
                                             army3.Points = army3.Points + 75;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(75);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 15)
                                         {
                                             hq.Add("Psychomancer");
                                             army3.Points = army3.Points + 70;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(70);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 16)
                                         {
                                             hq.Add("Illuminor Szeras");
                                             army3.Points = army3.Points + 160;
                                             army3.PL = army3.PL + 8;
+                                            hqp.Add(160);
+                                            hpl.Add(8);
                                         }
                                     }
                                 }
@@ -3415,96 +4259,128 @@ namespace Final
                                             hq.Add("Chronomancer");
                                             army3.Points = army3.Points + 80;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(80);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Necron Catacomb Command Barge");
                                             army3.Points = army3.Points + 160;
                                             army3.PL = army3.PL + 9;
+                                            hqp.Add(160);
+                                            hpl.Add(9);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Necron Destroyer Lord");
                                             army3.Points = army3.Points + 105;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(105);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Vargard Obyron");
                                             army3.Points = army3.Points + 100;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(100);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Necron Lord with Resurrection Orb");
                                             army3.Points = army3.Points + 100;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(100);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Cryptek");
                                             army3.Points = army3.Points + 75;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(75);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Anrakyr the Traveller");
                                             army3.Points = army3.Points + 140;
                                             army3.PL = army3.PL + 7;
+                                            hqp.Add(140);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("Imotekh the Stormlord");
                                             army3.Points = army3.Points + 145;
                                             army3.PL = army3.PL + 8;
+                                            hqp.Add(145);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 9)
                                         {
                                             hq.Add("Necron Overlord with Warscythe");
                                             army3.Points = army3.Points + 100;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(100);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 10)
                                         {
                                             hq.Add("Orikan the Diviner");
                                             army3.Points = army3.Points + 110;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(110);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 11)
                                         {
                                             hq.Add("Nemesor Zahndrekh");
                                             army3.Points = army3.Points + 135;
                                             army3.PL = army3.PL + 7;
+                                            hqp.Add(135);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 12)
                                         {
                                             hq.Add("Trazyn the Infinite");
                                             army3.Points = army3.Points + 100;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(100);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 13)
                                         {
                                             hq.Add("Overlord");
                                             army3.Points = army3.Points + 100;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(100);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 14)
                                         {
                                             hq.Add("Technomancer");
                                             army3.Points = army3.Points + 75;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(75);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 15)
                                         {
                                             hq.Add("Psychomancer");
                                             army3.Points = army3.Points + 70;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(70);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 16)
                                         {
                                             hq.Add("Illuminor Szeras");
                                             army3.Points = army3.Points + 160;
                                             army3.PL = army3.PL + 8;
+                                            hqp.Add(160);
+                                            hpl.Add(8);
                                         }
                                     }
                                 }
@@ -3517,96 +4393,128 @@ namespace Final
                                             hq.Add("Chronomancer");
                                             army3.Points = army3.Points + 80;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(80);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Necron Catacomb Command Barge");
                                             army3.Points = army3.Points + 160;
                                             army3.PL = army3.PL + 9;
+                                            hqp.Add(160);
+                                            hpl.Add(9);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Necron Destroyer Lord");
                                             army3.Points = army3.Points + 105;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(105);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Vargard Obyron");
                                             army3.Points = army3.Points + 100;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(100);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Necron Lord with Resurrection Orb");
                                             army3.Points = army3.Points + 100;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(100);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Cryptek");
                                             army3.Points = army3.Points + 75;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(75);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Anrakyr the Traveller");
                                             army3.Points = army3.Points + 140;
                                             army3.PL = army3.PL + 7;
+                                            hqp.Add(140);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("Imotekh the Stormlord");
                                             army3.Points = army3.Points + 145;
                                             army3.PL = army3.PL + 8;
+                                            hqp.Add(145);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 9)
                                         {
                                             hq.Add("Necron Overlord with Warscythe");
                                             army3.Points = army3.Points + 100;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(100);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 10)
                                         {
                                             hq.Add("Orikan the Diviner");
                                             army3.Points = army3.Points + 110;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(110);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 11)
                                         {
                                             hq.Add("Nemesor Zahndrekh");
                                             army3.Points = army3.Points + 135;
                                             army3.PL = army3.PL + 7;
+                                            hqp.Add(135);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 12)
                                         {
                                             hq.Add("Trazyn the Infinite");
                                             army3.Points = army3.Points + 100;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(100);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 13)
                                         {
                                             hq.Add("Overlord");
                                             army3.Points = army3.Points + 100;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(100);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 14)
                                         {
                                             hq.Add("Technomancer");
                                             army3.Points = army3.Points + 75;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(75);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 15)
                                         {
                                             hq.Add("Psychomancer");
                                             army3.Points = army3.Points + 70;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(70);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 16)
                                         {
                                             hq.Add("Illuminor Szeras");
                                             army3.Points = army3.Points + 160;
                                             army3.PL = army3.PL + 8;
+                                            hqp.Add(160);
+                                            hpl.Add(8);
                                         }
                                     }
                                 }
@@ -3639,96 +4547,128 @@ namespace Final
                                             hq.Add("Da Red Gobbo and Bounca");
                                             army3.Points = army3.Points +  80;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(80);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Mozrog Skragbad");
                                             army3.Points = army3.Points +  170;
                                             army3.PL = army3.PL + 9;
+                                            hqp.Add(170);
+                                            hpl.Add(9);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Panboss");
                                             army3.Points = army3.Points +  80;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(80);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Zodgrod Wortsnagga");
                                             army3.Points = army3.Points +  65;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(65);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Beastboss");
                                             army3.Points = army3.Points +  95;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(95);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Big Mek with Kustom Force Field");
                                             army3.Points = army3.Points +  85;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(85);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Ork Boss Zagstruk");
                                             army3.Points = army3.Points +  110;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(110);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("Kaptin Badrukk");
                                             army3.Points = army3.Points +  95;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(95);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 9)
                                         {
                                             hq.Add("Ork Boss Snikrot");
                                             army3.Points = army3.Points +  95;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(95);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 10)
                                         {
                                             hq.Add("Weirdboy");
                                             army3.Points = army3.Points +  70;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(70);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 11)
                                         {
                                             hq.Add("Ork Warboss with Big Choppa");
                                             army3.Points = army3.Points +  90;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(90);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 12)
                                         {
                                             hq.Add("Big Mek with Shokk Attac Gun");
                                             army3.Points = army3.Points +  110;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(110);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 13)
                                         {
                                             hq.Add("Beastboss on Squigosaur");
                                             army3.Points = army3.Points +  145;
                                             army3.PL = army3.PL + 8;
+                                            hqp.Add(145);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 14)
                                         {
                                             hq.Add("Deffkilla Wartrike");
                                             army3.Points = army3.Points +  120;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(120);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 15)
                                         {
                                             hq.Add("Big Mek in Mega Armour");
                                             army3.Points = army3.Points +  85;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(85);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 16)
                                         {
                                             hq.Add("Ghazghkull Thraka");
                                             army3.Points = army3.Points +  300;
                                             army3.PL = army3.PL + 15;
+                                            hqp.Add(300);
+                                            hpl.Add(15);
                                         }
                                     }
                                 }
@@ -3741,96 +4681,128 @@ namespace Final
                                             hq.Add("Da Red Gobbo and Bounca");
                                             army3.Points = army3.Points + 80;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(80);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Mozrog Skragbad");
                                             army3.Points = army3.Points + 170;
                                             army3.PL = army3.PL + 9;
+                                            hqp.Add(170);
+                                            hpl.Add(9);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Panboss");
                                             army3.Points = army3.Points + 80;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(80);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Zodgrod Wortsnagga");
                                             army3.Points = army3.Points + 65;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(65);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Beastboss");
                                             army3.Points = army3.Points + 95;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(95);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Big Mek with Kustom Force Field");
                                             army3.Points = army3.Points + 85;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(85);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Ork Boss Zagstruk");
                                             army3.Points = army3.Points + 110;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(110);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("Kaptin Badrukk");
                                             army3.Points = army3.Points + 95;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(95);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 9)
                                         {
                                             hq.Add("Ork Boss Snikrot");
                                             army3.Points = army3.Points + 95;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(95);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 10)
                                         {
                                             hq.Add("Weirdboy");
                                             army3.Points = army3.Points + 70;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(70);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 11)
                                         {
                                             hq.Add("Ork Warboss with Big Choppa");
                                             army3.Points = army3.Points + 90;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(90);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 12)
                                         {
                                             hq.Add("Big Mek with Shokk Attac Gun");
                                             army3.Points = army3.Points + 110;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(110);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 13)
                                         {
                                             hq.Add("Beastboss on Squigosaur");
                                             army3.Points = army3.Points + 145;
                                             army3.PL = army3.PL + 8;
+                                            hqp.Add(145);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 14)
                                         {
                                             hq.Add("Deffkilla Wartrike");
                                             army3.Points = army3.Points + 120;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(120);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 15)
                                         {
                                             hq.Add("Big Mek in Mega Armour");
                                             army3.Points = army3.Points + 85;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(85);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 16)
                                         {
                                             hq.Add("Ghazghkull Thraka");
                                             army3.Points = army3.Points + 300;
                                             army3.PL = army3.PL + 15;
+                                            hqp.Add(300);
+                                            hpl.Add(15);
                                         }
                                     }
                                 }
@@ -3843,96 +4815,128 @@ namespace Final
                                             hq.Add("Da Red Gobbo and Bounca");
                                             army3.Points = army3.Points + 80;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(80);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Mozrog Skragbad");
                                             army3.Points = army3.Points + 170;
                                             army3.PL = army3.PL + 9;
+                                            hqp.Add(170);
+                                            hpl.Add(9);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Panboss");
                                             army3.Points = army3.Points + 80;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(80);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Zodgrod Wortsnagga");
                                             army3.Points = army3.Points + 65;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(65);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Beastboss");
                                             army3.Points = army3.Points + 95;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(95);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Big Mek with Kustom Force Field");
                                             army3.Points = army3.Points + 85;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(85);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Ork Boss Zagstruk");
                                             army3.Points = army3.Points + 110;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(110);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("Kaptin Badrukk");
                                             army3.Points = army3.Points + 95;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(95);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 9)
                                         {
                                             hq.Add("Ork Boss Snikrot");
                                             army3.Points = army3.Points + 95;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(95);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 10)
                                         {
                                             hq.Add("Weirdboy");
                                             army3.Points = army3.Points + 70;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(70);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 11)
                                         {
                                             hq.Add("Ork Warboss with Big Choppa");
                                             army3.Points = army3.Points + 90;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(90);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 12)
                                         {
                                             hq.Add("Big Mek with Shokk Attac Gun");
                                             army3.Points = army3.Points + 110;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(110);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 13)
                                         {
                                             hq.Add("Beastboss on Squigosaur");
                                             army3.Points = army3.Points + 145;
                                             army3.PL = army3.PL + 8;
+                                            hqp.Add(145);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 14)
                                         {
                                             hq.Add("Deffkilla Wartrike");
                                             army3.Points = army3.Points + 120;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(120);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 15)
                                         {
                                             hq.Add("Big Mek in Mega Armour");
                                             army3.Points = army3.Points + 85;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(85);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 16)
                                         {
                                             hq.Add("Ghazghkull Thraka");
                                             army3.Points = army3.Points + 300;
                                             army3.PL = army3.PL + 15;
+                                            hqp.Add(300);
+                                            hpl.Add(15);
                                         }
                                     }
                                 }
@@ -3957,48 +4961,64 @@ namespace Final
                                             hq.Add("Commander Shadowsun");
                                             army3.Points = army3.Points +  155;
                                             army3.PL = army3.PL + 8;
+                                            hqp.Add(155);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Commander Farsight");
                                             army3.Points = army3.Points +  130;
                                             army3.PL = army3.PL + 7;
+                                            hqp.Add(130);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("T'au Empire Commander");
                                             army3.Points = army3.Points +  113;
                                             army3.PL = army3.PL + 7;
+                                            hqp.Add(113);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Aun'Va, Master of the Undying Spirit");
                                             army3.Points = army3.Points +  85;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(85);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Cadre Fireblade");
                                             army3.Points = army3.Points +  45;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(45);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Aun Shi T'au Ethereal");
                                             army3.Points = army3.Points +  55;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(55);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Darkstrider");
                                             army3.Points = army3.Points +  60;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(60);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("Longstrike");
                                             army3.Points = army3.Points +  205;
                                             army3.PL = army3.PL + 11;
+                                            hqp.Add(205);
+                                            hpl.Add(11);
                                         }
                                     }
                                 }
@@ -4011,48 +5031,64 @@ namespace Final
                                             hq.Add("Commander Shadowsun");
                                             army3.Points = army3.Points + 155;
                                             army3.PL = army3.PL + 8;
+                                            hqp.Add(155);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Commander Farsight");
                                             army3.Points = army3.Points + 130;
                                             army3.PL = army3.PL + 7;
+                                            hqp.Add(130);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("T'au Empire Commander");
                                             army3.Points = army3.Points + 113;
                                             army3.PL = army3.PL + 7;
+                                            hqp.Add(113);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Aun'Va, Master of the Undying Spirit");
                                             army3.Points = army3.Points + 85;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(85);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Cadre Fireblade");
                                             army3.Points = army3.Points + 45;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(45);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Aun Shi T'au Ethereal");
                                             army3.Points = army3.Points + 55;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(55);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Darkstrider");
                                             army3.Points = army3.Points + 60;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(60);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("Longstrike");
                                             army3.Points = army3.Points + 205;
                                             army3.PL = army3.PL + 11;
+                                            hqp.Add(205);
+                                            hpl.Add(11);
                                         }
                                     }
                                 }
@@ -4065,48 +5101,64 @@ namespace Final
                                             hq.Add("Commander Shadowsun");
                                             army3.Points = army3.Points + 155;
                                             army3.PL = army3.PL + 8;
+                                            hqp.Add(155);
+                                            hpl.Add(8);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Commander Farsight");
                                             army3.Points = army3.Points + 130;
                                             army3.PL = army3.PL + 7;
+                                            hqp.Add(130);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("T'au Empire Commander");
                                             army3.Points = army3.Points + 113;
                                             army3.PL = army3.PL + 7;
+                                            hqp.Add(113);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Aun'Va, Master of the Undying Spirit");
                                             army3.Points = army3.Points + 85;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(85);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Cadre Fireblade");
                                             army3.Points = army3.Points + 45;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(45);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Aun Shi T'au Ethereal");
                                             army3.Points = army3.Points + 55;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(55);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Darkstrider");
                                             army3.Points = army3.Points + 60;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(60);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("Longstrike");
                                             army3.Points = army3.Points + 205;
                                             army3.PL = army3.PL + 11;
+                                            hqp.Add(205);
+                                            hpl.Add(11);
                                         }
                                     }
                                 }
@@ -4127,24 +5179,32 @@ namespace Final
                                             hq.Add("Broodlord");
                                             army3.Points = army3.Points +  125;
                                             army3.PL = army3.PL + 7;
+                                            hqp.Add(125);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("The Swarmlord");
                                             army3.Points = army3.Points +  240;
                                             army3.PL = army3.PL + 14;
+                                            hqp.Add(240);
+                                            hpl.Add(14);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Old One Eye's Carnifex Brood");
-                                            army3.Points = army3.Points +  20;
+                                            army3.Points = army3.Points +  220;
                                             army3.PL = army3.PL + 11;
+                                            hqp.Add(220);
+                                            hpl.Add(11);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Tyranids Hive Tyrant");
                                             army3.Points = army3.Points +  175;
                                             army3.PL = army3.PL + 9;
+                                            hqp.Add(175);
+                                            hpl.Add(9);
                                         }
                                     }
                                 }
@@ -4157,24 +5217,32 @@ namespace Final
                                             hq.Add("Broodlord");
                                             army3.Points = army3.Points + 125;
                                             army3.PL = army3.PL + 7;
+                                            hqp.Add(125);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("The Swarmlord");
                                             army3.Points = army3.Points + 240;
                                             army3.PL = army3.PL + 14;
+                                            hqp.Add(240);
+                                            hpl.Add(14);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Old One Eye's Carnifex Brood");
-                                            army3.Points = army3.Points + 20;
+                                            army3.Points = army3.Points + 220;
                                             army3.PL = army3.PL + 11;
+                                            hqp.Add(220);
+                                            hpl.Add(11);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Tyranids Hive Tyrant");
                                             army3.Points = army3.Points + 175;
                                             army3.PL = army3.PL + 9;
+                                            hqp.Add(175);
+                                            hpl.Add(9);
                                         }
                                     }
                                 }
@@ -4187,24 +5255,32 @@ namespace Final
                                             hq.Add("Broodlord");
                                             army3.Points = army3.Points + 125;
                                             army3.PL = army3.PL + 7;
+                                            hqp.Add(125);
+                                            hpl.Add(7);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("The Swarmlord");
                                             army3.Points = army3.Points + 240;
                                             army3.PL = army3.PL + 14;
+                                            hqp.Add(240);
+                                            hpl.Add(14);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("Old One Eye's Carnifex Brood");
-                                            army3.Points = army3.Points + 20;
+                                            army3.Points = army3.Points + 220;
                                             army3.PL = army3.PL + 11;
+                                            hqp.Add(220);
+                                            hpl.Add(11);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Tyranids Hive Tyrant");
                                             army3.Points = army3.Points + 175;
                                             army3.PL = army3.PL + 9;
+                                            hqp.Add(175);
+                                            hpl.Add(9);
                                         }
                                     }
                                 }
@@ -4234,78 +5310,104 @@ namespace Final
                                             hq.Add("The Yncarne, Avatar of Ynnead");
                                             army3.Points = army3.Points +  290;
                                             army3.PL = army3.PL + 15;
+                                            hqp.Add(290);
+                                            hpl.Add(15);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Yvraine, Emissary of Ynnead");
                                             army3.Points = army3.Points +  120;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(120);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("The Visarch, Sword of Ynnead");
                                             army3.Points = army3.Points +  85;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(85);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Warlock with Wich Blade and Shuriken Pistol");
                                             army3.Points = army3.Points +  50;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(50);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Succubus");
                                             army3.Points = army3.Points +  80;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(80);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Autarch");
                                             army3.Points = army3.Points +  80;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(80);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Farseer");
                                             army3.Points = army3.Points +  115;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(115);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("Archon");
                                             army3.Points = army3.Points +  75;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(75);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 9)
                                         {
                                             hq.Add("Spiritseer");
                                             army3.Points = army3.Points +  60;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(60);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 10)
                                         {
                                             hq.Add("Farseer and Warlocks");
                                             army3.Points = army3.Points +  235;
                                             army3.PL = army3.PL + 15;
+                                            hqp.Add(235);
+                                            hpl.Add(15);
                                         }
                                         if (hqs == 11)
                                         {
                                             hq.Add("Autarch Skyrunner");
                                             army3.Points = army3.Points +  105;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 12)
                                         {
                                             hq.Add("Warlock Skyrunner");
                                             army3.Points = army3.Points +  65;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(65);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 13)
                                         {
                                             hq.Add("Eldar Farseer Skyrunner");
                                             army3.Points = army3.Points +  135;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(135);
+                                            hpl.Add(4);
                                         }
                                     }
                                 }
@@ -4318,78 +5420,104 @@ namespace Final
                                             hq.Add("The Yncarne, Avatar of Ynnead");
                                             army3.Points = army3.Points + 290;
                                             army3.PL = army3.PL + 15;
+                                            hqp.Add(290);
+                                            hpl.Add(15);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Yvraine, Emissary of Ynnead");
                                             army3.Points = army3.Points + 120;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(120);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("The Visarch, Sword of Ynnead");
                                             army3.Points = army3.Points + 85;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(85);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Warlock with Wich Blade and Shuriken Pistol");
                                             army3.Points = army3.Points + 50;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(50);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Succubus");
                                             army3.Points = army3.Points + 80;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(80);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Autarch");
                                             army3.Points = army3.Points + 80;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(80);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Farseer");
                                             army3.Points = army3.Points + 115;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(115);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("Archon");
                                             army3.Points = army3.Points + 75;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(75);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 9)
                                         {
                                             hq.Add("Spiritseer");
                                             army3.Points = army3.Points + 60;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(60);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 10)
                                         {
                                             hq.Add("Farseer and Warlocks");
                                             army3.Points = army3.Points + 235;
                                             army3.PL = army3.PL + 15;
+                                            hqp.Add(235);
+                                            hpl.Add(15);
                                         }
                                         if (hqs == 11)
                                         {
                                             hq.Add("Autarch Skyrunner");
                                             army3.Points = army3.Points + 105;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 12)
                                         {
                                             hq.Add("Warlock Skyrunner");
                                             army3.Points = army3.Points + 65;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(65);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 13)
                                         {
                                             hq.Add("Eldar Farseer Skyrunner");
                                             army3.Points = army3.Points + 135;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(135);
+                                            hpl.Add(4);
                                         }
                                     }
                                 }
@@ -4402,78 +5530,104 @@ namespace Final
                                             hq.Add("The Yncarne, Avatar of Ynnead");
                                             army3.Points = army3.Points + 290;
                                             army3.PL = army3.PL + 15;
+                                            hqp.Add(290);
+                                            hpl.Add(15);
                                         }
                                         if (hqs == 2)
                                         {
                                             hq.Add("Yvraine, Emissary of Ynnead");
                                             army3.Points = army3.Points + 120;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(120);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 3)
                                         {
                                             hq.Add("The Visarch, Sword of Ynnead");
                                             army3.Points = army3.Points + 85;
                                             army3.PL = army3.PL + 5;
+                                            hqp.Add(85);
+                                            hpl.Add(5);
                                         }
                                         if (hqs == 4)
                                         {
                                             hq.Add("Warlock with Wich Blade and Shuriken Pistol");
                                             army3.Points = army3.Points + 50;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(50);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 5)
                                         {
                                             hq.Add("Succubus");
                                             army3.Points = army3.Points + 80;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(80);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 6)
                                         {
                                             hq.Add("Autarch");
                                             army3.Points = army3.Points + 80;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(80);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 7)
                                         {
                                             hq.Add("Farseer");
                                             army3.Points = army3.Points + 115;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(115);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 8)
                                         {
                                             hq.Add("Archon");
                                             army3.Points = army3.Points + 75;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(75);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 9)
                                         {
                                             hq.Add("Spiritseer");
                                             army3.Points = army3.Points + 60;
                                             army3.PL = army3.PL + 3;
+                                            hqp.Add(60);
+                                            hpl.Add(3);
                                         }
                                         if (hqs == 10)
                                         {
                                             hq.Add("Farseer and Warlocks");
                                             army3.Points = army3.Points + 235;
                                             army3.PL = army3.PL + 15;
+                                            hqp.Add(235);
+                                            hpl.Add(15);
                                         }
                                         if (hqs == 11)
                                         {
                                             hq.Add("Autarch Skyrunner");
                                             army3.Points = army3.Points + 105;
                                             army3.PL = army3.PL + 6;
+                                            hqp.Add(105);
+                                            hpl.Add(6);
                                         }
                                         if (hqs == 12)
                                         {
                                             hq.Add("Warlock Skyrunner");
                                             army3.Points = army3.Points + 65;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(65);
+                                            hpl.Add(4);
                                         }
                                         if (hqs == 13)
                                         {
                                             hq.Add("Eldar Farseer Skyrunner");
                                             army3.Points = army3.Points + 135;
                                             army3.PL = army3.PL + 4;
+                                            hqp.Add(135);
+                                            hpl.Add(4);
                                         }
                                     }
                                 }
@@ -4498,6 +5652,8 @@ namespace Final
                                             troop.Add("Battle Sister Squad");
                                             army1.Points = army1.Points + 55;
                                             army1.PL = army1.PL + 3;
+                                            troopp.Add(55);
+                                            tpl.Add(3);
                                         }
                                     }
                                 }
@@ -4510,6 +5666,8 @@ namespace Final
                                             troop.Add("Battle Sister Squad");
                                             army1.Points = army1.Points + 55;
                                             army1.PL = army1.PL + 3;
+                                            troopp.Add(55);
+                                            tpl.Add(3);
                                         }
                                     }
                                 }
@@ -4522,6 +5680,8 @@ namespace Final
                                             troop.Add("Battle Sister Squad");
                                             army1.Points = army1.Points + 55;
                                             army1.PL = army1.PL + 3;
+                                            troopp.Add(55);
+                                            tpl.Add(3);
                                         }
                                     }
                                 }
@@ -4544,36 +5704,48 @@ namespace Final
                                             troop.Add("Assault Intercessor Squad");
                                             army1.Points += 95;
                                             army1.PL += 5;
+                                            troopp.Add(95);
+                                            tpl.Add(5);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Heavy Intercessor Squad");
                                             army1.Points += 140;
                                             army1.PL += 7;
+                                            troopp.Add(140);
+                                            tpl.Add(7);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Inursor Squad");
                                             army1.Points += 105;
                                             army1.PL += 5;
+                                            troopp.Add(105);
+                                            tpl.Add(5);
                                         }
                                         if (troops == 4)
                                         {
                                             troop.Add("Infiltrator Squad");
                                             army1.Points += 120;
                                             army1.PL += 6;
+                                            troopp.Add(120);
+                                            tpl.Add(6);
                                         }
                                         if (troops == 5)
                                         {
                                             troop.Add("Intercessor Squad");
                                             army1.Points += 100;
                                             army1.PL += 5;
+                                            troopp.Add(100);
+                                            tpl.Add(5);
                                         }
                                         if (troops == 6)
                                         {
                                             troop.Add("Tactical Squad");
                                             army1.Points += 90;
                                             army1.PL += 5;
+                                            troopp.Add(90);
+                                            tpl.Add(5);
                                         }
                                     }
                                 }
@@ -4586,36 +5758,48 @@ namespace Final
                                             troop.Add("Assault Intercessor Squad");
                                             army1.Points += 95;
                                             army1.PL += 5;
+                                            troopp.Add(95);
+                                            tpl.Add(5);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Heavy Intercessor Squad");
                                             army1.Points += 140;
                                             army1.PL += 7;
+                                            troopp.Add(140);
+                                            tpl.Add(7);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Inursor Squad");
                                             army1.Points += 105;
                                             army1.PL += 5;
+                                            troopp.Add(105);
+                                            tpl.Add(5);
                                         }
                                         if (troops == 4)
                                         {
                                             troop.Add("Infiltrator Squad");
                                             army1.Points += 120;
                                             army1.PL += 6;
+                                            troopp.Add(120);
+                                            tpl.Add(6);
                                         }
                                         if (troops == 5)
                                         {
                                             troop.Add("Intercessor Squad");
                                             army1.Points += 100;
                                             army1.PL += 5;
+                                            troopp.Add(100);
+                                            tpl.Add(5);
                                         }
                                         if (troops == 6)
                                         {
                                             troop.Add("Tactical Squad");
                                             army1.Points += 90;
                                             army1.PL += 5;
+                                            troopp.Add(90);
+                                            tpl.Add(5);
                                         }
                                     }
                                 }
@@ -4628,36 +5812,48 @@ namespace Final
                                             troop.Add("Assault Intercessor Squad");
                                             army1.Points += 95;
                                             army1.PL += 5;
+                                            troopp.Add(95);
+                                            tpl.Add(5);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Heavy Intercessor Squad");
                                             army1.Points += 140;
                                             army1.PL += 7;
+                                            troopp.Add(140);
+                                            tpl.Add(7);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Inursor Squad");
                                             army1.Points += 105;
                                             army1.PL += 5;
+                                            troopp.Add(105);
+                                            tpl.Add(5);
                                         }
                                         if (troops == 4)
                                         {
                                             troop.Add("Infiltrator Squad");
                                             army1.Points += 120;
                                             army1.PL += 6;
+                                            troopp.Add(120);
+                                            tpl.Add(6);
                                         }
                                         if (troops == 5)
                                         {
                                             troop.Add("Intercessor Squad");
                                             army1.Points += 100;
                                             army1.PL += 5;
+                                            troopp.Add(100);
+                                            tpl.Add(5);
                                         }
                                         if (troops == 6)
                                         {
                                             troop.Add("Tactical Squad");
                                             army1.Points += 90;
                                             army1.PL += 5;
+                                            troopp.Add(90);
+                                            tpl.Add(5);
                                         }
                                     }
                                 }
@@ -4676,12 +5872,16 @@ namespace Final
                                             troop.Add("Custodian Guard");
                                             army1.Points += 135;
                                             army1.PL += 7;
+                                            troopp.Add(135);
+                                            tpl.Add(7);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Sagittarum Custodians");
                                             army1.Points += 150;
                                             army1.PL += 7;
+                                            troopp.Add(150);
+                                            tpl.Add(7);
                                         }
                                     }    
                                 }
@@ -4694,12 +5894,16 @@ namespace Final
                                             troop.Add("Custodian Guard");
                                             army1.Points += 135;
                                             army1.PL += 7;
+                                            troopp.Add(135);
+                                            tpl.Add(7);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Sagittarum Custodians");
                                             army1.Points += 150;
                                             army1.PL += 7;
+                                            troopp.Add(150);
+                                            tpl.Add(7);
                                         }
                                     }
                                 }
@@ -4712,12 +5916,16 @@ namespace Final
                                             troop.Add("Custodian Guard");
                                             army1.Points += 135;
                                             army1.PL += 7;
+                                            troopp.Add(135);
+                                            tpl.Add(7);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Sagittarum Custodians");
                                             army1.Points += 150;
                                             army1.PL += 7;
+                                            troopp.Add(150);
+                                            tpl.Add(7);
                                         }
                                     }
                                 }
@@ -4738,24 +5946,32 @@ namespace Final
                                             troop.Add("Skitarii Rangers");
                                             army1.Points += 45;
                                             army1.PL += 2;
+                                            troopp.Add(45);
+                                            tpl.Add(2);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Kataphron Breachers");
                                             army1.Points += 105;
                                             army1.PL += 6;
+                                            troopp.Add(105);
+                                            tpl.Add(6);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Skitarii Vanguard");
                                             army1.Points += 45;
                                             army1.PL += 2;
+                                            troopp.Add(45);
+                                            tpl.Add(2);
                                         }
                                         if (troops == 4)
                                         {
                                             troop.Add("Kataphron Destroyers");
                                             army1.Points += 120;
                                             army1.PL += 7;
+                                            troopp.Add(120);
+                                            tpl.Add(7);
                                         }
                                     }
                                 }
@@ -4768,24 +5984,32 @@ namespace Final
                                             troop.Add("Skitarii Rangers");
                                             army1.Points += 45;
                                             army1.PL += 2;
+                                            troopp.Add(45);
+                                            tpl.Add(2);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Kataphron Breachers");
                                             army1.Points += 105;
                                             army1.PL += 6;
+                                            troopp.Add(105);
+                                            tpl.Add(6);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Skitarii Vanguard");
                                             army1.Points += 45;
                                             army1.PL += 2;
+                                            troopp.Add(45);
+                                            tpl.Add(2);
                                         }
                                         if (troops == 4)
                                         {
                                             troop.Add("Kataphron Destroyers");
                                             army1.Points += 120;
                                             army1.PL += 7;
+                                            troopp.Add(120);
+                                            tpl.Add(7);
                                         }
                                     }
                                 }
@@ -4798,24 +6022,32 @@ namespace Final
                                             troop.Add("Skitarii Rangers");
                                             army1.Points += 45;
                                             army1.PL += 2;
+                                            troopp.Add(45);
+                                            tpl.Add(2);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Kataphron Breachers");
                                             army1.Points += 105;
                                             army1.PL += 6;
+                                            troopp.Add(105);
+                                            tpl.Add(6);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Skitarii Vanguard");
                                             army1.Points += 45;
                                             army1.PL += 2;
+                                            troopp.Add(45);
+                                            tpl.Add(2);
                                         }
                                         if (troops == 4)
                                         {
                                             troop.Add("Kataphron Destroyers");
                                             army1.Points += 120;
                                             army1.PL += 7;
+                                            troopp.Add(120);
+                                            tpl.Add(7);
                                         }
                                     }
                                 }
@@ -4834,12 +6066,16 @@ namespace Final
                                             troop.Add("Conscrips");
                                             army1.Points += 100;
                                             army1.PL += 5;
+                                            troopp.Add(100);
+                                            tpl.Add(5);
                                         }
                                         if (troops == 1)
                                         {
                                             troop.Add("Infantry Squad");
                                             army1.Points += 55;
                                             army1.PL += 3;
+                                            troopp.Add(55);
+                                            tpl.Add(3);
                                         }
                                     }
                                 }
@@ -4852,12 +6088,16 @@ namespace Final
                                             troop.Add("Conscrips");
                                             army1.Points += 100;
                                             army1.PL += 5;
+                                            troopp.Add(100);
+                                            tpl.Add(5);
                                         }
                                         if (troops == 1)
                                         {
                                             troop.Add("Infantry Squad");
                                             army1.Points += 55;
                                             army1.PL += 3;
+                                            troopp.Add(55);
+                                            tpl.Add(3);
                                         }
                                     }
                                 }
@@ -4870,12 +6110,16 @@ namespace Final
                                             troop.Add("Conscrips");
                                             army1.Points += 100;
                                             army1.PL += 5;
+                                            troopp.Add(100);
+                                            tpl.Add(5);
                                         }
                                         if (troops == 1)
                                         {
                                             troop.Add("Infantry Squad");
                                             army1.Points += 55;
                                             army1.PL += 3;
+                                            troopp.Add(55);
+                                            tpl.Add(3);
                                         }
                                     }
                                 }
@@ -4900,30 +6144,40 @@ namespace Final
                                             troop.Add("Horrors of Tzeentch");
                                             army2.Points += 35;
                                             army2.PL += 4;
+                                            troopp.Add(35);
+                                            tpl.Add(4);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Nurglings");
                                             army2.Points += 66;
                                             army2.PL += 3;
+                                            troopp.Add(66);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Daemonettes of Saanesh");
                                             army2.Points += 70;
                                             army2.PL += 4;
+                                            troopp.Add(70);
+                                            tpl.Add(4);
                                         }
                                         if (troops == 4)
                                         {
                                             troop.Add("Daemons of Khorne Bloodletters");
                                             army2.Points += 80;
                                             army2.PL += 4;
+                                            troopp.Add(80);
+                                            tpl.Add(4);
                                         }
                                         if (troops == 5)
                                         {
                                             troop.Add("Plaguebearers of Nurgle");
                                             army2.Points += 90;
                                             army2.PL += 5;
+                                            troopp.Add(90);
+                                            tpl.Add(5);
                                         }
                                     }
                                 }
@@ -4936,30 +6190,40 @@ namespace Final
                                             troop.Add("Horrors of Tzeentch");
                                             army2.Points += 35;
                                             army2.PL += 4;
+                                            troopp.Add(35);
+                                            tpl.Add(4);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Nurglings");
                                             army2.Points += 66;
                                             army2.PL += 3;
+                                            troopp.Add(66);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Daemonettes of Saanesh");
                                             army2.Points += 70;
                                             army2.PL += 4;
+                                            troopp.Add(70);
+                                            tpl.Add(4);
                                         }
                                         if (troops == 4)
                                         {
                                             troop.Add("Daemons of Khorne Bloodletters");
                                             army2.Points += 80;
                                             army2.PL += 4;
+                                            troopp.Add(80);
+                                            tpl.Add(4);
                                         }
                                         if (troops == 5)
                                         {
                                             troop.Add("Plaguebearers of Nurgle");
                                             army2.Points += 90;
                                             army2.PL += 5;
+                                            troopp.Add(90);
+                                            tpl.Add(5);
                                         }
                                     }
                                 }
@@ -4972,30 +6236,40 @@ namespace Final
                                             troop.Add("Horrors of Tzeentch");
                                             army2.Points += 35;
                                             army2.PL += 4;
+                                            troopp.Add(35);
+                                            tpl.Add(4);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Nurglings");
                                             army2.Points += 66;
                                             army2.PL += 3;
+                                            troopp.Add(66);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Daemonettes of Saanesh");
                                             army2.Points += 70;
                                             army2.PL += 4;
+                                            troopp.Add(70);
+                                            tpl.Add(4);
                                         }
                                         if (troops == 4)
                                         {
                                             troop.Add("Daemons of Khorne Bloodletters");
                                             army2.Points += 80;
                                             army2.PL += 4;
+                                            troopp.Add(80);
+                                            tpl.Add(4);
                                         }
                                         if (troops == 5)
                                         {
                                             troop.Add("Plaguebearers of Nurgle");
                                             army2.Points += 90;
                                             army2.PL += 5;
+                                            troopp.Add(90);
+                                            tpl.Add(5);
                                         }
                                     }
                                 }
@@ -5014,12 +6288,16 @@ namespace Final
                                             troop.Add("Plague Marines");
                                             army2.Points += 105;
                                             army2.PL += 6;
+                                            troopp.Add(105);
+                                            tpl.Add(6);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Poxwalkers");
                                             army2.Points += 50;
                                             army2.PL += 2;
+                                            troopp.Add(50);
+                                            tpl.Add(2);
                                         }
                                     }
                                 }
@@ -5032,12 +6310,16 @@ namespace Final
                                             troop.Add("Plague Marines");
                                             army2.Points += 105;
                                             army2.PL += 6;
+                                            troopp.Add(105);
+                                            tpl.Add(6);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Poxwalkers");
                                             army2.Points += 50;
                                             army2.PL += 2;
+                                            troopp.Add(50);
+                                            tpl.Add(2);
                                         }
                                     }
                                 }
@@ -5050,12 +6332,16 @@ namespace Final
                                             troop.Add("Plague Marines");
                                             army2.Points += 105;
                                             army2.PL += 6;
+                                            troopp.Add(105);
+                                            tpl.Add(6);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Poxwalkers");
                                             army2.Points += 50;
                                             army2.PL += 2;
+                                            troopp.Add(50);
+                                            tpl.Add(2);
                                         }
                                     }
                                 }
@@ -5077,30 +6363,40 @@ namespace Final
                                             troop.Add("Chaos Space Marines");
                                             army2.Points += 70;
                                             army2.PL += 4;
+                                            troopp.Add(70);
+                                            tpl.Add(4);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Black Legionnaires");
                                             army2.Points += 28;
                                             army2.PL += 1;
+                                            troopp.Add(28);
+                                            tpl.Add(1);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Chaos Cultists");
                                             army2.Points += 50;
                                             army2.PL += 3;
+                                            troopp.Add(50);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 4)
                                         {
                                             troop.Add("Khorne Berzerkers");
                                             army2.Points += 85;
                                             army2.PL += 5;
+                                            troopp.Add(85);
+                                            tpl.Add(5);
                                         }
                                         if (troops == 5)
                                         {
                                             troop.Add("Noise Marines");
                                             army2.Points += 80;
                                             army2.PL += 5;
+                                            troopp.Add(80);
+                                            tpl.Add(5);
                                         }
                                     }
                                 }
@@ -5113,30 +6409,40 @@ namespace Final
                                             troop.Add("Chaos Space Marines");
                                             army2.Points += 70;
                                             army2.PL += 4;
+                                            troopp.Add(70);
+                                            tpl.Add(4);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Black Legionnaires");
                                             army2.Points += 28;
                                             army2.PL += 1;
+                                            troopp.Add(28);
+                                            tpl.Add(1);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Chaos Cultists");
                                             army2.Points += 50;
                                             army2.PL += 3;
+                                            troopp.Add(50);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 4)
                                         {
                                             troop.Add("Khorne Berzerkers");
                                             army2.Points += 85;
                                             army2.PL += 5;
+                                            troopp.Add(85);
+                                            tpl.Add(5);
                                         }
                                         if (troops == 5)
                                         {
                                             troop.Add("Noise Marines");
                                             army2.Points += 80;
                                             army2.PL += 5;
+                                            troopp.Add(80);
+                                            tpl.Add(5);
                                         }
                                     }
                                 }
@@ -5149,30 +6455,40 @@ namespace Final
                                             troop.Add("Chaos Space Marines");
                                             army2.Points += 70;
                                             army2.PL += 4;
+                                            troopp.Add(70);
+                                            tpl.Add(4);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Black Legionnaires");
                                             army2.Points += 28;
                                             army2.PL += 1;
+                                            troopp.Add(28);
+                                            tpl.Add(1);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Chaos Cultists");
                                             army2.Points += 50;
                                             army2.PL += 3;
+                                            troopp.Add(50);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 4)
                                         {
                                             troop.Add("Khorne Berzerkers");
                                             army2.Points += 85;
                                             army2.PL += 5;
+                                            troopp.Add(85);
+                                            tpl.Add(5);
                                         }
                                         if (troops == 5)
                                         {
                                             troop.Add("Noise Marines");
                                             army2.Points += 80;
                                             army2.PL += 5;
+                                            troopp.Add(80);
+                                            tpl.Add(5);
                                         }
                                     }
                                 }
@@ -5191,12 +6507,16 @@ namespace Final
                                             troop.Add("Rubric Marines");
                                             army2.Points += 105;
                                             army2.PL += 6;
+                                            troopp.Add(105);
+                                            tpl.Add(6);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Tzaangors");
                                             army2.Points += 70;
                                             army2.PL += 6;
+                                            troopp.Add(70);
+                                            tpl.Add(6);
                                         }
                                     }
                                 }
@@ -5209,12 +6529,16 @@ namespace Final
                                             troop.Add("Rubric Marines");
                                             army2.Points += 105;
                                             army2.PL += 6;
+                                            troopp.Add(105);
+                                            tpl.Add(6);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Tzaangors");
                                             army2.Points += 70;
                                             army2.PL += 6;
+                                            troopp.Add(70);
+                                            tpl.Add(6);
                                         }
                                     }
                                 }
@@ -5227,12 +6551,16 @@ namespace Final
                                             troop.Add("Rubric Marines");
                                             army2.Points += 105;
                                             army2.PL += 6;
+                                            troopp.Add(105);
+                                            tpl.Add(6);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Tzaangors");
                                             army2.Points += 70;
                                             army2.PL += 6;
+                                            troopp.Add(70);
+                                            tpl.Add(6);
                                         }
                                     }
                                 }
@@ -5256,24 +6584,32 @@ namespace Final
                                             troop.Add("Dire Avengers");
                                             army3.Points += 55;
                                             army3.PL += 2;
+                                            troopp.Add(55);
+                                            tpl.Add(2);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Guardian Defenders");
                                             army3.Points += 80;
                                             army3.PL += 4;
+                                            troopp.Add(80);
+                                            tpl.Add(4);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Rangers");
                                             army3.Points += 65;
                                             army3.PL += 3;
+                                            troopp.Add(65);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 4)
                                         {
                                             troop.Add("Storm Guardians");
                                             army3.Points += 56;
                                             army3.PL += 3;
+                                            troopp.Add(56);
+                                            tpl.Add(3);
                                         }
                                     }
                                 }
@@ -5286,24 +6622,32 @@ namespace Final
                                             troop.Add("Dire Avengers");
                                             army3.Points += 55;
                                             army3.PL += 2;
+                                            troopp.Add(55);
+                                            tpl.Add(2);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Guardian Defenders");
                                             army3.Points += 80;
                                             army3.PL += 4;
+                                            troopp.Add(80);
+                                            tpl.Add(4);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Rangers");
                                             army3.Points += 65;
                                             army3.PL += 3;
+                                            troopp.Add(65);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 4)
                                         {
                                             troop.Add("Storm Guardians");
                                             army3.Points += 56;
                                             army3.PL += 3;
+                                            troopp.Add(56);
+                                            tpl.Add(3);
                                         }
                                     }
                                 }
@@ -5316,24 +6660,32 @@ namespace Final
                                             troop.Add("Dire Avengers");
                                             army3.Points += 55;
                                             army3.PL += 2;
+                                            troopp.Add(55);
+                                            tpl.Add(2);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Guardian Defenders");
                                             army3.Points += 80;
                                             army3.PL += 4;
+                                            troopp.Add(80);
+                                            tpl.Add(4);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Rangers");
                                             army3.Points += 65;
                                             army3.PL += 3;
+                                            troopp.Add(65);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 4)
                                         {
                                             troop.Add("Storm Guardians");
                                             army3.Points += 56;
                                             army3.PL += 3;
+                                            troopp.Add(56);
+                                            tpl.Add(3);
                                         }
                                     }
                                 }
@@ -5353,18 +6705,24 @@ namespace Final
                                             troop.Add("Kabalite Warriors");
                                             army3.Points += 40;
                                             army3.PL += 3;
+                                            troopp.Add(40);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Wracks");
                                             army3.Points += 40;
                                             army3.PL += 3;
+                                            troopp.Add(40);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Wyches");
                                             army3.Points += 60;
                                             army3.PL += 3;
+                                            troopp.Add(60);
+                                            tpl.Add(3);
                                         }
                                     }
                                 }
@@ -5377,18 +6735,24 @@ namespace Final
                                             troop.Add("Kabalite Warriors");
                                             army3.Points += 40;
                                             army3.PL += 3;
+                                            troopp.Add(40);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Wracks");
                                             army3.Points += 40;
                                             army3.PL += 3;
+                                            troopp.Add(40);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Wyches");
                                             army3.Points += 60;
                                             army3.PL += 3;
+                                            troopp.Add(60);
+                                            tpl.Add(3);
                                         }
                                     }
                                 }
@@ -5401,18 +6765,24 @@ namespace Final
                                             troop.Add("Kabalite Warriors");
                                             army3.Points += 40;
                                             army3.PL += 3;
+                                            troopp.Add(40);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Wracks");
                                             army3.Points += 40;
                                             army3.PL += 3;
+                                            troopp.Add(40);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Wyches");
                                             army3.Points += 60;
                                             army3.PL += 3;
+                                            troopp.Add(60);
+                                            tpl.Add(3);
                                         }
                                     }
                                 }
@@ -5432,18 +6802,24 @@ namespace Final
                                             troop.Add("Brood Brothers");
                                             army3.Points += 60;
                                             army3.PL += 3;
+                                            troopp.Add(60);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Neophyte Hybrids");
                                             army3.Points += 60;
                                             army3.PL += 4;
+                                            troopp.Add(60);
+                                            tpl.Add(4);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Acolyte Hybrids");
                                             army3.Points += 40;
                                             army3.PL += 3;
+                                            troopp.Add(40);
+                                            tpl.Add(3);
                                         }
                                     }
                                 }
@@ -5457,18 +6833,24 @@ namespace Final
                                             troop.Add("Brood Brothers");
                                             army3.Points += 60;
                                             army3.PL += 3;
+                                            troopp.Add(60);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Neophyte Hybrids");
                                             army3.Points += 60;
                                             army3.PL += 4;
+                                            troopp.Add(60);
+                                            tpl.Add(4);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Acolyte Hybrids");
                                             army3.Points += 40;
                                             army3.PL += 3;
+                                            troopp.Add(40);
+                                            tpl.Add(3);
                                         }
                                     }
                                 }
@@ -5476,25 +6858,31 @@ namespace Final
                                 {
                                         if (troop.Count < 12)
                                         {
-                                            if (troops == 1)
-                                            {
-                                                troop.Add("Brood Brothers");
-                                                army3.Points += 60;
-                                                army3.PL += 3;
-                                            }
-                                            if (troops == 2)
-                                            {
-                                                troop.Add("Neophyte Hybrids");
-                                                army3.Points += 60;
-                                                army3.PL += 4;
-                                            }
-                                            if (troops == 3)
-                                            {
-                                                troop.Add("Acolyte Hybrids");
-                                                army3.Points += 40;
-                                                army3.PL += 3;
-                                            }
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Brood Brothers");
+                                            army3.Points += 60;
+                                            army3.PL += 3;
+                                            troopp.Add(60);
+                                            tpl.Add(3);
                                         }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Neophyte Hybrids");
+                                            army3.Points += 60;
+                                            army3.PL += 4;
+                                            troopp.Add(60);
+                                            tpl.Add(4);
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Acolyte Hybrids");
+                                            army3.Points += 40;
+                                            army3.PL += 3;
+                                            troopp.Add(40);
+                                            tpl.Add(3);
+                                        }
+                                    }
                                 }
                             }
                             if (army3.Faction == 4)
@@ -5508,6 +6896,8 @@ namespace Final
                                         troop.Add("Troupe");
                                         army3.Points += 70;
                                         army3.PL += 5;
+                                        troopp.Add(70);
+                                        tpl.Add(5);
                                     }
                                 }
                                 if (army3.detachment == 2)
@@ -5517,6 +6907,8 @@ namespace Final
                                         troop.Add("Troupe");
                                         army3.Points += 70;
                                         army3.PL += 5;
+                                        troopp.Add(70);
+                                        tpl.Add(5);
                                     }
                                 }
                                 if (army3.detachment == 3)
@@ -5526,6 +6918,8 @@ namespace Final
                                         troop.Add("Troupe");
                                         army3.Points += 70;
                                         army3.PL += 5;
+                                        troopp.Add(70);
+                                        tpl.Add(5);
                                     }
                                 }
                             }
@@ -5543,12 +6937,16 @@ namespace Final
                                             troop.Add("Necron Warriors");
                                             army3.Points += 130;
                                             army3.PL += 6;
+                                            troopp.Add(130);
+                                            tpl.Add(6);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Immortals");
                                             army3.Points += 85;
                                             army3.PL += 4;
+                                            troopp.Add(85);
+                                            tpl.Add(4);
                                         }
                                     }
                                 }
@@ -5561,12 +6959,16 @@ namespace Final
                                             troop.Add("Necron Warriors");
                                             army3.Points += 130;
                                             army3.PL += 6;
+                                            troopp.Add(130);
+                                            tpl.Add(6);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Immortals");
                                             army3.Points += 85;
                                             army3.PL += 4;
+                                            troopp.Add(85);
+                                            tpl.Add(4);
                                         }
                                     }
                                 }
@@ -5579,12 +6981,16 @@ namespace Final
                                             troop.Add("Necron Warriors");
                                             army3.Points += 130;
                                             army3.PL += 6;
+                                            troopp.Add(130);
+                                            tpl.Add(6);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Immortals");
                                             army3.Points += 85;
                                             army3.PL += 4;
+                                            troopp.Add(85);
+                                            tpl.Add(4);
                                         }
                                     }
                                 }
@@ -5604,18 +7010,24 @@ namespace Final
                                             troop.Add("Ork Boyz");
                                             army3.Points += 90;
                                             army3.PL += 5;
+                                            troopp.Add(90);
+                                            tpl.Add(5);
                                         }
                                         if(troops == 2)
                                         {
                                             troop.Add("Ork Gretchin");
                                             army3.Points += 50;
                                             army3.PL += 2;
+                                            troopp.Add(50);
+                                            tpl.Add(2);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Ork Beast Snagga Boyz");
                                             army3.Points += 110;
                                             army3.PL += 5;
+                                            troopp.Add(110);
+                                            tpl.Add(5);
                                         }
                                     }
                                 }
@@ -5628,18 +7040,24 @@ namespace Final
                                             troop.Add("Ork Boyz");
                                             army3.Points += 90;
                                             army3.PL += 5;
+                                            troopp.Add(90);
+                                            tpl.Add(5);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Ork Gretchin");
                                             army3.Points += 50;
                                             army3.PL += 2;
+                                            troopp.Add(50);
+                                            tpl.Add(2);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Ork Beast Snagga Boyz");
                                             army3.Points += 110;
                                             army3.PL += 5;
+                                            troopp.Add(110);
+                                            tpl.Add(5);
                                         }
                                     }
                                 }
@@ -5652,18 +7070,24 @@ namespace Final
                                             troop.Add("Ork Boyz");
                                             army3.Points += 90;
                                             army3.PL += 5;
+                                            troopp.Add(90);
+                                            tpl.Add(5);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Ork Gretchin");
                                             army3.Points += 50;
                                             army3.PL += 2;
+                                            troopp.Add(50);
+                                            tpl.Add(2);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Ork Beast Snagga Boyz");
                                             army3.Points += 110;
                                             army3.PL += 5;
+                                            troopp.Add(110);
+                                            tpl.Add(5);
                                         }
                                     }
                                 }
@@ -5683,18 +7107,24 @@ namespace Final
                                             troop.Add("Breacher Team");
                                             army3.Points += 45;
                                             army3.PL += 2;
+                                            troopp.Add(45);
+                                            tpl.Add(2);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Kroot Carnivores");
                                             army3.Points += 60;
                                             army3.PL += 3;
+                                            troopp.Add(60);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Strike Team");
                                             army3.Points += 45;
                                             army3.PL += 2;
+                                            troopp.Add(45);
+                                            tpl.Add(2);
                                         }
                                     }
                                 }
@@ -5707,18 +7137,24 @@ namespace Final
                                             troop.Add("Breacher Team");
                                             army3.Points += 45;
                                             army3.PL += 2;
+                                            troopp.Add(45);
+                                            tpl.Add(2);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Kroot Carnivores");
                                             army3.Points += 60;
                                             army3.PL += 3;
+                                            troopp.Add(60);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Strike Team");
                                             army3.Points += 45;
                                             army3.PL += 2;
+                                            troopp.Add(45);
+                                            tpl.Add(2);
                                         }
                                     }
                                 }
@@ -5731,18 +7167,24 @@ namespace Final
                                             troop.Add("Breacher Team");
                                             army3.Points += 45;
                                             army3.PL += 2;
+                                            troopp.Add(45);
+                                            tpl.Add(2);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Kroot Carnivores");
                                             army3.Points += 60;
                                             army3.PL += 3;
+                                            troopp.Add(60);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Strike Team");
                                             army3.Points += 45;
                                             army3.PL += 2;
+                                            troopp.Add(45);
+                                            tpl.Add(2);
                                         }
                                     }
                                 }
@@ -5764,30 +7206,132 @@ namespace Final
                                             troop.Add("Genestealers");
                                             army3.Points += 65;
                                             army3.PL += 4;
+                                            troopp.Add(65);
+                                            tpl.Add(4);
                                         }
                                         if (troops == 1)
                                         {
                                             troop.Add("Hormagaunts");
                                             army3.Points += 60;
                                             army3.PL += 3;
+                                            troopp.Add(60);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 1)
                                         {
                                             troop.Add("Ripper Swarm");
                                             army3.Points += 36;
                                             army3.PL += 2;
+                                            troopp.Add(36);
+                                            tpl.Add(2);
                                         }
                                         if (troops == 1)
                                         {
                                             troop.Add("Termagants");
                                             army3.Points += 50;
                                             army3.PL += 3;
+                                            troopp.Add(50);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 1)
                                         {
                                             troop.Add("Tyranid Warriors");
                                             army3.Points += 63;
                                             army3.PL += 4;
+                                            troopp.Add(63);
+                                            tpl.Add(4);
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 2)
+                                {
+                                    if (troop.Count < 6)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Genestealers");
+                                            army3.Points += 65;
+                                            army3.PL += 4;
+                                            troopp.Add(65);
+                                            tpl.Add(4);
+                                        }
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Hormagaunts");
+                                            army3.Points += 60;
+                                            army3.PL += 3;
+                                            troopp.Add(60);
+                                            tpl.Add(3);
+                                        }
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Ripper Swarm");
+                                            army3.Points += 36;
+                                            army3.PL += 2;
+                                            troopp.Add(36);
+                                            tpl.Add(2);
+                                        }
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Termagants");
+                                            army3.Points += 50;
+                                            army3.PL += 3;
+                                            troopp.Add(50);
+                                            tpl.Add(3);
+                                        }
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Tyranid Warriors");
+                                            army3.Points += 63;
+                                            army3.PL += 4;
+                                            troopp.Add(63);
+                                            tpl.Add(4);
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 3)
+                                {
+                                    if (troop.Count < 12)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Genestealers");
+                                            army3.Points += 65;
+                                            army3.PL += 4;
+                                            troopp.Add(65);
+                                            tpl.Add(4);
+                                        }
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Hormagaunts");
+                                            army3.Points += 60;
+                                            army3.PL += 3;
+                                            troopp.Add(60);
+                                            tpl.Add(3);
+                                        }
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Ripper Swarm");
+                                            army3.Points += 36;
+                                            army3.PL += 2;
+                                            troopp.Add(36);
+                                            tpl.Add(2);
+                                        }
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Termagants");
+                                            army3.Points += 50;
+                                            army3.PL += 3;
+                                            troopp.Add(50);
+                                            tpl.Add(3);
+                                        }
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Tyranid Warriors");
+                                            army3.Points += 63;
+                                            army3.PL += 4;
+                                            troopp.Add(63);
+                                            tpl.Add(4);
                                         }
                                     }
                                 }
@@ -5811,42 +7355,56 @@ namespace Final
                                             troop.Add("Dire Avengers");
                                             army3.Points += 55;
                                             army3.PL += 2;
+                                            troopp.Add(55);
+                                            tpl.Add(2);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Guardian Defenders");
                                             army3.Points += 80;
                                             army3.PL += 4;
+                                            troopp.Add(80);
+                                            tpl.Add(4);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Rangers");
                                             army3.Points += 65;
                                             army3.PL += 3;
+                                            troopp.Add(65);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 4)
                                         {
                                             troop.Add("Storm Guardians");
                                             army3.Points += 56;
                                             army3.PL += 3;
+                                            troopp.Add(56);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 5)
                                         {
                                             troop.Add("Kabalite Warriors");
                                             army3.Points += 40;
                                             army3.PL += 3;
+                                            troopp.Add(40);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 6)
                                         {
                                             troop.Add("Wracks");
                                             army3.Points += 40;
                                             army3.PL += 3;
+                                            troopp.Add(40);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 7)
                                         {
                                             troop.Add("Wyches");
                                             army3.Points += 60;
                                             army3.PL += 3;
+                                            troopp.Add(60);
+                                            tpl.Add(3);
                                         }
                                     }
                                 }
@@ -5859,42 +7417,56 @@ namespace Final
                                             troop.Add("Dire Avengers");
                                             army3.Points += 55;
                                             army3.PL += 2;
+                                            troopp.Add(55);
+                                            tpl.Add(2);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Guardian Defenders");
                                             army3.Points += 80;
                                             army3.PL += 4;
+                                            troopp.Add(80);
+                                            tpl.Add(4);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Rangers");
                                             army3.Points += 65;
                                             army3.PL += 3;
+                                            troopp.Add(65);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 4)
                                         {
                                             troop.Add("Storm Guardians");
                                             army3.Points += 56;
                                             army3.PL += 3;
+                                            troopp.Add(56);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 5)
                                         {
                                             troop.Add("Kabalite Warriors");
                                             army3.Points += 40;
                                             army3.PL += 3;
+                                            troopp.Add(40);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 6)
                                         {
                                             troop.Add("Wracks");
                                             army3.Points += 40;
                                             army3.PL += 3;
+                                            troopp.Add(40);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 7)
                                         {
                                             troop.Add("Wyches");
                                             army3.Points += 60;
                                             army3.PL += 3;
+                                            troopp.Add(60);
+                                            tpl.Add(3);
                                         }
                                     }
                                 }
@@ -5907,42 +7479,56 @@ namespace Final
                                             troop.Add("Dire Avengers");
                                             army3.Points += 55;
                                             army3.PL += 2;
+                                            troopp.Add(55);
+                                            tpl.Add(2);
                                         }
                                         if (troops == 2)
                                         {
                                             troop.Add("Guardian Defenders");
                                             army3.Points += 80;
                                             army3.PL += 4;
+                                            troopp.Add(80);
+                                            tpl.Add(4);
                                         }
                                         if (troops == 3)
                                         {
                                             troop.Add("Rangers");
                                             army3.Points += 65;
                                             army3.PL += 3;
+                                            troopp.Add(65);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 4)
                                         {
                                             troop.Add("Storm Guardians");
                                             army3.Points += 56;
                                             army3.PL += 3;
+                                            troopp.Add(56);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 5)
                                         {
                                             troop.Add("Kabalite Warriors");
                                             army3.Points += 40;
                                             army3.PL += 3;
+                                            troopp.Add(40);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 6)
                                         {
                                             troop.Add("Wracks");
                                             army3.Points += 40;
                                             army3.PL += 3;
+                                            troopp.Add(40);
+                                            tpl.Add(3);
                                         }
                                         if (troops == 7)
                                         {
                                             troop.Add("Wyches");
                                             army3.Points += 60;
                                             army3.PL += 3;
+                                            troopp.Add(60);
+                                            tpl.Add(3);
                                         }
                                     }
                                 }
@@ -7360,14 +8946,325 @@ namespace Final
                         {
                             if (army2.Faction == 1)
                             {
+                                Console.WriteLine("1 - Beasts of Nurgle");
+                                Console.WriteLine("2 - Bloodcrushers");
+                                Console.WriteLine("3 - Exalted Flamers");
+                                Console.WriteLine("4 - Fiends");
+                                Console.WriteLine("5 - Flamers");
+                                elites = Convert.ToInt32(Console.ReadLine());
+                                if(army2.detachment == 1)
+                                {
+                                    if(elite.Count < 2)
+                                    {
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Beasts of Nurgel");
+                                            army2.Points += 35;
+                                            army2.PL += 2;
+                                        }
+                                        if(elites == 2)
+                                        {
+                                            elite.Add("Bloodcrushers");
+                                            army2.Points += 120;
+                                            army2.PL += 6;
+                                        }
+                                        if (elites == 3)
+                                        {
+                                            elite.Add("Exalted Flamers");
+                                            army2.Points += 60;
+                                            army2.PL += 3;
+                                        }
+                                        if (elites == 4)
+                                        {
+                                            elite.Add("Fiends");
+                                            army2.Points += 40;
+                                            army2.PL += 2;
+                                        }
+                                        if (elites == 5)
+                                        {
+                                            elite.Add("Flamers");
+                                            army2.Points += 69;
+                                            army2.PL += 3;
+                                        }
+                                    }
+                                    
+                                }
+                                if (army2.detachment == 2)
+                                {
+                                    if (elite.Count < 6)
+                                    {
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Beasts of Nurgel");
+                                            army2.Points += 35;
+                                            army2.PL += 2;
+                                        }
+                                        if (elites == 2)
+                                        {
+                                            elite.Add("Bloodcrushers");
+                                            army2.Points += 120;
+                                            army2.PL += 6;
+                                        }
+                                        if (elites == 3)
+                                        {
+                                            elite.Add("Exalted Flamers");
+                                            army2.Points += 60;
+                                            army2.PL += 3;
+                                        }
+                                        if (elites == 4)
+                                        {
+                                            elite.Add("Fiends");
+                                            army2.Points += 40;
+                                            army2.PL += 2;
+                                        }
+                                        if (elites == 5)
+                                        {
+                                            elite.Add("Flamers");
+                                            army2.Points += 69;
+                                            army2.PL += 3;
+                                        }
+                                    }
 
+                                }
+                                if (army2.detachment == 3)
+                                {
+                                    if (elite.Count < 8)
+                                    {
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Beasts of Nurgel");
+                                            army2.Points += 35;
+                                            army2.PL += 2;
+                                        }
+                                        if (elites == 2)
+                                        {
+                                            elite.Add("Bloodcrushers");
+                                            army2.Points += 120;
+                                            army2.PL += 6;
+                                        }
+                                        if (elites == 3)
+                                        {
+                                            elite.Add("Exalted Flamers");
+                                            army2.Points += 60;
+                                            army2.PL += 3;
+                                        }
+                                        if (elites == 4)
+                                        {
+                                            elite.Add("Fiends");
+                                            army2.Points += 40;
+                                            army2.PL += 2;
+                                        }
+                                        if (elites == 5)
+                                        {
+                                            elite.Add("Flamers");
+                                            army2.Points += 69;
+                                            army2.PL += 3;
+                                        }
+                                    }
+
+                                }
                             }
                             if (army2.Faction == 2)
                             {
-
+                                Console.WriteLine("1 - Biologus Putrifier");
+                                Console.WriteLine("2 - Blightlord Terminators");
+                                Console.WriteLine("3 - Possessed");
+                                Console.WriteLine("4 - Deathshroud Terminators");
+                                Console.WriteLine("5 - Foul Blightspawn");
+                                Console.WriteLine("6 - Helbrute");
+                                Console.WriteLine("7 - Noxious Blightbringer");
+                                Console.WriteLine("8 - Plague Surgeon");
+                                Console.WriteLine("9 - Tallyman");
+                                elites = Convert.ToInt32(Console.ReadLine());
+                                if(army2.detachment == 1)
+                                {
+                                    if(elite.Count < 2)
+                                    {
+                                        if(elites == 1)
+                                        {
+                                            elite.Add("Biologus Putrifier");
+                                            army2.Points += 65;
+                                            army2.PL += 4;
+                                        }
+                                        if (elites == 2)
+                                        {
+                                            elite.Add("Blightlord Terminators");
+                                            army2.Points += 200;
+                                            army2.PL += 10;
+                                        }
+                                        if (elites == 3)
+                                        {
+                                            elite.Add("Possessed");
+                                            army2.Points += 120;
+                                            army2.PL += 6;
+                                        }
+                                        if (elites == 4)
+                                        {
+                                            elite.Add("Deathshroud Terminators");
+                                            army2.Points += 150;
+                                            army2.PL += 7;
+                                        }
+                                        if (elites == 5)
+                                        {
+                                            elite.Add("Foul Blightspawn");
+                                            army2.Points += 75;
+                                            army2.PL += 4;
+                                        }
+                                        if (elites == 6)
+                                        {
+                                            elite.Add("Helbrute");
+                                            army2.Points += 120;
+                                            army2.PL += 7;
+                                        }
+                                        if (elites == 7)
+                                        {
+                                            elite.Add("Noxious Blightbringer");
+                                            army2.Points += 60;
+                                            army2.PL += 3;
+                                        }
+                                        if (elites == 8)
+                                        {
+                                            elite.Add("Plague Surgeon");
+                                            army2.Points += 75;
+                                            army2.PL += 4;
+                                        }
+                                        if (elites == 9)
+                                        {
+                                            elite.Add("Tallyman");
+                                            army2.Points += 70;
+                                            army2.PL += 5;
+                                        }
+                                    }
+                                }
+                                if (army2.detachment == 2)
+                                {
+                                    if (elite.Count < 6)
+                                    {
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Biologus Putrifier");
+                                            army2.Points += 65;
+                                            army2.PL += 4;
+                                        }
+                                        if (elites == 2)
+                                        {
+                                            elite.Add("Blightlord Terminators");
+                                            army2.Points += 200;
+                                            army2.PL += 10;
+                                        }
+                                        if (elites == 3)
+                                        {
+                                            elite.Add("Possessed");
+                                            army2.Points += 120;
+                                            army2.PL += 6;
+                                        }
+                                        if (elites == 4)
+                                        {
+                                            elite.Add("Deathshroud Terminators");
+                                            army2.Points += 150;
+                                            army2.PL += 7;
+                                        }
+                                        if (elites == 5)
+                                        {
+                                            elite.Add("Foul Blightspawn");
+                                            army2.Points += 75;
+                                            army2.PL += 4;
+                                        }
+                                        if (elites == 6)
+                                        {
+                                            elite.Add("Helbrute");
+                                            army2.Points += 120;
+                                            army2.PL += 7;
+                                        }
+                                        if (elites == 7)
+                                        {
+                                            elite.Add("Noxious Blightbringer");
+                                            army2.Points += 60;
+                                            army2.PL += 3;
+                                        }
+                                        if (elites == 8)
+                                        {
+                                            elite.Add("Plague Surgeon");
+                                            army2.Points += 75;
+                                            army2.PL += 4;
+                                        }
+                                        if (elites == 9)
+                                        {
+                                            elite.Add("Tallyman");
+                                            army2.Points += 70;
+                                            army2.PL += 5;
+                                        }
+                                    }
+                                }
+                                if (army2.detachment == 3)
+                                {
+                                    if (elite.Count < 8)
+                                    {
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Biologus Putrifier");
+                                            army2.Points += 65;
+                                            army2.PL += 4;
+                                        }
+                                        if (elites == 2)
+                                        {
+                                            elite.Add("Blightlord Terminators");
+                                            army2.Points += 200;
+                                            army2.PL += 10;
+                                        }
+                                        if (elites == 3)
+                                        {
+                                            elite.Add("Possessed");
+                                            army2.Points += 120;
+                                            army2.PL += 6;
+                                        }
+                                        if (elites == 4)
+                                        {
+                                            elite.Add("Deathshroud Terminators");
+                                            army2.Points += 150;
+                                            army2.PL += 7;
+                                        }
+                                        if (elites == 5)
+                                        {
+                                            elite.Add("Foul Blightspawn");
+                                            army2.Points += 75;
+                                            army2.PL += 4;
+                                        }
+                                        if (elites == 6)
+                                        {
+                                            elite.Add("Helbrute");
+                                            army2.Points += 120;
+                                            army2.PL += 7;
+                                        }
+                                        if (elites == 7)
+                                        {
+                                            elite.Add("Noxious Blightbringer");
+                                            army2.Points += 60;
+                                            army2.PL += 3;
+                                        }
+                                        if (elites == 8)
+                                        {
+                                            elite.Add("Plague Surgeon");
+                                            army2.Points += 75;
+                                            army2.PL += 4;
+                                        }
+                                        if (elites == 9)
+                                        {
+                                            elite.Add("Tallyman");
+                                            army2.Points += 70;
+                                            army2.PL += 5;
+                                        }
+                                    }
+                                }
                             }
                             if (army2.Faction == 3)
                             {
+                                Console.WriteLine("1 - Greater Possessed");
+                                Console.WriteLine("2 - Helbrute");
+                                Console.WriteLine("3 - Mutilators");
+                                Console.WriteLine("4 - Possessed");
+                                Console.WriteLine("5 - Terminators");
+                                elites = Convert.ToInt32(Console.ReadLine());
 
                             }
                             if (army2.Faction == 4)
@@ -7748,85 +9645,2221 @@ namespace Final
                         }
                         break;
                     case 8:
+                        Console.Clear();
+                        Console.WriteLine("What would you like to remove?\n");
+                        Console.WriteLine("1 - Hq\n");
+                        Console.WriteLine("2 - Troop\n");
+                        Console.WriteLine("3 - Elite\n");
+                        Console.WriteLine("4 - Heavy Support\n");
+                        Console.WriteLine("5 - Fast Attack\n");
+                        Console.WriteLine("6 - Flyer\n");
+                        Console.WriteLine("7 - Dedicated Transport\n");
+                        remove = Convert.ToInt32(Console.ReadLine());
+                        Console.Clear();
                         if (choice == 1)
                         {
                             if (army1.Faction == 1)
                             {
-
+                                if (remove == 1)
+                                {
+                                    if (hq.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no HQs in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < hq.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + hq[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        hq.RemoveAt(remove);
+                                        army1.Points -= hqp.ElementAt(remove);
+                                        army1.PL -= hpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 2)
+                                {
+                                    if (troop.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no troops in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < troop.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + troop[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        troop.RemoveAt(remove);
+                                        army1.Points -= troopp.ElementAt(remove);
+                                        army1.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 3)
+                                {
+                                    if (elite.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no elites in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < elite.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + elite[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        elite.RemoveAt(remove);
+                                        army1.Points -= elitep.ElementAt(remove);
+                                        army1.PL -= epl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 4)
+                                {
+                                    if (heavy.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no heavy supports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < heavy.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + heavy[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        heavy.RemoveAt(remove);
+                                        army1.Points -= heavyp.ElementAt(remove);
+                                        army1.PL -= hepl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 5)
+                                {
+                                    if (fast.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no fast attacks in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < fast.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + fast[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        fast.RemoveAt(remove);
+                                        army1.Points -= fastp.ElementAt(remove);
+                                        army1.PL -= fpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 6)
+                                {
+                                    if (flyer.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no flyers in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < flyer.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + flyer[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        flyer.RemoveAt(remove);
+                                        army1.Points -= flyerp.ElementAt(remove);
+                                        army1.PL -= flpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 7)
+                                {
+                                    if (transport.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no dedicated transports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < transport.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + transport[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        transport.RemoveAt(remove);
+                                        army1.Points -= transportp.ElementAt(remove);
+                                        army1.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
                             }
                             if (army1.Faction == 2)
                             {
+                                if (remove == 1)
+                                {
+                                    if (hq.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no HQs in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < hq.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + hq[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        hq.RemoveAt(remove);
+                                        army1.Points -= hqp.ElementAt(remove);
+                                        army1.PL -= hpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 2)
+                                {
+                                    if (troop.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no troops in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < troop.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + troop[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        troop.RemoveAt(remove);
+                                        army1.Points -= troopp.ElementAt(remove);
+                                        army1.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 3)
+                                {
+                                    if (elite.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no elites in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < elite.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + elite[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        elite.RemoveAt(remove);
+                                        army1.Points -= elitep.ElementAt(remove);
+                                        army1.PL -= epl.ElementAt(remove);
 
+                                    }
+                                }
+                                if (remove == 4)
+                                {
+                                    if (heavy.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no heavy supports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < heavy.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + heavy[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        heavy.RemoveAt(remove);
+                                        army1.Points -= heavyp.ElementAt(remove);
+                                        army1.PL -= hepl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 5)
+                                {
+                                    if (fast.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no fast attacks in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < fast.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + fast[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        fast.RemoveAt(remove);
+                                        army1.Points -= fastp.ElementAt(remove);
+                                        army1.PL -= fpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 6)
+                                {
+                                    if (flyer.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no flyers in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < flyer.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + flyer[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        flyer.RemoveAt(remove);
+                                        army1.Points -= flyerp.ElementAt(remove);
+                                        army1.PL -= flpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 7)
+                                {
+                                    if (transport.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no dedicated transports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < transport.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + transport[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        transport.RemoveAt(remove);
+                                        army1.Points -= transportp.ElementAt(remove);
+                                        army1.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
                             }
                             if (army1.Faction == 3)
                             {
+                                if (remove == 1)
+                                {
+                                    if (hq.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no HQs in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < hq.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + hq[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        hq.RemoveAt(remove);
+                                        army1.Points -= hqp.ElementAt(remove);
+                                        army1.PL -= hpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 2)
+                                {
+                                    if (troop.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no troops in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < troop.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + troop[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        troop.RemoveAt(remove);
+                                        army1.Points -= troopp.ElementAt(remove);
+                                        army1.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 3)
+                                {
+                                    if (elite.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no elites in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < elite.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + elite[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        elite.RemoveAt(remove);
+                                        army1.Points -= elitep.ElementAt(remove);
+                                        army1.PL -= epl.ElementAt(remove);
 
+                                    }
+                                }
+                                if (remove == 4)
+                                {
+                                    if (heavy.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no heavy supports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < heavy.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + heavy[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        heavy.RemoveAt(remove);
+                                        army1.Points -= heavyp.ElementAt(remove);
+                                        army1.PL -= hepl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 5)
+                                {
+                                    if (fast.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no fast attacks in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < fast.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + fast[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        fast.RemoveAt(remove);
+                                        army1.Points -= fastp.ElementAt(remove);
+                                        army1.PL -= fpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 6)
+                                {
+                                    if (flyer.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no flyers in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < flyer.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + flyer[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        flyer.RemoveAt(remove);
+                                        army1.Points -= flyerp.ElementAt(remove);
+                                        army1.PL -= flpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 7)
+                                {
+                                    if (transport.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no dedicated transports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < transport.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + transport[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        transport.RemoveAt(remove);
+                                        army1.Points -= transportp.ElementAt(remove);
+                                        army1.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
                             }
                             if (army1.Faction == 4)
                             {
+                                if (remove == 1)
+                                {
+                                    if (hq.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no HQs in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < hq.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + hq[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        hq.RemoveAt(remove);
+                                        army1.Points -= hqp.ElementAt(remove);
+                                        army1.PL -= hpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 2)
+                                {
+                                    if (troop.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no troops in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < troop.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + troop[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        troop.RemoveAt(remove);
+                                        army1.Points -= troopp.ElementAt(remove);
+                                        army1.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 3)
+                                {
+                                    if (elite.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no elites in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < elite.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + elite[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        elite.RemoveAt(remove);
+                                        army1.Points -= elitep.ElementAt(remove);
+                                        army1.PL -= epl.ElementAt(remove);
 
+                                    }
+                                }
+                                if (remove == 4)
+                                {
+                                    if (heavy.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no heavy supports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < heavy.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + heavy[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        heavy.RemoveAt(remove);
+                                        army1.Points -= heavyp.ElementAt(remove);
+                                        army1.PL -= hepl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 5)
+                                {
+                                    if (fast.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no fast attacks in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < fast.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + fast[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        fast.RemoveAt(remove);
+                                        army1.Points -= fastp.ElementAt(remove);
+                                        army1.PL -= fpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 6)
+                                {
+                                    if (flyer.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no flyers in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < flyer.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + flyer[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        flyer.RemoveAt(remove);
+                                        army1.Points -= flyerp.ElementAt(remove);
+                                        army1.PL -= flpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 7)
+                                {
+                                    if (transport.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no dedicated transports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < transport.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + transport[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        transport.RemoveAt(remove);
+                                        army1.Points -= transportp.ElementAt(remove);
+                                        army1.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
                             }
                             if (army1.Faction == 5)
                             {
+                                if (remove == 1)
+                                {
+                                    if (hq.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no HQs in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < hq.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + hq[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        hq.RemoveAt(remove);
+                                        army1.Points -= hqp.ElementAt(remove);
+                                        army1.PL -= hpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 2)
+                                {
+                                    if (troop.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no troops in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < troop.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + troop[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        troop.RemoveAt(remove);
+                                        army1.Points -= troopp.ElementAt(remove);
+                                        army1.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 3)
+                                {
+                                    if (elite.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no elites in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < elite.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + elite[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        elite.RemoveAt(remove);
+                                        army1.Points -= elitep.ElementAt(remove);
+                                        army1.PL -= epl.ElementAt(remove);
 
+                                    }
+                                }
+                                if (remove == 4)
+                                {
+                                    if (heavy.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no heavy supports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < heavy.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + heavy[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        heavy.RemoveAt(remove);
+                                        army1.Points -= heavyp.ElementAt(remove);
+                                        army1.PL -= hepl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 5)
+                                {
+                                    if (fast.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no fast attacks in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < fast.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + fast[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        fast.RemoveAt(remove);
+                                        army1.Points -= fastp.ElementAt(remove);
+                                        army1.PL -= fpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 6)
+                                {
+                                    if (flyer.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no flyers in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < flyer.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + flyer[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        flyer.RemoveAt(remove);
+                                        army1.Points -= flyerp.ElementAt(remove);
+                                        army1.PL -= flpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 7)
+                                {
+                                    if (transport.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no dedicated transports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < transport.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + transport[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        transport.RemoveAt(remove);
+                                        army1.Points -= transportp.ElementAt(remove);
+                                        army1.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
                             }
                         }
                         if (choice == 2)
                         {
                             if (army2.Faction == 1)
                             {
-
+                                if (remove == 1)
+                                {
+                                    if (hq.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no HQs in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < hq.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + hq[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        hq.RemoveAt(remove);
+                                        army2.Points -= hqp.ElementAt(remove);
+                                        army2.PL -= hpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 2)
+                                {
+                                    if (troop.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no troops in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < troop.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + troop[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        troop.RemoveAt(remove);
+                                        army2.Points -= troopp.ElementAt(remove);
+                                        army2.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 3)
+                                {
+                                    if (elite.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no elites in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < elite.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + elite[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        elite.RemoveAt(remove);
+                                        army2.Points -= elitep.ElementAt(remove);
+                                        army2.PL -= epl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 4)
+                                {
+                                    if (heavy.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no heavy supports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < heavy.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + heavy[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        heavy.RemoveAt(remove);
+                                        army2.Points -= heavyp.ElementAt(remove);
+                                        army2.PL -= hepl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 5)
+                                {
+                                    if (fast.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no fast attacks in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < fast.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + fast[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        fast.RemoveAt(remove);
+                                        army2.Points -= fastp.ElementAt(remove);
+                                        army2.PL -= fpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 6)
+                                {
+                                    if (flyer.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no flyers in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < flyer.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + flyer[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        flyer.RemoveAt(remove);
+                                        army2.Points -= flyerp.ElementAt(remove);
+                                        army2.PL -= flpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 7)
+                                {
+                                    if (transport.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no dedicated transports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < transport.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + transport[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        transport.RemoveAt(remove);
+                                        army2.Points -= transportp.ElementAt(remove);
+                                        army2.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
                             }
                             if (army2.Faction == 2)
                             {
-
+                                if (remove == 1)
+                                {
+                                    if (hq.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no HQs in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < hq.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + hq[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        hq.RemoveAt(remove);
+                                        army2.Points -= hqp.ElementAt(remove);
+                                        army2.PL -= hpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 2)
+                                {
+                                    if (troop.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no troops in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < troop.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + troop[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        troop.RemoveAt(remove);
+                                        army2.Points -= troopp.ElementAt(remove);
+                                        army2.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 3)
+                                {
+                                    if (elite.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no elites in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < elite.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + elite[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        elite.RemoveAt(remove);
+                                        army2.Points -= elitep.ElementAt(remove);
+                                        army2.PL -= epl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 4)
+                                {
+                                    if (heavy.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no heavy supports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < heavy.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + heavy[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        heavy.RemoveAt(remove);
+                                        army2.Points -= heavyp.ElementAt(remove);
+                                        army2.PL -= hepl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 5)
+                                {
+                                    if (fast.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no fast attacks in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < fast.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + fast[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        fast.RemoveAt(remove);
+                                        army2.Points -= fastp.ElementAt(remove);
+                                        army2.PL -= fpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 6)
+                                {
+                                    if (flyer.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no flyers in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < flyer.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + flyer[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        flyer.RemoveAt(remove);
+                                        army2.Points -= flyerp.ElementAt(remove);
+                                        army2.PL -= flpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 7)
+                                {
+                                    if (transport.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no dedicated transports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < transport.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + transport[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        transport.RemoveAt(remove);
+                                        army2.Points -= transportp.ElementAt(remove);
+                                        army2.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
                             }
                             if (army2.Faction == 3)
                             {
-
+                                if (remove == 1)
+                                {
+                                    if (hq.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no HQs in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < hq.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + hq[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        hq.RemoveAt(remove);
+                                        army2.Points -= hqp.ElementAt(remove);
+                                        army2.PL -= hpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 2)
+                                {
+                                    if (troop.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no troops in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < troop.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + troop[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        troop.RemoveAt(remove);
+                                        army2.Points -= troopp.ElementAt(remove);
+                                        army2.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 3)
+                                {
+                                    if (elite.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no elites in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < elite.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + elite[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        elite.RemoveAt(remove);
+                                        army2.Points -= elitep.ElementAt(remove);
+                                        army2.PL -= epl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 4)
+                                {
+                                    if (heavy.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no heavy supports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < heavy.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + heavy[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        heavy.RemoveAt(remove);
+                                        army2.Points -= heavyp.ElementAt(remove);
+                                        army2.PL -= hepl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 5)
+                                {
+                                    if (fast.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no fast attacks in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < fast.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + fast[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        fast.RemoveAt(remove);
+                                        army2.Points -= fastp.ElementAt(remove);
+                                        army2.PL -= fpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 6)
+                                {
+                                    if (flyer.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no flyers in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < flyer.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + flyer[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        flyer.RemoveAt(remove);
+                                        army2.Points -= flyerp.ElementAt(remove);
+                                        army2.PL -= flpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 7)
+                                {
+                                    if (transport.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no dedicated transports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < transport.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + transport[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        transport.RemoveAt(remove);
+                                        army2.Points -= transportp.ElementAt(remove);
+                                        army2.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
                             }
                             if (army2.Faction == 4)
                             {
-
+                                if (remove == 1)
+                                {
+                                    if (hq.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no HQs in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < hq.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + hq[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        hq.RemoveAt(remove);
+                                        army2.Points -= hqp.ElementAt(remove);
+                                        army2.PL -= hpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 2)
+                                {
+                                    if (troop.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no troops in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < troop.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + troop[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        troop.RemoveAt(remove);
+                                        army2.Points -= troopp.ElementAt(remove);
+                                        army2.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 3)
+                                {
+                                    if (elite.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no elites in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < elite.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + elite[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        elite.RemoveAt(remove);
+                                        army2.Points -= elitep.ElementAt(remove);
+                                        army2.PL -= epl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 4)
+                                {
+                                    if (heavy.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no heavy supports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < heavy.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + heavy[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        heavy.RemoveAt(remove);
+                                        army2.Points -= heavyp.ElementAt(remove);
+                                        army2.PL -= hepl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 5)
+                                {
+                                    if (fast.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no fast attacks in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < fast.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + fast[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        fast.RemoveAt(remove);
+                                        army2.Points -= fastp.ElementAt(remove);
+                                        army2.PL -= fpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 6)
+                                {
+                                    if (flyer.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no flyers in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < flyer.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + flyer[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        flyer.RemoveAt(remove);
+                                        army2.Points -= flyerp.ElementAt(remove);
+                                        army2.PL -= flpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 7)
+                                {
+                                    if (transport.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no dedicated transports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < transport.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + transport[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        transport.RemoveAt(remove);
+                                        army2.Points -= transportp.ElementAt(remove);
+                                        army2.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
                             }
                         }
                         if (choice == 3)
                         {
                             if (army3.Faction == 1)
                             {
-
+                                if (remove == 1)
+                                {
+                                    if (hq.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no HQs in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < hq.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + hq[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        hq.RemoveAt(remove);
+                                        army3.Points -= hqp.ElementAt(remove);
+                                        army3.PL -= hpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 2)
+                                {
+                                    if (troop.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no troops in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < troop.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + troop[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        troop.RemoveAt(remove);
+                                        army3.Points -= troopp.ElementAt(remove);
+                                        army3.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 3)
+                                {
+                                    if (elite.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no elites in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < elite.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + elite[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        elite.RemoveAt(remove);
+                                        army3.Points -= elitep.ElementAt(remove);
+                                        army3.PL -= epl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 4)
+                                {
+                                    if (heavy.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no heavy supports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < heavy.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + heavy[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        heavy.RemoveAt(remove);
+                                        army3.Points -= heavyp.ElementAt(remove);
+                                        army3.PL -= hepl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 5)
+                                {
+                                    if (fast.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no fast attacks in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < fast.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + fast[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        fast.RemoveAt(remove);
+                                        army3.Points -= fastp.ElementAt(remove);
+                                        army3.PL -= fpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 6)
+                                {
+                                    if (flyer.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no flyers in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < flyer.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + flyer[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        flyer.RemoveAt(remove);
+                                        army3.Points -= flyerp.ElementAt(remove);
+                                        army3.PL -= flpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 7)
+                                {
+                                    if (transport.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no dedicated transports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < transport.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + transport[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        transport.RemoveAt(remove);
+                                        army3.Points -= transportp.ElementAt(remove);
+                                        army3.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
                             }
                             if (army3.Faction == 2)
                             {
-
+                                if (remove == 1)
+                                {
+                                    if (hq.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no HQs in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < hq.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + hq[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        hq.RemoveAt(remove);
+                                        army3.Points -= hqp.ElementAt(remove);
+                                        army3.PL -= hpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 2)
+                                {
+                                    if (troop.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no troops in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < troop.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + troop[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        troop.RemoveAt(remove);
+                                        army3.Points -= troopp.ElementAt(remove);
+                                        army3.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 3)
+                                {
+                                    if (elite.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no elites in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < elite.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + elite[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        elite.RemoveAt(remove);
+                                        army3.Points -= elitep.ElementAt(remove);
+                                        army3.PL -= epl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 4)
+                                {
+                                    if (heavy.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no heavy supports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < heavy.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + heavy[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        heavy.RemoveAt(remove);
+                                        army3.Points -= heavyp.ElementAt(remove);
+                                        army3.PL -= hepl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 5)
+                                {
+                                    if (fast.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no fast attacks in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < fast.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + fast[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        fast.RemoveAt(remove);
+                                        army3.Points -= fastp.ElementAt(remove);
+                                        army3.PL -= fpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 6)
+                                {
+                                    if (flyer.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no flyers in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < flyer.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + flyer[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        flyer.RemoveAt(remove);
+                                        army3.Points -= flyerp.ElementAt(remove);
+                                        army3.PL -= flpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 7)
+                                {
+                                    if (transport.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no dedicated transports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < transport.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + transport[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        transport.RemoveAt(remove);
+                                        army3.Points -= transportp.ElementAt(remove);
+                                        army3.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
                             }
                             if (army3.Faction == 3)
                             {
-
-                            }
-                            if (army3.Faction == 4)
-                            {
-
+                                if (remove == 1)
+                                {
+                                    if (hq.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no HQs in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < hq.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + hq[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        hq.RemoveAt(remove);
+                                        army3.Points -= hqp.ElementAt(remove);
+                                        army3.PL -= hpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 2)
+                                {
+                                    if (troop.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no troops in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < troop.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + troop[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        troop.RemoveAt(remove);
+                                        army3.Points -= troopp.ElementAt(remove);
+                                        army3.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 3)
+                                {
+                                    if (elite.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no elites in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < elite.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + elite[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        elite.RemoveAt(remove);
+                                        army3.Points -= elitep.ElementAt(remove);
+                                        army3.PL -= epl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 4)
+                                {
+                                    if (heavy.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no heavy supports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < heavy.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + heavy[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        heavy.RemoveAt(remove);
+                                        army3.Points -= heavyp.ElementAt(remove);
+                                        army3.PL -= hepl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 5)
+                                {
+                                    if (fast.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no fast attacks in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < fast.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + fast[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        fast.RemoveAt(remove);
+                                        army3.Points -= fastp.ElementAt(remove);
+                                        army3.PL -= fpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 6)
+                                {
+                                    if (flyer.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no flyers in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < flyer.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + flyer[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        flyer.RemoveAt(remove);
+                                        army3.Points -= flyerp.ElementAt(remove);
+                                        army3.PL -= flpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 7)
+                                {
+                                    if (transport.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no dedicated transports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < transport.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + transport[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        transport.RemoveAt(remove);
+                                        army3.Points -= transportp.ElementAt(remove);
+                                        army3.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
                             }
                             if (army3.Faction == 5)
                             {
-
+                                if (remove == 1)
+                                {
+                                    if (hq.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no HQs in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < hq.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + hq[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        hq.RemoveAt(remove);
+                                        army3.Points -= hqp.ElementAt(remove);
+                                        army3.PL -= hpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 2)
+                                {
+                                    if (troop.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no troops in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < troop.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + troop[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        troop.RemoveAt(remove);
+                                        army3.Points -= troopp.ElementAt(remove);
+                                        army3.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 3)
+                                {
+                                    if (elite.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no elites in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < elite.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + elite[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        elite.RemoveAt(remove);
+                                        army3.Points -= elitep.ElementAt(remove);
+                                        army3.PL -= epl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 4)
+                                {
+                                    if (heavy.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no heavy supports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < heavy.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + heavy[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        heavy.RemoveAt(remove);
+                                        army3.Points -= heavyp.ElementAt(remove);
+                                        army3.PL -= hepl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 5)
+                                {
+                                    if (fast.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no fast attacks in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < fast.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + fast[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        fast.RemoveAt(remove);
+                                        army3.Points -= fastp.ElementAt(remove);
+                                        army3.PL -= fpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 6)
+                                {
+                                    if (flyer.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no flyers in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < flyer.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + flyer[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        flyer.RemoveAt(remove);
+                                        army3.Points -= flyerp.ElementAt(remove);
+                                        army3.PL -= flpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 7)
+                                {
+                                    if (transport.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no dedicated transports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < transport.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + transport[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        transport.RemoveAt(remove);
+                                        army3.Points -= transportp.ElementAt(remove);
+                                        army3.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
                             }
                             if (army3.Faction == 6)
                             {
-
+                                if (remove == 1)
+                                {
+                                    if (hq.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no HQs in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < hq.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + hq[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        hq.RemoveAt(remove);
+                                        army3.Points -= hqp.ElementAt(remove);
+                                        army3.PL -= hpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 2)
+                                {
+                                    if (troop.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no troops in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < troop.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + troop[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        troop.RemoveAt(remove);
+                                        army3.Points -= troopp.ElementAt(remove);
+                                        army3.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 3)
+                                {
+                                    if (elite.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no elites in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < elite.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + elite[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        elite.RemoveAt(remove);
+                                        army3.Points -= elitep.ElementAt(remove);
+                                        army3.PL -= epl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 4)
+                                {
+                                    if (heavy.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no heavy supports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < heavy.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + heavy[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        heavy.RemoveAt(remove);
+                                        army3.Points -= heavyp.ElementAt(remove);
+                                        army3.PL -= hepl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 5)
+                                {
+                                    if (fast.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no fast attacks in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < fast.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + fast[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        fast.RemoveAt(remove);
+                                        army3.Points -= fastp.ElementAt(remove);
+                                        army3.PL -= fpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 6)
+                                {
+                                    if (flyer.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no flyers in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < flyer.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + flyer[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        flyer.RemoveAt(remove);
+                                        army3.Points -= flyerp.ElementAt(remove);
+                                        army3.PL -= flpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 7)
+                                {
+                                    if (transport.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no dedicated transports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < transport.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + transport[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        transport.RemoveAt(remove);
+                                        army3.Points -= transportp.ElementAt(remove);
+                                        army3.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
                             }
                             if (army3.Faction == 7)
                             {
-
+                                if (remove == 1)
+                                {
+                                    if (hq.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no HQs in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < hq.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + hq[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        hq.RemoveAt(remove);
+                                        army3.Points -= hqp.ElementAt(remove);
+                                        army3.PL -= hpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 2)
+                                {
+                                    if (troop.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no troops in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < troop.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + troop[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        troop.RemoveAt(remove);
+                                        army3.Points -= troopp.ElementAt(remove);
+                                        army3.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 3)
+                                {
+                                    if (elite.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no elites in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < elite.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + elite[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        elite.RemoveAt(remove);
+                                        army3.Points -= elitep.ElementAt(remove);
+                                        army3.PL -= epl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 4)
+                                {
+                                    if (heavy.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no heavy supports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < heavy.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + heavy[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        heavy.RemoveAt(remove);
+                                        army3.Points -= heavyp.ElementAt(remove);
+                                        army3.PL -= hepl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 5)
+                                {
+                                    if (fast.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no fast attacks in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < fast.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + fast[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        fast.RemoveAt(remove);
+                                        army3.Points -= fastp.ElementAt(remove);
+                                        army3.PL -= fpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 6)
+                                {
+                                    if (flyer.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no flyers in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < flyer.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + flyer[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        flyer.RemoveAt(remove);
+                                        army3.Points -= flyerp.ElementAt(remove);
+                                        army3.PL -= flpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 7)
+                                {
+                                    if (transport.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no dedicated transports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < transport.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + transport[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        transport.RemoveAt(remove);
+                                        army3.Points -= transportp.ElementAt(remove);
+                                        army3.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
                             }
                             if (army3.Faction == 8)
                             {
-
+                                if (remove == 1)
+                                {
+                                    if (hq.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no HQs in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < hq.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + hq[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        hq.RemoveAt(remove);
+                                        army3.Points -= hqp.ElementAt(remove);
+                                        army3.PL -= hpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 2)
+                                {
+                                    if (troop.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no troops in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < troop.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + troop[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        troop.RemoveAt(remove);
+                                        army3.Points -= troopp.ElementAt(remove);
+                                        army3.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 3)
+                                {
+                                    if (elite.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no elites in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < elite.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + elite[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        elite.RemoveAt(remove);
+                                        army3.Points -= elitep.ElementAt(remove);
+                                        army3.PL -= epl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 4)
+                                {
+                                    if (heavy.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no heavy supports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < heavy.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + heavy[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        heavy.RemoveAt(remove);
+                                        army3.Points -= heavyp.ElementAt(remove);
+                                        army3.PL -= hepl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 5)
+                                {
+                                    if (fast.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no fast attacks in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < fast.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + fast[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        fast.RemoveAt(remove);
+                                        army3.Points -= fastp.ElementAt(remove);
+                                        army3.PL -= fpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 6)
+                                {
+                                    if (flyer.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no flyers in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < flyer.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + flyer[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        flyer.RemoveAt(remove);
+                                        army3.Points -= flyerp.ElementAt(remove);
+                                        army3.PL -= flpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 7)
+                                {
+                                    if (transport.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no dedicated transports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < transport.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + transport[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        transport.RemoveAt(remove);
+                                        army3.Points -= transportp.ElementAt(remove);
+                                        army3.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
                             }
                             if (army3.Faction == 9)
                             {
-
+                                if (remove == 1)
+                                {
+                                    if (hq.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no HQs in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < hq.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + hq[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        hq.RemoveAt(remove);
+                                        army3.Points -= hqp.ElementAt(remove);
+                                        army3.PL -= hpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 2)
+                                {
+                                    if (troop.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no troops in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < troop.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + troop[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        troop.RemoveAt(remove);
+                                        army3.Points -= troopp.ElementAt(remove);
+                                        army3.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 3)
+                                {
+                                    if (elite.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no elites in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < elite.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + elite[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        elite.RemoveAt(remove);
+                                        army3.Points -= elitep.ElementAt(remove);
+                                        army3.PL -= epl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 4)
+                                {
+                                    if (heavy.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no heavy supports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < heavy.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + heavy[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        heavy.RemoveAt(remove);
+                                        army3.Points -= heavyp.ElementAt(remove);
+                                        army3.PL -= hepl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 5)
+                                {
+                                    if (fast.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no fast attacks in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < fast.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + fast[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        fast.RemoveAt(remove);
+                                        army3.Points -= fastp.ElementAt(remove);
+                                        army3.PL -= fpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 6)
+                                {
+                                    if (flyer.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no flyers in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < flyer.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + flyer[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        flyer.RemoveAt(remove);
+                                        army3.Points -= flyerp.ElementAt(remove);
+                                        army3.PL -= flpl.ElementAt(remove);
+                                    }
+                                }
+                                if (remove == 7)
+                                {
+                                    if (transport.Count == 0)
+                                    {
+                                        Console.WriteLine("There are no dedicated transports in your list.");
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < transport.Count; i++)
+                                        {
+                                            Console.WriteLine(i + " - " + transport[i]);
+                                        }
+                                        remove = Convert.ToInt32(Console.ReadLine());
+                                        transport.RemoveAt(remove);
+                                        army3.Points -= transportp.ElementAt(remove);
+                                        army3.PL -= tpl.ElementAt(remove);
+                                    }
+                                }
                             }
                         }
                         break;
