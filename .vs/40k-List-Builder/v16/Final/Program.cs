@@ -153,6 +153,7 @@ namespace Final
             }
             do
             {
+                Console.Clear();
                 if (choice == 1)
                 {
                     Console.WriteLine(army1.name + "\n");
@@ -173,8 +174,6 @@ namespace Final
                         Console.WriteLine("Adeptus Mechanicus");
                     if (army1.Faction == 5)
                         Console.WriteLine("Astra Millitarum");
-                    if (army1.Faction == 6)
-                        Console.WriteLine("Imperial Knights");
 
                     Console.WriteLine(army1.CP + " Command Points");
                     Console.WriteLine(army1.Points + " Points");
@@ -4482,7 +4481,596 @@ namespace Final
                         break;
 
                     case 2:
+                        Console.Clear();
+                        if(choice == 1)
+                        {
+                            if (army1.Faction == 1)
+                            {
+                                Console.WriteLine("1 - Battle Sister Squad\n");
+                                troops = Convert.ToInt32(Console.ReadLine());
+                                if(army1.detachment == 1)
+                                {
+                                    if(troop.Count < 3)
+                                    {
+                                        if(troops == 1)
+                                        {
+                                            troop.Add("Battle Sister Squad");
+                                            army1.Points = army1.Points + 55;
+                                            army1.PL = army1.PL + 3;
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 2)
+                                {
+                                    if (troop.Count < 6)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Battle Sister Squad");
+                                            army1.Points = army1.Points + 55;
+                                            army1.PL = army1.PL + 3;
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 3)
+                                {
+                                    if (troop.Count < 12)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Battle Sister Squad");
+                                            army1.Points = army1.Points + 55;
+                                            army1.PL = army1.PL + 3;
+                                        }
+                                    }
+                                }
+                            }
+                            if (army1.Faction == 2)
+                            {
+                                Console.WriteLine("1 - Assault Intercessor Squad");
+                                Console.WriteLine("2 - Heavy Intercessor Squad");
+                                Console.WriteLine("3 - Inursor Squad");
+                                Console.WriteLine("4 - Infiltrator Squad");
+                                Console.WriteLine("5 - Intercessor Squad");
+                                Console.WriteLine("6 - Tactical Squad");
+                                troops = Convert.ToInt32(Console.ReadLine());
+                                if (army1.detachment == 1)
+                                {
+                                    if (troop.Count < 3)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Assault Intercessor Squad");
+                                            army1.Points += 95;
+                                            army1.PL += 5;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Heavy Intercessor Squad");
+                                            army1.Points += 140;
+                                            army1.PL += 7;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Inursor Squad");
+                                            army1.Points += 105;
+                                            army1.PL += 5;
+                                        }
+                                        if (troops == 4)
+                                        {
+                                            troop.Add("Infiltrator Squad");
+                                            army1.Points += 120;
+                                            army1.PL += 6;
+                                        }
+                                        if (troops == 5)
+                                        {
+                                            troop.Add("Intercessor Squad");
+                                            army1.Points += 100;
+                                            army1.PL += 5;
+                                        }
+                                        if (troops == 6)
+                                        {
+                                            troop.Add("Tactical Squad");
+                                            army1.Points += 90;
+                                            army1.PL += 5;
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 2)
+                                {
+                                    if (troop.Count < 6)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Assault Intercessor Squad");
+                                            army1.Points += 95;
+                                            army1.PL += 5;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Heavy Intercessor Squad");
+                                            army1.Points += 140;
+                                            army1.PL += 7;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Inursor Squad");
+                                            army1.Points += 105;
+                                            army1.PL += 5;
+                                        }
+                                        if (troops == 4)
+                                        {
+                                            troop.Add("Infiltrator Squad");
+                                            army1.Points += 120;
+                                            army1.PL += 6;
+                                        }
+                                        if (troops == 5)
+                                        {
+                                            troop.Add("Intercessor Squad");
+                                            army1.Points += 100;
+                                            army1.PL += 5;
+                                        }
+                                        if (troops == 6)
+                                        {
+                                            troop.Add("Tactical Squad");
+                                            army1.Points += 90;
+                                            army1.PL += 5;
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 3)
+                                {
+                                    if (troop.Count < 12)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Assault Intercessor Squad");
+                                            army1.Points += 95;
+                                            army1.PL += 5;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Heavy Intercessor Squad");
+                                            army1.Points += 140;
+                                            army1.PL += 7;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Inursor Squad");
+                                            army1.Points += 105;
+                                            army1.PL += 5;
+                                        }
+                                        if (troops == 4)
+                                        {
+                                            troop.Add("Infiltrator Squad");
+                                            army1.Points += 120;
+                                            army1.PL += 6;
+                                        }
+                                        if (troops == 5)
+                                        {
+                                            troop.Add("Intercessor Squad");
+                                            army1.Points += 100;
+                                            army1.PL += 5;
+                                        }
+                                        if (troops == 6)
+                                        {
+                                            troop.Add("Tactical Squad");
+                                            army1.Points += 90;
+                                            army1.PL += 5;
+                                        }
+                                    }
+                                }
+                            }
+                            if (army1.Faction == 3)
+                            {
+                                Console.WriteLine("1 - Custodian Guard");
+                                Console.WriteLine("2 - Sagittarum Custodians");
+                                troops = Convert.ToInt32(Console.ReadLine());
+                                if(army1.detachment == 1)
+                                {
+                                    if(troop.Count < 3)
+                                    {
+                                        if(troops == 1)
+                                        {
+                                            troop.Add("Custodian Guard");
+                                            army1.Points += 135;
+                                            army1.PL += 7;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Sagittarum Custodians");
+                                            army1.Points += 150;
+                                            army1.PL += 7;
+                                        }
+                                    }    
+                                }
+                                if (army1.detachment == 2)
+                                {
+                                    if (troop.Count < 6)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Custodian Guard");
+                                            army1.Points += 135;
+                                            army1.PL += 7;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Sagittarum Custodians");
+                                            army1.Points += 150;
+                                            army1.PL += 7;
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 3)
+                                {
+                                    if (troop.Count < 12)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Custodian Guard");
+                                            army1.Points += 135;
+                                            army1.PL += 7;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Sagittarum Custodians");
+                                            army1.Points += 150;
+                                            army1.PL += 7;
+                                        }
+                                    }
+                                }
+                            }
+                            if (army1.Faction == 4)
+                            {
+                                Console.WriteLine("1 - Skitarii Rangers");
+                                Console.WriteLine("2 - Kataphron Breachers");
+                                Console.WriteLine("3 - Skitarii Vanguard");
+                                Console.WriteLine("4 - Kataphron Destroyers");
+                                troops = Convert.ToInt32(Console.ReadLine());
+                                if(army1.detachment == 1)
+                                {
+                                    if(troop.Count < 3)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Skitarii Rangers");
+                                            army1.Points += 45;
+                                            army1.PL += 2;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Kataphron Breachers");
+                                            army1.Points += 105;
+                                            army1.PL += 6;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Skitarii Vanguard");
+                                            army1.Points += 45;
+                                            army1.PL += 2;
+                                        }
+                                        if (troops == 4)
+                                        {
+                                            troop.Add("Kataphron Destroyers");
+                                            army1.Points += 120;
+                                            army1.PL += 7;
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 2)
+                                {
+                                    if (troop.Count < 6)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Skitarii Rangers");
+                                            army1.Points += 45;
+                                            army1.PL += 2;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Kataphron Breachers");
+                                            army1.Points += 105;
+                                            army1.PL += 6;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Skitarii Vanguard");
+                                            army1.Points += 45;
+                                            army1.PL += 2;
+                                        }
+                                        if (troops == 4)
+                                        {
+                                            troop.Add("Kataphron Destroyers");
+                                            army1.Points += 120;
+                                            army1.PL += 7;
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 3)
+                                {
+                                    if (troop.Count < 12)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Skitarii Rangers");
+                                            army1.Points += 45;
+                                            army1.PL += 2;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Kataphron Breachers");
+                                            army1.Points += 105;
+                                            army1.PL += 6;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Skitarii Vanguard");
+                                            army1.Points += 45;
+                                            army1.PL += 2;
+                                        }
+                                        if (troops == 4)
+                                        {
+                                            troop.Add("Kataphron Destroyers");
+                                            army1.Points += 120;
+                                            army1.PL += 7;
+                                        }
+                                    }
+                                }
+                            }
+                            if (army1.Faction == 5)
+                            {
+                                Console.WriteLine("1 - Conscripts");
+                                Console.WriteLine("2 - Infantry Squad");
+                                troops = Convert.ToInt32(Console.ReadLine());
+                                if (army1.detachment == 1)
+                                {
+                                    if(troop.Count < 3)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Conscrips");
+                                            army1.Points += 100;
+                                            army1.PL += 5;
+                                        }
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Infantry Squad");
+                                            army1.Points += 55;
+                                            army1.PL += 3;
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 2)
+                                {
+                                    if (troop.Count < 6)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Conscrips");
+                                            army1.Points += 100;
+                                            army1.PL += 5;
+                                        }
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Infantry Squad");
+                                            army1.Points += 55;
+                                            army1.PL += 3;
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 3)
+                                {
+                                    if (troop.Count < 3)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Conscrips");
+                                            army1.Points += 100;
+                                            army1.PL += 5;
+                                        }
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Infantry Squad");
+                                            army1.Points += 55;
+                                            army1.PL += 3;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        if(choice == 2)
+                        {
+                            if (army2.Faction == 1)
+                            {
+                                Console.WriteLine("1 - Horros of Tzeentch");
+                                Console.WriteLine("2 - Nurglings");
+                                Console.WriteLine("3 - Daemonettes of Slaanesh");
+                                Console.WriteLine("4 - Daemons of Khorne Bloodletters");
+                                Console.WriteLine("5 - Plaguebearers of Nurgle");
+                                troops = Convert.ToInt32(Console.ReadLine());
+                                if(army1.detachment == 1)
+                                {
+                                    if (troop.Count < 3)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Horrors of Tzeentch");
+                                            army2.Points += 35;
+                                            army2.PL += 4;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Nurglings");
+                                            army2.Points += 66;
+                                            army2.PL += 3;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Daemonettes of Saanesh");
+                                            army2.Points += 70;
+                                            army2.PL += 4;
+                                        }
+                                        if (troops == 4)
+                                        {
+                                            troop.Add("Daemons of Khorne Bloodletters");
+                                            army2.Points += 80;
+                                            army2.PL += 4;
+                                        }
+                                        if (troops == 5)
+                                        {
+                                            troop.Add("Plaguebearers of Nurgle");
+                                            army2.Points += 90;
+                                            army2.PL += 5;
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 2)
+                                {
+                                    if (troop.Count < 6)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Horrors of Tzeentch");
+                                            army2.Points += 35;
+                                            army2.PL += 4;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Nurglings");
+                                            army2.Points += 66;
+                                            army2.PL += 3;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Daemonettes of Saanesh");
+                                            army2.Points += 70;
+                                            army2.PL += 4;
+                                        }
+                                        if (troops == 4)
+                                        {
+                                            troop.Add("Daemons of Khorne Bloodletters");
+                                            army2.Points += 80;
+                                            army2.PL += 4;
+                                        }
+                                        if (troops == 5)
+                                        {
+                                            troop.Add("Plaguebearers of Nurgle");
+                                            army2.Points += 90;
+                                            army2.PL += 5;
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 3)
+                                {
+                                    if (troop.Count < 12)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Horrors of Tzeentch");
+                                            army2.Points += 35;
+                                            army2.PL += 4;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Nurglings");
+                                            army2.Points += 66;
+                                            army2.PL += 3;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Daemonettes of Saanesh");
+                                            army2.Points += 70;
+                                            army2.PL += 4;
+                                        }
+                                        if (troops == 4)
+                                        {
+                                            troop.Add("Daemons of Khorne Bloodletters");
+                                            army2.Points += 80;
+                                            army2.PL += 4;
+                                        }
+                                        if (troops == 5)
+                                        {
+                                            troop.Add("Plaguebearers of Nurgle");
+                                            army2.Points += 90;
+                                            army2.PL += 5;
+                                        }
+                                    }
+                                }
+                            }
+                            if (army2.Faction == 2)
+                            {
+                                Console.WriteLine("1 - Plague Marines");
+                                Console.WriteLine("2 - Poxwalkers");
+                                troops = Convert.ToInt32(Console.ReadLine());
+                                if(army2.detachment == 1)
+                                {
+                                    if (troop.Count < 3)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Plague Marines");
+                                            army2.Points += 105;
+                                            army2.PL += 6;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Poxwalkers");
+                                            army2.Points += 50;
+                                            army2.PL += 2;
+                                        }
+                                    }
+                                }
+                            }
+                            if (army2.Faction == 3)
+                            {
 
+                            }
+                            if (army2.Faction == 4)
+                            {
+
+                            }
+                        }
+                        if(choice == 3)
+                        {
+                            if (army3.Faction == 1)
+                            {
+
+                            }
+                            if (army3.Faction == 2)
+                            {
+
+                            }
+                            if (army3.Faction == 3)
+                            {
+
+                            }
+                            if (army3.Faction == 4)
+                            {
+
+                            }
+                            if (army3.Faction == 5)
+                            {
+
+                            }
+                            if (army3.Faction == 6)
+                            {
+
+                            }
+                            if (army3.Faction == 7)
+                            {
+
+                            }
+                            if (army3.Faction == 8)
+                            {
+
+                            }
+                            if (army3.Faction == 9)
+                            {
+
+                            }
+                        }
                         break;
                     case 3:
 
