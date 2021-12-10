@@ -378,7 +378,8 @@ namespace Final
                 Console.WriteLine("6 - Add a Flyer");
                 Console.WriteLine("7 - Add a Dedicated Transport");
                 Console.WriteLine("8 - Remove a Unit");
-                Console.WriteLine("9 - Exit");
+                Console.WriteLine("9 - Change Army Name");
+                Console.WriteLine("10 - Exit");
                 menu = Convert.ToInt32(Console.ReadLine());
                 switch (menu)
                 {
@@ -5022,6 +5023,2348 @@ namespace Final
                                         }
                                     }
                                 }
+                                if (army2.detachment == 2)
+                                {
+                                    if (troop.Count < 6)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Plague Marines");
+                                            army2.Points += 105;
+                                            army2.PL += 6;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Poxwalkers");
+                                            army2.Points += 50;
+                                            army2.PL += 2;
+                                        }
+                                    }
+                                }
+                                if (army2.detachment == 3)
+                                {
+                                    if (troop.Count < 12)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Plague Marines");
+                                            army2.Points += 105;
+                                            army2.PL += 6;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Poxwalkers");
+                                            army2.Points += 50;
+                                            army2.PL += 2;
+                                        }
+                                    }
+                                }
+                            }
+                            if (army2.Faction == 3)
+                            {
+                                Console.WriteLine("1 - Chaos Space Marines");
+                                Console.WriteLine("2 - Black Legionnaires");
+                                Console.WriteLine("3 - Chaos Cultists");
+                                Console.WriteLine("4 - Khorne Berzerkers");
+                                Console.WriteLine("5 - Noise Marines");
+                                troops = Convert.ToInt32(Console.ReadLine());
+                                if (army2.detachment == 1)
+                                {
+                                    if (troop.Count < 3)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Chaos Space Marines");
+                                            army2.Points += 70;
+                                            army2.PL += 4;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Black Legionnaires");
+                                            army2.Points += 28;
+                                            army2.PL += 1;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Chaos Cultists");
+                                            army2.Points += 50;
+                                            army2.PL += 3;
+                                        }
+                                        if (troops == 4)
+                                        {
+                                            troop.Add("Khorne Berzerkers");
+                                            army2.Points += 85;
+                                            army2.PL += 5;
+                                        }
+                                        if (troops == 5)
+                                        {
+                                            troop.Add("Noise Marines");
+                                            army2.Points += 80;
+                                            army2.PL += 5;
+                                        }
+                                    }
+                                }
+                                if (army2.detachment == 2)
+                                {
+                                    if (troop.Count < 6)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Chaos Space Marines");
+                                            army2.Points += 70;
+                                            army2.PL += 4;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Black Legionnaires");
+                                            army2.Points += 28;
+                                            army2.PL += 1;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Chaos Cultists");
+                                            army2.Points += 50;
+                                            army2.PL += 3;
+                                        }
+                                        if (troops == 4)
+                                        {
+                                            troop.Add("Khorne Berzerkers");
+                                            army2.Points += 85;
+                                            army2.PL += 5;
+                                        }
+                                        if (troops == 5)
+                                        {
+                                            troop.Add("Noise Marines");
+                                            army2.Points += 80;
+                                            army2.PL += 5;
+                                        }
+                                    }
+                                }
+                                if (army2.detachment == 3)
+                                {
+                                    if (troop.Count < 12)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Chaos Space Marines");
+                                            army2.Points += 70;
+                                            army2.PL += 4;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Black Legionnaires");
+                                            army2.Points += 28;
+                                            army2.PL += 1;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Chaos Cultists");
+                                            army2.Points += 50;
+                                            army2.PL += 3;
+                                        }
+                                        if (troops == 4)
+                                        {
+                                            troop.Add("Khorne Berzerkers");
+                                            army2.Points += 85;
+                                            army2.PL += 5;
+                                        }
+                                        if (troops == 5)
+                                        {
+                                            troop.Add("Noise Marines");
+                                            army2.Points += 80;
+                                            army2.PL += 5;
+                                        }
+                                    }
+                                }
+                            }
+                            if (army2.Faction == 4)
+                            {
+                                Console.WriteLine("1 - Rubric Marines");
+                                Console.WriteLine("2 - Tzaangors");
+                                troops = Convert.ToInt32(Console.ReadLine());
+                                if(army2.detachment == 1)
+                                {
+                                    if(troop.Count < 3)
+                                    {
+                                        if(troops == 1)
+                                        {
+                                            troop.Add("Rubric Marines");
+                                            army2.Points += 105;
+                                            army2.PL += 6;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Tzaangors");
+                                            army2.Points += 70;
+                                            army2.PL += 6;
+                                        }
+                                    }
+                                }
+                                if (army2.detachment == 2)
+                                {
+                                    if (troop.Count < 6)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Rubric Marines");
+                                            army2.Points += 105;
+                                            army2.PL += 6;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Tzaangors");
+                                            army2.Points += 70;
+                                            army2.PL += 6;
+                                        }
+                                    }
+                                }
+                                if (army2.detachment == 3)
+                                {
+                                    if (troop.Count < 12)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Rubric Marines");
+                                            army2.Points += 105;
+                                            army2.PL += 6;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Tzaangors");
+                                            army2.Points += 70;
+                                            army2.PL += 6;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        if(choice == 3)
+                        {
+                            if (army3.Faction == 1)
+                            {
+                                Console.WriteLine("1 - Dire Avengers");
+                                Console.WriteLine("2 - Guardian Defenders");
+                                Console.WriteLine("3 - Rangers");
+                                Console.WriteLine("4 - Storm Guardians");
+                                troops = Convert.ToInt32(Console.ReadLine());
+                                if(army3.detachment == 1)
+                                {
+                                    if(troop.Count < 3)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Dire Avengers");
+                                            army3.Points += 55;
+                                            army3.PL += 2;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Guardian Defenders");
+                                            army3.Points += 80;
+                                            army3.PL += 4;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Rangers");
+                                            army3.Points += 65;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 4)
+                                        {
+                                            troop.Add("Storm Guardians");
+                                            army3.Points += 56;
+                                            army3.PL += 3;
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 2)
+                                {
+                                    if (troop.Count < 6)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Dire Avengers");
+                                            army3.Points += 55;
+                                            army3.PL += 2;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Guardian Defenders");
+                                            army3.Points += 80;
+                                            army3.PL += 4;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Rangers");
+                                            army3.Points += 65;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 4)
+                                        {
+                                            troop.Add("Storm Guardians");
+                                            army3.Points += 56;
+                                            army3.PL += 3;
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 3)
+                                {
+                                    if (troop.Count < 12)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Dire Avengers");
+                                            army3.Points += 55;
+                                            army3.PL += 2;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Guardian Defenders");
+                                            army3.Points += 80;
+                                            army3.PL += 4;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Rangers");
+                                            army3.Points += 65;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 4)
+                                        {
+                                            troop.Add("Storm Guardians");
+                                            army3.Points += 56;
+                                            army3.PL += 3;
+                                        }
+                                    }
+                                }
+                            }
+                            if (army3.Faction == 2)
+                            {
+                                Console.WriteLine("1 - Kabalite Warriors");
+                                Console.WriteLine("2 - Wracks");
+                                Console.WriteLine("3 - Wyches");
+                                troops = Convert.ToInt32(Console.ReadLine());
+                                if (army3.detachment == 1)
+                                {
+                                    if (troop.Count < 3)
+                                    {
+                                        if(troops == 1)
+                                        {
+                                            troop.Add("Kabalite Warriors");
+                                            army3.Points += 40;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Wracks");
+                                            army3.Points += 40;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Wyches");
+                                            army3.Points += 60;
+                                            army3.PL += 3;
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 2)
+                                {
+                                    if (troop.Count < 6)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Kabalite Warriors");
+                                            army3.Points += 40;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Wracks");
+                                            army3.Points += 40;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Wyches");
+                                            army3.Points += 60;
+                                            army3.PL += 3;
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 3)
+                                {
+                                    if (troop.Count < 12)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Kabalite Warriors");
+                                            army3.Points += 40;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Wracks");
+                                            army3.Points += 40;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Wyches");
+                                            army3.Points += 60;
+                                            army3.PL += 3;
+                                        }
+                                    }
+                                }
+                            }
+                            if (army3.Faction == 3)
+                            {
+                                Console.WriteLine("1 - Brood Brothers");
+                                Console.WriteLine("2 - Neophyte Hybrids");
+                                Console.WriteLine("3 - Acolyte Hybrids");
+                                troops = Convert.ToInt32(Console.ReadLine());
+                                if (army3.detachment == 1)
+                                {
+                                    if (troop.Count < 3)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Brood Brothers");
+                                            army3.Points += 60;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Neophyte Hybrids");
+                                            army3.Points += 60;
+                                            army3.PL += 4;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Acolyte Hybrids");
+                                            army3.Points += 40;
+                                            army3.PL += 3;
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 2)
+                                {
+                                    if (troop.Count < 6)
+                                    {
+
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Brood Brothers");
+                                            army3.Points += 60;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Neophyte Hybrids");
+                                            army3.Points += 60;
+                                            army3.PL += 4;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Acolyte Hybrids");
+                                            army3.Points += 40;
+                                            army3.PL += 3;
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 3)
+                                {
+                                        if (troop.Count < 12)
+                                        {
+                                            if (troops == 1)
+                                            {
+                                                troop.Add("Brood Brothers");
+                                                army3.Points += 60;
+                                                army3.PL += 3;
+                                            }
+                                            if (troops == 2)
+                                            {
+                                                troop.Add("Neophyte Hybrids");
+                                                army3.Points += 60;
+                                                army3.PL += 4;
+                                            }
+                                            if (troops == 3)
+                                            {
+                                                troop.Add("Acolyte Hybrids");
+                                                army3.Points += 40;
+                                                army3.PL += 3;
+                                            }
+                                        }
+                                }
+                            }
+                            if (army3.Faction == 4)
+                            {
+                                Console.WriteLine("1 - Troupe");
+                                troops = Convert.ToInt32(Console.ReadLine());
+                                if(army3.detachment == 1)
+                                {
+                                    if(troop.Count < 3)
+                                    {
+                                        troop.Add("Troupe");
+                                        army3.Points += 70;
+                                        army3.PL += 5;
+                                    }
+                                }
+                                if (army3.detachment == 2)
+                                {
+                                    if (troop.Count < 6)
+                                    {
+                                        troop.Add("Troupe");
+                                        army3.Points += 70;
+                                        army3.PL += 5;
+                                    }
+                                }
+                                if (army3.detachment == 3)
+                                {
+                                    if (troop.Count < 12)
+                                    {
+                                        troop.Add("Troupe");
+                                        army3.Points += 70;
+                                        army3.PL += 5;
+                                    }
+                                }
+                            }
+                            if (army3.Faction == 5)
+                            {
+                                Console.WriteLine("1 - Necron Warriors");
+                                Console.WriteLine("2 - Immortals");
+                                troops = Convert.ToInt32(Console.ReadLine());
+                                if(army3.detachment == 1)
+                                {
+                                    if(troop.Count < 3)
+                                    {
+                                        if(troops == 1)
+                                        {
+                                            troop.Add("Necron Warriors");
+                                            army3.Points += 130;
+                                            army3.PL += 6;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Immortals");
+                                            army3.Points += 85;
+                                            army3.PL += 4;
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 2)
+                                {
+                                    if (troop.Count < 6)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Necron Warriors");
+                                            army3.Points += 130;
+                                            army3.PL += 6;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Immortals");
+                                            army3.Points += 85;
+                                            army3.PL += 4;
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 3)
+                                {
+                                    if (troop.Count < 12)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Necron Warriors");
+                                            army3.Points += 130;
+                                            army3.PL += 6;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Immortals");
+                                            army3.Points += 85;
+                                            army3.PL += 4;
+                                        }
+                                    }
+                                }
+                            }
+                            if (army3.Faction == 6)
+                            {
+                                Console.WriteLine("1 - Ork Boyz");
+                                Console.WriteLine("2 - Ork Gretchin");
+                                Console.WriteLine("3 - Ork Beast Snagga Boyz");
+                                troops = Convert.ToInt32(Console.ReadLine());
+                                if(army3.detachment == 1)
+                                {
+                                    if(troop.Count < 3)
+                                    {
+                                        if(troops == 1)
+                                        {
+                                            troop.Add("Ork Boyz");
+                                            army3.Points += 90;
+                                            army3.PL += 5;
+                                        }
+                                        if(troops == 2)
+                                        {
+                                            troop.Add("Ork Gretchin");
+                                            army3.Points += 50;
+                                            army3.PL += 2;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Ork Beast Snagga Boyz");
+                                            army3.Points += 110;
+                                            army3.PL += 5;
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 2)
+                                {
+                                    if (troop.Count < 6)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Ork Boyz");
+                                            army3.Points += 90;
+                                            army3.PL += 5;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Ork Gretchin");
+                                            army3.Points += 50;
+                                            army3.PL += 2;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Ork Beast Snagga Boyz");
+                                            army3.Points += 110;
+                                            army3.PL += 5;
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 3)
+                                {
+                                    if (troop.Count < 12)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Ork Boyz");
+                                            army3.Points += 90;
+                                            army3.PL += 5;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Ork Gretchin");
+                                            army3.Points += 50;
+                                            army3.PL += 2;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Ork Beast Snagga Boyz");
+                                            army3.Points += 110;
+                                            army3.PL += 5;
+                                        }
+                                    }
+                                }
+                            }
+                            if (army3.Faction == 7)
+                            {
+                                Console.WriteLine("1 - Breacher Team");
+                                Console.WriteLine("2 - Kroot Carnivores");
+                                Console.WriteLine("3 - Strike Team");
+                                troops = Convert.ToInt32(Console.ReadLine());
+                                if(army3.detachment == 1)
+                                {
+                                    if(troop.Count < 3)
+                                    {
+                                        if(troops == 1)
+                                        {
+                                            troop.Add("Breacher Team");
+                                            army3.Points += 45;
+                                            army3.PL += 2;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Kroot Carnivores");
+                                            army3.Points += 60;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Strike Team");
+                                            army3.Points += 45;
+                                            army3.PL += 2;
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 2)
+                                {
+                                    if (troop.Count < 6)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Breacher Team");
+                                            army3.Points += 45;
+                                            army3.PL += 2;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Kroot Carnivores");
+                                            army3.Points += 60;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Strike Team");
+                                            army3.Points += 45;
+                                            army3.PL += 2;
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 3)
+                                {
+                                    if (troop.Count < 12)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Breacher Team");
+                                            army3.Points += 45;
+                                            army3.PL += 2;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Kroot Carnivores");
+                                            army3.Points += 60;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Strike Team");
+                                            army3.Points += 45;
+                                            army3.PL += 2;
+                                        }
+                                    }
+                                }
+                            }
+                            if (army3.Faction == 8)
+                            {
+                                Console.WriteLine("1 - Genestealers");
+                                Console.WriteLine("2 - Hormagaunts");
+                                Console.WriteLine("3 - Ripper Swarm");
+                                Console.WriteLine("4 - Termagants");
+                                Console.WriteLine("5 - Tyranid Warriors");
+                                troops = Convert.ToInt32(Console.ReadLine());
+                                if(army3.detachment == 1)
+                                {
+                                    if(troop.Count < 3)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Genestealers");
+                                            army3.Points += 65;
+                                            army3.PL += 4;
+                                        }
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Hormagaunts");
+                                            army3.Points += 60;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Ripper Swarm");
+                                            army3.Points += 36;
+                                            army3.PL += 2;
+                                        }
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Termagants");
+                                            army3.Points += 50;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Tyranid Warriors");
+                                            army3.Points += 63;
+                                            army3.PL += 4;
+                                        }
+                                    }
+                                }
+                            }
+                            if (army3.Faction == 9)
+                            {
+                                Console.WriteLine("1 - Dire Avengers");
+                                Console.WriteLine("2 - Guardian Defenders");
+                                Console.WriteLine("3 - Rangers");
+                                Console.WriteLine("4 - Storm Guardians");
+                                Console.WriteLine("5 - Kabalite Warriors");
+                                Console.WriteLine("6 - Wracks");
+                                Console.WriteLine("7 - Wyches");
+                                troops = Convert.ToInt32(Console.ReadLine());
+                                if(army3.detachment == 1)
+                                {
+                                    if(troop.Count < 3)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Dire Avengers");
+                                            army3.Points += 55;
+                                            army3.PL += 2;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Guardian Defenders");
+                                            army3.Points += 80;
+                                            army3.PL += 4;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Rangers");
+                                            army3.Points += 65;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 4)
+                                        {
+                                            troop.Add("Storm Guardians");
+                                            army3.Points += 56;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 5)
+                                        {
+                                            troop.Add("Kabalite Warriors");
+                                            army3.Points += 40;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 6)
+                                        {
+                                            troop.Add("Wracks");
+                                            army3.Points += 40;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 7)
+                                        {
+                                            troop.Add("Wyches");
+                                            army3.Points += 60;
+                                            army3.PL += 3;
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 2)
+                                {
+                                    if (troop.Count < 6)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Dire Avengers");
+                                            army3.Points += 55;
+                                            army3.PL += 2;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Guardian Defenders");
+                                            army3.Points += 80;
+                                            army3.PL += 4;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Rangers");
+                                            army3.Points += 65;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 4)
+                                        {
+                                            troop.Add("Storm Guardians");
+                                            army3.Points += 56;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 5)
+                                        {
+                                            troop.Add("Kabalite Warriors");
+                                            army3.Points += 40;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 6)
+                                        {
+                                            troop.Add("Wracks");
+                                            army3.Points += 40;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 7)
+                                        {
+                                            troop.Add("Wyches");
+                                            army3.Points += 60;
+                                            army3.PL += 3;
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 3)
+                                {
+                                    if (troop.Count < 12)
+                                    {
+                                        if (troops == 1)
+                                        {
+                                            troop.Add("Dire Avengers");
+                                            army3.Points += 55;
+                                            army3.PL += 2;
+                                        }
+                                        if (troops == 2)
+                                        {
+                                            troop.Add("Guardian Defenders");
+                                            army3.Points += 80;
+                                            army3.PL += 4;
+                                        }
+                                        if (troops == 3)
+                                        {
+                                            troop.Add("Rangers");
+                                            army3.Points += 65;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 4)
+                                        {
+                                            troop.Add("Storm Guardians");
+                                            army3.Points += 56;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 5)
+                                        {
+                                            troop.Add("Kabalite Warriors");
+                                            army3.Points += 40;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 6)
+                                        {
+                                            troop.Add("Wracks");
+                                            army3.Points += 40;
+                                            army3.PL += 3;
+                                        }
+                                        if (troops == 7)
+                                        {
+                                            troop.Add("Wyches");
+                                            army3.Points += 60;
+                                            army3.PL += 3;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        break;
+                    case 3:
+                        Console.Clear();
+                        if (choice == 1)
+                        {
+                            if (army1.Faction == 1)
+                            {
+                                Console.WriteLine("1 - Aestred Thurga, Reliquant at Arms");
+                                Console.WriteLine("2 - Paragon warsuits");
+                                Console.WriteLine("3 - Death Cult Assassins");
+                                Console.WriteLine("4 - Crusaders");
+                                Console.WriteLine("5 - Preacher with Chainsword");
+                                Console.WriteLine("6 - Imagifier");
+                                Console.WriteLine("7 - Sister Dogmata");
+                                Console.WriteLine("8 - Hospitaller");
+                                Console.WriteLine("9 - Dialogues");
+                                Console.WriteLine("10 - Arco-flagellants");
+                                Console.WriteLine("11 - Celestian Sacresants");
+                                elites = Convert.ToInt32(Console.ReadLine());
+                                if(army1.detachment == 1)
+                                {
+                                    if(elite.Count < 2)
+                                    {
+                                        if(elites == 1)
+                                        {
+                                            elite.Add("Aestred Thurga, Reliquant at Arms");
+                                            army1.Points += 90;
+                                            army1.PL += 5;
+                                        }
+                                        if (elites == 2)
+                                        {
+                                            elite.Add("Paragon warsuits");
+                                            army1.Points += 240;
+                                            army1.PL += 13;
+                                        }
+                                        if (elites == 3)
+                                        {
+                                            elite.Add("Death Cult Assassins");
+                                            army1.Points += 26;
+                                            army1.PL += 1;
+                                        }
+                                        if (elites == 4)
+                                        {
+                                            elite.Add("Crusaders");
+                                            army1.Points += 22;
+                                            army1.PL += 1;
+                                        }
+                                        if (elites == 5)
+                                        {
+                                            elite.Add("Preacher with Chainsword");
+                                            army1.Points += 30;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 6)
+                                        {
+                                            elite.Add("Imagifier");
+                                            army1.Points += 50;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 7)
+                                        {
+                                            elite.Add("Sister Dogmata");
+                                            army1.Points += 65;
+                                            army1.PL += 4;
+                                        }
+                                        if (elites == 8)
+                                        {
+                                            elite.Add("Hospitaller");
+                                            army1.Points += 50;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 9)
+                                        {
+                                            elite.Add("Dialogues");
+                                            army1.Points += 50;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 10)
+                                        {
+                                            elite.Add("Arco-flagellants");
+                                            army1.Points += 39;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 11)
+                                        {
+                                            elite.Add("Celestian Sacresants");
+                                            army1.Points += 70;
+                                            army1.PL += 3;
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 2)
+                                {
+                                    if (elite.Count < 6)
+                                    {
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Aestred Thurga, Reliquant at Arms");
+                                            army1.Points += 90;
+                                            army1.PL += 5;
+                                        }
+                                        if (elites == 2)
+                                        {
+                                            elite.Add("Paragon warsuits");
+                                            army1.Points += 240;
+                                            army1.PL += 13;
+                                        }
+                                        if (elites == 3)
+                                        {
+                                            elite.Add("Death Cult Assassins");
+                                            army1.Points += 26;
+                                            army1.PL += 1;
+                                        }
+                                        if (elites == 4)
+                                        {
+                                            elite.Add("Crusaders");
+                                            army1.Points += 22;
+                                            army1.PL += 1;
+                                        }
+                                        if (elites == 5)
+                                        {
+                                            elite.Add("Preacher with Chainsword");
+                                            army1.Points += 30;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 6)
+                                        {
+                                            elite.Add("Imagifier");
+                                            army1.Points += 50;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 7)
+                                        {
+                                            elite.Add("Sister Dogmata");
+                                            army1.Points += 65;
+                                            army1.PL += 4;
+                                        }
+                                        if (elites == 8)
+                                        {
+                                            elite.Add("Hospitaller");
+                                            army1.Points += 50;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 9)
+                                        {
+                                            elite.Add("Dialogues");
+                                            army1.Points += 50;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 10)
+                                        {
+                                            elite.Add("Arco-flagellants");
+                                            army1.Points += 39;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 11)
+                                        {
+                                            elite.Add("Celestian Sacresants");
+                                            army1.Points += 70;
+                                            army1.PL += 3;
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 3)
+                                {
+                                    if (elite.Count < 8)
+                                    {
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Aestred Thurga, Reliquant at Arms");
+                                            army1.Points += 90;
+                                            army1.PL += 5;
+                                        }
+                                        if (elites == 2)
+                                        {
+                                            elite.Add("Paragon warsuits");
+                                            army1.Points += 240;
+                                            army1.PL += 13;
+                                        }
+                                        if (elites == 3)
+                                        {
+                                            elite.Add("Death Cult Assassins");
+                                            army1.Points += 26;
+                                            army1.PL += 1;
+                                        }
+                                        if (elites == 4)
+                                        {
+                                            elite.Add("Crusaders");
+                                            army1.Points += 22;
+                                            army1.PL += 1;
+                                        }
+                                        if (elites == 5)
+                                        {
+                                            elite.Add("Preacher with Chainsword");
+                                            army1.Points += 30;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 6)
+                                        {
+                                            elite.Add("Imagifier");
+                                            army1.Points += 50;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 7)
+                                        {
+                                            elite.Add("Sister Dogmata");
+                                            army1.Points += 65;
+                                            army1.PL += 4;
+                                        }
+                                        if (elites == 8)
+                                        {
+                                            elite.Add("Hospitaller");
+                                            army1.Points += 50;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 9)
+                                        {
+                                            elite.Add("Dialogues");
+                                            army1.Points += 50;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 10)
+                                        {
+                                            elite.Add("Arco-flagellants");
+                                            army1.Points += 39;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 11)
+                                        {
+                                            elite.Add("Celestian Sacresants");
+                                            army1.Points += 70;
+                                            army1.PL += 3;
+                                        }
+                                    }
+                                }
+                            }
+                            if (army1.Faction == 2)
+                            {
+                                Console.WriteLine("1 - Servirtors with Multi-Melta");
+                                Console.WriteLine("2 - Servitors with Plasma Cannon");
+                                Console.WriteLine("3 - Space Marine Scouts");
+                                Console.WriteLine("4 - Scouts with Sniper Rifles");
+                                Console.WriteLine("5 - Primaris Apothecary");
+                                Console.WriteLine("6 - Vanguard Veteran Squad");
+                                Console.WriteLine("7 - Bladeguard Veterans");
+                                Console.WriteLine("8 - Primaris Aggressors");
+                                Console.WriteLine("9 - Dreadnought");
+                                Console.WriteLine("10 - Company Command");
+                                Console.WriteLine("11 - Terminator Squad");
+                                Console.WriteLine("12 - Terminator Assault Squad");
+                                Console.WriteLine("13 - Ironclad Dreadnought");
+                                Console.WriteLine("14 - Sternguard Veteran Squad");
+                                Console.WriteLine("15 - Venerable Dreadnought");
+                                Console.WriteLine("16 - Primaris Reivers");
+                                Console.WriteLine("17 - Primaris Invictor Tactical Warsuit");
+                                Console.WriteLine("18 - Tartaros Terminators");
+                                Console.WriteLine("19 - Cataphractii Terminators");
+                                Console.WriteLine("20 - Primaris Redemptor Dreadnought");
+                                Console.WriteLine("21 - Centurion Assault Squad");
+                                Console.WriteLine("22 - Contemptor Dreadnought");
+                                elites = Convert.ToInt32(Console.ReadLine());
+                                if(army1.detachment == 1)
+                                {
+                                    if(elite.Count < 2)
+                                    {
+                                        if(elites == 1)
+                                        {
+                                            elite.Add("Servirtors with Multi-Melta");
+                                            army1.Points += 60;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 2)
+                                        {
+                                            elite.Add("Servitors with Plasma Cannon");
+                                            army1.Points += 50;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 3)
+                                        {
+                                            elite.Add("Space Marine Scouts");
+                                            army1.Points += 70;
+                                            army1.PL += 4;
+                                        }
+                                        if (elites == 4)
+                                        {
+                                            elite.Add("Scouts with Sniper Rifles");
+                                            army1.Points += 80;
+                                            army1.PL += 4;
+                                        }
+                                        if (elites == 5)
+                                        {
+                                            elite.Add("Primaris Apothecary");
+                                            army1.Points += 80;
+                                            army1.PL += 4;
+                                        }
+                                        if (elites == 6)
+                                        {
+                                            elite.Add("Vanguard Veteran Squad");
+                                            army1.Points += 95;
+                                            army1.PL += 6;
+                                        }
+                                        if (elites == 7)
+                                        {
+                                            elite.Add("Bladeguard Veterans");
+                                            army1.Points += 105;
+                                            army1.PL += 5;
+                                        }
+                                        if (elites == 8)
+                                        {
+                                            elite.Add("Primaris Aggressors");
+                                            army1.Points += 120;
+                                            army1.PL += 6;
+                                        }
+                                        if (elites == 9)
+                                        {
+                                            elite.Add("Dreadnought");
+                                            army1.Points += 120;
+                                            army1.PL += 7;
+                                        }
+                                        if (elites == 10)
+                                        {
+                                            elite.Add("Company Command");
+                                            army1.Points += 40;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 11)
+                                        {
+                                            elite.Add("Terminator Squad");
+                                            army1.Points += 190;
+                                            army1.PL += 9;
+                                        }
+                                        if (elites == 12)
+                                        {
+                                            elite.Add("Terminator Assault Squad");
+                                            army1.Points += 215;
+                                            army1.PL += 9;
+                                        }
+                                        if (elites == 13)
+                                        {
+                                            elite.Add("Ironclad Dreadnought");
+                                            army1.Points += 135;
+                                            army1.PL += 8;
+                                        }
+                                        if (elites == 14)
+                                        {
+                                            elite.Add("Sternguard Veteran Squad");
+                                            army1.Points += 100;
+                                            army1.PL += 6;
+                                        }
+                                        if (elites == 15)
+                                        {
+                                            elite.Add("Venerable Dreadnought");
+                                            army1.Points += 135;
+                                            army1.PL += 8;
+                                        }
+                                        if (elites == 16)
+                                        {
+                                            elite.Add("Primaris Reivers");
+                                            army1.Points += 90;
+                                            army1.PL += 5;
+                                        }
+                                        if (elites == 17)
+                                        {
+                                            elite.Add("Primaris Invictor Tactical Warsuit");
+                                            army1.Points += 160;
+                                            army1.PL += 8;
+                                        }
+                                        if (elites == 18)
+                                        {
+                                            elite.Add("Tartaros Terminators");
+                                            army1.Points += 190;
+                                            army1.PL += 9;
+                                        }
+                                        if (elites == 19)
+                                        {
+                                            elite.Add("Cataphractii Terminators");
+                                            army1.Points += 190;
+                                            army1.PL += 9;
+                                        }
+                                        if (elites == 20)
+                                        {
+                                            elite.Add("Primaris Redemptor Dreadnought");
+                                            army1.Points += 175;
+                                            army1.PL += 8;
+                                        }
+                                        if (elites == 21)
+                                        {
+                                            elite.Add("Centurion Assault Squad");
+                                            army1.Points += 165;
+                                            army1.PL += 9;
+                                        }
+                                        if (elites == 22)
+                                        {
+                                            elite.Add("Contemptor Dreadnought");
+                                            army1.Points += 150;
+                                            army1.PL += 8;
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 2)
+                                {
+                                    if (elite.Count < 6)
+                                    {
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Servirtors with Multi-Melta");
+                                            army1.Points += 60;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 2)
+                                        {
+                                            elite.Add("Servitors with Plasma Cannon");
+                                            army1.Points += 50;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 3)
+                                        {
+                                            elite.Add("Space Marine Scouts");
+                                            army1.Points += 70;
+                                            army1.PL += 4;
+                                        }
+                                        if (elites == 4)
+                                        {
+                                            elite.Add("Scouts with Sniper Rifles");
+                                            army1.Points += 80;
+                                            army1.PL += 4;
+                                        }
+                                        if (elites == 5)
+                                        {
+                                            elite.Add("Primaris Apothecary");
+                                            army1.Points += 80;
+                                            army1.PL += 4;
+                                        }
+                                        if (elites == 6)
+                                        {
+                                            elite.Add("Vanguard Veteran Squad");
+                                            army1.Points += 95;
+                                            army1.PL += 6;
+                                        }
+                                        if (elites == 7)
+                                        {
+                                            elite.Add("Bladeguard Veterans");
+                                            army1.Points += 105;
+                                            army1.PL += 5;
+                                        }
+                                        if (elites == 8)
+                                        {
+                                            elite.Add("Primaris Aggressors");
+                                            army1.Points += 120;
+                                            army1.PL += 6;
+                                        }
+                                        if (elites == 9)
+                                        {
+                                            elite.Add("Dreadnought");
+                                            army1.Points += 120;
+                                            army1.PL += 7;
+                                        }
+                                        if (elites == 10)
+                                        {
+                                            elite.Add("Company Command");
+                                            army1.Points += 40;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 11)
+                                        {
+                                            elite.Add("Terminator Squad");
+                                            army1.Points += 190;
+                                            army1.PL += 9;
+                                        }
+                                        if (elites == 12)
+                                        {
+                                            elite.Add("Terminator Assault Squad");
+                                            army1.Points += 215;
+                                            army1.PL += 9;
+                                        }
+                                        if (elites == 13)
+                                        {
+                                            elite.Add("Ironclad Dreadnought");
+                                            army1.Points += 135;
+                                            army1.PL += 8;
+                                        }
+                                        if (elites == 14)
+                                        {
+                                            elite.Add("Sternguard Veteran Squad");
+                                            army1.Points += 100;
+                                            army1.PL += 6;
+                                        }
+                                        if (elites == 15)
+                                        {
+                                            elite.Add("Venerable Dreadnought");
+                                            army1.Points += 135;
+                                            army1.PL += 8;
+                                        }
+                                        if (elites == 16)
+                                        {
+                                            elite.Add("Primaris Reivers");
+                                            army1.Points += 90;
+                                            army1.PL += 5;
+                                        }
+                                        if (elites == 17)
+                                        {
+                                            elite.Add("Primaris Invictor Tactical Warsuit");
+                                            army1.Points += 160;
+                                            army1.PL += 8;
+                                        }
+                                        if (elites == 18)
+                                        {
+                                            elite.Add("Tartaros Terminators");
+                                            army1.Points += 190;
+                                            army1.PL += 9;
+                                        }
+                                        if (elites == 19)
+                                        {
+                                            elite.Add("Cataphractii Terminators");
+                                            army1.Points += 190;
+                                            army1.PL += 9;
+                                        }
+                                        if (elites == 20)
+                                        {
+                                            elite.Add("Primaris Redemptor Dreadnought");
+                                            army1.Points += 175;
+                                            army1.PL += 8;
+                                        }
+                                        if (elites == 21)
+                                        {
+                                            elite.Add("Centurion Assault Squad");
+                                            army1.Points += 165;
+                                            army1.PL += 9;
+                                        }
+                                        if (elites == 22)
+                                        {
+                                            elite.Add("Contemptor Dreadnought");
+                                            army1.Points += 150;
+                                            army1.PL += 8;
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 3)
+                                {
+                                    if (elite.Count < 8)
+                                    {
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Servirtors with Multi-Melta");
+                                            army1.Points += 60;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 2)
+                                        {
+                                            elite.Add("Servitors with Plasma Cannon");
+                                            army1.Points += 50;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 3)
+                                        {
+                                            elite.Add("Space Marine Scouts");
+                                            army1.Points += 70;
+                                            army1.PL += 4;
+                                        }
+                                        if (elites == 4)
+                                        {
+                                            elite.Add("Scouts with Sniper Rifles");
+                                            army1.Points += 80;
+                                            army1.PL += 4;
+                                        }
+                                        if (elites == 5)
+                                        {
+                                            elite.Add("Primaris Apothecary");
+                                            army1.Points += 80;
+                                            army1.PL += 4;
+                                        }
+                                        if (elites == 6)
+                                        {
+                                            elite.Add("Vanguard Veteran Squad");
+                                            army1.Points += 95;
+                                            army1.PL += 6;
+                                        }
+                                        if (elites == 7)
+                                        {
+                                            elite.Add("Bladeguard Veterans");
+                                            army1.Points += 105;
+                                            army1.PL += 5;
+                                        }
+                                        if (elites == 8)
+                                        {
+                                            elite.Add("Primaris Aggressors");
+                                            army1.Points += 120;
+                                            army1.PL += 6;
+                                        }
+                                        if (elites == 9)
+                                        {
+                                            elite.Add("Dreadnought");
+                                            army1.Points += 120;
+                                            army1.PL += 7;
+                                        }
+                                        if (elites == 10)
+                                        {
+                                            elite.Add("Company Command");
+                                            army1.Points += 40;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 11)
+                                        {
+                                            elite.Add("Terminator Squad");
+                                            army1.Points += 190;
+                                            army1.PL += 9;
+                                        }
+                                        if (elites == 12)
+                                        {
+                                            elite.Add("Terminator Assault Squad");
+                                            army1.Points += 215;
+                                            army1.PL += 9;
+                                        }
+                                        if (elites == 13)
+                                        {
+                                            elite.Add("Ironclad Dreadnought");
+                                            army1.Points += 135;
+                                            army1.PL += 8;
+                                        }
+                                        if (elites == 14)
+                                        {
+                                            elite.Add("Sternguard Veteran Squad");
+                                            army1.Points += 100;
+                                            army1.PL += 6;
+                                        }
+                                        if (elites == 15)
+                                        {
+                                            elite.Add("Venerable Dreadnought");
+                                            army1.Points += 135;
+                                            army1.PL += 8;
+                                        }
+                                        if (elites == 16)
+                                        {
+                                            elite.Add("Primaris Reivers");
+                                            army1.Points += 90;
+                                            army1.PL += 5;
+                                        }
+                                        if (elites == 17)
+                                        {
+                                            elite.Add("Primaris Invictor Tactical Warsuit");
+                                            army1.Points += 160;
+                                            army1.PL += 8;
+                                        }
+                                        if (elites == 18)
+                                        {
+                                            elite.Add("Tartaros Terminators");
+                                            army1.Points += 190;
+                                            army1.PL += 9;
+                                        }
+                                        if (elites == 19)
+                                        {
+                                            elite.Add("Cataphractii Terminators");
+                                            army1.Points += 190;
+                                            army1.PL += 9;
+                                        }
+                                        if (elites == 20)
+                                        {
+                                            elite.Add("Primaris Redemptor Dreadnought");
+                                            army1.Points += 175;
+                                            army1.PL += 8;
+                                        }
+                                        if (elites == 21)
+                                        {
+                                            elite.Add("Centurion Assault Squad");
+                                            army1.Points += 165;
+                                            army1.PL += 9;
+                                        }
+                                        if (elites == 22)
+                                        {
+                                            elite.Add("Contemptor Dreadnought");
+                                            army1.Points += 150;
+                                            army1.PL += 8;
+                                        }
+                                    }
+                                }
+                            }
+                            if (army1.Faction == 3)
+                            {
+                                Console.WriteLine("1 - Allarus Custodians");
+                                Console.WriteLine("2 - Custodian Wardens");
+                                Console.WriteLine("3 - Venerable Contemptor Dreadnought");
+                                Console.WriteLine("4 - Vexilus Praetor");
+                                Console.WriteLine("5 - Vexilus Praetor in Allarus Terminator Armour");
+                                elites = Convert.ToInt32(Console.ReadLine());
+                                if(army1.detachment == 1)
+                                {
+                                    if(elite.Count < 2)
+                                    {
+                                        if(elites == 1)
+                                        {
+                                            elite.Add("Allarus Custodians");
+                                            army1.Points += 225;
+                                            army1.PL += 9;
+                                        }
+                                        if (elites == 2)
+                                        {
+                                            elite.Add("Custodian Wardens");
+                                            army1.Points += 165;
+                                            army1.PL += 8;
+                                        }
+                                        if (elites == 3)
+                                        {
+                                            elite.Add("Venerable Contemptor Dreadnought");
+                                            army1.Points += 155;
+                                            army1.PL += 8;
+                                        }
+                                        if (elites == 4)
+                                        {
+                                            elite.Add("Vexilus Praetor");
+                                            army1.Points += 110;
+                                            army1.PL += 6;
+                                        }
+                                        if (elites == 5)
+                                        {
+                                            elite.Add("Vexilus Praetor in Allarus Terminator Armour");
+                                            army1.Points += 115;
+                                            army1.PL += 7;
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 2)
+                                {
+                                    if (elite.Count < 6)
+                                    {
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Allarus Custodians");
+                                            army1.Points += 225;
+                                            army1.PL += 9;
+                                        }
+                                        if (elites == 2)
+                                        {
+                                            elite.Add("Custodian Wardens");
+                                            army1.Points += 165;
+                                            army1.PL += 8;
+                                        }
+                                        if (elites == 3)
+                                        {
+                                            elite.Add("Venerable Contemptor Dreadnought");
+                                            army1.Points += 155;
+                                            army1.PL += 8;
+                                        }
+                                        if (elites == 4)
+                                        {
+                                            elite.Add("Vexilus Praetor");
+                                            army1.Points += 110;
+                                            army1.PL += 6;
+                                        }
+                                        if (elites == 5)
+                                        {
+                                            elite.Add("Vexilus Praetor in Allarus Terminator Armour");
+                                            army1.Points += 115;
+                                            army1.PL += 7;
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 3)
+                                {
+                                    if (elite.Count < 8)
+                                    {
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Allarus Custodians");
+                                            army1.Points += 225;
+                                            army1.PL += 9;
+                                        }
+                                        if (elites == 2)
+                                        {
+                                            elite.Add("Custodian Wardens");
+                                            army1.Points += 165;
+                                            army1.PL += 8;
+                                        }
+                                        if (elites == 3)
+                                        {
+                                            elite.Add("Venerable Contemptor Dreadnought");
+                                            army1.Points += 155;
+                                            army1.PL += 8;
+                                        }
+                                        if (elites == 4)
+                                        {
+                                            elite.Add("Vexilus Praetor");
+                                            army1.Points += 110;
+                                            army1.PL += 6;
+                                        }
+                                        if (elites == 5)
+                                        {
+                                            elite.Add("Vexilus Praetor in Allarus Terminator Armour");
+                                            army1.Points += 115;
+                                            army1.PL += 7;
+                                        }
+                                    }
+                                }
+                            }
+                            if (army1.Faction == 4)
+                            {
+                                Console.WriteLine("1 - Corpuscarii Electro-Priests");
+                                Console.WriteLine("2 - Fulgurite Electro-Priests");
+                                Console.WriteLine("3 - Sicarian Infiltrators");
+                                Console.WriteLine("4 - Sicarian Ruststalkers");
+                                Console.WriteLine("5 - Servitors with Plasma Cannon");
+                                Console.WriteLine("6 - Servitors with Multi-Melta");
+                                elites = Convert.ToInt32(Console.ReadLine());
+                                if(army1.detachment == 1)
+                                {
+                                    if(elite.Count < 2)
+                                    {
+                                        if(elites == 1)
+                                        {
+                                            elite.Add("Corpuscarii Electro-Priests");
+                                            army1.Points += 75;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 2)
+                                        {
+                                            elite.Add("Fulgurite Electro-Priests");
+                                            army1.Points += 75;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 3)
+                                        {
+                                            elite.Add("Sicarian Infiltrators");
+                                            army1.Points += 95;
+                                            army1.PL += 4;
+                                        }
+                                        if (elites == 4)
+                                        {
+                                            elite.Add("Sicarian Ruststalkers");
+                                            army1.Points += 95;
+                                            army1.PL += 4;
+                                        }
+                                        if (elites == 5)
+                                        {
+                                            elite.Add("Servitors with Plasma Cannon");
+                                            army1.Points += 50;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 6)
+                                        {
+                                            elite.Add("Servirtors with Multi-Melta");
+                                            army1.Points += 60;
+                                            army1.PL += 2;
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 2)
+                                {
+                                    if (elite.Count < 6)
+                                    {
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Corpuscarii Electro-Priests");
+                                            army1.Points += 75;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 2)
+                                        {
+                                            elite.Add("Fulgurite Electro-Priests");
+                                            army1.Points += 75;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 3)
+                                        {
+                                            elite.Add("Sicarian Infiltrators");
+                                            army1.Points += 95;
+                                            army1.PL += 4;
+                                        }
+                                        if (elites == 4)
+                                        {
+                                            elite.Add("Sicarian Ruststalkers");
+                                            army1.Points += 95;
+                                            army1.PL += 4;
+                                        }
+                                        if (elites == 5)
+                                        {
+                                            elite.Add("Servitors with Plasma Cannon");
+                                            army1.Points += 50;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 6)
+                                        {
+                                            elite.Add("Servirtors with Multi-Melta");
+                                            army1.Points += 60;
+                                            army1.PL += 2;
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 3)
+                                {
+                                    if (elite.Count < 8)
+                                    {
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Corpuscarii Electro-Priests");
+                                            army1.Points += 75;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 2)
+                                        {
+                                            elite.Add("Fulgurite Electro-Priests");
+                                            army1.Points += 75;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 3)
+                                        {
+                                            elite.Add("Sicarian Infiltrators");
+                                            army1.Points += 95;
+                                            army1.PL += 4;
+                                        }
+                                        if (elites == 4)
+                                        {
+                                            elite.Add("Sicarian Ruststalkers");
+                                            army1.Points += 95;
+                                            army1.PL += 4;
+                                        }
+                                        if (elites == 5)
+                                        {
+                                            elite.Add("Servitors with Plasma Cannon");
+                                            army1.Points += 50;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 6)
+                                        {
+                                            elite.Add("Servirtors with Multi-Melta");
+                                            army1.Points += 60;
+                                            army1.PL += 2;
+                                        }
+                                    }
+                                }
+                            }
+                            if (army1.Faction == 5)
+                            {
+                                Console.WriteLine("1 - Astropath");
+                                Console.WriteLine("2 - Bullgryns");
+                                Console.WriteLine("3 - Colour Sergeant Kell");
+                                Console.WriteLine("4 - Combat Engineer Squad");
+                                Console.WriteLine("5 - Command Squad");
+                                Console.WriteLine("6 - Commissar");
+                                Console.WriteLine("7 - Commissar Severina Raine");
+                                Console.WriteLine("8 - Crusaders");
+                                Console.WriteLine("9 - Death Rider Command Squad");
+                                Console.WriteLine("10 - Gotfret de Montbard");
+                                Console.WriteLine("11 - Master of Ordnance");
+                                Console.WriteLine("12 - Millitarum Tempestus Command Squad");
+                                Console.WriteLine("13 - Ministorum Priest");
+                                Console.WriteLine("14 - Nork Deddog");
+                                Console.WriteLine("15 - Officer of the Fleet");
+                                Console.WriteLine("16 - Ogryn Bodyguard");
+                                Console.WriteLine("17 - Ogryns");
+                                Console.WriteLine("18 - Platoon Commander");
+                                Console.WriteLine("19 - Ratlings");
+                                Console.WriteLine("20 - Rein and Raus");
+                                Console.WriteLine("21 - Special Weapons Squad");
+                                Console.WriteLine("22 - Veterans");
+                                Console.WriteLine("23 - Voidsmen-at-arms");
+                                Console.WriteLine("24 - Wyrdvane Psykers");
+                                elites = Convert.ToInt32(Console.ReadLine());
+                                if(army1.detachment == 1)
+                                {
+                                    if(elite.Count < 2)
+                                    {
+                                        if(elites == 1)
+                                        {
+                                            elite.Add("Astropath");
+                                            army1.Points += 35;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Bullgryns");
+                                            army1.Points += 105;
+                                            army1.PL += 5;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Colour Sergeant Kell");
+                                            army1.Points += 45;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Combat Engineer Squad");
+                                            army1.Points += 40;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Command Squad");
+                                            army1.Points += 25;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Commissar");
+                                            army1.Points += 25;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Commissar Severina Raine");
+                                            army1.Points += 35;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Crusaders");
+                                            army1.Points += 32;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Death Rider Command Squad");
+                                            army1.Points += 85;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Gotfret de Montbard");
+                                            army1.Points += 40;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Master of Ordnance");
+                                            army1.Points += 35;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Millitarum Tempestus Command Squad");
+                                            army1.Points += 40;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Ministorum Priest");
+                                            army1.Points += 40;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Nork Deddog");
+                                            army1.Points += 60;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Officer of the Fleet");
+                                            army1.Points += 25;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Ogryn Bodyguard");
+                                            army1.Points += 50;
+                                            army1.PL += 6;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Ogryns");
+                                            army1.Points += 75;
+                                            army1.PL += 4;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Platoon Commander");
+                                            army1.Points += 25;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Ratlings");
+                                            army1.Points += 50;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Rein and Raus");
+                                            army1.Points += 40;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Special Weapons Squad");
+                                            army1.Points += 40;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Veterans");
+                                            army1.Points += 65;
+                                            army1.PL += 5;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Voidsmen-at-arms");
+                                            army1.Points += 40;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Wyrdvane Psykers");
+                                            army1.Points += 24;
+                                            army1.PL += 1;
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 2)
+                                {
+                                    if (elite.Count < 6)
+                                    {
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Astropath");
+                                            army1.Points += 35;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Bullgryns");
+                                            army1.Points += 105;
+                                            army1.PL += 5;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Colour Sergeant Kell");
+                                            army1.Points += 45;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Combat Engineer Squad");
+                                            army1.Points += 40;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Command Squad");
+                                            army1.Points += 25;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Commissar");
+                                            army1.Points += 25;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Commissar Severina Raine");
+                                            army1.Points += 35;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Crusaders");
+                                            army1.Points += 32;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Death Rider Command Squad");
+                                            army1.Points += 85;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Gotfret de Montbard");
+                                            army1.Points += 40;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Master of Ordnance");
+                                            army1.Points += 35;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Millitarum Tempestus Command Squad");
+                                            army1.Points += 40;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Ministorum Priest");
+                                            army1.Points += 40;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Nork Deddog");
+                                            army1.Points += 60;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Officer of the Fleet");
+                                            army1.Points += 25;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Ogryn Bodyguard");
+                                            army1.Points += 50;
+                                            army1.PL += 6;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Ogryns");
+                                            army1.Points += 75;
+                                            army1.PL += 4;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Platoon Commander");
+                                            army1.Points += 25;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Ratlings");
+                                            army1.Points += 50;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Rein and Raus");
+                                            army1.Points += 40;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Special Weapons Squad");
+                                            army1.Points += 40;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Veterans");
+                                            army1.Points += 65;
+                                            army1.PL += 5;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Voidsmen-at-arms");
+                                            army1.Points += 40;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Wyrdvane Psykers");
+                                            army1.Points += 24;
+                                            army1.PL += 1;
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 3)
+                                {
+                                    if (elite.Count < 8)
+                                    {
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Astropath");
+                                            army1.Points += 35;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Bullgryns");
+                                            army1.Points += 105;
+                                            army1.PL += 5;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Colour Sergeant Kell");
+                                            army1.Points += 45;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Combat Engineer Squad");
+                                            army1.Points += 40;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Command Squad");
+                                            army1.Points += 25;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Commissar");
+                                            army1.Points += 25;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Commissar Severina Raine");
+                                            army1.Points += 35;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Crusaders");
+                                            army1.Points += 32;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Death Rider Command Squad");
+                                            army1.Points += 85;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Gotfret de Montbard");
+                                            army1.Points += 40;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Master of Ordnance");
+                                            army1.Points += 35;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Millitarum Tempestus Command Squad");
+                                            army1.Points += 40;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Ministorum Priest");
+                                            army1.Points += 40;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Nork Deddog");
+                                            army1.Points += 60;
+                                            army1.PL += 3;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Officer of the Fleet");
+                                            army1.Points += 25;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Ogryn Bodyguard");
+                                            army1.Points += 50;
+                                            army1.PL += 6;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Ogryns");
+                                            army1.Points += 75;
+                                            army1.PL += 4;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Platoon Commander");
+                                            army1.Points += 25;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Ratlings");
+                                            army1.Points += 50;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Rein and Raus");
+                                            army1.Points += 40;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Special Weapons Squad");
+                                            army1.Points += 40;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Veterans");
+                                            army1.Points += 65;
+                                            army1.PL += 5;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Voidsmen-at-arms");
+                                            army1.Points += 40;
+                                            army1.PL += 2;
+                                        }
+                                        if (elites == 1)
+                                        {
+                                            elite.Add("Wyrdvane Psykers");
+                                            army1.Points += 24;
+                                            army1.PL += 1;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        if (choice == 2)
+                        {
+                            if (army2.Faction == 1)
+                            {
+
+                            }
+                            if (army2.Faction == 2)
+                            {
+
                             }
                             if (army2.Faction == 3)
                             {
@@ -5032,7 +7375,7 @@ namespace Final
 
                             }
                         }
-                        if(choice == 3)
+                        if (choice == 3)
                         {
                             if (army3.Faction == 1)
                             {
@@ -5072,25 +7415,438 @@ namespace Final
                             }
                         }
                         break;
-                    case 3:
-
-                        break;
                     case 4:
+                        if (choice == 1)
+                        {
+                            if (army1.Faction == 1)
+                            {
 
+                            }
+                            if (army1.Faction == 2)
+                            {
+
+                            }
+                            if (army1.Faction == 3)
+                            {
+
+                            }
+                            if (army1.Faction == 4)
+                            {
+
+                            }
+                            if (army1.Faction == 5)
+                            {
+
+                            }
+                        }
+                        if (choice == 2)
+                        {
+                            if (army2.Faction == 1)
+                            {
+
+                            }
+                            if (army2.Faction == 2)
+                            {
+
+                            }
+                            if (army2.Faction == 3)
+                            {
+
+                            }
+                            if (army2.Faction == 4)
+                            {
+
+                            }
+                        }
+                        if (choice == 3)
+                        {
+                            if (army3.Faction == 1)
+                            {
+
+                            }
+                            if (army3.Faction == 2)
+                            {
+
+                            }
+                            if (army3.Faction == 3)
+                            {
+
+                            }
+                            if (army3.Faction == 4)
+                            {
+
+                            }
+                            if (army3.Faction == 5)
+                            {
+
+                            }
+                            if (army3.Faction == 6)
+                            {
+
+                            }
+                            if (army3.Faction == 7)
+                            {
+
+                            }
+                            if (army3.Faction == 8)
+                            {
+
+                            }
+                            if (army3.Faction == 9)
+                            {
+
+                            }
+                        }
                         break;
                     case 5:
+                        if (choice == 1)
+                        {
+                            if (army1.Faction == 1)
+                            {
 
+                            }
+                            if (army1.Faction == 2)
+                            {
+
+                            }
+                            if (army1.Faction == 3)
+                            {
+
+                            }
+                            if (army1.Faction == 4)
+                            {
+
+                            }
+                            if (army1.Faction == 5)
+                            {
+
+                            }
+                        }
+                        if (choice == 2)
+                        {
+                            if (army2.Faction == 1)
+                            {
+
+                            }
+                            if (army2.Faction == 2)
+                            {
+
+                            }
+                            if (army2.Faction == 3)
+                            {
+
+                            }
+                            if (army2.Faction == 4)
+                            {
+
+                            }
+                        }
+                        if (choice == 3)
+                        {
+                            if (army3.Faction == 1)
+                            {
+
+                            }
+                            if (army3.Faction == 2)
+                            {
+
+                            }
+                            if (army3.Faction == 3)
+                            {
+
+                            }
+                            if (army3.Faction == 4)
+                            {
+
+                            }
+                            if (army3.Faction == 5)
+                            {
+
+                            }
+                            if (army3.Faction == 6)
+                            {
+
+                            }
+                            if (army3.Faction == 7)
+                            {
+
+                            }
+                            if (army3.Faction == 8)
+                            {
+
+                            }
+                            if (army3.Faction == 9)
+                            {
+
+                            }
+                        }
                         break;
                     case 6:
+                        if (choice == 1)
+                        {
+                            if (army1.Faction == 1)
+                            {
 
+                            }
+                            if (army1.Faction == 2)
+                            {
+
+                            }
+                            if (army1.Faction == 3)
+                            {
+
+                            }
+                            if (army1.Faction == 4)
+                            {
+
+                            }
+                            if (army1.Faction == 5)
+                            {
+
+                            }
+                        }
+                        if (choice == 2)
+                        {
+                            if (army2.Faction == 1)
+                            {
+
+                            }
+                            if (army2.Faction == 2)
+                            {
+
+                            }
+                            if (army2.Faction == 3)
+                            {
+
+                            }
+                            if (army2.Faction == 4)
+                            {
+
+                            }
+                        }
+                        if (choice == 3)
+                        {
+                            if (army3.Faction == 1)
+                            {
+
+                            }
+                            if (army3.Faction == 2)
+                            {
+
+                            }
+                            if (army3.Faction == 3)
+                            {
+
+                            }
+                            if (army3.Faction == 4)
+                            {
+
+                            }
+                            if (army3.Faction == 5)
+                            {
+
+                            }
+                            if (army3.Faction == 6)
+                            {
+
+                            }
+                            if (army3.Faction == 7)
+                            {
+
+                            }
+                            if (army3.Faction == 8)
+                            {
+
+                            }
+                            if (army3.Faction == 9)
+                            {
+
+                            }
+                        }
                         break;
                     case 7:
+                        if (choice == 1)
+                        {
+                            if (army1.Faction == 1)
+                            {
 
+                            }
+                            if (army1.Faction == 2)
+                            {
+
+                            }
+                            if (army1.Faction == 3)
+                            {
+
+                            }
+                            if (army1.Faction == 4)
+                            {
+
+                            }
+                            if (army1.Faction == 5)
+                            {
+
+                            }
+                        }
+                        if (choice == 2)
+                        {
+                            if (army2.Faction == 1)
+                            {
+
+                            }
+                            if (army2.Faction == 2)
+                            {
+
+                            }
+                            if (army2.Faction == 3)
+                            {
+
+                            }
+                            if (army2.Faction == 4)
+                            {
+
+                            }
+                        }
+                        if (choice == 3)
+                        {
+                            if (army3.Faction == 1)
+                            {
+
+                            }
+                            if (army3.Faction == 2)
+                            {
+
+                            }
+                            if (army3.Faction == 3)
+                            {
+
+                            }
+                            if (army3.Faction == 4)
+                            {
+
+                            }
+                            if (army3.Faction == 5)
+                            {
+
+                            }
+                            if (army3.Faction == 6)
+                            {
+
+                            }
+                            if (army3.Faction == 7)
+                            {
+
+                            }
+                            if (army3.Faction == 8)
+                            {
+
+                            }
+                            if (army3.Faction == 9)
+                            {
+
+                            }
+                        }
                         break;
                     case 8:
+                        if (choice == 1)
+                        {
+                            if (army1.Faction == 1)
+                            {
 
+                            }
+                            if (army1.Faction == 2)
+                            {
+
+                            }
+                            if (army1.Faction == 3)
+                            {
+
+                            }
+                            if (army1.Faction == 4)
+                            {
+
+                            }
+                            if (army1.Faction == 5)
+                            {
+
+                            }
+                        }
+                        if (choice == 2)
+                        {
+                            if (army2.Faction == 1)
+                            {
+
+                            }
+                            if (army2.Faction == 2)
+                            {
+
+                            }
+                            if (army2.Faction == 3)
+                            {
+
+                            }
+                            if (army2.Faction == 4)
+                            {
+
+                            }
+                        }
+                        if (choice == 3)
+                        {
+                            if (army3.Faction == 1)
+                            {
+
+                            }
+                            if (army3.Faction == 2)
+                            {
+
+                            }
+                            if (army3.Faction == 3)
+                            {
+
+                            }
+                            if (army3.Faction == 4)
+                            {
+
+                            }
+                            if (army3.Faction == 5)
+                            {
+
+                            }
+                            if (army3.Faction == 6)
+                            {
+
+                            }
+                            if (army3.Faction == 7)
+                            {
+
+                            }
+                            if (army3.Faction == 8)
+                            {
+
+                            }
+                            if (army3.Faction == 9)
+                            {
+
+                            }
+                        }
                         break;
                     case 9:
+                        Console.Clear();
+                        Console.WriteLine("What would you like to change your army name to?");
+                        if(choice == 1)
+                        {
+                            army1.name = Console.ReadLine();
+                        }
+                        if (choice == 2)
+                        {
+                            army2.name = Console.ReadLine();
+                        }
+                        if (choice == 3)
+                        {
+                            army3.name = Console.ReadLine();
+                        }
+                        break;
+                    case 10:
                         Console.WriteLine("Goodbye");
                         break;
 
@@ -5098,7 +7854,7 @@ namespace Final
                         Console.WriteLine("Not a valid Choice");
                         break;
                 }
-            } while (menu != 9);
+            } while (menu != 10);
         }
     }
 }

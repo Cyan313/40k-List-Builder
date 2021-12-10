@@ -5,3 +5,11 @@ C:\Users\DSU Student\source\repos\Cyan313\40k-List-Builder\.vs\40k-List-Builder\
 C:\Users\DSU Student\source\repos\Cyan313\40k-List-Builder\.vs\40k-List-Builder\v16\Final\obj\Debug\Final.csproj.CoreCompileInputs.cache
 C:\Users\DSU Student\source\repos\Cyan313\40k-List-Builder\.vs\40k-List-Builder\v16\Final\obj\Debug\Final.exe
 C:\Users\DSU Student\source\repos\Cyan313\40k-List-Builder\.vs\40k-List-Builder\v16\Final\obj\Debug\Final.pdb
+C:\Users\nethe\source\repos\40k-List-Builder\.vs\40k-List-Builder\v16\Final\bin\Debug\Final.exe.config
+C:\Users\nethe\source\repos\40k-List-Builder\.vs\40k-List-Builder\v16\Final\bin\Debug\Final.exe
+C:\Users\nethe\source\repos\40k-List-Builder\.vs\40k-List-Builder\v16\Final\bin\Debug\Final.pdb
+C:\Users\nethe\source\repos\40k-List-Builder\.vs\40k-List-Builder\v16\Final\obj\Debug\Final.csproj.AssemblyReference.cache
+C:\Users\nethe\source\repos\40k-List-Builder\.vs\40k-List-Builder\v16\Final\obj\Debug\Final.csproj.SuggestedBindingRedirects.cache
+C:\Users\nethe\source\repos\40k-List-Builder\.vs\40k-List-Builder\v16\Final\obj\Debug\Final.csproj.CoreCompileInputs.cache
+C:\Users\nethe\source\repos\40k-List-Builder\.vs\40k-List-Builder\v16\Final\obj\Debug\Final.exe
+C:\Users\nethe\source\repos\40k-List-Builder\.vs\40k-List-Builder\v16\Final\obj\Debug\Final.pdb
