@@ -170,242 +170,17 @@ namespace Final
                 Console.Clear();
                 if (choice == 1)
                 {
-                    Console.WriteLine(army1.name + "\n");
-                    if (army1.detachment == 1)
-                        Console.WriteLine("Patrol Detachment\n");
-                    if (army1.detachment == 2)
-                        Console.WriteLine("Battalion Detachment\n");
-                    if (army1.detachment == 3)
-                        Console.WriteLine("Brigade Detachment\n");
-
-                    if (army1.Faction == 1)
-                        Console.WriteLine("Adepta Sororitas");
-                    if (army1.Faction == 2)
-                        Console.WriteLine("Adeptus Astartes");
-                    if (army1.Faction == 3)
-                        Console.WriteLine("Adeptus Custodes");
-                    if (army1.Faction == 4)
-                        Console.WriteLine("Adeptus Mechanicus");
-                    if (army1.Faction == 5)
-                        Console.WriteLine("Astra Millitarum");
-
-                    Console.WriteLine(army1.subFaction);
-                    Console.WriteLine(army1.CP + " Command Points");
-                    Console.WriteLine(army1.Points + " Points");
-                    Console.WriteLine(army1.PL + " PL");
-                    Console.WriteLine("\n");
-                    Console.WriteLine("\n");
-                    Console.WriteLine("HQs");
-                    Console.WriteLine("----------------------------------");
-                    for (int i = 0; i < hq.Count; i++)
-                    {
-                        Console.WriteLine(hq[i]);
-                    }
-                    Console.WriteLine("\n");
-                    Console.WriteLine("Troops");
-                    Console.WriteLine("----------------------------------");
-                    for (int i = 0; i < troop.Count; i++)
-                    {
-                        Console.WriteLine(troop[i]);
-                    }
-                    Console.WriteLine("\n");
-                    Console.WriteLine("Elites");
-                    Console.WriteLine("----------------------------------");
-                    for (int i = 0; i < elite.Count; i++)
-                    {
-                        Console.WriteLine(elite[i]);
-                    }
-                    Console.WriteLine("\n");
-                    Console.WriteLine("Fast Attack");
-                    Console.WriteLine("----------------------------------");
-                    for (int i = 0; i < fast.Count; i++)
-                    {
-                        Console.WriteLine(fast[i]);
-                    }
-                    Console.WriteLine("\n");
-                    Console.WriteLine("Heavy Supports");
-                    Console.WriteLine("----------------------------------");
-                    for (int i = 0; i < heavy.Count; i++)
-                    {
-                        Console.WriteLine(heavy[i]);
-                    }
-                    Console.WriteLine("\n");
-                    Console.WriteLine("Flyers");
-                    Console.WriteLine("----------------------------------");
-                    for (int i = 0; i < flyer.Count; i++)
-                    {
-                        Console.WriteLine(flyer[i]);
-                    }
-                    Console.WriteLine("\n");
-                    Console.WriteLine("Dedicated Transports");
-                    Console.WriteLine("----------------------------------");
-                    for (int i = 0; i < transport.Count; i++)
-                    {
-                        Console.WriteLine(transport[i]);
-                    }
-                    Console.WriteLine("\n");
+                    army1.printImp(army1, hq, troop, elite, fast, heavy, flyer, transport);
                 }
 
                 if (choice == 2)
                 {
-                    Console.WriteLine(army2.name + "\n");
-                    if (army2.detachment == 1)
-                        Console.WriteLine("Patrol Detachment\n");
-                    if (army2.detachment == 2)
-                        Console.WriteLine("Battalion Detachment\n");
-                    if (army2.detachment == 3)
-                        Console.WriteLine("Brigade Detachment\n");
-
-                    if (army2.Faction == 1)
-                        Console.WriteLine("Chaos Daemons");
-                    if (army2.Faction == 2)
-                        Console.WriteLine("Death Guard");
-                    if (army2.Faction == 3)
-                        Console.WriteLine("Chaos Space Marines");
-                    if (army2.Faction == 4)
-                        Console.WriteLine("Thousand Sons");
-
-                    Console.WriteLine(army2.subFaction);
-                    Console.WriteLine(army2.CP + " Command Points");
-                    Console.WriteLine(army2.Points + " Points");
-                    Console.WriteLine(army2.PL + " PL");
-                    Console.WriteLine("\n");
-                    Console.WriteLine("\n");
-                    Console.WriteLine("HQs");
-                    Console.WriteLine("----------------------------------");
-                    for (int i = 0; i < hq.Count; i++)
-                    {
-                        Console.WriteLine(hq[i]);
-                    }
-                    Console.WriteLine("\n");
-                    Console.WriteLine("Troops");
-                    Console.WriteLine("----------------------------------");
-                    for (int i = 0; i < troop.Count; i++)
-                    {
-                        Console.WriteLine(troop[i]);
-                    }
-                    Console.WriteLine("\n");
-                    Console.WriteLine("Elites");
-                    Console.WriteLine("----------------------------------");
-                    for (int i = 0; i < elite.Count; i++)
-                    {
-                        Console.WriteLine(elite[i]);
-                    }
-                    Console.WriteLine("\n");
-                    Console.WriteLine("Fast Attack");
-                    Console.WriteLine("----------------------------------");
-                    for (int i = 0; i < fast.Count; i++)
-                    {
-                        Console.WriteLine(fast[i]);
-                    }
-                    Console.WriteLine("\n");
-                    Console.WriteLine("Heavy Supports");
-                    Console.WriteLine("----------------------------------");
-                    for (int i = 0; i < heavy.Count; i++)
-                    {
-                        Console.WriteLine(heavy[i]);
-                    }
-                    Console.WriteLine("\n");
-                    Console.WriteLine("Flyers");
-                    Console.WriteLine("----------------------------------");
-                    for (int i = 0; i < flyer.Count; i++)
-                    {
-                        Console.WriteLine(flyer[i]);
-                    }
-                    Console.WriteLine("\n");
-                    Console.WriteLine("Dedicated Transports");
-                    Console.WriteLine("----------------------------------");
-                    for (int i = 0; i < transport.Count; i++)
-                    {
-                        Console.WriteLine(transport[i]);
-                    }
-                    Console.WriteLine("\n");
+                    army2.printChaos(army2, hq, troop, elite, fast, heavy, flyer, transport);
                 }
 
                 if (choice == 3)
                 {
-                    Console.WriteLine(army3.name + "\n");
-                    if (army3.detachment == 1)
-                        Console.WriteLine("Patrol Detachment\n");
-                    if (army3.detachment == 2)
-                        Console.WriteLine("Battalion Detachment\n");
-                    if (army3.detachment == 3)
-                        Console.WriteLine("Brigade Detachment\n");
-
-                    if (army3.Faction == 1)
-                        Console.WriteLine("Craftworlds");
-                    if (army3.Faction == 2)
-                        Console.WriteLine("Drukhari");
-                    if (army3.Faction == 3)
-                        Console.WriteLine("Genestealer Cults");
-                    if (army3.Faction == 4)
-                        Console.WriteLine("Harlequins");
-                    if (army3.Faction == 5)
-                        Console.WriteLine("Necrons");
-                    if (army3.Faction == 6)
-                        Console.WriteLine("Orks");
-                    if (army3.Faction == 7)
-                        Console.WriteLine("T'au Empire");
-                    if (army3.Faction == 8)
-                        Console.WriteLine("Tyranids");
-                    if (army3.Faction == 9)
-                        Console.WriteLine("Ynnari");
-
-                    Console.WriteLine(army3.subFaction);
-                    Console.WriteLine(army3.CP + " Command Points");
-                    Console.WriteLine(army3.Points + " Points");
-                    Console.WriteLine(army3.PL + " PL");
-                    Console.WriteLine("\n");
-                    Console.WriteLine("\n");
-                    Console.WriteLine("HQs");
-                    Console.WriteLine("----------------------------------");
-                    for (int i = 0; i < hq.Count; i++)
-                    {
-                        Console.WriteLine(hq[i]);
-                    }
-                    Console.WriteLine("\n");
-                    Console.WriteLine("Troops");
-                    Console.WriteLine("----------------------------------");
-                    for (int i = 0; i < troop.Count; i++)
-                    {
-                        Console.WriteLine(troop[i]);
-                    }
-                    Console.WriteLine("\n");
-                    Console.WriteLine("Elites");
-                    Console.WriteLine("----------------------------------");
-                    for (int i = 0; i < elite.Count; i++)
-                    {
-                        Console.WriteLine(elite[i]);
-                    }
-                    Console.WriteLine("\n");
-                    Console.WriteLine("Fast Attack");
-                    Console.WriteLine("----------------------------------");
-                    for (int i = 0; i < fast.Count; i++)
-                    {
-                        Console.WriteLine(fast[i]);
-                    }
-                    Console.WriteLine("\n");
-                    Console.WriteLine("Heavy Supports");
-                    Console.WriteLine("----------------------------------");
-                    for (int i = 0; i < heavy.Count; i++)
-                    {
-                        Console.WriteLine(heavy[i]);
-                    }
-                    Console.WriteLine("\n");
-                    Console.WriteLine("Flyers");
-                    Console.WriteLine("----------------------------------");
-                    for (int i = 0; i < flyer.Count; i++)
-                    {
-                        Console.WriteLine(flyer[i]);
-                    }
-                    Console.WriteLine("\n");
-                    Console.WriteLine("Dedicated Transports");
-                    Console.WriteLine("----------------------------------");
-                    for (int i = 0; i < transport.Count; i++)
-                    {
-                        Console.WriteLine(transport[i]);
-                    }
-                    Console.WriteLine("\n");
+                    army3.printXenos(army3, hq, troop, elite, fast, heavy, flyer, transport);
                 }
                 Console.WriteLine("What would you like to do?");
                 Console.WriteLine("1 - Add an HQ");
@@ -17018,6 +16793,7 @@ namespace Final
                         }
                         break;
                     case 6:
+                        Console.Clear();
                         if (choice == 1)
                         {
                             if (army1.Faction == 1)
@@ -17032,12 +16808,192 @@ namespace Final
                                 Console.WriteLine("3 - Stormhawk Interceptor");
                                 Console.WriteLine("4 - Stormtalon Gunship");
                                 flyers = Convert.ToInt32(Console.ReadLine());
+                                if(army1.detachment == 1)
+                                {
+                                    if(flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Corvus Blackstar");
+                                            army1.Points += 180;
+                                            army1.PL += 10;
+                                            flyerp.Add(180);
+                                            flpl.Add(10);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Ravenwing Dark Talon");
+                                            army1.Points += 210;
+                                            army1.PL += 11;
+                                            flyerp.Add(210);
+                                            flpl.Add(11);
+                                        }
+                                        if (flyers == 3)
+                                        {
+                                            flyer.Add("Stormhawk Interceptor");
+                                            army1.Points += 185;
+                                            army1.PL += 10;
+                                            flyerp.Add(185);
+                                            flpl.Add(10);
+                                        }
+                                        if (flyers == 4)
+                                        {
+                                            flyer.Add("Stormtalon Gunship");
+                                            army1.Points += 165;
+                                            army1.PL += 9;
+                                            flyerp.Add(165);
+                                            flpl.Add(9);
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 2)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Corvus Blackstar");
+                                            army1.Points += 180;
+                                            army1.PL += 10;
+                                            flyerp.Add(180);
+                                            flpl.Add(10);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Ravenwing Dark Talon");
+                                            army1.Points += 210;
+                                            army1.PL += 11;
+                                            flyerp.Add(210);
+                                            flpl.Add(11);
+                                        }
+                                        if (flyers == 3)
+                                        {
+                                            flyer.Add("Stormhawk Interceptor");
+                                            army1.Points += 185;
+                                            army1.PL += 10;
+                                            flyerp.Add(185);
+                                            flpl.Add(10);
+                                        }
+                                        if (flyers == 4)
+                                        {
+                                            flyer.Add("Stormtalon Gunship");
+                                            army1.Points += 165;
+                                            army1.PL += 9;
+                                            flyerp.Add(165);
+                                            flpl.Add(9);
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 3)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Corvus Blackstar");
+                                            army1.Points += 180;
+                                            army1.PL += 10;
+                                            flyerp.Add(180);
+                                            flpl.Add(10);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Ravenwing Dark Talon");
+                                            army1.Points += 210;
+                                            army1.PL += 11;
+                                            flyerp.Add(210);
+                                            flpl.Add(11);
+                                        }
+                                        if (flyers == 3)
+                                        {
+                                            flyer.Add("Stormhawk Interceptor");
+                                            army1.Points += 185;
+                                            army1.PL += 10;
+                                            flyerp.Add(185);
+                                            flpl.Add(10);
+                                        }
+                                        if (flyers == 4)
+                                        {
+                                            flyer.Add("Stormtalon Gunship");
+                                            army1.Points += 165;
+                                            army1.PL += 9;
+                                            flyerp.Add(165);
+                                            flpl.Add(9);
+                                        }
+                                    }
+                                }
                             }
                             if (army1.Faction == 3)
                             {
                                 Console.WriteLine("1 - Ares Gunship");
                                 Console.WriteLine("2 - Orion Assault Dropship");
                                 flyers = Convert.ToInt32(Console.ReadLine());
+                                if (army1.detachment == 1)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Ares Gunship");
+                                            army1.Points += 450;
+                                            army1.PL += 23;
+                                            flyerp.Add(450);
+                                            flpl.Add(23);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Orion Assault Dropship");
+                                            army1.Points += 500;
+                                            army1.PL += 25;
+                                            flyerp.Add(500);
+                                            flpl.Add(25);
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 2)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Ares Gunship");
+                                            army1.Points += 450;
+                                            army1.PL += 23;
+                                            flyerp.Add(450);
+                                            flpl.Add(23);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Orion Assault Dropship");
+                                            army1.Points += 500;
+                                            army1.PL += 25;
+                                            flyerp.Add(500);
+                                            flpl.Add(25);
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 3)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Ares Gunship");
+                                            army1.Points += 450;
+                                            army1.PL += 23;
+                                            flyerp.Add(450);
+                                            flpl.Add(23);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Orion Assault Dropship");
+                                            army1.Points += 500;
+                                            army1.PL += 25;
+                                            flyerp.Add(500);
+                                            flpl.Add(25);
+                                        }
+                                    }
+                                }
                             }
                             if (army1.Faction == 4)
                             {
@@ -17045,6 +17001,96 @@ namespace Final
                                 Console.WriteLine("2 - Archaeopter Stratoraptor");
                                 Console.WriteLine("3 - Archaeopter Transvector");
                                 flyers = Convert.ToInt32(Console.ReadLine());
+                                if (army1.detachment == 1)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Archaeopter Fusilave");
+                                            army1.Points += 150;
+                                            army1.PL += 7;
+                                            flyerp.Add(150);
+                                            flpl.Add(7);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Archaeopter Stratoraptor");
+                                            army1.Points += 180;
+                                            army1.PL += 9;
+                                            flyerp.Add(180);
+                                            flpl.Add(9);
+                                        }
+                                        if (flyers == 3)
+                                        {
+                                            flyer.Add("Archaeopter Transvector");
+                                            army1.Points += 110;
+                                            army1.PL += 6;
+                                            flyerp.Add(110);
+                                            flpl.Add(6);
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 2)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Archaeopter Fusilave");
+                                            army1.Points += 150;
+                                            army1.PL += 7;
+                                            flyerp.Add(150);
+                                            flpl.Add(7);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Archaeopter Stratoraptor");
+                                            army1.Points += 180;
+                                            army1.PL += 9;
+                                            flyerp.Add(180);
+                                            flpl.Add(9);
+                                        }
+                                        if (flyers == 3)
+                                        {
+                                            flyer.Add("Archaeopter Transvector");
+                                            army1.Points += 110;
+                                            army1.PL += 6;
+                                            flyerp.Add(110);
+                                            flpl.Add(6);
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 3)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Archaeopter Fusilave");
+                                            army1.Points += 150;
+                                            army1.PL += 7;
+                                            flyerp.Add(150);
+                                            flpl.Add(7);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Archaeopter Stratoraptor");
+                                            army1.Points += 180;
+                                            army1.PL += 9;
+                                            flyerp.Add(180);
+                                            flpl.Add(9);
+                                        }
+                                        if (flyers == 3)
+                                        {
+                                            flyer.Add("Archaeopter Transvector");
+                                            army1.Points += 110;
+                                            army1.PL += 6;
+                                            flyerp.Add(110);
+                                            flpl.Add(6);
+                                        }
+                                    }
+                                }
                             }
                             if (army1.Faction == 5)
                             {
@@ -17053,6 +17099,120 @@ namespace Final
                                 Console.WriteLine("3 - Valkyrie");
                                 Console.WriteLine("4 - Vulture Gunship");
                                 flyers = Convert.ToInt32(Console.ReadLine());
+                                if (army1.detachment == 1)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Arvus Lighter");
+                                            army1.Points += 85;
+                                            army1.PL += 5;
+                                            flyerp.Add(85);
+                                            flpl.Add(5);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Thunderbolt");
+                                            army1.Points += 210;
+                                            army1.PL += 11;
+                                            flyerp.Add(210);
+                                            flpl.Add(11);
+                                        }
+                                        if (flyers == 3)
+                                        {
+                                            flyer.Add("Valkyrie");
+                                            army1.Points += 120;
+                                            army1.PL += 7;
+                                            flyerp.Add(120);
+                                            flpl.Add(7);
+                                        }
+                                        if (flyers == 4)
+                                        {
+                                            flyer.Add("Vulture Gunship");
+                                            army1.Points += 180;
+                                            army1.PL += 10;
+                                            flyerp.Add(180);
+                                            flpl.Add(10);
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 2)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Arvus Lighter");
+                                            army1.Points += 85;
+                                            army1.PL += 5;
+                                            flyerp.Add(85);
+                                            flpl.Add(5);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Thunderbolt");
+                                            army1.Points += 210;
+                                            army1.PL += 11;
+                                            flyerp.Add(210);
+                                            flpl.Add(11);
+                                        }
+                                        if (flyers == 3)
+                                        {
+                                            flyer.Add("Valkyrie");
+                                            army1.Points += 120;
+                                            army1.PL += 7;
+                                            flyerp.Add(120);
+                                            flpl.Add(7);
+                                        }
+                                        if (flyers == 4)
+                                        {
+                                            flyer.Add("Vulture Gunship");
+                                            army1.Points += 180;
+                                            army1.PL += 10;
+                                            flyerp.Add(180);
+                                            flpl.Add(10);
+                                        }
+                                    }
+                                }
+                                if (army1.detachment == 3)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Arvus Lighter");
+                                            army1.Points += 85;
+                                            army1.PL += 5;
+                                            flyerp.Add(85);
+                                            flpl.Add(5);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Thunderbolt");
+                                            army1.Points += 210;
+                                            army1.PL += 11;
+                                            flyerp.Add(210);
+                                            flpl.Add(11);
+                                        }
+                                        if (flyers == 3)
+                                        {
+                                            flyer.Add("Valkyrie");
+                                            army1.Points += 120;
+                                            army1.PL += 7;
+                                            flyerp.Add(120);
+                                            flpl.Add(7);
+                                        }
+                                        if (flyers == 4)
+                                        {
+                                            flyer.Add("Vulture Gunship");
+                                            army1.Points += 180;
+                                            army1.PL += 10;
+                                            flyerp.Add(180);
+                                            flpl.Add(10);
+                                        }
+                                    }
+                                }
 
                             }
                         }
@@ -17068,12 +17228,144 @@ namespace Final
                                 Console.WriteLine("1 - Death Guard Chaos Storm Eagle Gunship");
                                 Console.WriteLine("2 - Death Guard Hell Blade");
                                 flyers = Convert.ToInt32(Console.ReadLine());
+                                if (army2.detachment == 1)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Death Guard Chaos Storm Eagle Gunship");
+                                            army2.Points += 335;
+                                            army2.PL += 19;
+                                            flyerp.Add(335);
+                                            flpl.Add(19);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Death Guard Hell Blade");
+                                            army2.Points += 135;
+                                            army2.PL += 7;
+                                            flyerp.Add(135);
+                                            flpl.Add(7);
+                                        }
+                                    }
+                                }
+                                if (army2.detachment == 2)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Death Guard Chaos Storm Eagle Gunship");
+                                            army2.Points += 335;
+                                            army2.PL += 19;
+                                            flyerp.Add(335);
+                                            flpl.Add(19);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Death Guard Hell Blade");
+                                            army2.Points += 135;
+                                            army2.PL += 7;
+                                            flyerp.Add(135);
+                                            flpl.Add(7);
+                                        }
+                                    }
+                                }
+                                if (army2.detachment == 3)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Death Guard Chaos Storm Eagle Gunship");
+                                            army2.Points += 335;
+                                            army2.PL += 19;
+                                            flyerp.Add(335);
+                                            flpl.Add(19);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Death Guard Hell Blade");
+                                            army2.Points += 135;
+                                            army2.PL += 7;
+                                            flyerp.Add(135);
+                                            flpl.Add(7);
+                                        }
+                                    }
+                                }
                             }
                             if (army2.Faction == 3)
                             {
                                 Console.WriteLine("1 - Heldrake");
                                 Console.WriteLine("2 - Chaos Storm Eagle Gunship");
                                 flyers = Convert.ToInt32(Console.ReadLine());
+                                if (army2.detachment == 1)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Heldrake");
+                                            army2.Points += 165;
+                                            army2.PL += 9;
+                                            flyerp.Add(165);
+                                            flpl.Add(9);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Chaos Storm Eagle Gunship");
+                                            army2.Points += 335;
+                                            army2.PL += 19;
+                                            flyerp.Add(335);
+                                            flpl.Add(19);
+                                        }
+                                    }
+                                }
+                                if (army2.detachment == 2)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Heldrake");
+                                            army2.Points += 165;
+                                            army2.PL += 9;
+                                            flyerp.Add(165);
+                                            flpl.Add(9);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Chaos Storm Eagle Gunship");
+                                            army2.Points += 335;
+                                            army2.PL += 19;
+                                            flyerp.Add(335);
+                                            flpl.Add(19);
+                                        }
+                                    }
+                                }
+                                if (army2.detachment == 3)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Heldrake");
+                                            army2.Points += 165;
+                                            army2.PL += 9;
+                                            flyerp.Add(165);
+                                            flpl.Add(9);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Chaos Storm Eagle Gunship");
+                                            army2.Points += 335;
+                                            army2.PL += 19;
+                                            flyerp.Add(335);
+                                            flpl.Add(19);
+                                        }
+                                    }
+                                }
                             }
                             if (army2.Faction == 4)
                             {
@@ -17081,6 +17373,96 @@ namespace Final
                                 Console.WriteLine("2 - Thousand Sons Chaos Storm Eagle Gunship");
                                 Console.WriteLine("3 - Thousand Sons Hell Blade");
                                 flyers = Convert.ToInt32(Console.ReadLine());
+                                if (army2.detachment == 1)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Heldrake");
+                                            army2.Points += 165;
+                                            army2.PL += 9;
+                                            flyerp.Add(165);
+                                            flpl.Add(9);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Thousand Sons Chaos Storm Eagle Gunship");
+                                            army2.Points += 335;
+                                            army2.PL += 19;
+                                            flyerp.Add(335);
+                                            flpl.Add(19);
+                                        }
+                                        if (flyers == 3)
+                                        {
+                                            flyer.Add("Thousand Sons Hell Blade");
+                                            army2.Points += 135;
+                                            army2.PL += 7;
+                                            flyerp.Add(135);
+                                            flpl.Add(7);
+                                        }
+                                    }
+                                }
+                                if (army2.detachment == 2)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Heldrake");
+                                            army2.Points += 165;
+                                            army2.PL += 9;
+                                            flyerp.Add(165);
+                                            flpl.Add(9);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Thousand Sons Chaos Storm Eagle Gunship");
+                                            army2.Points += 335;
+                                            army2.PL += 19;
+                                            flyerp.Add(335);
+                                            flpl.Add(19);
+                                        }
+                                        if (flyers == 3)
+                                        {
+                                            flyer.Add("Thousand Sons Hell Blade");
+                                            army2.Points += 135;
+                                            army2.PL += 7;
+                                            flyerp.Add(135);
+                                            flpl.Add(7);
+                                        }
+                                    }
+                                }
+                                if (army2.detachment == 3)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Heldrake");
+                                            army2.Points += 165;
+                                            army2.PL += 9;
+                                            flyerp.Add(165);
+                                            flpl.Add(9);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Thousand Sons Chaos Storm Eagle Gunship");
+                                            army2.Points += 335;
+                                            army2.PL += 19;
+                                            flyerp.Add(335);
+                                            flpl.Add(19);
+                                        }
+                                        if (flyers == 3)
+                                        {
+                                            flyer.Add("Thousand Sons Hell Blade");
+                                            army2.Points += 135;
+                                            army2.PL += 7;
+                                            flyerp.Add(135);
+                                            flpl.Add(7);
+                                        }
+                                    }
+                                }
                             }
                         }
                         if (choice == 3)
@@ -17092,12 +17474,162 @@ namespace Final
                                 Console.WriteLine("3 - Hemlock Wraithfighter");
                                 Console.WriteLine("4 - Nightwing");
                                 flyers = Convert.ToInt32(Console.ReadLine());
+                                if (army3.detachment == 1)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Crimson Hunter");
+                                            army3.Points += 180;
+                                            army3.PL += 9;
+                                            flyerp.Add(180);
+                                            flpl.Add(9);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Crimson Hunter Exarch");
+                                            army3.Points += 170;
+                                            army3.PL += 11;
+                                            flyerp.Add(170);
+                                            flpl.Add(11);
+                                        }
+                                        if (flyers == 3)
+                                        {
+                                            flyer.Add("Hemlock Wraithfighter");
+                                            army3.Points += 240;
+                                            army3.PL += 12;
+                                            flyerp.Add(240);
+                                            flpl.Add(12);
+                                        }
+                                        if (flyers == 4)
+                                        {
+                                            flyer.Add("Nightwing");
+                                            army3.Points += 220;
+                                            army3.PL += 11;
+                                            flyerp.Add(220);
+                                            flpl.Add(11);
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 2)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Crimson Hunter");
+                                            army3.Points += 180;
+                                            army3.PL += 9;
+                                            flyerp.Add(180);
+                                            flpl.Add(9);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Crimson Hunter Exarch");
+                                            army3.Points += 170;
+                                            army3.PL += 11;
+                                            flyerp.Add(170);
+                                            flpl.Add(11);
+                                        }
+                                        if (flyers == 3)
+                                        {
+                                            flyer.Add("Hemlock Wraithfighter");
+                                            army3.Points += 240;
+                                            army3.PL += 12;
+                                            flyerp.Add(240);
+                                            flpl.Add(12);
+                                        }
+                                        if (flyers == 4)
+                                        {
+                                            flyer.Add("Nightwing");
+                                            army3.Points += 220;
+                                            army3.PL += 11;
+                                            flyerp.Add(220);
+                                            flpl.Add(11);
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 3)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Crimson Hunter");
+                                            army3.Points += 180;
+                                            army3.PL += 9;
+                                            flyerp.Add(180);
+                                            flpl.Add(9);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Crimson Hunter Exarch");
+                                            army3.Points += 170;
+                                            army3.PL += 11;
+                                            flyerp.Add(170);
+                                            flpl.Add(11);
+                                        }
+                                        if (flyers == 3)
+                                        {
+                                            flyer.Add("Hemlock Wraithfighter");
+                                            army3.Points += 240;
+                                            army3.PL += 12;
+                                            flyerp.Add(240);
+                                            flpl.Add(12);
+                                        }
+                                        if (flyers == 4)
+                                        {
+                                            flyer.Add("Nightwing");
+                                            army3.Points += 220;
+                                            army3.PL += 11;
+                                            flyerp.Add(220);
+                                            flpl.Add(11);
+                                        }
+                                    }
+                                }
                             }
                             if (army3.Faction == 2)
                             {
                                 Console.WriteLine("1 - Razorwing Jetfighter");
                                 Console.WriteLine("2 - Voidraven Bomber");
                                 flyers = Convert.ToInt32(Console.ReadLine());
+                                if (army3.detachment == 1)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Razorwing Jetfighter");
+                                            army3.Points += 150;
+                                            army3.PL += 8;
+                                            flyerp.Add(150);
+                                            flpl.Add(8);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Voidraven Bomber");
+                                            army3.Points += 175;
+                                            army3.PL += 9;
+                                            flyerp.Add(175);
+                                            flpl.Add(8);
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 2)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+
+                                    }
+                                }
+                                if (army3.detachment == 3)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+
+                                    }
+                                }
                             }
                             if (army3.Faction == 3)
                             {
@@ -17115,6 +17647,96 @@ namespace Final
                                 Console.WriteLine("2 - Night Scythe");
                                 Console.WriteLine("3 - Night Shroud");
                                 flyers = Convert.ToInt32(Console.ReadLine());
+                                if (army3.detachment == 1)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Doom Scythe");
+                                            army3.Points += 200;
+                                            army3.PL += 10;
+                                            flyerp.Add(200);
+                                            flpl.Add(10);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Night Scythe");
+                                            army3.Points += 145;
+                                            army3.PL += 8;
+                                            flyerp.Add(145);
+                                            flpl.Add(8);
+                                        }
+                                        if (flyers == 3)
+                                        {
+                                            flyer.Add("Night Shroud");
+                                            army3.Points += 145;
+                                            army3.PL += 8;
+                                            flyerp.Add(145);
+                                            flpl.Add(8);
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 2)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Doom Scythe");
+                                            army3.Points += 200;
+                                            army3.PL += 10;
+                                            flyerp.Add(200);
+                                            flpl.Add(10);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Night Scythe");
+                                            army3.Points += 145;
+                                            army3.PL += 8;
+                                            flyerp.Add(145);
+                                            flpl.Add(8);
+                                        }
+                                        if (flyers == 3)
+                                        {
+                                            flyer.Add("Night Shroud");
+                                            army3.Points += 145;
+                                            army3.PL += 8;
+                                            flyerp.Add(145);
+                                            flpl.Add(8);
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 3)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Doom Scythe");
+                                            army3.Points += 200;
+                                            army3.PL += 10;
+                                            flyerp.Add(200);
+                                            flpl.Add(10);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Night Scythe");
+                                            army3.Points += 145;
+                                            army3.PL += 8;
+                                            flyerp.Add(145);
+                                            flpl.Add(8);
+                                        }
+                                        if (flyers == 3)
+                                        {
+                                            flyer.Add("Night Shroud");
+                                            army3.Points += 145;
+                                            army3.PL += 8;
+                                            flyerp.Add(145);
+                                            flpl.Add(8);
+                                        }
+                                    }
+                                }
                             }
                             if (army3.Faction == 6)
                             {
@@ -17123,6 +17745,120 @@ namespace Final
                                 Console.WriteLine("3 - Dakkajet");
                                 Console.WriteLine("4 - Wazbom Blastajet");
                                 flyers = Convert.ToInt32(Console.ReadLine());
+                                if (army3.detachment == 1)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Blitza-bommer");
+                                            army3.Points += 150;
+                                            army3.PL += 8;
+                                            flyerp.Add(150);
+                                            flpl.Add(8);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Burna-bommer");
+                                            army3.Points += 135;
+                                            army3.PL += 7;
+                                            flyerp.Add(135);
+                                            flpl.Add(7);
+                                        }
+                                        if (flyers == 3)
+                                        {
+                                            flyer.Add("Dakkajet");
+                                            army3.Points += 100;
+                                            army3.PL += 8;
+                                            flyerp.Add(100);
+                                            flpl.Add(8);
+                                        }
+                                        if (flyers == 4)
+                                        {
+                                            flyer.Add("Wazbom Blastajet");
+                                            army3.Points += 170;
+                                            army3.PL += 10;
+                                            flyerp.Add(170);
+                                            flpl.Add(10);
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 2)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Blitza-bommer");
+                                            army3.Points += 150;
+                                            army3.PL += 8;
+                                            flyerp.Add(150);
+                                            flpl.Add(8);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Burna-bommer");
+                                            army3.Points += 135;
+                                            army3.PL += 7;
+                                            flyerp.Add(135);
+                                            flpl.Add(7);
+                                        }
+                                        if (flyers == 3)
+                                        {
+                                            flyer.Add("Dakkajet");
+                                            army3.Points += 100;
+                                            army3.PL += 8;
+                                            flyerp.Add(100);
+                                            flpl.Add(8);
+                                        }
+                                        if (flyers == 4)
+                                        {
+                                            flyer.Add("Wazbom Blastajet");
+                                            army3.Points += 170;
+                                            army3.PL += 10;
+                                            flyerp.Add(170);
+                                            flpl.Add(10);
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 3)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Blitza-bommer");
+                                            army3.Points += 150;
+                                            army3.PL += 8;
+                                            flyerp.Add(150);
+                                            flpl.Add(8);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Burna-bommer");
+                                            army3.Points += 135;
+                                            army3.PL += 7;
+                                            flyerp.Add(135);
+                                            flpl.Add(7);
+                                        }
+                                        if (flyers == 3)
+                                        {
+                                            flyer.Add("Dakkajet");
+                                            army3.Points += 100;
+                                            army3.PL += 8;
+                                            flyerp.Add(100);
+                                            flpl.Add(8);
+                                        }
+                                        if (flyers == 4)
+                                        {
+                                            flyer.Add("Wazbom Blastajet");
+                                            army3.Points += 170;
+                                            army3.PL += 10;
+                                            flyerp.Add(170);
+                                            flpl.Add(10);
+                                        }
+                                    }
+                                }
                             }
                             if (army3.Faction == 7)
                             {
@@ -17133,12 +17869,240 @@ namespace Final
                                 Console.WriteLine("5 - DX-6 Remora Stealth Drones");
                                 Console.WriteLine("6 - Tiger Shark");
                                 flyers = Convert.ToInt32(Console.ReadLine());
+                                if (army3.detachment == 1)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("AX-1-0 Tiger Shark");
+                                            army3.Points += 450;
+                                            army3.PL += 24;
+                                            flyerp.Add(450);
+                                            flpl.Add(24);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("AX-5-2 Barracuda");
+                                            army3.Points += 200;
+                                            army3.PL += 13;
+                                            flyerp.Add(200);
+                                            flpl.Add(13);
+                                        }
+                                        if (flyers == 3)
+                                        {
+                                            flyer.Add("AX3 Razorshark Strike Fighter");
+                                            army3.Points += 118;
+                                            army3.PL += 6;
+                                            flyerp.Add(118);
+                                            flpl.Add(6);
+                                        }
+                                        if (flyers == 4)
+                                        {
+                                            flyer.Add("AX39 Sun Shark Bomber");
+                                            army3.Points += 110;
+                                            army3.PL += 8;
+                                            flyerp.Add(110);
+                                            flpl.Add(8);
+                                        }
+                                        if (flyers == 5)
+                                        {
+                                            flyer.Add("DX-6 Remora Stealth Drones");
+                                            army3.Points += 60;
+                                            army3.PL += 3;
+                                            flyerp.Add(60);
+                                            flpl.Add(3);
+                                        }
+                                        if (flyers == 6)
+                                        {
+                                            flyer.Add("Tiger Shark");
+                                            army3.Points += 375;
+                                            army3.PL += 22;
+                                            flyerp.Add(375);
+                                            flpl.Add(22);
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 2)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("AX-1-0 Tiger Shark");
+                                            army3.Points += 450;
+                                            army3.PL += 24;
+                                            flyerp.Add(450);
+                                            flpl.Add(24);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("AX-5-2 Barracuda");
+                                            army3.Points += 200;
+                                            army3.PL += 13;
+                                            flyerp.Add(200);
+                                            flpl.Add(13);
+                                        }
+                                        if (flyers == 3)
+                                        {
+                                            flyer.Add("AX3 Razorshark Strike Fighter");
+                                            army3.Points += 118;
+                                            army3.PL += 6;
+                                            flyerp.Add(118);
+                                            flpl.Add(6);
+                                        }
+                                        if (flyers == 4)
+                                        {
+                                            flyer.Add("AX39 Sun Shark Bomber");
+                                            army3.Points += 110;
+                                            army3.PL += 8;
+                                            flyerp.Add(110);
+                                            flpl.Add(8);
+                                        }
+                                        if (flyers == 5)
+                                        {
+                                            flyer.Add("DX-6 Remora Stealth Drones");
+                                            army3.Points += 60;
+                                            army3.PL += 3;
+                                            flyerp.Add(60);
+                                            flpl.Add(3);
+                                        }
+                                        if (flyers == 6)
+                                        {
+                                            flyer.Add("Tiger Shark");
+                                            army3.Points += 375;
+                                            army3.PL += 22;
+                                            flyerp.Add(375);
+                                            flpl.Add(22);
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 3)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("AX-1-0 Tiger Shark");
+                                            army3.Points += 450;
+                                            army3.PL += 24;
+                                            flyerp.Add(450);
+                                            flpl.Add(24);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("AX-5-2 Barracuda");
+                                            army3.Points += 200;
+                                            army3.PL += 13;
+                                            flyerp.Add(200);
+                                            flpl.Add(13);
+                                        }
+                                        if (flyers == 3)
+                                        {
+                                            flyer.Add("AX3 Razorshark Strike Fighter");
+                                            army3.Points += 118;
+                                            army3.PL += 6;
+                                            flyerp.Add(118);
+                                            flpl.Add(6);
+                                        }
+                                        if (flyers == 4)
+                                        {
+                                            flyer.Add("AX39 Sun Shark Bomber");
+                                            army3.Points += 110;
+                                            army3.PL += 8;
+                                            flyerp.Add(110);
+                                            flpl.Add(8);
+                                        }
+                                        if (flyers == 5)
+                                        {
+                                            flyer.Add("DX-6 Remora Stealth Drones");
+                                            army3.Points += 60;
+                                            army3.PL += 3;
+                                            flyerp.Add(60);
+                                            flpl.Add(3);
+                                        }
+                                        if (flyers == 6)
+                                        {
+                                            flyer.Add("Tiger Shark");
+                                            army3.Points += 375;
+                                            army3.PL += 22;
+                                            flyerp.Add(375);
+                                            flpl.Add(22);
+                                        }
+                                    }
+                                }
                             }
                             if (army3.Faction == 8)
                             {
                                 Console.WriteLine("1 - Harpy");
                                 Console.WriteLine("2 - Hive Crone");
                                 flyers = Convert.ToInt32(Console.ReadLine());
+                                if (army3.detachment == 1)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Harpy");
+                                            army3.Points += 155;
+                                            army3.PL += 8;
+                                            flyerp.Add(155);
+                                            flpl.Add(8);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Hive Crone");
+                                            army3.Points += 155;
+                                            army3.PL += 8;
+                                            flyerp.Add(155);
+                                            flpl.Add(8);
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 2)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Harpy");
+                                            army3.Points += 155;
+                                            army3.PL += 8;
+                                            flyerp.Add(155);
+                                            flpl.Add(8);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Hive Crone");
+                                            army3.Points += 155;
+                                            army3.PL += 8;
+                                            flyerp.Add(155);
+                                            flpl.Add(8);
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 3)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Harpy");
+                                            army3.Points += 155;
+                                            army3.PL += 8;
+                                            flyerp.Add(155);
+                                            flpl.Add(8);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Hive Crone");
+                                            army3.Points += 155;
+                                            army3.PL += 8;
+                                            flyerp.Add(155);
+                                            flpl.Add(8);
+                                        }
+                                    }
+                                }
                             }
                             if (army3.Faction == 9)
                             {
@@ -17149,10 +18113,173 @@ namespace Final
                                 Console.WriteLine("5 - Razorwing Jetfighter");
                                 Console.WriteLine("6 - Voidraven Bomber");
                                 flyers = Convert.ToInt32(Console.ReadLine());
+                                if (army3.detachment == 1)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Crimson Hunter");
+                                            army3.Points += 180;
+                                            army3.PL += 9;
+                                            flyerp.Add(180);
+                                            flpl.Add(9);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Crimson Hunter Exarch");
+                                            army3.Points += 170;
+                                            army3.PL += 11;
+                                            flyerp.Add(170);
+                                            flpl.Add(11);
+                                        }
+                                        if (flyers == 3)
+                                        {
+                                            flyer.Add("Hemlock Wraithfighter");
+                                            army3.Points += 240;
+                                            army3.PL += 12;
+                                            flyerp.Add(240);
+                                            flpl.Add(12);
+                                        }
+                                        if (flyers == 4)
+                                        {
+                                            flyer.Add("Nightwing");
+                                            army3.Points += 220;
+                                            army3.PL += 11;
+                                            flyerp.Add(220);
+                                            flpl.Add(11);
+                                        }
+                                        if (flyers == 5)
+                                        {
+                                            flyer.Add("Razorwing Jetfighter");
+                                            army3.Points += 150;
+                                            army3.PL += 8;
+                                            flyerp.Add(150);
+                                            flpl.Add(8);
+                                        }
+                                        if (flyers == 6)
+                                        {
+                                            flyer.Add("Voidraven Bomber");
+                                            army3.Points += 175;
+                                            army3.PL += 9;
+                                            flyerp.Add(175);
+                                            flpl.Add(9);
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 2)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Crimson Hunter");
+                                            army3.Points += 180;
+                                            army3.PL += 9;
+                                            flyerp.Add(180);
+                                            flpl.Add(9);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Crimson Hunter Exarch");
+                                            army3.Points += 170;
+                                            army3.PL += 11;
+                                            flyerp.Add(170);
+                                            flpl.Add(11);
+                                        }
+                                        if (flyers == 3)
+                                        {
+                                            flyer.Add("Hemlock Wraithfighter");
+                                            army3.Points += 240;
+                                            army3.PL += 12;
+                                            flyerp.Add(240);
+                                            flpl.Add(12);
+                                        }
+                                        if (flyers == 4)
+                                        {
+                                            flyer.Add("Nightwing");
+                                            army3.Points += 220;
+                                            army3.PL += 11;
+                                            flyerp.Add(220);
+                                            flpl.Add(11);
+                                        }
+                                        if (flyers == 5)
+                                        {
+                                            flyer.Add("Razorwing Jetfighter");
+                                            army3.Points += 150;
+                                            army3.PL += 8;
+                                            flyerp.Add(150);
+                                            flpl.Add(8);
+                                        }
+                                        if (flyers == 6)
+                                        {
+                                            flyer.Add("Voidraven Bomber");
+                                            army3.Points += 175;
+                                            army3.PL += 9;
+                                            flyerp.Add(175);
+                                            flpl.Add(9);
+                                        }
+                                    }
+                                }
+                                if (army3.detachment == 3)
+                                {
+                                    if (flyer.Count < 2)
+                                    {
+                                        if (flyers == 1)
+                                        {
+                                            flyer.Add("Crimson Hunter");
+                                            army3.Points += 180;
+                                            army3.PL += 9;
+                                            flyerp.Add(180);
+                                            flpl.Add(9);
+                                        }
+                                        if (flyers == 2)
+                                        {
+                                            flyer.Add("Crimson Hunter Exarch");
+                                            army3.Points += 170;
+                                            army3.PL += 11;
+                                            flyerp.Add(170);
+                                            flpl.Add(11);
+                                        }
+                                        if (flyers == 3)
+                                        {
+                                            flyer.Add("Hemlock Wraithfighter");
+                                            army3.Points += 240;
+                                            army3.PL += 12;
+                                            flyerp.Add(240);
+                                            flpl.Add(12);
+                                        }
+                                        if (flyers == 4)
+                                        {
+                                            flyer.Add("Nightwing");
+                                            army3.Points += 220;
+                                            army3.PL += 11;
+                                            flyerp.Add(220);
+                                            flpl.Add(11);
+                                        }
+                                        if (flyers == 5)
+                                        {
+                                            flyer.Add("Razorwing Jetfighter");
+                                            army3.Points += 150;
+                                            army3.PL += 8;
+                                            flyerp.Add(150);
+                                            flpl.Add(8);
+                                        }
+                                        if (flyers == 6)
+                                        {
+                                            flyer.Add("Voidraven Bomber");
+                                            army3.Points += 175;
+                                            army3.PL += 9;
+                                            flyerp.Add(175);
+                                            flpl.Add(9);
+                                        }
+                                    }
+                                }
                             }
                         }
                         break;
                     case 7:
+                        Console.Clear();
                         if (choice == 1)
                         {
                             if (army1.Faction == 1)
@@ -17160,6 +18287,25 @@ namespace Final
                                 Console.WriteLine("1 - Immolator");
                                 Console.WriteLine("2 - Sororitas Rhino");
                                 transports = Convert.ToInt32(Console.ReadLine());
+                                if(troop.Count > transport.Count)
+                                {
+                                    if (transports == 1)
+                                    {
+                                        transport.Add("Immolator");
+                                        army1.Points += 120;
+                                        army1.PL += 7;
+                                        transportp.Add(120);
+                                        trpl.Add(7);
+                                    }
+                                    if (transports == 2)
+                                    {
+                                        transport.Add("Sororitas Rhino");
+                                        army1.Points += 80;
+                                        army1.PL += 4;
+                                        transportp.Add(80);
+                                        trpl.Add(4);
+                                    }
+                                }
                             }
                             if (army1.Faction == 2)
                             {
@@ -17169,24 +18315,115 @@ namespace Final
                                 Console.WriteLine("4 - Razorback");
                                 Console.WriteLine("5 - Rhino");
                                 transports = Convert.ToInt32(Console.ReadLine());
+                                if (troop.Count > transport.Count)
+                                {
+                                    if (transports == 1)
+                                    {
+                                        transport.Add("Drop Pod");
+                                        army1.Points += 70;
+                                        army1.PL += 4;
+                                        transportp.Add(70);
+                                        trpl.Add(4);
+                                    }
+                                    if (transports == 2)
+                                    {
+                                        transport.Add("Impulsor");
+                                        army1.Points += 110;
+                                        army1.PL += 7;
+                                        transportp.Add(110);
+                                        trpl.Add(7);
+                                    }
+                                    if (transports == 3)
+                                    {
+                                        transport.Add("Land Speeder Storm");
+                                        army1.Points += 55;
+                                        army1.PL += 3;
+                                        transportp.Add(55);
+                                        trpl.Add(3);
+                                    }
+                                    if (transports == 4)
+                                    {
+                                        transport.Add("Razorback");
+                                        army1.Points += 110;
+                                        army1.PL += 6;
+                                        transportp.Add(110);
+                                        trpl.Add(6);
+                                    }
+                                    if (transports == 5)
+                                    {
+                                        transport.Add("Rhino");
+                                        army1.Points += 80;
+                                        army1.PL += 4;
+                                        transportp.Add(80);
+                                        trpl.Add(4);
+                                    }
+                                }
                             }
                             if (army1.Faction == 3)
                             {
                                 Console.WriteLine("1 - Coronus Grav-carrier");
-                                Console.WriteLine("2 - Null-Maiden Rhino");
                                 transports = Convert.ToInt32(Console.ReadLine());
+                                if (troop.Count > transport.Count)
+                                {
+                                    if (transports == 1)
+                                    {
+                                        transport.Add("Coronus Grav-carrier");
+                                        army1.Points += 250;
+                                        army1.PL += 13;
+                                        transportp.Add(250);
+                                        trpl.Add(12);
+                                    }                                  
+                                }
                             }
                             if (army1.Faction == 4)
                             {
                                 Console.WriteLine("1 - Skorpius Dunerider");
                                 Console.WriteLine("2 - Terrax-pattern Termite");
                                 transports = Convert.ToInt32(Console.ReadLine());
+                                if (troop.Count > transport.Count)
+                                {
+                                    if (transports == 1)
+                                    {
+                                        transport.Add("Skorpius Dunerider");
+                                        army1.Points += 95;
+                                        army1.PL += 5;
+                                        transportp.Add(95);
+                                        trpl.Add(5);
+                                    }
+                                    if (transports == 2)
+                                    {
+                                        transport.Add("Terrax-pattern Termite");
+                                        army1.Points += 180;
+                                        army1.PL += 5;
+                                        transportp.Add(80);
+                                        trpl.Add(5);
+                                    }
+                                }
                             }
                             if (army1.Faction == 5)
                             {
                                 Console.WriteLine("1 - Chimera");
                                 Console.WriteLine("2 - Taurox");
                                 transports = Convert.ToInt32(Console.ReadLine());
+                                if (troop.Count > transport.Count)
+                                {
+                                    if (transports == 1)
+                                    {
+                                        transport.Add("Chimera");
+                                        army1.Points += 65;
+                                        army1.PL += 5;
+                                        transportp.Add(65);
+                                        trpl.Add(5);
+                                    }
+                                    if (transports == 2)
+                                    {
+                                        transport.Add("Taurox");
+                                        army1.Points += 90;
+                                        army1.PL += 5;
+                                        transportp.Add(90);
+                                        trpl.Add(5);
+                                    }
+                                }
                             }
                         }
                         if (choice == 2)
@@ -17200,16 +18437,50 @@ namespace Final
                             {
                                 Console.WriteLine("1 - Chaos Rhino");
                                 transports = Convert.ToInt32(Console.ReadLine());
+                                if (troop.Count > transport.Count)
+                                {
+                                    if (transports == 1)
+                                    {
+                                        transport.Add("Chaos Rhino");
+                                        army2.Points += 80;
+                                        army2.PL += 4;
+                                        transportp.Add(80);
+                                        trpl.Add(4);
+                                    }
+                                }
                             }
                             if (army2.Faction == 3)
                             {
                                 Console.WriteLine("1 - Chaos Rhino");
                                 transports = Convert.ToInt32(Console.ReadLine());
+                                if (troop.Count > transport.Count)
+                                {
+                                    if (transports == 1)
+                                    {
+                                        transport.Add("Chaos Rhino");
+                                        army2.Points += 80;
+                                        army2.PL += 4;
+                                        transportp.Add(80);
+                                        trpl.Add(4);
+                                    }
+                                }
                             }
                             if (army2.Faction == 4)
                             {
                                 Console.WriteLine("1 - Chaos Rhino");
                                 transports = Convert.ToInt32(Console.ReadLine());
+                                if (troop.Count > transport.Count)
+                                {
+
+                                }
+                                if (transports == 1)
+                                {
+                                    transport.Add("Chaos Rhino");
+                                    army2.Points += 80;
+                                    army2.PL += 4;
+                                    transportp.Add(80);
+                                    trpl.Add(4);
+                                }
                             }
                         }
                         if (choice == 3)
@@ -17218,43 +18489,147 @@ namespace Final
                             {
                                 Console.WriteLine("1 - Wave Serpent");
                                 transports = Convert.ToInt32(Console.ReadLine());
+                                if (troop.Count > transport.Count)
+                                {
+                                    if (transports == 1)
+                                    {
+                                        transport.Add("Wave Serpent");
+                                        army3.Points += 130;
+                                        army3.PL += 9;
+                                        transportp.Add(130);
+                                        trpl.Add(9);
+                                    }
+                                }
                             }
                             if (army3.Faction == 2)
                             {
                                 Console.WriteLine("1 - Raider");
                                 Console.WriteLine("2 - Venom");
                                 transports = Convert.ToInt32(Console.ReadLine());
+                                if (troop.Count > transport.Count)
+                                {
+                                    if (transports == 1)
+                                    {
+                                        transport.Add("Raider");
+                                        army3.Points += 95;
+                                        army3.PL += 6;
+                                        transportp.Add(95);
+                                        trpl.Add(6);
+                                    }
+                                    if (transports == 2)
+                                    {
+                                        transport.Add("Venom");
+                                        army3.Points += 65;
+                                        army3.PL += 4;
+                                        transportp.Add(65);
+                                        trpl.Add(4);
+                                    }
+                                }
                             }
                             if (army3.Faction == 3)
                             {
                                 Console.WriteLine("1 - Cult Chimera");
                                 Console.WriteLine("2 - Goliath Truck");
                                 transports = Convert.ToInt32(Console.ReadLine());
+                                if (troop.Count > transport.Count)
+                                {
+                                    if (transports == 1)
+                                    {
+                                        transport.Add("Cult Chimera");
+                                        army3.Points += 65;
+                                        army3.PL += 5;
+                                        transportp.Add(65);
+                                        trpl.Add(5);
+                                    }
+                                    if (transports == 2)
+                                    {
+                                        transport.Add("Goliath Truck");
+                                        army3.Points += 75;
+                                        army3.PL += 4;
+                                        transportp.Add(75);
+                                        trpl.Add(4);
+                                    }
+                                }
                             }
                             if (army3.Faction == 4)
                             {
                                 Console.WriteLine("1 - Starweaver");
                                 transports = Convert.ToInt32(Console.ReadLine());
+                                if (troop.Count > transport.Count)
+                                {
+                                    if (transports == 1)
+                                    {
+                                        transport.Add("Starweaver");
+                                        army3.Points += 80;
+                                        army3.PL += 4;
+                                        transportp.Add(80);
+                                        trpl.Add(4);
+                                    }
+                                }
                             }
                             if (army3.Faction == 5)
                             {
                                 Console.WriteLine("1 - Ghost Ark");
                                 transports = Convert.ToInt32(Console.ReadLine());
+                                if (troop.Count > transport.Count)
+                                {
+                                    if (transports == 1)
+                                    {
+                                        transport.Add("Ghost Ark");
+                                        army3.Points += 145;
+                                        army3.PL += 8;
+                                        transportp.Add(145);
+                                        trpl.Add(8);
+                                    }
+                                }
                             }
                             if (army3.Faction == 6)
                             {
                                 Console.WriteLine("1 - Trukk");
                                 transports = Convert.ToInt32(Console.ReadLine());
+                                if (troop.Count > transport.Count)
+                                {
+                                    if (transports == 1)
+                                    {
+                                        transport.Add("Trukk");
+                                        army3.Points += 70;
+                                        army3.PL += 4;
+                                        transportp.Add(70);
+                                        trpl.Add(4);
+                                    }
+                                }
                             }
                             if (army3.Faction == 7)
                             {
                                 Console.WriteLine("1 - TY7 Devilfish");
                                 transports = Convert.ToInt32(Console.ReadLine());
+                                if (troop.Count > transport.Count)
+                                {
+                                    if (transports == 1)
+                                    {
+                                        transport.Add("TY7 Devilfish");
+                                        army3.Points += 70;
+                                        army3.PL += 5;
+                                        transportp.Add(70);
+                                        trpl.Add(5);
+                                    }
+                                }
                             }
                             if (army3.Faction == 8)
                             {
                                 Console.WriteLine("1 - Tyrannocyte");
                                 transports = Convert.ToInt32(Console.ReadLine());
+                                if (troop.Count > transport.Count)
+                                {
+                                    if (transports == 1)
+                                    {
+                                        transport.Add("Tyrannocyte");
+                                        army3.Points += 95;
+                                        army3.PL += 6;
+                                        transportp.Add(95);
+                                        trpl.Add(6);
+                                    }
+                                }
                             }
                             if (army3.Faction == 9)
                             {
@@ -17262,6 +18637,33 @@ namespace Final
                                 Console.WriteLine("2 - Raider");
                                 Console.WriteLine("3 - Venom");
                                 transports = Convert.ToInt32(Console.ReadLine());
+                                if (troop.Count > transport.Count)
+                                {
+                                    if (transports == 1)
+                                    {
+                                        transport.Add("Wave Serpent");
+                                        army3.Points += 130;
+                                        army3.PL += 9;
+                                        transportp.Add(130);
+                                        trpl.Add(9);
+                                    }
+                                    if (transports == 2)
+                                    {
+                                        transport.Add("Raider");
+                                        army3.Points += 95;
+                                        army3.PL += 6;
+                                        transportp.Add(95);
+                                        trpl.Add(6);
+                                    }
+                                    if (transports == 3)
+                                    {
+                                        transport.Add("Venom");
+                                        army3.Points += 65;
+                                        army3.PL += 4;
+                                        transportp.Add(65);
+                                        trpl.Add(4);
+                                    }
+                                }
                             }
                         }
                         break;
