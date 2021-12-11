@@ -9,6 +9,7 @@ namespace Final
     class Army
     {
         public string name;
+        public string subFaction;
         internal int detachment;
         internal int Points = 0;
         internal int PL = 0;
