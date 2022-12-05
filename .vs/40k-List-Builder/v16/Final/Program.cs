@@ -8,10 +8,37 @@ namespace Final
 {
     class Program
     {
+       
+       
         static void Main(string[] args)
+        {
+            int armyChoice = 0;
+            Program p = new Program();
+
+            do
+            {
+
+                Console.WriteLine("Select an Army (1 for imperium, 2 for Chaos, 3 for Xenos).");
+                armyChoice = Convert.ToInt32(Console.ReadLine());
+               
+                if( armyChoice <= 3 )
+                {
+                    p.armyUnit(armyChoice);
+                }
+                Console.Clear();
+                Console.WriteLine("Make a choice from 1 - 3");
+             
+            } while ( armyChoice > 3);
+            
+        }
+
+        public void armyUnit(int choice)
         {
             int hqs, troops, elites, fasts, heavys, flyers, transports, remove, sub;
             int menu = 0;
+            var army1 = new Imperium();
+            var army2 = new Chaos();
+            var army3 = new Xenos();
             List<string> hq = new List<string>();
             List<string> troop = new List<string>();
             List<string> elite = new List<string>();
@@ -19,6 +46,7 @@ namespace Final
             List<string> heavy = new List<string>();
             List<string> flyer = new List<string>();
             List<string> transport = new List<string>();
+            List<string> blank = new List<string>() { ""};
             List<int> hqp = new List<int>();
             List<int> troopp = new List<int>();
             List<int> elitep = new List<int>();
@@ -33,43 +61,55 @@ namespace Final
             List<int> hepl = new List<int>();
             List<int> flpl = new List<int>();
             List<int> trpl = new List<int>();
-            Console.WriteLine("Select an Army (1 for imperium, 2 for Chaos, 3 for Xenos).");
-            int choice = Convert.ToInt32(Console.ReadLine());
-            var army1 = new Imperium();
-            var army2 = new Chaos();
-            var army3 = new Xenos();
             if (choice == 1)
             {
+               
                 Console.WriteLine("What would you like to call your army?");
                 army1.name = Console.ReadLine();
-                Console.WriteLine("Which faction would you like?\n");
-                Console.WriteLine("1 - Adepta Sororitas\n");
-                Console.WriteLine("2 - Adeptus Astartes\n");
-                Console.WriteLine("3 - Adeptus Custodes\n");
-                Console.WriteLine("4 - Adetus Mechanicus\n");
-                Console.WriteLine("5 - Astra Millitarum\n");
-                army1.Faction = Convert.ToInt32(Console.ReadLine());
-                
-                Console.WriteLine("What Detachment would you like?");
-                Console.WriteLine("1 - Patrol Detachment\n");
-                Console.WriteLine("     2 HQs, 3 Troops, 2 Elites, 2 Fast Attacks, 2 Heavy Supports, 2 Flyers, 3 Dedicated Transport\n");
 
-                Console.WriteLine("2 - Battalion Detachment\n");
-                Console.WriteLine("     3 HQs, 6 Troops, 6 Elites, 3 Fast Attacks, 3 Heavy Supports, 2 Flyers, 6 Dedicated Transport\n");
+                do
+                {
+                    Console.WriteLine("Which faction would you like?\n");
+                    Console.WriteLine("1 - Adepta Sororitas\n");
+                    Console.WriteLine("2 - Adeptus Astartes\n");
+                    Console.WriteLine("3 - Adeptus Custodes\n");
+                    Console.WriteLine("4 - Adetus Mechanicus\n");
+                    Console.WriteLine("5 - Astra Millitarum\n");
+                    army1.Faction = Convert.ToInt32(Console.ReadLine());
+                    Console.Clear();
 
-                Console.WriteLine("3 - Brigade Detachment\n");
-                Console.WriteLine("     5 HQs, 12 Troops, 8 Elites, 5 Fast Attacks, 5 Heavy Supports, 2 Flyers, 12 Dedicated Transport\n");
-            
-                army1.detachment = Convert.ToInt32(Console.ReadLine());
+                } while (army1.Faction < 1 || army1.Faction > 5);
+
+                do
+                {
+                    Console.WriteLine("What Detachment would you like?");
+                    Console.WriteLine("1 - Patrol Detachment\n");
+                    Console.WriteLine("     2 HQs, 3 Troops, 2 Elites, 2 Fast Attacks, 2 Heavy Supports, 2 Flyers, 3 Dedicated Transport\n");
+
+                    Console.WriteLine("2 - Battalion Detachment\n");
+                    Console.WriteLine("     3 HQs, 6 Troops, 6 Elites, 3 Fast Attacks, 3 Heavy Supports, 2 Flyers, 6 Dedicated Transport\n");
+
+                    Console.WriteLine("3 - Brigade Detachment\n");
+                    Console.WriteLine("     5 HQs, 12 Troops, 8 Elites, 5 Fast Attacks, 5 Heavy Supports, 2 Flyers, 12 Dedicated Transport\n");
+
+                    army1.detachment = Convert.ToInt32(Console.ReadLine());
+                    Console.Clear();
+
+                } while (army1.detachment < 1 || army1.detachment > 3);
 
 
-                Console.WriteLine("How many points is your army?");
-                Console.WriteLine("1 - Combat Patrol (0-500)");
-                Console.WriteLine("2 - Incursion (501-1000)");
-                Console.WriteLine("3 - Strike Force (1001-2000)");
-                Console.WriteLine("4 - Onslaught (2001-3000)");
+                do
+                {
+                    Console.WriteLine("How many points is your army?");
+                    Console.WriteLine("1 - Combat Patrol (0-500)");
+                    Console.WriteLine("2 - Incursion (501-1000)");
+                    Console.WriteLine("3 - Strike Force (1001-2000)");
+                    Console.WriteLine("4 - Onslaught (2001-3000)");
 
-                army1.Maxpoints = Convert.ToInt32(Console.ReadLine());
+                    army1.Maxpoints = Convert.ToInt32(Console.ReadLine());
+                    Console.Clear();
+
+                } while (army1.Maxpoints < 1 || army1.Maxpoints > 4);
 
                 if (army1.detachment == 1)
                     army1.CP = 3;
@@ -81,35 +121,51 @@ namespace Final
                     army1.CP = 18;
                 Console.Clear();
             }
-            if(choice == 2)
+            if (choice == 2)
             {
                 Console.WriteLine("What would you like to call your army?");
                 army2.name = Console.ReadLine();
-                Console.WriteLine("Which faction would you like?\n");
-                Console.WriteLine("1 - Chaos Daemons\n");
-                Console.WriteLine("2 - Death Guard\n");
-                Console.WriteLine("3 - Chaos Space Marines\n");
-                Console.WriteLine("4 - Thousand Sons\n");
-                army2.Faction = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("What Detachment would you like?");
-                Console.WriteLine("1 - Patrol Detachment\n");
-                Console.WriteLine("     2 HQs, 3 Troops, 2 Elites, 2 Fast Attacks, 2 Heavy Supports, 2 Flyers, 3 Dedicated Transport\n");
 
-                Console.WriteLine("2 - Battalion Detachment\n");
-                Console.WriteLine("     3 HQs, 6 Troops, 6 Elites, 3 Fast Attacks, 3 Heavy Supports, 2 Flyers, 6 Dedicated Transport\n");
+                do
+                {
+                    Console.WriteLine("Which faction would you like?\n");
+                    Console.WriteLine("1 - Chaos Daemons\n");
+                    Console.WriteLine("2 - Death Guard\n");
+                    Console.WriteLine("3 - Chaos Space Marines\n");
+                    Console.WriteLine("4 - Thousand Sons\n");
+                    army2.Faction = Convert.ToInt32(Console.ReadLine());
+                    Console.Clear();
 
-                Console.WriteLine("3 - Brigade Detachment\n");
-                Console.WriteLine("     5 HQs, 12 Troops, 8 Elites, 5 Fast Attacks, 5 Heavy Supports, 2 Flyers, 12 Dedicated Transport\n");
+                } while (army2.Faction < 1 || army2.Faction > 4);
 
-                army2.detachment = Convert.ToInt32(Console.ReadLine());
+                do
+                {
+                    Console.WriteLine("What Detachment would you like?");
+                    Console.WriteLine("1 - Patrol Detachment\n");
+                    Console.WriteLine("     2 HQs, 3 Troops, 2 Elites, 2 Fast Attacks, 2 Heavy Supports, 2 Flyers, 3 Dedicated Transport\n");
 
-                Console.WriteLine("How many points is your army?");
-                Console.WriteLine("1 - Combat Patrol (0-500)");
-                Console.WriteLine("2 - Incursion (501-1000)");
-                Console.WriteLine("3 - Strike Force (1001-2000)");
-                Console.WriteLine("4 - Onslaught (2001-3000)");
+                    Console.WriteLine("2 - Battalion Detachment\n");
+                    Console.WriteLine("     3 HQs, 6 Troops, 6 Elites, 3 Fast Attacks, 3 Heavy Supports, 2 Flyers, 6 Dedicated Transport\n");
 
-                army2.Maxpoints = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("3 - Brigade Detachment\n");
+                    Console.WriteLine("     5 HQs, 12 Troops, 8 Elites, 5 Fast Attacks, 5 Heavy Supports, 2 Flyers, 12 Dedicated Transport\n");
+
+                    army2.detachment = Convert.ToInt32(Console.ReadLine());
+                    Console.Clear();
+                } while (army2.detachment < 1 || army2.detachment > 3);
+
+                do
+                {
+                    Console.WriteLine("How many points is your army?");
+                    Console.WriteLine("1 - Combat Patrol (0-500)");
+                    Console.WriteLine("2 - Incursion (501-1000)");
+                    Console.WriteLine("3 - Strike Force (1001-2000)");
+                    Console.WriteLine("4 - Onslaught (2001-3000)");
+
+                    army2.Maxpoints = Convert.ToInt32(Console.ReadLine());
+                    Console.Clear();
+                } while (army2.Maxpoints < 1 || army2.Maxpoints > 4);
+
                 if (army2.detachment == 1)
                     army2.CP = 3;
                 if (army2.detachment == 2)
@@ -120,40 +176,55 @@ namespace Final
                     army2.CP = 18;
                 Console.Clear();
             }
-            if(choice == 3)
+            if (choice == 3)
             {
                 Console.WriteLine("What would you like to call your army?");
                 army3.name = Console.ReadLine();
-                Console.WriteLine("Which faction would you like?\n");
-                Console.WriteLine("1 - Craftworlds\n");
-                Console.WriteLine("2 - Drukhari\n");
-                Console.WriteLine("3 - Genestealer Cults\n");
-                Console.WriteLine("4 - Harlequins\n");
-                Console.WriteLine("5 - Necrons\n");
-                Console.WriteLine("6 - Orks\n");
-                Console.WriteLine("7 - T'au Empire\n");
-                Console.WriteLine("8 - Tyranids\n");
-                Console.WriteLine("9 - Ynnari\n");
-                army3.Faction = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("What Detachment would you like?");
-                Console.WriteLine("1 - Patrol Detachment\n");
-                Console.WriteLine("     2 HQs, 3 Troops, 2 Elites, 2 Fast Attacks, 2 Heavy Supports, 2 Flyers, 3 Dedicated Transport\n");
 
-                Console.WriteLine("2 - Battalion Detachment\n");
-                Console.WriteLine("     3 HQs, 6 Troops, 6 Elites, 3 Fast Attacks, 3 Heavy Supports, 2 Flyers, 6 Dedicated Transport\n");
 
-                Console.WriteLine("3 - Brigade Detachment\n");
-                Console.WriteLine("     5 HQs, 12 Troops, 8 Elites, 5 Fast Attacks, 5 Heavy Supports, 2 Flyers, 12 Dedicated Transport\n");
+                do
+                {
+                    Console.WriteLine("Which faction would you like?\n");
+                    Console.WriteLine("1 - Craftworlds\n");
+                    Console.WriteLine("2 - Drukhari\n");
+                    Console.WriteLine("3 - Genestealer Cults\n");
+                    Console.WriteLine("4 - Harlequins\n");
+                    Console.WriteLine("5 - Necrons\n");
+                    Console.WriteLine("6 - Orks\n");
+                    Console.WriteLine("7 - T'au Empire\n");
+                    Console.WriteLine("8 - Tyranids\n");
+                    Console.WriteLine("9 - Ynnari\n");
+                    army3.Faction = Convert.ToInt32(Console.ReadLine());
+                    Console.Clear();
+                } while (army3.Faction < 1 || army3.Faction > 9);
 
-                army3.detachment = Convert.ToInt32(Console.ReadLine());
+                do
+                {
+                    Console.WriteLine("What Detachment would you like?");
+                    Console.WriteLine("1 - Patrol Detachment\n");
+                    Console.WriteLine("     2 HQs, 3 Troops, 2 Elites, 2 Fast Attacks, 2 Heavy Supports, 2 Flyers, 3 Dedicated Transport\n");
 
-                Console.WriteLine("How many points is your army?");
-                Console.WriteLine("1 - Combat Patrol (0-500)");
-                Console.WriteLine("2 - Incursion (501-1000)");
-                Console.WriteLine("3 - Strike Force (1001-2000)");
-                Console.WriteLine("4 - Onslaught (2001-3000)");
+                    Console.WriteLine("2 - Battalion Detachment\n");
+                    Console.WriteLine("     3 HQs, 6 Troops, 6 Elites, 3 Fast Attacks, 3 Heavy Supports, 2 Flyers, 6 Dedicated Transport\n");
 
-                army3.Maxpoints = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("3 - Brigade Detachment\n");
+                    Console.WriteLine("     5 HQs, 12 Troops, 8 Elites, 5 Fast Attacks, 5 Heavy Supports, 2 Flyers, 12 Dedicated Transport\n");
+
+                    army3.detachment = Convert.ToInt32(Console.ReadLine());
+                    Console.Clear();
+                } while (army3.detachment < 1 || army3.detachment > 3);
+
+                do
+                {
+                    Console.WriteLine("How many points is your army?");
+                    Console.WriteLine("1 - Combat Patrol (0-500)");
+                    Console.WriteLine("2 - Incursion (501-1000)");
+                    Console.WriteLine("3 - Strike Force (1001-2000)");
+                    Console.WriteLine("4 - Onslaught (2001-3000)");
+
+                    army3.Maxpoints = Convert.ToInt32(Console.ReadLine());
+                    Console.Clear();
+                } while (army3.Maxpoints < 1 || army3.Maxpoints > 4);
 
                 if (army3.detachment == 1)
                     army3.CP = 3;
@@ -199,24 +270,28 @@ namespace Final
                 {
                     case 1:
                         Console.Clear();
-                        if(choice == 1)
+                        if (choice == 1)
                         {
-                            if(army1.Faction == 1)
+                            if (army1.Faction == 1)
                             {
-                                Console.WriteLine("1 - Canoness\n");
-                                Console.WriteLine("2 - Palatine\n");
-                                Console.WriteLine("3 - Missionary with Chainsword\n");
-                                Console.WriteLine("4 - Canoness Veridyan\n");
-                                Console.WriteLine("5 - Junith Eruita\n");
-                                Console.WriteLine("6 - Ephrael Stern & Kyganil\n");
-                                Console.WriteLine("7 - Celestine, the Living Saint\n");
-                                Console.WriteLine("8 - The Triumph of Saint Katherine\n");
-                                Console.WriteLine("9 - Morvenn Vahl, Abbess Sanctorum of the Adepta Sororitas\n");
-                                hqs = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Canoness\n");
+                                    Console.WriteLine("2 - Palatine\n");
+                                    Console.WriteLine("3 - Missionary with Chainsword\n");
+                                    Console.WriteLine("4 - Canoness Veridyan\n");
+                                    Console.WriteLine("5 - Junith Eruita\n");
+                                    Console.WriteLine("6 - Ephrael Stern & Kyganil\n");
+                                    Console.WriteLine("7 - Celestine, the Living Saint\n");
+                                    Console.WriteLine("8 - The Triumph of Saint Katherine\n");
+                                    Console.WriteLine("9 - Morvenn Vahl, Abbess Sanctorum of the Adepta Sororitas\n");
+                                    hqs = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (hqs < 1 || hqs > 10);
 
-                                if(army1.detachment == 1)
+                                if (army1.detachment == 1)
                                 {
-                                    if(hq.Count < 2)
+                                    if (hq.Count < 2)
                                     {
                                         if (hqs == 1)
                                         {
@@ -297,9 +372,9 @@ namespace Final
                                         break;
                                     }
                                 }
-                                if(army1.detachment == 2)
+                                if (army1.detachment == 2)
                                 {
-                                    if(hq.Count < 3)
+                                    if (hq.Count < 3)
                                     {
                                         if (hqs == 1)
                                         {
@@ -380,9 +455,9 @@ namespace Final
                                         break;
                                     }
                                 }
-                                if(army1.detachment == 3)
+                                if (army1.detachment == 3)
                                 {
-                                    if(hq.Count < 5)
+                                    if (hq.Count < 5)
                                     {
                                         if (hqs == 1)
                                         {
@@ -464,32 +539,37 @@ namespace Final
                                     }
                                 }
                             }
-                            if(army1.Faction == 2)
+                            if (army1.Faction == 2)
                             {
-                                Console.WriteLine("1 - Captain with Master-crafter Heavy Bolt Rifle");
-                                Console.WriteLine("2 - Techmarine");
-                                Console.WriteLine("3 - Space Marine Captain: Lord Executioner");
-                                Console.WriteLine("4 - Chaplain with Jump Pack");
-                                Console.WriteLine("5 - Space Marine Commander");
-                                Console.WriteLine("6 - Space Marine Captain");
-                                Console.WriteLine("7 - Librarian in Terminator Armour");
-                                Console.WriteLine("8 - Masters of the Chapter");
-                                Console.WriteLine("9 - Librarian");
-                                Console.WriteLine("10 - Primaris Lieutenant in Reiver Armour");
-                                Console.WriteLine("11 - Primaris Chaplain");
-                                Console.WriteLine("12 - Primaris Librarian in Phobos Armour");
-                                Console.WriteLine("13 - Primaris Lieutenant with Power Sword");
-                                Console.WriteLine("14 - Primaris Librarian");
-                                Console.WriteLine("15 - Spce Marines Chaplain");
-                                Console.WriteLine("16 - Primaris Captain");
-                                Console.WriteLine("17 - Primaris Techmarine");
-                                Console.WriteLine("18 - Captain in Phobos Armour");
-                                Console.WriteLine("19 - Primaris Chaplain on Bike");
-                                Console.WriteLine("20 - Space Marine Heroes");
-                                Console.WriteLine("21 - Company Command");
-                                Console.WriteLine("22 - Heroes of the Chapter");
-                                Console.WriteLine("23 - Space Marines: Honoured of the Chapter");
-                                hqs = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Captain with Master-crafter Heavy Bolt Rifle");
+                                    Console.WriteLine("2 - Techmarine");
+                                    Console.WriteLine("3 - Space Marine Captain: Lord Executioner");
+                                    Console.WriteLine("4 - Chaplain with Jump Pack");
+                                    Console.WriteLine("5 - Space Marine Commander");
+                                    Console.WriteLine("6 - Space Marine Captain");
+                                    Console.WriteLine("7 - Librarian in Terminator Armour");
+                                    Console.WriteLine("8 - Masters of the Chapter");
+                                    Console.WriteLine("9 - Librarian");
+                                    Console.WriteLine("10 - Primaris Lieutenant in Reiver Armour");
+                                    Console.WriteLine("11 - Primaris Chaplain");
+                                    Console.WriteLine("12 - Primaris Librarian in Phobos Armour");
+                                    Console.WriteLine("13 - Primaris Lieutenant with Power Sword");
+                                    Console.WriteLine("14 - Primaris Librarian");
+                                    Console.WriteLine("15 - Spce Marines Chaplain");
+                                    Console.WriteLine("16 - Primaris Captain");
+                                    Console.WriteLine("17 - Primaris Techmarine");
+                                    Console.WriteLine("18 - Captain in Phobos Armour");
+                                    Console.WriteLine("19 - Primaris Chaplain on Bike");
+                                    Console.WriteLine("20 - Space Marine Heroes");
+                                    Console.WriteLine("21 - Company Command");
+                                    Console.WriteLine("22 - Heroes of the Chapter");
+                                    Console.WriteLine("23 - Space Marines: Honoured of the Chapter");
+                                    hqs = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+
+                                } while (hqs < 1 || hqs > 23);
                                 if (army1.detachment == 1)
                                 {
                                     if (hq.Count < 2)
@@ -1078,49 +1158,18 @@ namespace Final
                             }
                             if (army1.Faction == 3)
                             {
-                                Console.WriteLine("1 - Valerian and Aleya");
-                                Console.WriteLine("2 - Vexilus Praetor in Allarus Terminator Armour");
-                                Console.WriteLine("3 - Shield-Captain in Allarus Terminator Armour");
-                                hqs = Convert.ToInt32(Console.ReadLine());
-                                if(army1.detachment == 1)
+                                do
                                 {
-                                    if(hq.Count < 2)
-                                    {
-                                        if(hqs == 1)
-                                        {
-                                            hq.Add("Valerian and Aleya");
-                                            army1.Points = army1.Points +  200;
-                                            army1.PL = army1.PL + 10;
-                                            hqp.Add(200);
-                                            hpl.Add(10);
-                                        }
+                                    Console.WriteLine("1 - Valerian and Aleya");
+                                    Console.WriteLine("2 - Vexilus Praetor in Allarus Terminator Armour");
+                                    Console.WriteLine("3 - Shield-Captain in Allarus Terminator Armour");
+                                    hqs = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
 
-                                        if (hqs == 2)
-                                        {
-                                            hq.Add("Vexilus Praetor in Allarus Terminator Armour");
-                                            army1.Points = army1.Points +  110;
-                                            army1.PL = army1.PL + 6;
-                                            hqp.Add(110);
-                                            hpl.Add(6);
-                                        }
-                                        if (hqs == 3)
-                                        {
-                                            hq.Add("Shield-Captain in Allarus Terminator Armour");
-                                            army1.Points = army1.Points +  110;
-                                            army1.PL = army1.PL + 6;
-                                            hqp.Add(110);
-                                            hpl.Add(6);
-                                        }
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("There are too many HQs in your list");
-                                        break;
-                                    }
-                                }
-                                if(army1.detachment == 2)
+                                } while (hqs < 1 || hqs > 3);
+                                if (army1.detachment == 1)
                                 {
-                                    if(hq.Count < 3)
+                                    if (hq.Count < 2)
                                     {
                                         if (hqs == 1)
                                         {
@@ -1154,9 +1203,45 @@ namespace Final
                                         break;
                                     }
                                 }
-                                if(army1.detachment == 3)
+                                if (army1.detachment == 2)
                                 {
-                                    if(hq.Count < 5)
+                                    if (hq.Count < 3)
+                                    {
+                                        if (hqs == 1)
+                                        {
+                                            hq.Add("Valerian and Aleya");
+                                            army1.Points = army1.Points + 200;
+                                            army1.PL = army1.PL + 10;
+                                            hqp.Add(200);
+                                            hpl.Add(10);
+                                        }
+
+                                        if (hqs == 2)
+                                        {
+                                            hq.Add("Vexilus Praetor in Allarus Terminator Armour");
+                                            army1.Points = army1.Points + 110;
+                                            army1.PL = army1.PL + 6;
+                                            hqp.Add(110);
+                                            hpl.Add(6);
+                                        }
+                                        if (hqs == 3)
+                                        {
+                                            hq.Add("Shield-Captain in Allarus Terminator Armour");
+                                            army1.Points = army1.Points + 110;
+                                            army1.PL = army1.PL + 6;
+                                            hqp.Add(110);
+                                            hpl.Add(6);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("There are too many HQs in your list");
+                                        break;
+                                    }
+                                }
+                                if (army1.detachment == 3)
+                                {
+                                    if (hq.Count < 5)
                                     {
                                         if (hqs == 1)
                                         {
@@ -1193,17 +1278,22 @@ namespace Final
                             }
                             if (army1.Faction == 4)
                             {
-                                Console.WriteLine("1 - Skitarii Marshal");
-                                Console.WriteLine("2 - Tech-Priest Manipulus");
-                                Console.WriteLine("3 - Tech-Priest Dominus");
-                                Console.WriteLine("4 - Tech-Priest Enginseer");
-                                Console.WriteLine("5 - Belisarius Cawl");
-                                hqs = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Skitarii Marshal");
+                                    Console.WriteLine("2 - Tech-Priest Manipulus");
+                                    Console.WriteLine("3 - Tech-Priest Dominus");
+                                    Console.WriteLine("4 - Tech-Priest Enginseer");
+                                    Console.WriteLine("5 - Belisarius Cawl");
+                                    hqs = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+
+                                } while (hqs < 1 || hqs > 5);
                                 if (army1.detachment == 1)
                                 {
-                                    if(hq.Count < 2)
+                                    if (hq.Count < 2)
                                     {
-                                        if(hqs == 1)
+                                        if (hqs == 1)
                                         {
                                             hq.Add("Skitarii Marshal");
                                             army1.Points = army1.Points + 55;
@@ -1354,21 +1444,26 @@ namespace Final
                                 }
                             }
                             if (army1.Faction == 5)
-                            { 
-                                Console.WriteLine("1 - Commisar Yarrik");
-                                Console.WriteLine("2 - Company Commander");
-                                Console.WriteLine("3 - Primaris Psyker");
-                                Console.WriteLine("4 - Tank Commander");
-                                Console.WriteLine("5 - Colonel 'Iron Hand' Straken");
-                                Console.WriteLine("6 - Lord Castellan Creed");
-                                Console.WriteLine("7 - Tech-Priest Enginseer");
-                                Console.WriteLine("8 - Gaunt's Ghosts");
-                                hqs = Convert.ToInt32(Console.ReadLine());
-                                if(army1.detachment == 1)
+                            {
+                                do
                                 {
-                                    if(hq.Count < 2)
+                                    Console.WriteLine("1 - Commisar Yarrik");
+                                    Console.WriteLine("2 - Company Commander");
+                                    Console.WriteLine("3 - Primaris Psyker");
+                                    Console.WriteLine("4 - Tank Commander");
+                                    Console.WriteLine("5 - Colonel 'Iron Hand' Straken");
+                                    Console.WriteLine("6 - Lord Castellan Creed");
+                                    Console.WriteLine("7 - Tech-Priest Enginseer");
+                                    Console.WriteLine("8 - Gaunt's Ghosts");
+                                    hqs = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+
+                                } while (hqs < 1 || hqs > 8);
+                                if (army1.detachment == 1)
+                                {
+                                    if (hq.Count < 2)
                                     {
-                                        if(hqs == 1)
+                                        if (hqs == 1)
                                         {
                                             hq.Add("Commisar Yarrik");
                                             army1.Points = army1.Points + 105;
@@ -1593,40 +1688,45 @@ namespace Final
                         }
                         if (choice == 2)
                         {
-                            if(army2.Faction == 1)
+                            if (army2.Faction == 1)
                             {
-                                Console.WriteLine("1 - Lord of Change");
-                                Console.WriteLine("2 - Great Unclean One");
-                                Console.WriteLine("3 - Keeper of Secrets");
-                                Console.WriteLine("4 - Daemons of Khrne Bloodthirster");
-                                Console.WriteLine("5 - Kairos Fateweaver");
-                                Console.WriteLine("6 - Herald of Slaanesh");
-                                Console.WriteLine("7 - Bloodmaster, Herald of Khorne");
-                                Console.WriteLine("8 - Poxbringer");
-                                Console.WriteLine("9 - The Masque");
-                                Console.WriteLine("10 - Sloppity Bilepiper");
-                                Console.WriteLine("11 - Spoilpox Scrivener");
-                                Console.WriteLine("12 - The Changeling");
-                                Console.WriteLine("13 - Skulltaker");
-                                Console.WriteLine("14 - The Blue Scribes");
-                                Console.WriteLine("15 - Fluxmaster, Herald of Tzeentch");
-                                Console.WriteLine("16 - Daemons of Khorne Bloodthrone");
-                                Console.WriteLine("17 - Herald of Khorne on Juggernaut");
-                                Console.WriteLine("18 - Fateskimmer, Herald of Tzeentch on Burning Chariot");
-                                Console.WriteLine("19 - Daemon Prince");
-                                Console.WriteLine("20 - Epidemius");
-                                Console.WriteLine("21 - Syll'Esske: The Vengeful Allegiance");
-                                Console.WriteLine("22 - Horticulous Slimux");
-                                Console.WriteLine("23 - Skarbrand");
-                                Console.WriteLine("24 - Rotigus");
-                                Console.WriteLine("25 - Karanak, The Hound of Vengeance");
-                                Console.WriteLine("26 - Infernal Enrapuress");
-                                hqs = Convert.ToInt32(Console.ReadLine());
-                                if(army2.detachment == 1)
+                                do
                                 {
-                                    if(hq.Count < 2)
+                                    Console.WriteLine("1 - Lord of Change");
+                                    Console.WriteLine("2 - Great Unclean One");
+                                    Console.WriteLine("3 - Keeper of Secrets");
+                                    Console.WriteLine("4 - Daemons of Khrne Bloodthirster");
+                                    Console.WriteLine("5 - Kairos Fateweaver");
+                                    Console.WriteLine("6 - Herald of Slaanesh");
+                                    Console.WriteLine("7 - Bloodmaster, Herald of Khorne");
+                                    Console.WriteLine("8 - Poxbringer");
+                                    Console.WriteLine("9 - The Masque");
+                                    Console.WriteLine("10 - Sloppity Bilepiper");
+                                    Console.WriteLine("11 - Spoilpox Scrivener");
+                                    Console.WriteLine("12 - The Changeling");
+                                    Console.WriteLine("13 - Skulltaker");
+                                    Console.WriteLine("14 - The Blue Scribes");
+                                    Console.WriteLine("15 - Fluxmaster, Herald of Tzeentch");
+                                    Console.WriteLine("16 - Daemons of Khorne Bloodthrone");
+                                    Console.WriteLine("17 - Herald of Khorne on Juggernaut");
+                                    Console.WriteLine("18 - Fateskimmer, Herald of Tzeentch on Burning Chariot");
+                                    Console.WriteLine("19 - Daemon Prince");
+                                    Console.WriteLine("20 - Epidemius");
+                                    Console.WriteLine("21 - Syll'Esske: The Vengeful Allegiance");
+                                    Console.WriteLine("22 - Horticulous Slimux");
+                                    Console.WriteLine("23 - Skarbrand");
+                                    Console.WriteLine("24 - Rotigus");
+                                    Console.WriteLine("25 - Karanak, The Hound of Vengeance");
+                                    Console.WriteLine("26 - Infernal Enrapuress");
+                                    hqs = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+
+                                } while (hqs < 1 || hqs > 26);
+                                if (army2.detachment == 1)
+                                {
+                                    if (hq.Count < 2)
                                     {
-                                        if(hqs == 1)
+                                        if (hqs == 1)
                                         {
                                             hq.Add("Lord of Change");
                                             army2.Points = army2.Points + 290;
@@ -1838,7 +1938,7 @@ namespace Final
                                 }
                                 if (army2.detachment == 2)
                                 {
-                                    if(hq.Count < 3)
+                                    if (hq.Count < 3)
                                     {
                                         if (hqs == 1)
                                         {
@@ -2052,7 +2152,7 @@ namespace Final
                                 }
                                 if (army2.detachment == 3)
                                 {
-                                    if(hq.Count < 5)
+                                    if (hq.Count < 5)
                                     {
                                         if (hqs == 1)
                                         {
@@ -2265,20 +2365,26 @@ namespace Final
                                     }
                                 }
                             }
-                            if(army2.Faction == 2)
+                            if (army2.Faction == 2)
                             {
-                                Console.WriteLine("1 - Lord Felthius");
-                                Console.WriteLine("2 - Lord of Virulence");
-                                Console.WriteLine("3 - Daemon Prince");
-                                Console.WriteLine("4 - Typhus - Herald of the Plague God");
-                                Console.WriteLine("5 - Nurgle Daemon Prince");
-                                Console.WriteLine("6 - Chaos Space Marines Terminator Lord");
-                                hqs = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Lord Felthius");
+                                    Console.WriteLine("2 - Lord of Virulence");
+                                    Console.WriteLine("3 - Daemon Prince");
+                                    Console.WriteLine("4 - Typhus - Herald of the Plague God");
+                                    Console.WriteLine("5 - Nurgle Daemon Prince");
+                                    Console.WriteLine("6 - Chaos Space Marines Terminator Lord");
+                                    hqs = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+
+                                } while (hqs < 1 || hqs > 6);
+
                                 if (army2.detachment == 1)
                                 {
-                                    if(hq.Count < 2)
+                                    if (hq.Count < 2)
                                     {
-                                        if(hqs == 1)
+                                        if (hqs == 1)
                                         {
                                             hq.Add("Lord Felthius");
                                             army2.Points = army2.Points + 120;
@@ -2437,33 +2543,38 @@ namespace Final
                                     }
                                 }
                             }
-                            if(army2.Faction == 3)
+                            if (army2.Faction == 3)
                             {
-                                Console.WriteLine("1 - Abaddon the Despoiler");
-                                Console.WriteLine("2 - Fabius Bile");
-                                Console.WriteLine("3 - Chaos Space Marines Sorcerer");
-                                Console.WriteLine("4 - Dark Apostle");
-                                Console.WriteLine("5 - Vex Machinaotr, Arch-Lord Discordant");
-                                Console.WriteLine("6 - Night Lords Chaos Lord");
-                                Console.WriteLine("7 - Chaos Lord with Jump Pack");
-                                Console.WriteLine("8 - Emperor's Children Lucius The Eternal");
-                                Console.WriteLine("9 - Red Corsairs Huron Blackheart");
-                                Console.WriteLine("10 - Chaos Space Marines Terminator Lord");
-                                Console.WriteLine("11 - Warpsmith");
-                                Console.WriteLine("12 - Sorcerer Lord in Terminator Armour");
-                                Console.WriteLine("13 - Chaos Lord");
-                                Console.WriteLine("14 - Master of Executions");
-                                Console.WriteLine("15 - World Eaters Khârn the Betrayer");
-                                Console.WriteLine("16 - Cypher");
-                                Console.WriteLine("17 - Haarken Worldclaimer, Herald of the Apocalypse");
-                                Console.WriteLine("18 - Nurgle Daemon Prince");
-                                Console.WriteLine("19 - Daemon Prince");
-                                hqs = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Abaddon the Despoiler");
+                                    Console.WriteLine("2 - Fabius Bile");
+                                    Console.WriteLine("3 - Chaos Space Marines Sorcerer");
+                                    Console.WriteLine("4 - Dark Apostle");
+                                    Console.WriteLine("5 - Vex Machinaotr, Arch-Lord Discordant");
+                                    Console.WriteLine("6 - Night Lords Chaos Lord");
+                                    Console.WriteLine("7 - Chaos Lord with Jump Pack");
+                                    Console.WriteLine("8 - Emperor's Children Lucius The Eternal");
+                                    Console.WriteLine("9 - Red Corsairs Huron Blackheart");
+                                    Console.WriteLine("10 - Chaos Space Marines Terminator Lord");
+                                    Console.WriteLine("11 - Warpsmith");
+                                    Console.WriteLine("12 - Sorcerer Lord in Terminator Armour");
+                                    Console.WriteLine("13 - Chaos Lord");
+                                    Console.WriteLine("14 - Master of Executions");
+                                    Console.WriteLine("15 - World Eaters Khârn the Betrayer");
+                                    Console.WriteLine("16 - Cypher");
+                                    Console.WriteLine("17 - Haarken Worldclaimer, Herald of the Apocalypse");
+                                    Console.WriteLine("18 - Nurgle Daemon Prince");
+                                    Console.WriteLine("19 - Daemon Prince");
+                                    hqs = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+
+                                } while (hqs < 1 || hqs > 19);
                                 if (army2.detachment == 1)
                                 {
-                                    if(hq.Count < 2)
+                                    if (hq.Count < 2)
                                     {
-                                        if(hqs == 1)
+                                        if (hqs == 1)
                                         {
                                             hq.Add("Abaddon the Despoiler");
                                             army2.Points = army2.Points + 220;
@@ -2934,18 +3045,22 @@ namespace Final
                                     }
                                 }
                             }
-                            if(army2.Faction == 4)
+                            if (army2.Faction == 4)
                             {
-                                Console.WriteLine("1 - Ahriman");
-                                Console.WriteLine("2 - Exalted Sorcerers");
-                                Console.WriteLine("3 - Sorcerer Lord in Terminator Armour");
-                                Console.WriteLine("4 - Daemon Prince");
-                                hqs = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Ahriman");
+                                    Console.WriteLine("2 - Exalted Sorcerers");
+                                    Console.WriteLine("3 - Sorcerer Lord in Terminator Armour");
+                                    Console.WriteLine("4 - Daemon Prince");
+                                    hqs = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (hqs < 1 || hqs > 4);
                                 if (army2.detachment == 1)
                                 {
-                                    if(hq.Count < 2)
+                                    if (hq.Count < 2)
                                     {
-                                        if(hqs == 1)
+                                        if (hqs == 1)
                                         {
                                             hq.Add("Ahriman");
                                             army2.Points = army2.Points + 160;
@@ -3061,25 +3176,30 @@ namespace Final
                         {
                             if (army3.Faction == 1)
                             {
-                                Console.WriteLine("1 - Jain Zar");
-                                Console.WriteLine("2 - Spiritseer");
-                                Console.WriteLine("3 - Farseer");
-                                Console.WriteLine("4 - Autarch");
-                                Console.WriteLine("5 - Avatar of Khaine");
-                                Console.WriteLine("6 - Warlock Skyrunner");
-                                Console.WriteLine("7 - Eldar Farseer Skyrunner");
-                                Console.WriteLine("8 - Eldrad Ulthran");
-                                Console.WriteLine("9 - Farseer and Warlocks");
-                                Console.WriteLine("10 - Autarch Skyrunner");
-                                Console.WriteLine("11 - Phoenix Lord Baharroth");
-                                Console.WriteLine("12 - Phoenix Lord Fuegan");
-                                Console.WriteLine("13 - Prince Yriel");
-                                Console.WriteLine("14 - Illic Nightspear");
-                                Console.WriteLine("15 - Phoenix Lord Maugan Ra");
-                                Console.WriteLine("16 - Phoenix Lord Karandras");
-                                Console.WriteLine("17 - Phoenix Lord Asurmen");
-                                Console.WriteLine("18 - Warlock with Witch Blade and Shuriken Pistol");
-                                hqs = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Jain Zar");
+                                    Console.WriteLine("2 - Spiritseer");
+                                    Console.WriteLine("3 - Farseer");
+                                    Console.WriteLine("4 - Autarch");
+                                    Console.WriteLine("5 - Avatar of Khaine");
+                                    Console.WriteLine("6 - Warlock Skyrunner");
+                                    Console.WriteLine("7 - Eldar Farseer Skyrunner");
+                                    Console.WriteLine("8 - Eldrad Ulthran");
+                                    Console.WriteLine("9 - Farseer and Warlocks");
+                                    Console.WriteLine("10 - Autarch Skyrunner");
+                                    Console.WriteLine("11 - Phoenix Lord Baharroth");
+                                    Console.WriteLine("12 - Phoenix Lord Fuegan");
+                                    Console.WriteLine("13 - Prince Yriel");
+                                    Console.WriteLine("14 - Illic Nightspear");
+                                    Console.WriteLine("15 - Phoenix Lord Maugan Ra");
+                                    Console.WriteLine("16 - Phoenix Lord Karandras");
+                                    Console.WriteLine("17 - Phoenix Lord Asurmen");
+                                    Console.WriteLine("18 - Warlock with Witch Blade and Shuriken Pistol");
+                                    hqs = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+
+                                } while (hqs < 1 || hqs > 18);
                                 if (army3.detachment == 1)
                                 {
                                     if (hq.Count < 2)
@@ -3533,13 +3653,19 @@ namespace Final
                             }
                             if (army3.Faction == 2)
                             {
-                                Console.WriteLine("1 - Lelith Hesperax");
-                                Console.WriteLine("2 - Drazhar");
-                                Console.WriteLine("3 - Succbus");
-                                Console.WriteLine("4 - Urien Rakarth");
-                                Console.WriteLine("5 - Haemonculus");
-                                Console.WriteLine("6 - Archon");
-                                hqs = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Lelith Hesperax");
+                                    Console.WriteLine("2 - Drazhar");
+                                    Console.WriteLine("3 - Succbus");
+                                    Console.WriteLine("4 - Urien Rakarth");
+                                    Console.WriteLine("5 - Haemonculus");
+                                    Console.WriteLine("6 - Archon");
+                                    hqs = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+
+                                } while (hqs < 1 || hqs > 6);
+
                                 if (army3.detachment == 1)
                                 {
                                     if (hq.Count < 2)
@@ -3547,7 +3673,7 @@ namespace Final
                                         if (hqs == 1)
                                         {
                                             hq.Add("Lelith Hesperax");
-                                            army3.Points = army3.Points +  90;
+                                            army3.Points = army3.Points + 90;
                                             army3.PL = army3.PL + 5;
                                             hqp.Add(90);
                                             hpl.Add(5);
@@ -3555,7 +3681,7 @@ namespace Final
                                         if (hqs == 2)
                                         {
                                             hq.Add("Drazhar");
-                                            army3.Points = army3.Points +  145;
+                                            army3.Points = army3.Points + 145;
                                             army3.PL = army3.PL + 8;
                                             hqp.Add(145);
                                             hpl.Add(8);
@@ -3563,7 +3689,7 @@ namespace Final
                                         if (hqs == 3)
                                         {
                                             hq.Add("Succbus");
-                                            army3.Points = army3.Points +  80;
+                                            army3.Points = army3.Points + 80;
                                             army3.PL = army3.PL + 3;
                                             hqp.Add(80);
                                             hpl.Add(3);
@@ -3571,7 +3697,7 @@ namespace Final
                                         if (hqs == 4)
                                         {
                                             hq.Add("Urien Rakarth");
-                                            army3.Points = army3.Points +  100;
+                                            army3.Points = army3.Points + 100;
                                             army3.PL = army3.PL + 5;
                                             hqp.Add(100);
                                             hpl.Add(5);
@@ -3579,7 +3705,7 @@ namespace Final
                                         if (hqs == 5)
                                         {
                                             hq.Add("Haemonculus");
-                                            army3.Points = army3.Points +  70;
+                                            army3.Points = army3.Points + 70;
                                             army3.PL = army3.PL + 4;
                                             hqp.Add(70);
                                             hpl.Add(4);
@@ -3587,7 +3713,7 @@ namespace Final
                                         if (hqs == 6)
                                         {
                                             hq.Add("Archon");
-                                            army3.Points = army3.Points +  75;
+                                            army3.Points = army3.Points + 75;
                                             army3.PL = army3.PL + 4;
                                             hqp.Add(75);
                                             hpl.Add(4);
@@ -3705,11 +3831,16 @@ namespace Final
                             }
                             if (army3.Faction == 3)
                             {
-                                Console.WriteLine("1 - Jackal Alphus");
-                                Console.WriteLine("2 - Abominant");
-                                Console.WriteLine("3 - Magus");
-                                Console.WriteLine("4 - Acolyte Iconward");
-                                hqs = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Jackal Alphus");
+                                    Console.WriteLine("2 - Abominant");
+                                    Console.WriteLine("3 - Magus");
+                                    Console.WriteLine("4 - Acolyte Iconward");
+                                    hqs = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+
+                                } while (hqs < 1 || hqs > 4);
                                 if (army3.detachment == 1)
                                 {
                                     if (hq.Count < 2)
@@ -3717,7 +3848,7 @@ namespace Final
                                         if (hqs == 1)
                                         {
                                             hq.Add("Jackal Alphus");
-                                            army3.Points = army3.Points +  75;
+                                            army3.Points = army3.Points + 75;
                                             army3.PL = army3.PL + 4;
                                             hqp.Add(75);
                                             hpl.Add(4);
@@ -3725,7 +3856,7 @@ namespace Final
                                         if (hqs == 2)
                                         {
                                             hq.Add("Abominant");
-                                            army3.Points = army3.Points +  110;
+                                            army3.Points = army3.Points + 110;
                                             army3.PL = army3.PL + 6;
                                             hqp.Add(110);
                                             hpl.Add(6);
@@ -3733,7 +3864,7 @@ namespace Final
                                         if (hqs == 3)
                                         {
                                             hq.Add("Magus");
-                                            army3.Points = army3.Points +  85;
+                                            army3.Points = army3.Points + 85;
                                             army3.PL = army3.PL + 5;
                                             hqp.Add(85);
                                             hpl.Add(5);
@@ -3741,7 +3872,7 @@ namespace Final
                                         if (hqs == 4)
                                         {
                                             hq.Add("Acolyte Iconward");
-                                            army3.Points = army3.Points +  60;
+                                            army3.Points = army3.Points + 60;
                                             army3.PL = army3.PL + 3;
                                             hqp.Add(60);
                                             hpl.Add(3);
@@ -3827,9 +3958,14 @@ namespace Final
                             }
                             if (army3.Faction == 4)
                             {
-                                Console.WriteLine("1 - Shadowseer");
-                                Console.WriteLine("2 - Troupe Master");
-                                hqs = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Shadowseer");
+                                    Console.WriteLine("2 - Troupe Master");
+                                    hqs = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (hqs < 1 || hqs > 2);
+
                                 if (army3.detachment == 1)
                                 {
                                     if (hq.Count < 2)
@@ -3837,7 +3973,7 @@ namespace Final
                                         if (hqs == 1)
                                         {
                                             hq.Add("Shadowseer");
-                                            army3.Points = army3.Points +  115;
+                                            army3.Points = army3.Points + 115;
                                             army3.PL = army3.PL + 6;
                                             hqp.Add(115);
                                             hpl.Add(6);
@@ -3845,7 +3981,7 @@ namespace Final
                                         if (hqs == 2)
                                         {
                                             hq.Add("Troupe Master");
-                                            army3.Points = army3.Points +  65;
+                                            army3.Points = army3.Points + 65;
                                             army3.PL = army3.PL + 4;
                                             hqp.Add(65);
                                             hpl.Add(4);
@@ -3899,23 +4035,27 @@ namespace Final
                             }
                             if (army3.Faction == 5)
                             {
-                                Console.WriteLine("1 - Chronomancer");
-                                Console.WriteLine("2 - Necron Catacomb Command Barge");
-                                Console.WriteLine("3 - Necron Destroyer Lord");
-                                Console.WriteLine("4 - Vargard Obyron");
-                                Console.WriteLine("5 - Necron Lord with Resurrection Orb");
-                                Console.WriteLine("6 - Cryptek");
-                                Console.WriteLine("7 - Anrakyr the Traveller");
-                                Console.WriteLine("8 - Imotekh the Stormlord");
-                                Console.WriteLine("9 - Necron Overlord with Warscythe");
-                                Console.WriteLine("10 - Orikan the Diviner");
-                                Console.WriteLine("11 - Nemesor Zahndrekh");
-                                Console.WriteLine("12 - Trazyn the Infinite");
-                                Console.WriteLine("13 - Overlord");
-                                Console.WriteLine("14 - Technomancer");
-                                Console.WriteLine("15 - Psychomancer");
-                                Console.WriteLine("16 - Illuminor Szeras");
-                                hqs = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Chronomancer");
+                                    Console.WriteLine("2 - Necron Catacomb Command Barge");
+                                    Console.WriteLine("3 - Necron Destroyer Lord");
+                                    Console.WriteLine("4 - Vargard Obyron");
+                                    Console.WriteLine("5 - Necron Lord with Resurrection Orb");
+                                    Console.WriteLine("6 - Cryptek");
+                                    Console.WriteLine("7 - Anrakyr the Traveller");
+                                    Console.WriteLine("8 - Imotekh the Stormlord");
+                                    Console.WriteLine("9 - Necron Overlord with Warscythe");
+                                    Console.WriteLine("10 - Orikan the Diviner");
+                                    Console.WriteLine("11 - Nemesor Zahndrekh");
+                                    Console.WriteLine("12 - Trazyn the Infinite");
+                                    Console.WriteLine("13 - Overlord");
+                                    Console.WriteLine("14 - Technomancer");
+                                    Console.WriteLine("15 - Psychomancer");
+                                    Console.WriteLine("16 - Illuminor Szeras");
+                                    hqs = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (hqs < 1 || hqs > 16);
                                 if (army3.detachment == 1)
                                 {
                                     if (hq.Count < 2)
@@ -4321,23 +4461,28 @@ namespace Final
                             }
                             if (army3.Faction == 6)
                             {
-                                Console.WriteLine("1 - Da Red Gobbo and Bounca");
-                                Console.WriteLine("2 - Mozrog Skragbad");
-                                Console.WriteLine("3 - Panboss");
-                                Console.WriteLine("4 - Zodgrod Wortsnagga");
-                                Console.WriteLine("5 - Beastboss");
-                                Console.WriteLine("6 - Big Mek with Kustom Force Field");
-                                Console.WriteLine("7 - Ork Boss Zagstruk");
-                                Console.WriteLine("8 - Kaptin Badrukk");
-                                Console.WriteLine("9 - Ork Boss Snikrot");
-                                Console.WriteLine("10 - Weirdboy");
-                                Console.WriteLine("11 - Ork Warboss with Big Choppa");
-                                Console.WriteLine("12 - Big Mek with Shokk Attac Gun");
-                                Console.WriteLine("13 - Beastboss on Squigosaur");
-                                Console.WriteLine("14 - Deffkilla Wartrike");
-                                Console.WriteLine("15 - Big Mek in Mega Armour");
-                                Console.WriteLine("16 - Ghazghkull Thraka");
-                                hqs = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Da Red Gobbo and Bounca");
+                                    Console.WriteLine("2 - Mozrog Skragbad");
+                                    Console.WriteLine("3 - Panboss");
+                                    Console.WriteLine("4 - Zodgrod Wortsnagga");
+                                    Console.WriteLine("5 - Beastboss");
+                                    Console.WriteLine("6 - Big Mek with Kustom Force Field");
+                                    Console.WriteLine("7 - Ork Boss Zagstruk");
+                                    Console.WriteLine("8 - Kaptin Badrukk");
+                                    Console.WriteLine("9 - Ork Boss Snikrot");
+                                    Console.WriteLine("10 - Weirdboy");
+                                    Console.WriteLine("11 - Ork Warboss with Big Choppa");
+                                    Console.WriteLine("12 - Big Mek with Shokk Attac Gun");
+                                    Console.WriteLine("13 - Beastboss on Squigosaur");
+                                    Console.WriteLine("14 - Deffkilla Wartrike");
+                                    Console.WriteLine("15 - Big Mek in Mega Armour");
+                                    Console.WriteLine("16 - Ghazghkull Thraka");
+                                    hqs = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (hqs < 1 || hqs > 16);
+
                                 if (army3.detachment == 1)
                                 {
                                     if (hq.Count < 2)
@@ -4345,7 +4490,7 @@ namespace Final
                                         if (hqs == 1)
                                         {
                                             hq.Add("Da Red Gobbo and Bounca");
-                                            army3.Points = army3.Points +  80;
+                                            army3.Points = army3.Points + 80;
                                             army3.PL = army3.PL + 4;
                                             hqp.Add(80);
                                             hpl.Add(4);
@@ -4353,7 +4498,7 @@ namespace Final
                                         if (hqs == 2)
                                         {
                                             hq.Add("Mozrog Skragbad");
-                                            army3.Points = army3.Points +  170;
+                                            army3.Points = army3.Points + 170;
                                             army3.PL = army3.PL + 9;
                                             hqp.Add(170);
                                             hpl.Add(9);
@@ -4361,7 +4506,7 @@ namespace Final
                                         if (hqs == 3)
                                         {
                                             hq.Add("Panboss");
-                                            army3.Points = army3.Points +  80;
+                                            army3.Points = army3.Points + 80;
                                             army3.PL = army3.PL + 5;
                                             hqp.Add(80);
                                             hpl.Add(5);
@@ -4369,7 +4514,7 @@ namespace Final
                                         if (hqs == 4)
                                         {
                                             hq.Add("Zodgrod Wortsnagga");
-                                            army3.Points = army3.Points +  65;
+                                            army3.Points = army3.Points + 65;
                                             army3.PL = army3.PL + 4;
                                             hqp.Add(65);
                                             hpl.Add(4);
@@ -4377,7 +4522,7 @@ namespace Final
                                         if (hqs == 5)
                                         {
                                             hq.Add("Beastboss");
-                                            army3.Points = army3.Points +  95;
+                                            army3.Points = army3.Points + 95;
                                             army3.PL = army3.PL + 5;
                                             hqp.Add(95);
                                             hpl.Add(5);
@@ -4385,7 +4530,7 @@ namespace Final
                                         if (hqs == 6)
                                         {
                                             hq.Add("Big Mek with Kustom Force Field");
-                                            army3.Points = army3.Points +  85;
+                                            army3.Points = army3.Points + 85;
                                             army3.PL = army3.PL + 5;
                                             hqp.Add(85);
                                             hpl.Add(5);
@@ -4393,7 +4538,7 @@ namespace Final
                                         if (hqs == 7)
                                         {
                                             hq.Add("Ork Boss Zagstruk");
-                                            army3.Points = army3.Points +  110;
+                                            army3.Points = army3.Points + 110;
                                             army3.PL = army3.PL + 6;
                                             hqp.Add(110);
                                             hpl.Add(6);
@@ -4401,7 +4546,7 @@ namespace Final
                                         if (hqs == 8)
                                         {
                                             hq.Add("Kaptin Badrukk");
-                                            army3.Points = army3.Points +  95;
+                                            army3.Points = army3.Points + 95;
                                             army3.PL = army3.PL + 5;
                                             hqp.Add(95);
                                             hpl.Add(5);
@@ -4409,7 +4554,7 @@ namespace Final
                                         if (hqs == 9)
                                         {
                                             hq.Add("Ork Boss Snikrot");
-                                            army3.Points = army3.Points +  95;
+                                            army3.Points = army3.Points + 95;
                                             army3.PL = army3.PL + 5;
                                             hqp.Add(95);
                                             hpl.Add(5);
@@ -4417,7 +4562,7 @@ namespace Final
                                         if (hqs == 10)
                                         {
                                             hq.Add("Weirdboy");
-                                            army3.Points = army3.Points +  70;
+                                            army3.Points = army3.Points + 70;
                                             army3.PL = army3.PL + 4;
                                             hqp.Add(70);
                                             hpl.Add(4);
@@ -4425,7 +4570,7 @@ namespace Final
                                         if (hqs == 11)
                                         {
                                             hq.Add("Ork Warboss with Big Choppa");
-                                            army3.Points = army3.Points +  90;
+                                            army3.Points = army3.Points + 90;
                                             army3.PL = army3.PL + 5;
                                             hqp.Add(90);
                                             hpl.Add(5);
@@ -4433,7 +4578,7 @@ namespace Final
                                         if (hqs == 12)
                                         {
                                             hq.Add("Big Mek with Shokk Attac Gun");
-                                            army3.Points = army3.Points +  110;
+                                            army3.Points = army3.Points + 110;
                                             army3.PL = army3.PL + 6;
                                             hqp.Add(110);
                                             hpl.Add(6);
@@ -4441,7 +4586,7 @@ namespace Final
                                         if (hqs == 13)
                                         {
                                             hq.Add("Beastboss on Squigosaur");
-                                            army3.Points = army3.Points +  145;
+                                            army3.Points = army3.Points + 145;
                                             army3.PL = army3.PL + 8;
                                             hqp.Add(145);
                                             hpl.Add(8);
@@ -4449,7 +4594,7 @@ namespace Final
                                         if (hqs == 14)
                                         {
                                             hq.Add("Deffkilla Wartrike");
-                                            army3.Points = army3.Points +  120;
+                                            army3.Points = army3.Points + 120;
                                             army3.PL = army3.PL + 6;
                                             hqp.Add(120);
                                             hpl.Add(6);
@@ -4457,7 +4602,7 @@ namespace Final
                                         if (hqs == 15)
                                         {
                                             hq.Add("Big Mek in Mega Armour");
-                                            army3.Points = army3.Points +  85;
+                                            army3.Points = army3.Points + 85;
                                             army3.PL = army3.PL + 6;
                                             hqp.Add(85);
                                             hpl.Add(6);
@@ -4465,7 +4610,7 @@ namespace Final
                                         if (hqs == 16)
                                         {
                                             hq.Add("Ghazghkull Thraka");
-                                            army3.Points = army3.Points +  300;
+                                            army3.Points = army3.Points + 300;
                                             army3.PL = army3.PL + 15;
                                             hqp.Add(300);
                                             hpl.Add(15);
@@ -4743,15 +4888,20 @@ namespace Final
                             }
                             if (army3.Faction == 7)
                             {
-                                Console.WriteLine("1 - Commander Shadowsun");
-                                Console.WriteLine("2 - Commander Farsight");
-                                Console.WriteLine("3 - T'au Empire Commander");
-                                Console.WriteLine("4 - Aun'Va, Master of the Undying Spirit");
-                                Console.WriteLine("5 - Cadre Fireblade");
-                                Console.WriteLine("6 - Aun Shi T'au Ethereal");
-                                Console.WriteLine("7 - Darkstrider");
-                                Console.WriteLine("8 - Longstrike");
-                                hqs = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Commander Shadowsun");
+                                    Console.WriteLine("2 - Commander Farsight");
+                                    Console.WriteLine("3 - T'au Empire Commander");
+                                    Console.WriteLine("4 - Aun'Va, Master of the Undying Spirit");
+                                    Console.WriteLine("5 - Cadre Fireblade");
+                                    Console.WriteLine("6 - Aun Shi T'au Ethereal");
+                                    Console.WriteLine("7 - Darkstrider");
+                                    Console.WriteLine("8 - Longstrike");
+                                    hqs = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (hqs < 1 || hqs > 8);
+
                                 if (army3.detachment == 1)
                                 {
                                     if (hq.Count < 2)
@@ -4759,7 +4909,7 @@ namespace Final
                                         if (hqs == 1)
                                         {
                                             hq.Add("Commander Shadowsun");
-                                            army3.Points = army3.Points +  155;
+                                            army3.Points = army3.Points + 155;
                                             army3.PL = army3.PL + 8;
                                             hqp.Add(155);
                                             hpl.Add(8);
@@ -4767,7 +4917,7 @@ namespace Final
                                         if (hqs == 2)
                                         {
                                             hq.Add("Commander Farsight");
-                                            army3.Points = army3.Points +  130;
+                                            army3.Points = army3.Points + 130;
                                             army3.PL = army3.PL + 7;
                                             hqp.Add(130);
                                             hpl.Add(7);
@@ -4775,7 +4925,7 @@ namespace Final
                                         if (hqs == 3)
                                         {
                                             hq.Add("T'au Empire Commander");
-                                            army3.Points = army3.Points +  113;
+                                            army3.Points = army3.Points + 113;
                                             army3.PL = army3.PL + 7;
                                             hqp.Add(113);
                                             hpl.Add(7);
@@ -4783,7 +4933,7 @@ namespace Final
                                         if (hqs == 4)
                                         {
                                             hq.Add("Aun'Va, Master of the Undying Spirit");
-                                            army3.Points = army3.Points +  85;
+                                            army3.Points = army3.Points + 85;
                                             army3.PL = army3.PL + 5;
                                             hqp.Add(85);
                                             hpl.Add(5);
@@ -4791,7 +4941,7 @@ namespace Final
                                         if (hqs == 5)
                                         {
                                             hq.Add("Cadre Fireblade");
-                                            army3.Points = army3.Points +  45;
+                                            army3.Points = army3.Points + 45;
                                             army3.PL = army3.PL + 3;
                                             hqp.Add(45);
                                             hpl.Add(3);
@@ -4799,7 +4949,7 @@ namespace Final
                                         if (hqs == 6)
                                         {
                                             hq.Add("Aun Shi T'au Ethereal");
-                                            army3.Points = army3.Points +  55;
+                                            army3.Points = army3.Points + 55;
                                             army3.PL = army3.PL + 3;
                                             hqp.Add(55);
                                             hpl.Add(3);
@@ -4807,7 +4957,7 @@ namespace Final
                                         if (hqs == 7)
                                         {
                                             hq.Add("Darkstrider");
-                                            army3.Points = army3.Points +  60;
+                                            army3.Points = army3.Points + 60;
                                             army3.PL = army3.PL + 3;
                                             hqp.Add(60);
                                             hpl.Add(3);
@@ -4815,7 +4965,7 @@ namespace Final
                                         if (hqs == 8)
                                         {
                                             hq.Add("Longstrike");
-                                            army3.Points = army3.Points +  205;
+                                            army3.Points = army3.Points + 205;
                                             army3.PL = army3.PL + 11;
                                             hqp.Add(205);
                                             hpl.Add(11);
@@ -4965,11 +5115,19 @@ namespace Final
                             }
                             if (army3.Faction == 8)
                             {
-                                Console.WriteLine("1 - Broodlord");
-                                Console.WriteLine("2 - The Swarmlord");
-                                Console.WriteLine("3 - Old One Eye's Carnifex Brood");
-                                Console.WriteLine("4 - Tyranids Hive Tyrant");
-                                hqs = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Commander Shadowsun");
+                                    Console.WriteLine("2 - Commander Farsight");
+                                    Console.WriteLine("3 - T'au Empire Commander");
+                                    Console.WriteLine("4 - Aun'Va, Master of the Undying Spirit");
+                                    Console.WriteLine("5 - Cadre Fireblade");
+                                    Console.WriteLine("6 - Aun Shi T'au Ethereal");
+                                    Console.WriteLine("7 - Darkstrider");
+                                    Console.WriteLine("8 - Longstrike");
+                                    hqs = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (hqs < 1 || hqs > 8);
                                 if (army3.detachment == 1)
                                 {
                                     if (hq.Count < 2)
@@ -4977,7 +5135,7 @@ namespace Final
                                         if (hqs == 1)
                                         {
                                             hq.Add("Broodlord");
-                                            army3.Points = army3.Points +  125;
+                                            army3.Points = army3.Points + 125;
                                             army3.PL = army3.PL + 7;
                                             hqp.Add(125);
                                             hpl.Add(7);
@@ -4985,7 +5143,7 @@ namespace Final
                                         if (hqs == 2)
                                         {
                                             hq.Add("The Swarmlord");
-                                            army3.Points = army3.Points +  240;
+                                            army3.Points = army3.Points + 240;
                                             army3.PL = army3.PL + 14;
                                             hqp.Add(240);
                                             hpl.Add(14);
@@ -4993,7 +5151,7 @@ namespace Final
                                         if (hqs == 3)
                                         {
                                             hq.Add("Old One Eye's Carnifex Brood");
-                                            army3.Points = army3.Points +  220;
+                                            army3.Points = army3.Points + 220;
                                             army3.PL = army3.PL + 11;
                                             hqp.Add(220);
                                             hpl.Add(11);
@@ -5001,7 +5159,7 @@ namespace Final
                                         if (hqs == 4)
                                         {
                                             hq.Add("Tyranids Hive Tyrant");
-                                            army3.Points = army3.Points +  175;
+                                            army3.Points = army3.Points + 175;
                                             army3.PL = army3.PL + 9;
                                             hqp.Add(175);
                                             hpl.Add(9);
@@ -5087,20 +5245,25 @@ namespace Final
                             }
                             if (army3.Faction == 9)
                             {
-                                Console.WriteLine("1 - The Yncarne, Avatar of Ynnead");
-                                Console.WriteLine("2 - Yvraine, Emissary of Ynnead");
-                                Console.WriteLine("3 - The Visarch, Sword of Ynnead");
-                                Console.WriteLine("4 - Warlock with Wich Blade and Shuriken Pistol");
-                                Console.WriteLine("5 - Succubus");
-                                Console.WriteLine("6 - Autarch");
-                                Console.WriteLine("7 - Farseer");
-                                Console.WriteLine("8 - Archon");
-                                Console.WriteLine("9 - Spiritseer");
-                                Console.WriteLine("10 - Farseer and Warlocks");
-                                Console.WriteLine("11 - Autarch Skyrunner");
-                                Console.WriteLine("12 - Warlock Skyrunner");
-                                Console.WriteLine("13 - Eldar Farseer Skyrunner");
-                                hqs = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - The Yncarne, Avatar of Ynnead");
+                                    Console.WriteLine("2 - Yvraine, Emissary of Ynnead");
+                                    Console.WriteLine("3 - The Visarch, Sword of Ynnead");
+                                    Console.WriteLine("4 - Warlock with Wich Blade and Shuriken Pistol");
+                                    Console.WriteLine("5 - Succubus");
+                                    Console.WriteLine("6 - Autarch");
+                                    Console.WriteLine("7 - Farseer");
+                                    Console.WriteLine("8 - Archon");
+                                    Console.WriteLine("9 - Spiritseer");
+                                    Console.WriteLine("10 - Farseer and Warlocks");
+                                    Console.WriteLine("11 - Autarch Skyrunner");
+                                    Console.WriteLine("12 - Warlock Skyrunner");
+                                    Console.WriteLine("13 - Eldar Farseer Skyrunner");
+                                    hqs = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (hqs < 1 || hqs > 13);
+
                                 if (army3.detachment == 1)
                                 {
                                     if (hq.Count < 2)
@@ -5108,7 +5271,7 @@ namespace Final
                                         if (hqs == 1)
                                         {
                                             hq.Add("The Yncarne, Avatar of Ynnead");
-                                            army3.Points = army3.Points +  290;
+                                            army3.Points = army3.Points + 290;
                                             army3.PL = army3.PL + 15;
                                             hqp.Add(290);
                                             hpl.Add(15);
@@ -5116,7 +5279,7 @@ namespace Final
                                         if (hqs == 2)
                                         {
                                             hq.Add("Yvraine, Emissary of Ynnead");
-                                            army3.Points = army3.Points +  120;
+                                            army3.Points = army3.Points + 120;
                                             army3.PL = army3.PL + 6;
                                             hqp.Add(120);
                                             hpl.Add(6);
@@ -5124,7 +5287,7 @@ namespace Final
                                         if (hqs == 3)
                                         {
                                             hq.Add("The Visarch, Sword of Ynnead");
-                                            army3.Points = army3.Points +  85;
+                                            army3.Points = army3.Points + 85;
                                             army3.PL = army3.PL + 5;
                                             hqp.Add(85);
                                             hpl.Add(5);
@@ -5132,7 +5295,7 @@ namespace Final
                                         if (hqs == 4)
                                         {
                                             hq.Add("Warlock with Wich Blade and Shuriken Pistol");
-                                            army3.Points = army3.Points +  50;
+                                            army3.Points = army3.Points + 50;
                                             army3.PL = army3.PL + 3;
                                             hqp.Add(50);
                                             hpl.Add(3);
@@ -5140,7 +5303,7 @@ namespace Final
                                         if (hqs == 5)
                                         {
                                             hq.Add("Succubus");
-                                            army3.Points = army3.Points +  80;
+                                            army3.Points = army3.Points + 80;
                                             army3.PL = army3.PL + 3;
                                             hqp.Add(80);
                                             hpl.Add(3);
@@ -5148,7 +5311,7 @@ namespace Final
                                         if (hqs == 6)
                                         {
                                             hq.Add("Autarch");
-                                            army3.Points = army3.Points +  80;
+                                            army3.Points = army3.Points + 80;
                                             army3.PL = army3.PL + 4;
                                             hqp.Add(80);
                                             hpl.Add(4);
@@ -5156,7 +5319,7 @@ namespace Final
                                         if (hqs == 7)
                                         {
                                             hq.Add("Farseer");
-                                            army3.Points = army3.Points +  115;
+                                            army3.Points = army3.Points + 115;
                                             army3.PL = army3.PL + 6;
                                             hqp.Add(115);
                                             hpl.Add(6);
@@ -5164,7 +5327,7 @@ namespace Final
                                         if (hqs == 8)
                                         {
                                             hq.Add("Archon");
-                                            army3.Points = army3.Points +  75;
+                                            army3.Points = army3.Points + 75;
                                             army3.PL = army3.PL + 4;
                                             hqp.Add(75);
                                             hpl.Add(4);
@@ -5172,7 +5335,7 @@ namespace Final
                                         if (hqs == 9)
                                         {
                                             hq.Add("Spiritseer");
-                                            army3.Points = army3.Points +  60;
+                                            army3.Points = army3.Points + 60;
                                             army3.PL = army3.PL + 3;
                                             hqp.Add(60);
                                             hpl.Add(3);
@@ -5180,7 +5343,7 @@ namespace Final
                                         if (hqs == 10)
                                         {
                                             hq.Add("Farseer and Warlocks");
-                                            army3.Points = army3.Points +  235;
+                                            army3.Points = army3.Points + 235;
                                             army3.PL = army3.PL + 15;
                                             hqp.Add(235);
                                             hpl.Add(15);
@@ -5188,7 +5351,7 @@ namespace Final
                                         if (hqs == 11)
                                         {
                                             hq.Add("Autarch Skyrunner");
-                                            army3.Points = army3.Points +  105;
+                                            army3.Points = army3.Points + 105;
                                             army3.PL = army3.PL + 6;
                                             hqp.Add(105);
                                             hpl.Add(6);
@@ -5196,7 +5359,7 @@ namespace Final
                                         if (hqs == 12)
                                         {
                                             hq.Add("Warlock Skyrunner");
-                                            army3.Points = army3.Points +  65;
+                                            army3.Points = army3.Points + 65;
                                             army3.PL = army3.PL + 4;
                                             hqp.Add(65);
                                             hpl.Add(4);
@@ -5204,7 +5367,7 @@ namespace Final
                                         if (hqs == 13)
                                         {
                                             hq.Add("Eldar Farseer Skyrunner");
-                                            army3.Points = army3.Points +  135;
+                                            army3.Points = army3.Points + 135;
                                             army3.PL = army3.PL + 4;
                                             hqp.Add(135);
                                             hpl.Add(4);
@@ -5437,17 +5600,21 @@ namespace Final
 
                     case 2:
                         Console.Clear();
-                        if(choice == 1)
+                        if (choice == 1)
                         {
                             if (army1.Faction == 1)
                             {
-                                Console.WriteLine("1 - Battle Sister Squad\n");
-                                troops = Convert.ToInt32(Console.ReadLine());
-                                if(army1.detachment == 1)
+                                do
                                 {
-                                    if(troop.Count < 3)
+                                    Console.WriteLine("1 - Battle Sister Squad\n");
+                                    troops = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (troops < 1 || troops > 1);
+                                if (army1.detachment == 1)
+                                {
+                                    if (troop.Count < 3)
                                     {
-                                        if(troops == 1)
+                                        if (troops == 1)
                                         {
                                             troop.Add("Battle Sister Squad");
                                             army1.Points = army1.Points + 55;
@@ -5488,13 +5655,17 @@ namespace Final
                             }
                             if (army1.Faction == 2)
                             {
-                                Console.WriteLine("1 - Assault Intercessor Squad");
-                                Console.WriteLine("2 - Heavy Intercessor Squad");
-                                Console.WriteLine("3 - Inursor Squad");
-                                Console.WriteLine("4 - Infiltrator Squad");
-                                Console.WriteLine("5 - Intercessor Squad");
-                                Console.WriteLine("6 - Tactical Squad");
-                                troops = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Assault Intercessor Squad");
+                                    Console.WriteLine("2 - Heavy Intercessor Squad");
+                                    Console.WriteLine("3 - Inursor Squad");
+                                    Console.WriteLine("4 - Infiltrator Squad");
+                                    Console.WriteLine("5 - Intercessor Squad");
+                                    Console.WriteLine("6 - Tactical Squad");
+                                    troops = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (troops < 1 || troops > 6);
                                 if (army1.detachment == 1)
                                 {
                                     if (troop.Count < 3)
@@ -5660,14 +5831,18 @@ namespace Final
                             }
                             if (army1.Faction == 3)
                             {
-                                Console.WriteLine("1 - Custodian Guard");
-                                Console.WriteLine("2 - Sagittarum Custodians");
-                                troops = Convert.ToInt32(Console.ReadLine());
-                                if(army1.detachment == 1)
+                                do
                                 {
-                                    if(troop.Count < 3)
+                                    Console.WriteLine("1 - Custodian Guard");
+                                    Console.WriteLine("2 - Sagittarum Custodians");
+                                    troops = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (troops < 1 || troops > 2);
+                                if (army1.detachment == 1)
+                                {
+                                    if (troop.Count < 3)
                                     {
-                                        if(troops == 1)
+                                        if (troops == 1)
                                         {
                                             troop.Add("Custodian Guard");
                                             army1.Points += 135;
@@ -5683,7 +5858,7 @@ namespace Final
                                             troopp.Add(150);
                                             tpl.Add(7);
                                         }
-                                    }    
+                                    }
                                 }
                                 if (army1.detachment == 2)
                                 {
@@ -5732,14 +5907,18 @@ namespace Final
                             }
                             if (army1.Faction == 4)
                             {
-                                Console.WriteLine("1 - Skitarii Rangers");
-                                Console.WriteLine("2 - Kataphron Breachers");
-                                Console.WriteLine("3 - Skitarii Vanguard");
-                                Console.WriteLine("4 - Kataphron Destroyers");
-                                troops = Convert.ToInt32(Console.ReadLine());
-                                if(army1.detachment == 1)
+                                do
                                 {
-                                    if(troop.Count < 3)
+                                    Console.WriteLine("1 - Skitarii Rangers");
+                                    Console.WriteLine("2 - Kataphron Breachers");
+                                    Console.WriteLine("3 - Skitarii Vanguard");
+                                    Console.WriteLine("4 - Kataphron Destroyers");
+                                    troops = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (troops < 1 || troops > 4);
+                                if (army1.detachment == 1)
+                                {
+                                    if (troop.Count < 3)
                                     {
                                         if (troops == 1)
                                         {
@@ -5854,12 +6033,16 @@ namespace Final
                             }
                             if (army1.Faction == 5)
                             {
-                                Console.WriteLine("1 - Conscripts");
-                                Console.WriteLine("2 - Infantry Squad");
-                                troops = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Conscripts");
+                                    Console.WriteLine("2 - Infantry Squad");
+                                    troops = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (troops < 1 || troops > 2);
                                 if (army1.detachment == 1)
                                 {
-                                    if(troop.Count < 3)
+                                    if (troop.Count < 3)
                                     {
                                         if (troops == 1)
                                         {
@@ -5925,17 +6108,21 @@ namespace Final
                                 }
                             }
                         }
-                        if(choice == 2)
+                        if (choice == 2)
                         {
                             if (army2.Faction == 1)
                             {
-                                Console.WriteLine("1 - Horros of Tzeentch");
-                                Console.WriteLine("2 - Nurglings");
-                                Console.WriteLine("3 - Daemonettes of Slaanesh");
-                                Console.WriteLine("4 - Daemons of Khorne Bloodletters");
-                                Console.WriteLine("5 - Plaguebearers of Nurgle");
-                                troops = Convert.ToInt32(Console.ReadLine());
-                                if(army1.detachment == 1)
+                                do
+                                {
+                                    Console.WriteLine("1 - Horros of Tzeentch");
+                                    Console.WriteLine("2 - Nurglings");
+                                    Console.WriteLine("3 - Daemonettes of Slaanesh");
+                                    Console.WriteLine("4 - Daemons of Khorne Bloodletters");
+                                    Console.WriteLine("5 - Plaguebearers of Nurgle");
+                                    troops = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (troops < 1 || troops > 5);
+                                if (army1.detachment == 1)
                                 {
                                     if (troop.Count < 3)
                                     {
@@ -6076,10 +6263,15 @@ namespace Final
                             }
                             if (army2.Faction == 2)
                             {
-                                Console.WriteLine("1 - Plague Marines");
-                                Console.WriteLine("2 - Poxwalkers");
-                                troops = Convert.ToInt32(Console.ReadLine());
-                                if(army2.detachment == 1)
+                                do
+                                {
+                                    Console.WriteLine("1 - Plague Marines");
+                                    Console.WriteLine("2 - Poxwalkers");
+                                    troops = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (troops < 1 || troops > 2);
+
+                                if (army2.detachment == 1)
                                 {
                                     if (troop.Count < 3)
                                     {
@@ -6148,12 +6340,16 @@ namespace Final
                             }
                             if (army2.Faction == 3)
                             {
-                                Console.WriteLine("1 - Chaos Space Marines");
-                                Console.WriteLine("2 - Black Legionnaires");
-                                Console.WriteLine("3 - Chaos Cultists");
-                                Console.WriteLine("4 - Khorne Berzerkers");
-                                Console.WriteLine("5 - Noise Marines");
-                                troops = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Chaos Space Marines");
+                                    Console.WriteLine("2 - Black Legionnaires");
+                                    Console.WriteLine("3 - Chaos Cultists");
+                                    Console.WriteLine("4 - Khorne Berzerkers");
+                                    Console.WriteLine("5 - Noise Marines");
+                                    troops = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (troops < 1 || troops > 5);
                                 if (army2.detachment == 1)
                                 {
                                     if (troop.Count < 3)
@@ -6295,14 +6491,18 @@ namespace Final
                             }
                             if (army2.Faction == 4)
                             {
-                                Console.WriteLine("1 - Rubric Marines");
-                                Console.WriteLine("2 - Tzaangors");
-                                troops = Convert.ToInt32(Console.ReadLine());
-                                if(army2.detachment == 1)
+                                do
                                 {
-                                    if(troop.Count < 3)
+                                    Console.WriteLine("1 - Rubric Marines");
+                                    Console.WriteLine("2 - Tzaangors");
+                                    troops = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (troops < 1 || troops > 2);
+                                if (army2.detachment == 1)
+                                {
+                                    if (troop.Count < 3)
                                     {
-                                        if(troops == 1)
+                                        if (troops == 1)
                                         {
                                             troop.Add("Rubric Marines");
                                             army2.Points += 105;
@@ -6366,18 +6566,22 @@ namespace Final
                                 }
                             }
                         }
-                        if(choice == 3)
+                        if (choice == 3)
                         {
                             if (army3.Faction == 1)
                             {
-                                Console.WriteLine("1 - Dire Avengers");
-                                Console.WriteLine("2 - Guardian Defenders");
-                                Console.WriteLine("3 - Rangers");
-                                Console.WriteLine("4 - Storm Guardians");
-                                troops = Convert.ToInt32(Console.ReadLine());
-                                if(army3.detachment == 1)
+                                do
                                 {
-                                    if(troop.Count < 3)
+                                    Console.WriteLine("1 - Dire Avengers");
+                                    Console.WriteLine("2 - Guardian Defenders");
+                                    Console.WriteLine("3 - Rangers");
+                                    Console.WriteLine("4 - Storm Guardians");
+                                    troops = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (troops < 1 || troops > 4);
+                                if (army3.detachment == 1)
+                                {
+                                    if (troop.Count < 3)
                                     {
                                         if (troops == 1)
                                         {
@@ -6492,15 +6696,19 @@ namespace Final
                             }
                             if (army3.Faction == 2)
                             {
-                                Console.WriteLine("1 - Kabalite Warriors");
-                                Console.WriteLine("2 - Wracks");
-                                Console.WriteLine("3 - Wyches");
-                                troops = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Kabalite Warriors");
+                                    Console.WriteLine("2 - Wracks");
+                                    Console.WriteLine("3 - Wyches");
+                                    troops = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (troops < 1 || troops > 3);
                                 if (army3.detachment == 1)
                                 {
                                     if (troop.Count < 3)
                                     {
-                                        if(troops == 1)
+                                        if (troops == 1)
                                         {
                                             troop.Add("Kabalite Warriors");
                                             army3.Points += 40;
@@ -6589,10 +6797,14 @@ namespace Final
                             }
                             if (army3.Faction == 3)
                             {
-                                Console.WriteLine("1 - Brood Brothers");
-                                Console.WriteLine("2 - Neophyte Hybrids");
-                                Console.WriteLine("3 - Acolyte Hybrids");
-                                troops = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Brood Brothers");
+                                    Console.WriteLine("2 - Neophyte Hybrids");
+                                    Console.WriteLine("3 - Acolyte Hybrids");
+                                    troops = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (troops < 1 || troops > 3);
                                 if (army3.detachment == 1)
                                 {
                                     if (troop.Count < 3)
@@ -6656,8 +6868,8 @@ namespace Final
                                 }
                                 if (army3.detachment == 3)
                                 {
-                                        if (troop.Count < 12)
-                                        {
+                                    if (troop.Count < 12)
+                                    {
                                         if (troops == 1)
                                         {
                                             troop.Add("Brood Brothers");
@@ -6689,9 +6901,9 @@ namespace Final
                             {
                                 Console.WriteLine("1 - Troupe");
                                 troops = Convert.ToInt32(Console.ReadLine());
-                                if(army3.detachment == 1)
+                                if (army3.detachment == 1)
                                 {
-                                    if(troop.Count < 3)
+                                    if (troop.Count < 3)
                                     {
                                         troop.Add("Troupe");
                                         army3.Points += 70;
@@ -6725,14 +6937,18 @@ namespace Final
                             }
                             if (army3.Faction == 5)
                             {
-                                Console.WriteLine("1 - Necron Warriors");
-                                Console.WriteLine("2 - Immortals");
-                                troops = Convert.ToInt32(Console.ReadLine());
-                                if(army3.detachment == 1)
+                                do
                                 {
-                                    if(troop.Count < 3)
+                                    Console.WriteLine("1 - Necron Warriors");
+                                    Console.WriteLine("2 - Immortals");
+                                    troops = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (troops < 1 || troops > 2);
+                                if (army3.detachment == 1)
+                                {
+                                    if (troop.Count < 3)
                                     {
-                                        if(troops == 1)
+                                        if (troops == 1)
                                         {
                                             troop.Add("Necron Warriors");
                                             army3.Points += 130;
@@ -6797,15 +7013,19 @@ namespace Final
                             }
                             if (army3.Faction == 6)
                             {
-                                Console.WriteLine("1 - Ork Boyz");
-                                Console.WriteLine("2 - Ork Gretchin");
-                                Console.WriteLine("3 - Ork Beast Snagga Boyz");
-                                troops = Convert.ToInt32(Console.ReadLine());
-                                if(army3.detachment == 1)
+                                do
                                 {
-                                    if(troop.Count < 3)
+                                    Console.WriteLine("1 - Ork Boyz");
+                                    Console.WriteLine("2 - Ork Gretchin");
+                                    Console.WriteLine("3 - Ork Beast Snagga Boyz");
+                                    troops = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (troops < 1 || troops > 3);
+                                if (army3.detachment == 1)
+                                {
+                                    if (troop.Count < 3)
                                     {
-                                        if(troops == 1)
+                                        if (troops == 1)
                                         {
                                             troop.Add("Ork Boyz");
                                             army3.Points += 90;
@@ -6813,7 +7033,7 @@ namespace Final
                                             troopp.Add(90);
                                             tpl.Add(5);
                                         }
-                                        if(troops == 2)
+                                        if (troops == 2)
                                         {
                                             troop.Add("Ork Gretchin");
                                             army3.Points += 50;
@@ -6894,15 +7114,19 @@ namespace Final
                             }
                             if (army3.Faction == 7)
                             {
-                                Console.WriteLine("1 - Breacher Team");
-                                Console.WriteLine("2 - Kroot Carnivores");
-                                Console.WriteLine("3 - Strike Team");
-                                troops = Convert.ToInt32(Console.ReadLine());
-                                if(army3.detachment == 1)
+                                do
                                 {
-                                    if(troop.Count < 3)
+                                    Console.WriteLine("1 - Breacher Team");
+                                    Console.WriteLine("2 - Kroot Carnivores");
+                                    Console.WriteLine("3 - Strike Team");
+                                    troops = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (troops < 1 || troops > 3);
+                                if (army3.detachment == 1)
+                                {
+                                    if (troop.Count < 3)
                                     {
-                                        if(troops == 1)
+                                        if (troops == 1)
                                         {
                                             troop.Add("Breacher Team");
                                             army3.Points += 45;
@@ -6991,15 +7215,19 @@ namespace Final
                             }
                             if (army3.Faction == 8)
                             {
-                                Console.WriteLine("1 - Genestealers");
-                                Console.WriteLine("2 - Hormagaunts");
-                                Console.WriteLine("3 - Ripper Swarm");
-                                Console.WriteLine("4 - Termagants");
-                                Console.WriteLine("5 - Tyranid Warriors");
-                                troops = Convert.ToInt32(Console.ReadLine());
-                                if(army3.detachment == 1)
+                                do
                                 {
-                                    if(troop.Count < 3)
+                                    Console.WriteLine("1 - Genestealers");
+                                    Console.WriteLine("2 - Hormagaunts");
+                                    Console.WriteLine("3 - Ripper Swarm");
+                                    Console.WriteLine("4 - Termagants");
+                                    Console.WriteLine("5 - Tyranid Warriors");
+                                    troops = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (troops < 1 || troops > 5);
+                                if (army3.detachment == 1)
+                                {
+                                    if (troop.Count < 3)
                                     {
                                         if (troops == 1)
                                         {
@@ -7138,17 +7366,21 @@ namespace Final
                             }
                             if (army3.Faction == 9)
                             {
-                                Console.WriteLine("1 - Dire Avengers");
-                                Console.WriteLine("2 - Guardian Defenders");
-                                Console.WriteLine("3 - Rangers");
-                                Console.WriteLine("4 - Storm Guardians");
-                                Console.WriteLine("5 - Kabalite Warriors");
-                                Console.WriteLine("6 - Wracks");
-                                Console.WriteLine("7 - Wyches");
-                                troops = Convert.ToInt32(Console.ReadLine());
-                                if(army3.detachment == 1)
+                                do
                                 {
-                                    if(troop.Count < 3)
+                                    Console.WriteLine("1 - Dire Avengers");
+                                    Console.WriteLine("2 - Guardian Defenders");
+                                    Console.WriteLine("3 - Rangers");
+                                    Console.WriteLine("4 - Storm Guardians");
+                                    Console.WriteLine("5 - Kabalite Warriors");
+                                    Console.WriteLine("6 - Wracks");
+                                    Console.WriteLine("7 - Wyches");
+                                    troops = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (troops < 1 || troops > 7);
+                                if (army3.detachment == 1)
+                                {
+                                    if (troop.Count < 3)
                                     {
                                         if (troops == 1)
                                         {
@@ -7341,21 +7573,25 @@ namespace Final
                         {
                             if (army1.Faction == 1)
                             {
-                                Console.WriteLine("1 - Aestred Thurga, Reliquant at Arms");
-                                Console.WriteLine("2 - Paragon warsuits");
-                                Console.WriteLine("3 - Death Cult Assassins");
-                                Console.WriteLine("4 - Crusaders");
-                                Console.WriteLine("5 - Preacher with Chainsword");
-                                Console.WriteLine("6 - Imagifier");
-                                Console.WriteLine("7 - Sister Dogmata");
-                                Console.WriteLine("8 - Hospitaller");
-                                Console.WriteLine("9 - Dialogues");
-                                Console.WriteLine("10 - Arco-flagellants");
-                                Console.WriteLine("11 - Celestian Sacresants");
-                                elites = Convert.ToInt32(Console.ReadLine());
-                                if(army1.detachment == 1)
+                                do
                                 {
-                                    if(elite.Count < 2)
+                                    Console.WriteLine("1 - Aestred Thurga, Reliquant at Arms");
+                                    Console.WriteLine("2 - Paragon warsuits");
+                                    Console.WriteLine("3 - Death Cult Assassins");
+                                    Console.WriteLine("4 - Crusaders");
+                                    Console.WriteLine("5 - Preacher with Chainsword");
+                                    Console.WriteLine("6 - Imagifier");
+                                    Console.WriteLine("7 - Sister Dogmata");
+                                    Console.WriteLine("8 - Hospitaller");
+                                    Console.WriteLine("9 - Dialogues");
+                                    Console.WriteLine("10 - Arco-flagellants");
+                                    Console.WriteLine("11 - Celestian Sacresants");
+                                    elites = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (elites < 1 || elites > 11);
+                                if (army1.detachment == 1)
+                                {
+                                    if (elite.Count < 2)
                                     {
                                         if (elites == 1)
                                         {
@@ -7638,34 +7874,38 @@ namespace Final
                             }
                             if (army1.Faction == 2)
                             {
-                                Console.WriteLine("1 - Servirtors with Multi-Melta");
-                                Console.WriteLine("2 - Servitors with Plasma Cannon");
-                                Console.WriteLine("3 - Space Marine Scouts");
-                                Console.WriteLine("4 - Scouts with Sniper Rifles");
-                                Console.WriteLine("5 - Primaris Apothecary");
-                                Console.WriteLine("6 - Vanguard Veteran Squad");
-                                Console.WriteLine("7 - Bladeguard Veterans");
-                                Console.WriteLine("8 - Primaris Aggressors");
-                                Console.WriteLine("9 - Dreadnought");
-                                Console.WriteLine("10 - Company Command");
-                                Console.WriteLine("11 - Terminator Squad");
-                                Console.WriteLine("12 - Terminator Assault Squad");
-                                Console.WriteLine("13 - Ironclad Dreadnought");
-                                Console.WriteLine("14 - Sternguard Veteran Squad");
-                                Console.WriteLine("15 - Venerable Dreadnought");
-                                Console.WriteLine("16 - Primaris Reivers");
-                                Console.WriteLine("17 - Primaris Invictor Tactical Warsuit");
-                                Console.WriteLine("18 - Tartaros Terminators");
-                                Console.WriteLine("19 - Cataphractii Terminators");
-                                Console.WriteLine("20 - Primaris Redemptor Dreadnought");
-                                Console.WriteLine("21 - Centurion Assault Squad");
-                                Console.WriteLine("22 - Contemptor Dreadnought");
-                                elites = Convert.ToInt32(Console.ReadLine());
-                                if(army1.detachment == 1)
+                                do
                                 {
-                                    if(elite.Count < 2)
+                                    Console.WriteLine("1 - Servirtors with Multi-Melta");
+                                    Console.WriteLine("2 - Servitors with Plasma Cannon");
+                                    Console.WriteLine("3 - Space Marine Scouts");
+                                    Console.WriteLine("4 - Scouts with Sniper Rifles");
+                                    Console.WriteLine("5 - Primaris Apothecary");
+                                    Console.WriteLine("6 - Vanguard Veteran Squad");
+                                    Console.WriteLine("7 - Bladeguard Veterans");
+                                    Console.WriteLine("8 - Primaris Aggressors");
+                                    Console.WriteLine("9 - Dreadnought");
+                                    Console.WriteLine("10 - Company Command");
+                                    Console.WriteLine("11 - Terminator Squad");
+                                    Console.WriteLine("12 - Terminator Assault Squad");
+                                    Console.WriteLine("13 - Ironclad Dreadnought");
+                                    Console.WriteLine("14 - Sternguard Veteran Squad");
+                                    Console.WriteLine("15 - Venerable Dreadnought");
+                                    Console.WriteLine("16 - Primaris Reivers");
+                                    Console.WriteLine("17 - Primaris Invictor Tactical Warsuit");
+                                    Console.WriteLine("18 - Tartaros Terminators");
+                                    Console.WriteLine("19 - Cataphractii Terminators");
+                                    Console.WriteLine("20 - Primaris Redemptor Dreadnought");
+                                    Console.WriteLine("21 - Centurion Assault Squad");
+                                    Console.WriteLine("22 - Contemptor Dreadnought");
+                                    elites = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (elites < 1 || elites > 22);
+                                if (army1.detachment == 1)
+                                {
+                                    if (elite.Count < 2)
                                     {
-                                        if(elites == 1)
+                                        if (elites == 1)
                                         {
                                             elite.Add("Servirtors with Multi-Melta");
                                             army1.Points += 60;
@@ -8210,17 +8450,21 @@ namespace Final
                             }
                             if (army1.Faction == 3)
                             {
-                                Console.WriteLine("1 - Allarus Custodians");
-                                Console.WriteLine("2 - Custodian Wardens");
-                                Console.WriteLine("3 - Venerable Contemptor Dreadnought");
-                                Console.WriteLine("4 - Vexilus Praetor");
-                                Console.WriteLine("5 - Vexilus Praetor in Allarus Terminator Armour");
-                                elites = Convert.ToInt32(Console.ReadLine());
-                                if(army1.detachment == 1)
+                                do
                                 {
-                                    if(elite.Count < 2)
+                                    Console.WriteLine("1 - Allarus Custodians");
+                                    Console.WriteLine("2 - Custodian Wardens");
+                                    Console.WriteLine("3 - Venerable Contemptor Dreadnought");
+                                    Console.WriteLine("4 - Vexilus Praetor");
+                                    Console.WriteLine("5 - Vexilus Praetor in Allarus Terminator Armour");
+                                    elites = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (elites < 1 || elites > 5);
+                                if (army1.detachment == 1)
+                                {
+                                    if (elite.Count < 2)
                                     {
-                                        if(elites == 1)
+                                        if (elites == 1)
                                         {
                                             elite.Add("Allarus Custodians");
                                             army1.Points += 225;
@@ -8357,18 +8601,22 @@ namespace Final
                             }
                             if (army1.Faction == 4)
                             {
-                                Console.WriteLine("1 - Corpuscarii Electro-Priests");
-                                Console.WriteLine("2 - Fulgurite Electro-Priests");
-                                Console.WriteLine("3 - Sicarian Infiltrators");
-                                Console.WriteLine("4 - Sicarian Ruststalkers");
-                                Console.WriteLine("5 - Servitors with Plasma Cannon");
-                                Console.WriteLine("6 - Servitors with Multi-Melta");
-                                elites = Convert.ToInt32(Console.ReadLine());
-                                if(army1.detachment == 1)
+                                do
                                 {
-                                    if(elite.Count < 2)
+                                    Console.WriteLine("1 - Corpuscarii Electro-Priests");
+                                    Console.WriteLine("2 - Fulgurite Electro-Priests");
+                                    Console.WriteLine("3 - Sicarian Infiltrators");
+                                    Console.WriteLine("4 - Sicarian Ruststalkers");
+                                    Console.WriteLine("5 - Servitors with Plasma Cannon");
+                                    Console.WriteLine("6 - Servitors with Multi-Melta");
+                                    elites = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (elites < 1 || elites > 6);
+                                if (army1.detachment == 1)
+                                {
+                                    if (elite.Count < 2)
                                     {
-                                        if(elites == 1)
+                                        if (elites == 1)
                                         {
                                             elite.Add("Corpuscarii Electro-Priests");
                                             army1.Points += 75;
@@ -8529,36 +8777,40 @@ namespace Final
                             }
                             if (army1.Faction == 5)
                             {
-                                Console.WriteLine("1 - Astropath");
-                                Console.WriteLine("2 - Bullgryns");
-                                Console.WriteLine("3 - Colour Sergeant Kell");
-                                Console.WriteLine("4 - Combat Engineer Squad");
-                                Console.WriteLine("5 - Command Squad");
-                                Console.WriteLine("6 - Commissar");
-                                Console.WriteLine("7 - Commissar Severina Raine");
-                                Console.WriteLine("8 - Crusaders");
-                                Console.WriteLine("9 - Death Rider Command Squad");
-                                Console.WriteLine("10 - Gotfret de Montbard");
-                                Console.WriteLine("11 - Master of Ordnance");
-                                Console.WriteLine("12 - Millitarum Tempestus Command Squad");
-                                Console.WriteLine("13 - Ministorum Priest");
-                                Console.WriteLine("14 - Nork Deddog");
-                                Console.WriteLine("15 - Officer of the Fleet");
-                                Console.WriteLine("16 - Ogryn Bodyguard");
-                                Console.WriteLine("17 - Ogryns");
-                                Console.WriteLine("18 - Platoon Commander");
-                                Console.WriteLine("19 - Ratlings");
-                                Console.WriteLine("20 - Rein and Raus");
-                                Console.WriteLine("21 - Special Weapons Squad");
-                                Console.WriteLine("22 - Veterans");
-                                Console.WriteLine("23 - Voidsmen-at-arms");
-                                Console.WriteLine("24 - Wyrdvane Psykers");
-                                elites = Convert.ToInt32(Console.ReadLine());
-                                if(army1.detachment == 1)
+                                do
                                 {
-                                    if(elite.Count < 2)
+                                    Console.WriteLine("1 - Astropath");
+                                    Console.WriteLine("2 - Bullgryns");
+                                    Console.WriteLine("3 - Colour Sergeant Kell");
+                                    Console.WriteLine("4 - Combat Engineer Squad");
+                                    Console.WriteLine("5 - Command Squad");
+                                    Console.WriteLine("6 - Commissar");
+                                    Console.WriteLine("7 - Commissar Severina Raine");
+                                    Console.WriteLine("8 - Crusaders");
+                                    Console.WriteLine("9 - Death Rider Command Squad");
+                                    Console.WriteLine("10 - Gotfret de Montbard");
+                                    Console.WriteLine("11 - Master of Ordnance");
+                                    Console.WriteLine("12 - Millitarum Tempestus Command Squad");
+                                    Console.WriteLine("13 - Ministorum Priest");
+                                    Console.WriteLine("14 - Nork Deddog");
+                                    Console.WriteLine("15 - Officer of the Fleet");
+                                    Console.WriteLine("16 - Ogryn Bodyguard");
+                                    Console.WriteLine("17 - Ogryns");
+                                    Console.WriteLine("18 - Platoon Commander");
+                                    Console.WriteLine("19 - Ratlings");
+                                    Console.WriteLine("20 - Rein and Raus");
+                                    Console.WriteLine("21 - Special Weapons Squad");
+                                    Console.WriteLine("22 - Veterans");
+                                    Console.WriteLine("23 - Voidsmen-at-arms");
+                                    Console.WriteLine("24 - Wyrdvane Psykers");
+                                    elites = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (elites < 1 || elites > 24);
+                                if (army1.detachment == 1)
+                                {
+                                    if (elite.Count < 2)
                                     {
-                                        if(elites == 1)
+                                        if (elites == 1)
                                         {
                                             elite.Add("Astropath");
                                             army1.Points += 35;
@@ -9154,15 +9406,19 @@ namespace Final
                         {
                             if (army2.Faction == 1)
                             {
-                                Console.WriteLine("1 - Beasts of Nurgle");
-                                Console.WriteLine("2 - Bloodcrushers");
-                                Console.WriteLine("3 - Exalted Flamers");
-                                Console.WriteLine("4 - Fiends");
-                                Console.WriteLine("5 - Flamers");
-                                elites = Convert.ToInt32(Console.ReadLine());
-                                if(army2.detachment == 1)
+                                do
                                 {
-                                    if(elite.Count < 2)
+                                    Console.WriteLine("1 - Beasts of Nurgle");
+                                    Console.WriteLine("2 - Bloodcrushers");
+                                    Console.WriteLine("3 - Exalted Flamers");
+                                    Console.WriteLine("4 - Fiends");
+                                    Console.WriteLine("5 - Flamers");
+                                    elites = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (elites < 1 || elites > 5);
+                                if (army2.detachment == 1)
+                                {
+                                    if (elite.Count < 2)
                                     {
                                         if (elites == 1)
                                         {
@@ -9172,7 +9428,7 @@ namespace Final
                                             elitep.Add(35);
                                             epl.Add(2);
                                         }
-                                        if(elites == 2)
+                                        if (elites == 2)
                                         {
                                             elite.Add("Bloodcrushers");
                                             army2.Points += 120;
@@ -9205,7 +9461,7 @@ namespace Final
                                             epl.Add(3);
                                         }
                                     }
-                                    
+
                                 }
                                 if (army2.detachment == 2)
                                 {
@@ -9304,21 +9560,25 @@ namespace Final
                             }
                             if (army2.Faction == 2)
                             {
-                                Console.WriteLine("1 - Biologus Putrifier");
-                                Console.WriteLine("2 - Blightlord Terminators");
-                                Console.WriteLine("3 - Possessed");
-                                Console.WriteLine("4 - Deathshroud Terminators");
-                                Console.WriteLine("5 - Foul Blightspawn");
-                                Console.WriteLine("6 - Helbrute");
-                                Console.WriteLine("7 - Noxious Blightbringer");
-                                Console.WriteLine("8 - Plague Surgeon");
-                                Console.WriteLine("9 - Tallyman");
-                                elites = Convert.ToInt32(Console.ReadLine());
-                                if(army2.detachment == 1)
+                                do
                                 {
-                                    if(elite.Count < 2)
+                                    Console.WriteLine("1 - Biologus Putrifier");
+                                    Console.WriteLine("2 - Blightlord Terminators");
+                                    Console.WriteLine("3 - Possessed");
+                                    Console.WriteLine("4 - Deathshroud Terminators");
+                                    Console.WriteLine("5 - Foul Blightspawn");
+                                    Console.WriteLine("6 - Helbrute");
+                                    Console.WriteLine("7 - Noxious Blightbringer");
+                                    Console.WriteLine("8 - Plague Surgeon");
+                                    Console.WriteLine("9 - Tallyman");
+                                    elites = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (elites < 1 || elites > 9);
+                                if (army2.detachment == 1)
+                                {
+                                    if (elite.Count < 2)
                                     {
-                                        if(elites == 1)
+                                        if (elites == 1)
                                         {
                                             elite.Add("Biologus Putrifier");
                                             army2.Points += 65;
@@ -9551,17 +9811,21 @@ namespace Final
                             }
                             if (army2.Faction == 3)
                             {
-                                Console.WriteLine("1 - Greater Possessed");
-                                Console.WriteLine("2 - Helbrute");
-                                Console.WriteLine("3 - Mutilators");
-                                Console.WriteLine("4 - Possessed");
-                                Console.WriteLine("5 - Terminators");
-                                elites = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Greater Possessed");
+                                    Console.WriteLine("2 - Helbrute");
+                                    Console.WriteLine("3 - Mutilators");
+                                    Console.WriteLine("4 - Possessed");
+                                    Console.WriteLine("5 - Terminators");
+                                    elites = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (elites < 1 || elites > 5);
                                 if (army2.detachment == 1)
                                 {
-                                    if(elite.Count < 2)
+                                    if (elite.Count < 2)
                                     {
-                                        if(elites == 1)
+                                        if (elites == 1)
                                         {
                                             elite.Add("Greater Possessed");
                                             army2.Points += 65;
@@ -9702,11 +9966,11 @@ namespace Final
                                 Console.WriteLine("2 - Tzaangor Shaman");
                                 Console.WriteLine("3 - Helbrute");
                                 elites = Convert.ToInt32(Console.ReadLine());
-                                if(army2.detachment == 1)
+                                if (army2.detachment == 1)
                                 {
-                                    if(elite.Count < 2)
+                                    if (elite.Count < 2)
                                     {
-                                        if(elites == 1)
+                                        if (elites == 1)
                                         {
                                             elite.Add("Scarab Occult Terminators");
                                             army2.Points += 200;
@@ -9798,14 +10062,18 @@ namespace Final
                         {
                             if (army3.Faction == 1)
                             {
-                                Console.WriteLine("1 - Howling Banshees");
-                                Console.WriteLine("2 - Wraithguard");
-                                Console.WriteLine("3 - Striking Scorpions");
-                                Console.WriteLine("4 - Fire Dragons");
-                                elites = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Howling Banshees");
+                                    Console.WriteLine("2 - Wraithguard");
+                                    Console.WriteLine("3 - Striking Scorpions");
+                                    Console.WriteLine("4 - Fire Dragons");
+                                    elites = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (elites < 1 || elites > 4);
                                 if (army3.detachment == 1)
                                 {
-                                    if(elite.Count < 2)
+                                    if (elite.Count < 2)
                                     {
                                         if (elites == 1)
                                         {
@@ -9815,7 +10083,7 @@ namespace Final
                                             elitep.Add(75);
                                             epl.Add(3);
                                         }
-                                        if(elites == 2)
+                                        if (elites == 2)
                                         {
                                             elite.Add("Wraithguard");
                                             army3.Points += 175;
@@ -9921,15 +10189,19 @@ namespace Final
 
                             if (army3.Faction == 2)
                             {
-                                Console.WriteLine("1 - Incubi");
-                                Console.WriteLine("2 - Medusae");
-                                Console.WriteLine("3 - Lhamaean");
-                                Console.WriteLine("4 - Sslyth");
-                                Console.WriteLine("5 - Ur-Ghul");
-                                Console.WriteLine("6 - Grotesque");
-                                Console.WriteLine("7 - Beastmaster");
-                                Console.WriteLine("8 - Mandrakes");
-                                elites = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Incubi");
+                                    Console.WriteLine("2 - Medusae");
+                                    Console.WriteLine("3 - Lhamaean");
+                                    Console.WriteLine("4 - Sslyth");
+                                    Console.WriteLine("5 - Ur-Ghul");
+                                    Console.WriteLine("6 - Grotesque");
+                                    Console.WriteLine("7 - Beastmaster");
+                                    Console.WriteLine("8 - Mandrakes");
+                                    elites = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (elites < 1 || elites > 8);
                                 if (army3.detachment == 1)
                                 {
                                     if (elite.Count < 2)
@@ -10143,16 +10415,20 @@ namespace Final
                             }
                             if (army3.Faction == 3)
                             {
-                                Console.WriteLine("1 - Aberrants");
-                                Console.WriteLine("3 - Biophagus");
-                                Console.WriteLine("4 - Clamavus");
-                                Console.WriteLine("5 - Hybrid Metamorphs");
-                                Console.WriteLine("6 - Kelermorph");
-                                Console.WriteLine("7 - Locus");
-                                Console.WriteLine("8 - Nexos");
-                                Console.WriteLine("9 - Purestrain Genestealers");
-                                Console.WriteLine("7 - Sanctus");
-                                elites = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Aberrants");
+                                    Console.WriteLine("3 - Biophagus");
+                                    Console.WriteLine("4 - Clamavus");
+                                    Console.WriteLine("5 - Hybrid Metamorphs");
+                                    Console.WriteLine("6 - Kelermorph");
+                                    Console.WriteLine("7 - Locus");
+                                    Console.WriteLine("8 - Nexos");
+                                    Console.WriteLine("9 - Purestrain Genestealers");
+                                    Console.WriteLine("10 - Sanctus");
+                                    elites = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (elites < 1 || elites > 10);
                                 if (army3.detachment == 1)
                                 {
                                     if (elite.Count < 2)
@@ -10390,9 +10666,13 @@ namespace Final
                             }
                             if (army3.Faction == 4)
                             {
-                                Console.WriteLine("1 - Death Jester");
-                                Console.WriteLine("2 - Solitaire");
-                                elites = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Death Jester");
+                                    Console.WriteLine("2 - Solitaire");
+                                    elites = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (elites < 1 || elites > 2);
                                 if (army3.detachment == 1)
                                 {
                                     if (elite.Count < 2)
@@ -10462,17 +10742,21 @@ namespace Final
                             }
                             if (army3.Faction == 5)
                             {
-                                Console.WriteLine("1 - Canoptek Plasmacyte");
-                                Console.WriteLine("2 - Canoptek Reanimator");
-                                Console.WriteLine("3 - Canoptek Spyders");
-                                Console.WriteLine("4 - Cryptothralls");
-                                Console.WriteLine("5 - C'tan Shard of the Deceiver");
-                                Console.WriteLine("6 - C'tan Shard of the Nightbringer");
-                                Console.WriteLine("7 - C'tan Shard of the Void Dragon");
-                                Console.WriteLine("8 - Deathmarks");
-                                Console.WriteLine("9 - Flayed Ones");
-                                Console.WriteLine("10 - Hexmark Destroyer");
-                                elites = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Canoptek Plasmacyte");
+                                    Console.WriteLine("2 - Canoptek Reanimator");
+                                    Console.WriteLine("3 - Canoptek Spyders");
+                                    Console.WriteLine("4 - Cryptothralls");
+                                    Console.WriteLine("5 - C'tan Shard of the Deceiver");
+                                    Console.WriteLine("6 - C'tan Shard of the Nightbringer");
+                                    Console.WriteLine("7 - C'tan Shard of the Void Dragon");
+                                    Console.WriteLine("8 - Deathmarks");
+                                    Console.WriteLine("9 - Flayed Ones");
+                                    Console.WriteLine("10 - Hexmark Destroyer");
+                                    elites = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (elites < 1 || elites > 10);
                                 if (army3.detachment == 1)
                                 {
                                     if (elite.Count < 2)
@@ -10734,15 +11018,19 @@ namespace Final
                             }
                             if (army3.Faction == 6)
                             {
-                                Console.WriteLine("1 - Burna Boyz");
-                                Console.WriteLine("2 - Kommandos");
-                                Console.WriteLine("3 - Mad Dok Grotsnik");
-                                Console.WriteLine("4 - Meganobz");
-                                Console.WriteLine("5 - Mek");
-                                Console.WriteLine("6 - Nob with Waaagh! Banner");
-                                Console.WriteLine("7 - Nobz");
-                                Console.WriteLine("8 - Tankbustas");
-                                elites = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Burna Boyz");
+                                    Console.WriteLine("2 - Kommandos");
+                                    Console.WriteLine("3 - Mad Dok Grotsnik");
+                                    Console.WriteLine("4 - Meganobz");
+                                    Console.WriteLine("5 - Mek");
+                                    Console.WriteLine("6 - Nob with Waaagh! Banner");
+                                    Console.WriteLine("7 - Nobz");
+                                    Console.WriteLine("8 - Tankbustas");
+                                    elites = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (elites < 1 || elites > 8);
                                 if (army3.detachment == 1)
                                 {
                                     if (elite.Count < 2)
@@ -10956,14 +11244,18 @@ namespace Final
                             }
                             if (army3.Faction == 7)
                             {
-                                Console.WriteLine("1 - Dahyak Grekh");
-                                Console.WriteLine("2 - Firesight Marksman");
-                                Console.WriteLine("3 - Kroot Shaper");
-                                Console.WriteLine("4 - Krootox Riders");
-                                Console.WriteLine("5 - XV104 Riptide Battlesuit");
-                                Console.WriteLine("6 - XV25 Stealth Battlesuits");
-                                Console.WriteLine("7 - XV8 Crisis Battlesuits");
-                                elites = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Dahyak Grekh");
+                                    Console.WriteLine("2 - Firesight Marksman");
+                                    Console.WriteLine("3 - Kroot Shaper");
+                                    Console.WriteLine("4 - Krootox Riders");
+                                    Console.WriteLine("5 - XV104 Riptide Battlesuit");
+                                    Console.WriteLine("6 - XV25 Stealth Battlesuits");
+                                    Console.WriteLine("7 - XV8 Crisis Battlesuits");
+                                    elites = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (elites < 1 || elites > 7);
                                 if (army3.detachment == 1)
                                 {
                                     if (elite.Count < 2)
@@ -11153,17 +11445,21 @@ namespace Final
                             }
                             if (army3.Faction == 8)
                             {
-                                Console.WriteLine("1 - Deathleaper");
-                                Console.WriteLine("2 - Haruspex");
-                                Console.WriteLine("3 - Hive Guard");
-                                Console.WriteLine("4 - Lictor");
-                                Console.WriteLine("5 - Maleceptor");
-                                Console.WriteLine("6 - Pyrovores");
-                                Console.WriteLine("7 - The Red Terror");
-                                Console.WriteLine("8 - Tyrant Guard");
-                                Console.WriteLine("9 - Venomthropes");
-                                Console.WriteLine("10 - Zoanthropes");
-                                elites = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Deathleaper");
+                                    Console.WriteLine("2 - Haruspex");
+                                    Console.WriteLine("3 - Hive Guard");
+                                    Console.WriteLine("4 - Lictor");
+                                    Console.WriteLine("5 - Maleceptor");
+                                    Console.WriteLine("6 - Pyrovores");
+                                    Console.WriteLine("7 - The Red Terror");
+                                    Console.WriteLine("8 - Tyrant Guard");
+                                    Console.WriteLine("9 - Venomthropes");
+                                    Console.WriteLine("10 - Zoanthropes");
+                                    elites = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (elites < 1 || elites > 10);
                                 if (army3.detachment == 1)
                                 {
                                     if (elite.Count < 2)
@@ -11425,19 +11721,23 @@ namespace Final
                             }
                             if (army3.Faction == 9)
                             {
-                                Console.WriteLine("1 - Howling Banshees");
-                                Console.WriteLine("2 - Wraithguard");
-                                Console.WriteLine("3 - Striking Scorpions");
-                                Console.WriteLine("4 - Fire Dragons");
-                                Console.WriteLine("5 - Incubi");
-                                Console.WriteLine("6 - Medusae");
-                                Console.WriteLine("7 - Lhamaean");
-                                Console.WriteLine("8 - Sslyth");
-                                Console.WriteLine("9 - Ur-Ghul");
-                                Console.WriteLine("10 - Grotesque");
-                                Console.WriteLine("11 - Beastmaster");
-                                Console.WriteLine("12 - Mandrakes");
-                                elites = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Howling Banshees");
+                                    Console.WriteLine("2 - Wraithguard");
+                                    Console.WriteLine("3 - Striking Scorpions");
+                                    Console.WriteLine("4 - Fire Dragons");
+                                    Console.WriteLine("5 - Incubi");
+                                    Console.WriteLine("6 - Medusae");
+                                    Console.WriteLine("7 - Lhamaean");
+                                    Console.WriteLine("8 - Sslyth");
+                                    Console.WriteLine("9 - Ur-Ghul");
+                                    Console.WriteLine("10 - Grotesque");
+                                    Console.WriteLine("11 - Beastmaster");
+                                    Console.WriteLine("12 - Mandrakes");
+                                    elites = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (elites < 1 || elites > 12);
                                 if (army3.detachment == 1)
                                 {
                                     if (elite.Count < 2)
@@ -11753,13 +12053,17 @@ namespace Final
                         {
                             if (army1.Faction == 1)
                             {
-                                Console.WriteLine("1 - Dominion Squad");
-                                Console.WriteLine("2 - Seraphim Squad");
-                                Console.WriteLine("3 - Zephyrim Squad");
-                                fasts = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Dominion Squad");
+                                    Console.WriteLine("2 - Seraphim Squad");
+                                    Console.WriteLine("3 - Zephyrim Squad");
+                                    fasts = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (fasts < 1 || fasts > 3);
                                 if (army1.detachment == 1)
                                 {
-                                    if(fast.Count < 2)
+                                    if (fast.Count < 2)
                                     {
                                         if (fasts == 1)
                                         {
@@ -11850,23 +12154,27 @@ namespace Final
                             }
                             if (army1.Faction == 2)
                             {
-                                Console.WriteLine("1 - Assault Squad");
-                                Console.WriteLine("2 - Attack Bike Squad");
-                                Console.WriteLine("3 - Cyberwolves");
-                                Console.WriteLine("4 - Fenrisian Wolves");
-                                Console.WriteLine("5 - Inceptor Squad");
-                                Console.WriteLine("6 - Invader ATV Squad");
-                                Console.WriteLine("7 - Land Speeder Tornadoes");
-                                Console.WriteLine("8 - Land Speeder Typhoons");
-                                Console.WriteLine("9 - Scout Bike Squad");
-                                Console.WriteLine("10 - Skyclaws");
-                                Console.WriteLine("11 - Storm Speeder Hailstrike");
-                                Console.WriteLine("12 - Suppressor Squad");
-                                Console.WriteLine("13 - Thunderwolf Cavalry");
-                                fasts = Convert.ToInt32(Console.ReadLine());
-                                if(army1.detachment == 1)
+                                do
                                 {
-                                    if(fast.Count < 2)
+                                    Console.WriteLine("1 - Assault Squad");
+                                    Console.WriteLine("2 - Attack Bike Squad");
+                                    Console.WriteLine("3 - Cyberwolves");
+                                    Console.WriteLine("4 - Fenrisian Wolves");
+                                    Console.WriteLine("5 - Inceptor Squad");
+                                    Console.WriteLine("6 - Invader ATV Squad");
+                                    Console.WriteLine("7 - Land Speeder Tornadoes");
+                                    Console.WriteLine("8 - Land Speeder Typhoons");
+                                    Console.WriteLine("9 - Scout Bike Squad");
+                                    Console.WriteLine("10 - Skyclaws");
+                                    Console.WriteLine("11 - Storm Speeder Hailstrike");
+                                    Console.WriteLine("12 - Suppressor Squad");
+                                    Console.WriteLine("13 - Thunderwolf Cavalry");
+                                    fasts = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (fasts < 1 || fasts > 13);
+                                if (army1.detachment == 1)
+                                {
+                                    if (fast.Count < 2)
                                     {
                                         if (fasts == 1)
                                         {
@@ -12197,11 +12505,15 @@ namespace Final
                             }
                             if (army1.Faction == 3)
                             {
-                                Console.WriteLine("1 - Vertus Praetors");
-                                fasts = Convert.ToInt32(Console.ReadLine());
-                                if(army1.detachment == 1)
+                                do
                                 {
-                                    if(fast.Count < 2)
+                                    Console.WriteLine("1 - Vertus Praetors");
+                                    fasts = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (fasts < 1 || fasts > 1);
+                                if (army1.detachment == 1)
+                                {
+                                    if (fast.Count < 2)
                                     {
                                         fast.Add("Vertus Praetors");
                                         army1.Points += 255;
@@ -12224,7 +12536,7 @@ namespace Final
                                 if (army1.detachment == 3)
                                 {
                                     if (fast.Count < 5)
-                                    { 
+                                    {
                                         fast.Add("Vertus Praetors");
                                         army1.Points += 255;
                                         army1.PL += 12;
@@ -12235,13 +12547,17 @@ namespace Final
                             }
                             if (army1.Faction == 4)
                             {
-                                Console.WriteLine("1 - Ironstride Ballistarii");
-                                Console.WriteLine("2 - Pteraxii Skystalkers");
-                                Console.WriteLine("3 - Pteraxii Sterylizors");
-                                Console.WriteLine("4 - Serberys Raiders");
-                                Console.WriteLine("5 - Serberys Sulphurhounds");
-                                Console.WriteLine("6 - Sydonian Dragoons");
-                                fasts = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Ironstride Ballistarii");
+                                    Console.WriteLine("2 - Pteraxii Skystalkers");
+                                    Console.WriteLine("3 - Pteraxii Sterylizors");
+                                    Console.WriteLine("4 - Serberys Raiders");
+                                    Console.WriteLine("5 - Serberys Sulphurhounds");
+                                    Console.WriteLine("6 - Sydonian Dragoons");
+                                    fasts = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (fasts < 1 || fasts > 6);
                                 if (army1.detachment == 1)
                                 {
                                     if (fast.Count < 2)
@@ -12411,7 +12727,7 @@ namespace Final
                                 Console.WriteLine("2 - Hellhounds");
                                 Console.WriteLine("3 - Scout Sentinels");
                                 fasts = Convert.ToInt32(Console.ReadLine());
-                                if(army1.detachment == 1)
+                                if (army1.detachment == 1)
                                 {
                                     if (fast.Count < 2)
                                     {
@@ -12507,16 +12823,20 @@ namespace Final
                         {
                             if (army2.Faction == 1)
                             {
-                                Console.WriteLine("1 - Flesh Hounds");
-                                Console.WriteLine("2 - Furies");
-                                Console.WriteLine("3 - Hellflayer");
-                                Console.WriteLine("4 - Plague Drones");
-                                Console.WriteLine("5 - Screamers");
-                                Console.WriteLine("6 - Seekers");
-                                fasts = Convert.ToInt32(Console.ReadLine());
-                                if(army2.detachment == 1)
+                                do
                                 {
-                                    if(fast.Count < 2)
+                                    Console.WriteLine("1 - Flesh Hounds");
+                                    Console.WriteLine("2 - Furies");
+                                    Console.WriteLine("3 - Hellflayer");
+                                    Console.WriteLine("4 - Plague Drones");
+                                    Console.WriteLine("5 - Screamers");
+                                    Console.WriteLine("6 - Seekers");
+                                    fasts = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (fasts < 1 || fasts > 6);
+                                if (army2.detachment == 1)
+                                {
+                                    if (fast.Count < 2)
                                     {
                                         if (fasts == 1)
                                         {
@@ -12679,13 +12999,17 @@ namespace Final
                             }
                             if (army2.Faction == 2)
                             {
-                                Console.WriteLine("1 - Chaos Spawn");
-                                Console.WriteLine("2 - Foetid Bload-Drone");
-                                Console.WriteLine("3 - Myphitic Blight-Haulers");
-                                fasts = Convert.ToInt32(Console.ReadLine());
-                                if(army2.detachment == 1)
+                                do
                                 {
-                                    if(fast.Count < 2)
+                                    Console.WriteLine("1 - Chaos Spawn");
+                                    Console.WriteLine("2 - Foetid Bload-Drone");
+                                    Console.WriteLine("3 - Myphitic Blight-Haulers");
+                                    fasts = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (fasts < 1 || fasts > 3);
+                                if (army2.detachment == 1)
+                                {
+                                    if (fast.Count < 2)
                                     {
                                         if (fasts == 1)
                                         {
@@ -12776,11 +13100,15 @@ namespace Final
                             }
                             if (army2.Faction == 3)
                             {
-                                Console.WriteLine("Bikers");
-                                Console.WriteLine("Chaos Spawn");
-                                Console.WriteLine("Raptors");
-                                Console.WriteLine("Warp Talons");
-                                fasts = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Bikers");
+                                    Console.WriteLine("2 - Chaos Spawn");
+                                    Console.WriteLine("3 - Raptors");
+                                    Console.WriteLine("4 - Warp Talons");
+                                    fasts = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (fasts < 1 || fasts > 4);
                                 if (army2.detachment == 1)
                                 {
                                     if (fast.Count < 2)
@@ -12898,9 +13226,13 @@ namespace Final
                             }
                             if (army2.Faction == 4)
                             {
-                                Console.WriteLine("1 - Chaos Spawn");
-                                Console.WriteLine("2 - Tzaangor Enlightened");
-                                fasts = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Chaos Spawn");
+                                    Console.WriteLine("2 - Tzaangor Enlightened");
+                                    fasts = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (fasts < 1 || fasts > 2);
                                 if (army2.detachment == 1)
                                 {
                                     if (fast.Count < 2)
@@ -12973,12 +13305,16 @@ namespace Final
                         {
                             if (army3.Faction == 1)
                             {
-                                Console.WriteLine("1 - Shining Spears");
-                                Console.WriteLine("2 - Swooping Hawks");
-                                Console.WriteLine("3 - Vypers");
-                                Console.WriteLine("4 - Warp Spiders");
-                                Console.WriteLine("5 - Windriders");
-                                fasts = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Shining Spears");
+                                    Console.WriteLine("2 - Swooping Hawks");
+                                    Console.WriteLine("3 - Vypers");
+                                    Console.WriteLine("4 - Warp Spiders");
+                                    Console.WriteLine("5 - Windriders");
+                                    fasts = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (fasts < 1 || fasts > 5);
                                 if (army3.detachment == 1)
                                 {
                                     if (fast.Count < 2)
@@ -13120,16 +13456,20 @@ namespace Final
                             }
                             if (army3.Faction == 2)
                             {
-                                Console.WriteLine("1 - Clawed Fiends");
-                                Console.WriteLine("2 - Hellions");
-                                Console.WriteLine("3 - Khymerae");
-                                Console.WriteLine("4 - Razorwing Flocks");
-                                fasts = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Clawed Fiends");
+                                    Console.WriteLine("2 - Hellions");
+                                    Console.WriteLine("3 - Khymerae");
+                                    Console.WriteLine("4 - Razorwing Flocks");
+                                    fasts = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (fasts < 1 || fasts > 4);
                                 if (army3.detachment == 1)
                                 {
                                     if (fast.Count < 2)
                                     {
-                                        if(fasts == 1)
+                                        if (fasts == 1)
                                         {
                                             fast.Add("Clawed Fiends");
                                             army3.Points += 25;
@@ -13242,11 +13582,15 @@ namespace Final
                             }
                             if (army3.Faction == 3)
                             {
-                                Console.WriteLine("1 - Achilles Ridgerunners");
-                                Console.WriteLine("2 - Atalan Jackals");
-                                Console.WriteLine("3 - Cult Armoured Sentinels");
-                                Console.WriteLine("4 - Cult Scout Sentinels");
-                                fasts = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Achilles Ridgerunners");
+                                    Console.WriteLine("2 - Atalan Jackals");
+                                    Console.WriteLine("3 - Cult Armoured Sentinels");
+                                    Console.WriteLine("4 - Cult Scout Sentinels");
+                                    fasts = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (fasts < 1 || fasts > 4);
                                 if (army3.detachment == 1)
                                 {
                                     if (fast.Count < 2)
@@ -13364,8 +13708,12 @@ namespace Final
                             }
                             if (army3.Faction == 4)
                             {
-                                Console.WriteLine("1 - Skyweavers");
-                                fasts = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Skyweavers");
+                                    fasts = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (fasts < 1 || fasts > 1);
                                 if (army3.detachment == 1)
                                 {
                                     if (fast.Count < 2)
@@ -13402,12 +13750,16 @@ namespace Final
                             }
                             if (army3.Faction == 5)
                             {
-                                Console.WriteLine("1 - Canoptek Scarab Swarms");
-                                Console.WriteLine("2 - Canoptek Wraiths");
-                                Console.WriteLine("3 - Ophydian Destroyers");
-                                Console.WriteLine("4 - Tomb Blades");
-                                Console.WriteLine("5 - Triarch Praetorians");
-                                fasts = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Canoptek Scarab Swarms");
+                                    Console.WriteLine("2 - Canoptek Wraiths");
+                                    Console.WriteLine("3 - Ophydian Destroyers");
+                                    Console.WriteLine("4 - Tomb Blades");
+                                    Console.WriteLine("5 - Triarch Praetorians");
+                                    fasts = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (fasts < 1 || fasts > 5);
                                 if (army3.detachment == 1)
                                 {
                                     if (fast.Count < 2)
@@ -13549,14 +13901,18 @@ namespace Final
                             }
                             if (army3.Faction == 6)
                             {
-                                Console.WriteLine("1 - Boomdakka Snazzwagon");
-                                Console.WriteLine("2 - Deffkopta");
-                                Console.WriteLine("3 - Kustom Boosta-blasta");
-                                Console.WriteLine("4 - Megatrakk Scrapjet");
-                                Console.WriteLine("5 - Nob on Smasha Squig");
-                                Console.WriteLine("6 - Rukkatrukk Squigbuggie");
-                                Console.WriteLine("7 - Shokkjump Dragsta");
-                                fasts = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Boomdakka Snazzwagon");
+                                    Console.WriteLine("2 - Deffkopta");
+                                    Console.WriteLine("3 - Kustom Boosta-blasta");
+                                    Console.WriteLine("4 - Megatrakk Scrapjet");
+                                    Console.WriteLine("5 - Nob on Smasha Squig");
+                                    Console.WriteLine("6 - Rukkatrukk Squigbuggie");
+                                    Console.WriteLine("7 - Shokkjump Dragsta");
+                                    fasts = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (fasts < 1 || fasts > 7);
                                 if (army3.detachment == 1)
                                 {
                                     if (fast.Count < 2)
@@ -13746,12 +14102,16 @@ namespace Final
                             }
                             if (army3.Faction == 7)
                             {
-                                Console.WriteLine("1 - Kroot Hounds");
-                                Console.WriteLine("2 - Pathfinder team");
-                                Console.WriteLine("3 - Tactical Drones");
-                                Console.WriteLine("4 - TX4 Piranhas");
-                                Console.WriteLine("5 - Vespid Stingwings");
-                                fasts = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Kroot Hounds");
+                                    Console.WriteLine("2 - Pathfinder team");
+                                    Console.WriteLine("3 - Tactical Drones");
+                                    Console.WriteLine("4 - TX4 Piranhas");
+                                    Console.WriteLine("5 - Vespid Stingwings");
+                                    fasts = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (fasts < 1 || fasts > 5);
                                 if (army3.detachment == 1)
                                 {
                                     if (fast.Count < 2)
@@ -13893,11 +14253,15 @@ namespace Final
                             }
                             if (army3.Faction == 8)
                             {
-                                Console.WriteLine("1 - Gargoyles");
-                                Console.WriteLine("2 - Mucolid Spores");
-                                Console.WriteLine("3 - Raveners");
-                                Console.WriteLine("4 - Spore Mines");
-                                fasts = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Gargoyles");
+                                    Console.WriteLine("2 - Mucolid Spores");
+                                    Console.WriteLine("3 - Raveners");
+                                    Console.WriteLine("4 - Spore Mines");
+                                    fasts = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (fasts < 1 || fasts > 4);
                                 if (army3.detachment == 1)
                                 {
                                     if (fast.Count < 2)
@@ -14015,16 +14379,21 @@ namespace Final
                             }
                             if (army3.Faction == 9)
                             {
-                                Console.WriteLine("1 - Shining Spears");
-                                Console.WriteLine("2 - Swooping Hawks");
-                                Console.WriteLine("3 - Vypers");
-                                Console.WriteLine("4 - Warp Spiders");
-                                Console.WriteLine("5 - Windriders");
-                                Console.WriteLine("6 - Clawed Fiends");
-                                Console.WriteLine("7 - Hellions");
-                                Console.WriteLine("8 - Khymerae");
-                                Console.WriteLine("9 - Razorwing Flocks");
-                                fasts = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Shining Spears");
+                                    Console.WriteLine("2 - Swooping Hawks");
+                                    Console.WriteLine("3 - Vypers");
+                                    Console.WriteLine("4 - Warp Spiders");
+                                    Console.WriteLine("5 - Windriders");
+                                    Console.WriteLine("6 - Clawed Fiends");
+                                    Console.WriteLine("7 - Hellions");
+                                    Console.WriteLine("8 - Khymerae");
+                                    Console.WriteLine("9 - Razorwing Flocks");
+                                    fasts = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (fasts < 1 || fasts > 9);
+                  
                                 if (army3.detachment == 1)
                                 {
                                     if (fast.Count < 2)
@@ -14112,16 +14481,20 @@ namespace Final
                         {
                             if (army1.Faction == 1)
                             {
-                                Console.WriteLine("1 - Castigator");
-                                Console.WriteLine("2 - Exorcist");
-                                Console.WriteLine("3 - Mortifier");
-                                Console.WriteLine("4 - Retributor Squad");
-                                heavys = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Castigator");
+                                    Console.WriteLine("2 - Exorcist");
+                                    Console.WriteLine("3 - Mortifier");
+                                    Console.WriteLine("4 - Retributor Squad");
+                                    heavys = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (heavys < 1 || heavys > 4);
                                 if (army1.detachment == 1)
                                 {
-                                    if(heavy.Count < 2)
+                                    if (heavy.Count < 2)
                                     {
-                                        if(heavys == 1)
+                                        if (heavys == 1)
                                         {
                                             heavy.Add("Castigator");
                                             army1.Points += 160;
@@ -14129,7 +14502,7 @@ namespace Final
                                             heavyp.Add(160);
                                             hepl.Add(9);
                                         }
-                                        if(heavys == 2)
+                                        if (heavys == 2)
                                         {
                                             heavy.Add("Exorcist");
                                             army1.Points += 150;
@@ -14234,15 +14607,19 @@ namespace Final
                             }
                             if (army1.Faction == 2)
                             {
-                                Console.WriteLine("1 - Centurion Devastator Squad");
-                                Console.WriteLine("2 - Devastator Squad");
-                                Console.WriteLine("3 - Eliminator Squad");
-                                Console.WriteLine("4 - Eradicator Squad");
-                                Console.WriteLine("5 - Hellblaster Squad");
-                                Console.WriteLine("6 - Land Raider");
-                                Console.WriteLine("7 - Repulsor");
-                                Console.WriteLine("8 - Stalker");
-                                heavys = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Centurion Devastator Squad");
+                                    Console.WriteLine("2 - Devastator Squad");
+                                    Console.WriteLine("3 - Eliminator Squad");
+                                    Console.WriteLine("4 - Eradicator Squad");
+                                    Console.WriteLine("5 - Hellblaster Squad");
+                                    Console.WriteLine("6 - Land Raider");
+                                    Console.WriteLine("7 - Repulsor");
+                                    Console.WriteLine("8 - Stalker");
+                                    heavys = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (heavys < 1 || heavys > 8);
                                 if (army1.detachment == 1)
                                 {
                                     if (heavy.Count < 2)
@@ -14456,9 +14833,13 @@ namespace Final
                             }
                             if (army1.Faction == 3)
                             {
-                                Console.WriteLine("1 - Caladius Grav-Tanks");
-                                Console.WriteLine("2 - Venerable Land Raider");
-                                heavys = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Caladius Grav-Tanks");
+                                    Console.WriteLine("2 - Venerable Land Raider");
+                                    heavys = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (heavys < 1 || heavys > 2);
                                 if (army1.detachment == 1)
                                 {
                                     if (heavy.Count < 2)
@@ -14471,7 +14852,7 @@ namespace Final
                                             heavyp.Add(205);
                                             hepl.Add(12);
                                         }
-                                        if(heavys == 2)
+                                        if (heavys == 2)
                                         {
                                             heavy.Add("Venerable Land Raider");
                                             army1.Points += 280;
@@ -14528,10 +14909,14 @@ namespace Final
                             }
                             if (army1.Faction == 4)
                             {
-                                Console.WriteLine("1 - Kastelan Robots");
-                                Console.WriteLine("2 - Onager Dunecrawler");
-                                Console.WriteLine("3 - Skorpius Disintegrator");
-                                heavys = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Kastelan Robots");
+                                    Console.WriteLine("2 - Onager Dunecrawler");
+                                    Console.WriteLine("3 - Skorpius Disintegrator");
+                                    heavys = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (heavys < 1 || heavys > 3);
                                 if (army1.detachment == 1)
                                 {
                                     if (heavy.Count < 2)
@@ -14625,13 +15010,17 @@ namespace Final
                             }
                             if (army1.Faction == 5)
                             {
-                                Console.WriteLine("1 - Basilisk");
-                                Console.WriteLine("2 - Deathstrike");
-                                Console.WriteLine("3 - Hydra");
-                                Console.WriteLine("4 - Leman Russ Battle Tank");
-                                Console.WriteLine("5 - Manticore");
-                                Console.WriteLine("6 - Wyverns");
-                                heavys = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Basilisk");
+                                    Console.WriteLine("2 - Deathstrike");
+                                    Console.WriteLine("3 - Hydra");
+                                    Console.WriteLine("4 - Leman Russ Battle Tank");
+                                    Console.WriteLine("5 - Manticore");
+                                    Console.WriteLine("6 - Wyverns");
+                                    heavys = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (heavys < 1 || heavys > 6);
                                 if (army1.detachment == 1)
                                 {
                                     if (heavy.Count < 2)
@@ -14800,12 +15189,16 @@ namespace Final
                         {
                             if (army2.Faction == 1)
                             {
-                                Console.WriteLine("1 - Burning Chariot");
-                                Console.WriteLine("2 - Exalted Seeker Chariot");
-                                Console.WriteLine("3 - Seeker Chariot");
-                                Console.WriteLine("4 - Skull Cannon");
-                                Console.WriteLine("5 - Soul Grinder");
-                                heavys = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Burning Chariot");
+                                    Console.WriteLine("2 - Exalted Seeker Chariot");
+                                    Console.WriteLine("3 - Seeker Chariot");
+                                    Console.WriteLine("4 - Skull Cannon");
+                                    Console.WriteLine("5 - Soul Grinder");
+                                    heavys = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (heavys < 1 || heavys > 5);
                                 if (army2.detachment == 1)
                                 {
                                     if (heavy.Count < 2)
@@ -14930,7 +15323,7 @@ namespace Final
                                         {
                                             heavy.Add("Skull Cannon");
                                             army2.Points += 90;
-                                            army2 .PL += 5;
+                                            army2.PL += 5;
                                             heavyp.Add(90);
                                             hepl.Add(5);
                                         }
@@ -14947,11 +15340,15 @@ namespace Final
                             }
                             if (army2.Faction == 2)
                             {
-                                Console.WriteLine("1 - Chaos Land Raider");
-                                Console.WriteLine("2 - Chaos Predator");
-                                Console.WriteLine("3 - Defiler");
-                                Console.WriteLine("4 - Plagueburst Crawler");
-                                heavys = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Chaos Land Raider");
+                                    Console.WriteLine("2 - Chaos Predator");
+                                    Console.WriteLine("3 - Defiler");
+                                    Console.WriteLine("4 - Plagueburst Crawler");
+                                    heavys = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (heavys < 1 || heavys > 4);
                                 if (army2.detachment == 1)
                                 {
                                     if (heavy.Count < 2)
@@ -15069,12 +15466,16 @@ namespace Final
                             }
                             if (army2.Faction == 3)
                             {
-                                Console.WriteLine("1 - Chaos Land Raider");
-                                Console.WriteLine("2 - Chaos Predator");
-                                Console.WriteLine("3 - Chaos Vindicator");
-                                Console.WriteLine("4 - Defiler");
-                                Console.WriteLine("5 - Forgefiend");
-                                heavys = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Chaos Land Raider");
+                                    Console.WriteLine("2 - Chaos Predator");
+                                    Console.WriteLine("3 - Chaos Vindicator");
+                                    Console.WriteLine("4 - Defiler");
+                                    Console.WriteLine("5 - Forgefiend");
+                                    heavys = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (heavys < 1 || heavys > 5);
                                 if (army2.detachment == 1)
                                 {
                                     if (heavy.Count < 2)
@@ -15216,10 +15617,14 @@ namespace Final
                             }
                             if (army2.Faction == 4)
                             {
-                                Console.WriteLine("1 - Forgefiend");
-                                Console.WriteLine("2 - Maulerfiend");
-                                Console.WriteLine("3 - Mutalith Vortex Beast");
-                                heavys = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Forgefiend");
+                                    Console.WriteLine("2 - Maulerfiend");
+                                    Console.WriteLine("3 - Mutalith Vortex Beast");
+                                    heavys = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (heavys < 1 || heavys > 3);
                                 if (army2.detachment == 1)
                                 {
                                     if (heavy.Count < 2)
@@ -15316,12 +15721,16 @@ namespace Final
                         {
                             if (army3.Faction == 1)
                             {
-                                Console.WriteLine("1 - Dark Reapers");
-                                Console.WriteLine("2 - Falcon");
-                                Console.WriteLine("3 - Fire Prism");
-                                Console.WriteLine("4 - Lynx");
-                                Console.WriteLine("5 - Night Spinner");
-                                heavys = Convert.ToInt32(Console.ReadLine());
+                                do 
+                                {
+                                    Console.WriteLine("1 - Dark Reapers");
+                                    Console.WriteLine("2 - Falcon");
+                                    Console.WriteLine("3 - Fire Prism");
+                                    Console.WriteLine("4 - Lynx");
+                                    Console.WriteLine("5 - Night Spinner");
+                                    heavys = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                }while(heavys < 1 || heavys > 5);
                                 if (army3.detachment == 1)
                                 {
                                     if (heavy.Count < 2)
@@ -15463,12 +15872,16 @@ namespace Final
                             }
                             if (army3.Faction == 2)
                             {
-                                Console.WriteLine("1 - Cronos");
-                                Console.WriteLine("2 - Ravager");
-                                Console.WriteLine("3 - Reaper");
-                                Console.WriteLine("4 - Talos");
-                                Console.WriteLine("5 - Tantalus");
-                                heavys = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Cronos");
+                                    Console.WriteLine("2 - Ravager");
+                                    Console.WriteLine("3 - Reaper");
+                                    Console.WriteLine("4 - Talos");
+                                    Console.WriteLine("5 - Tantalus");
+                                    heavys = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (heavys < 1 || heavys > 5);
                                 if (army3.detachment == 1)
                                 {
                                     if (heavy.Count < 2)
@@ -15610,10 +16023,14 @@ namespace Final
                             }
                             if (army3.Faction == 3)
                             {
-                                Console.WriteLine("1 - Brood Brothers Heavy Weapons Squad");
-                                Console.WriteLine("2 - Cult Leman Russ");
-                                Console.WriteLine("3 - Goliath Rockgrinder");
-                                heavys = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Brood Brothers Heavy Weapons Squad");
+                                    Console.WriteLine("2 - Cult Leman Russ");
+                                    Console.WriteLine("3 - Goliath Rockgrinder");
+                                    heavys = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while(heavys < 1 || heavys > 3);
                                 if (army3.detachment == 1)
                                 {
                                     if (heavy.Count < 2)
@@ -15707,8 +16124,12 @@ namespace Final
                             }
                             if (army3.Faction == 4)
                             {
-                                Console.WriteLine("1 - Voidweaver");
-                                heavys = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Voidweaver");
+                                    heavys = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (heavys < 1 || heavys > 1);
                                 if (army3.detachment == 1)
                                 {
                                     if (heavy.Count < 2)
@@ -15754,13 +16175,17 @@ namespace Final
                             }
                             if (army3.Faction == 5)
                             {
-                                Console.WriteLine("1 - Annihilation Barge");
-                                Console.WriteLine("2 - Canoptek Doomstalker");
-                                Console.WriteLine("3 - Dommsday Ark");
-                                Console.WriteLine("4 - Lokhust Destroyers");
-                                Console.WriteLine("5 - Lokhust Heavy Destroyers");
-                                Console.WriteLine("6 - Tesseract Ark");
-                                heavys = Convert.ToInt32(Console.ReadLine());
+                                do 
+                                {
+                                    Console.WriteLine("1 - Annihilation Barge");
+                                    Console.WriteLine("2 - Canoptek Doomstalker");
+                                    Console.WriteLine("3 - Dommsday Ark");
+                                    Console.WriteLine("4 - Lokhust Destroyers");
+                                    Console.WriteLine("5 - Lokhust Heavy Destroyers");
+                                    Console.WriteLine("6 - Tesseract Ark");
+                                    heavys = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                }while(heavys < 1 || heavys > 6);
                                 if (army3.detachment == 1)
                                 {
                                     if (heavy.Count < 2)
@@ -15926,15 +16351,19 @@ namespace Final
                             }
                             if (army3.Faction == 6)
                             {
-                                Console.WriteLine("1 - Battlewagon");
-                                Console.WriteLine("2 - Bonebreaka");
-                                Console.WriteLine("3 - Deff Dreads");
-                                Console.WriteLine("4 - Gunwagon");
-                                Console.WriteLine("5 - Kill Rig");
-                                Console.WriteLine("6 - Killa Kans");
-                                Console.WriteLine("7 - Lootas");
-                                Console.WriteLine("8 - Mek Gunz");
-                                heavys = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Battlewagon");
+                                    Console.WriteLine("2 - Bonebreaka");
+                                    Console.WriteLine("3 - Deff Dreads");
+                                    Console.WriteLine("4 - Gunwagon");
+                                    Console.WriteLine("5 - Kill Rig");
+                                    Console.WriteLine("6 - Killa Kans");
+                                    Console.WriteLine("7 - Lootas");
+                                    Console.WriteLine("8 - Mek Gunz");
+                                    heavys = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (heavys < 1 || heavys > 8);
                                 if (army3.detachment == 1)
                                 {
                                     if (heavy.Count < 2)
@@ -16148,11 +16577,15 @@ namespace Final
                             }
                             if (army3.Faction == 7)
                             {
-                                Console.WriteLine("1 - MV71 Sniper Drone");
-                                Console.WriteLine("2 - TX7 Hammerhead Gunship");
-                                Console.WriteLine("3 - TX78 Sky Ray Gunship");
-                                Console.WriteLine("4 - XV88 Broadside Battlesuits");
-                                heavys = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - MV71 Sniper Drone");
+                                    Console.WriteLine("2 - TX7 Hammerhead Gunship");
+                                    Console.WriteLine("3 - TX78 Sky Ray Gunship");
+                                    Console.WriteLine("4 - XV88 Broadside Battlesuits");
+                                    heavys = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (heavys < 1 || heavys > 4);
                                 if (army3.detachment == 1)
                                 {
                                     if (heavy.Count < 2)
@@ -16270,16 +16703,20 @@ namespace Final
                             }
                             if (army3.Faction == 8)
                             {
-                                Console.WriteLine("1 - Biovores");
-                                Console.WriteLine("2 - Carnifexes");
-                                Console.WriteLine("3 - Exocrine");
-                                Console.WriteLine("4 - Mawloc");
-                                Console.WriteLine("5 - Screamer-Killers");
-                                Console.WriteLine("6 - Thornbacks");
-                                Console.WriteLine("7 - Toxicrene");
-                                Console.WriteLine("8 - Trygon Prime");
-                                Console.WriteLine("9 - Tyrannofex");
-                                heavys = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Biovores");
+                                    Console.WriteLine("2 - Carnifexes");
+                                    Console.WriteLine("3 - Exocrine");
+                                    Console.WriteLine("4 - Mawloc");
+                                    Console.WriteLine("5 - Screamer-Killers");
+                                    Console.WriteLine("6 - Thornbacks");
+                                    Console.WriteLine("7 - Toxicrene");
+                                    Console.WriteLine("8 - Trygon Prime");
+                                    Console.WriteLine("9 - Tyrannofex");
+                                    heavys = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (heavys < 1 || heavys > 9);
                                 if (army3.detachment == 1)
                                 {
                                     if (heavy.Count < 2)
@@ -16517,17 +16954,21 @@ namespace Final
                             }
                             if (army3.Faction == 9)
                             {
-                                Console.WriteLine("1 - Dark Reapers");
-                                Console.WriteLine("2 - Falcon");
-                                Console.WriteLine("3 - Fire Prism");
-                                Console.WriteLine("4 - Lynx");
-                                Console.WriteLine("5 - Night Spinner");
-                                Console.WriteLine("6 - Cronos");
-                                Console.WriteLine("7 - Ravager");
-                                Console.WriteLine("8 - Reaper");
-                                Console.WriteLine("9 - Talos");
-                                Console.WriteLine("10 - Tantalus");
-                                heavys = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Dark Reapers");
+                                    Console.WriteLine("2 - Falcon");
+                                    Console.WriteLine("3 - Fire Prism");
+                                    Console.WriteLine("4 - Lynx");
+                                    Console.WriteLine("5 - Night Spinner");
+                                    Console.WriteLine("6 - Cronos");
+                                    Console.WriteLine("7 - Ravager");
+                                    Console.WriteLine("8 - Reaper");
+                                    Console.WriteLine("9 - Talos");
+                                    Console.WriteLine("10 - Tantalus");
+                                    heavys = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (heavys < 1 || heavys > 10);
                                 if (army3.detachment == 1)
                                 {
                                     if (heavy.Count < 2)
@@ -16803,14 +17244,19 @@ namespace Final
                             }
                             if (army1.Faction == 2)
                             {
-                                Console.WriteLine("1 - Corvus Blackstar");
-                                Console.WriteLine("2 - Ravenwing Dark Talon");
-                                Console.WriteLine("3 - Stormhawk Interceptor");
-                                Console.WriteLine("4 - Stormtalon Gunship");
-                                flyers = Convert.ToInt32(Console.ReadLine());
-                                if(army1.detachment == 1)
+                                do
                                 {
-                                    if(flyer.Count < 2)
+                                    Console.WriteLine("1 - Corvus Blackstar");
+                                    Console.WriteLine("2 - Ravenwing Dark Talon");
+                                    Console.WriteLine("3 - Stormhawk Interceptor");
+                                    Console.WriteLine("4 - Stormtalon Gunship");
+                                    flyers = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+
+                                } while (flyers < 1 || flyers > 4);
+                                if (army1.detachment == 1)
+                                {
+                                    if (flyer.Count < 2)
                                     {
                                         if (flyers == 1)
                                         {
@@ -16925,9 +17371,13 @@ namespace Final
                             }
                             if (army1.Faction == 3)
                             {
-                                Console.WriteLine("1 - Ares Gunship");
-                                Console.WriteLine("2 - Orion Assault Dropship");
-                                flyers = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Ares Gunship");
+                                    Console.WriteLine("2 - Orion Assault Dropship");
+                                    flyers = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (flyers < 1 || flyers > 2);
                                 if (army1.detachment == 1)
                                 {
                                     if (flyer.Count < 2)
@@ -16997,10 +17447,14 @@ namespace Final
                             }
                             if (army1.Faction == 4)
                             {
-                                Console.WriteLine("1 - Archaeopter Fusilave");
-                                Console.WriteLine("2 - Archaeopter Stratoraptor");
-                                Console.WriteLine("3 - Archaeopter Transvector");
-                                flyers = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Archaeopter Fusilave");
+                                    Console.WriteLine("2 - Archaeopter Stratoraptor");
+                                    Console.WriteLine("3 - Archaeopter Transvector");
+                                    flyers = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (flyers < 1 || flyers > 3);
                                 if (army1.detachment == 1)
                                 {
                                     if (flyer.Count < 2)
@@ -17094,11 +17548,15 @@ namespace Final
                             }
                             if (army1.Faction == 5)
                             {
-                                Console.WriteLine("1 - Arvus Lighter");
-                                Console.WriteLine("2 - Thunderbolt");
-                                Console.WriteLine("3 - Valkyrie");
-                                Console.WriteLine("4 - Vulture Gunship");
-                                flyers = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Arvus Lighter");
+                                    Console.WriteLine("2 - Thunderbolt");
+                                    Console.WriteLine("3 - Valkyrie");
+                                    Console.WriteLine("4 - Vulture Gunship");
+                                    flyers = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (flyers < 1 || flyers > 4);
                                 if (army1.detachment == 1)
                                 {
                                     if (flyer.Count < 2)
@@ -17225,9 +17683,13 @@ namespace Final
                             }
                             if (army2.Faction == 2)
                             {
-                                Console.WriteLine("1 - Death Guard Chaos Storm Eagle Gunship");
-                                Console.WriteLine("2 - Death Guard Hell Blade");
-                                flyers = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Death Guard Chaos Storm Eagle Gunship");
+                                    Console.WriteLine("2 - Death Guard Hell Blade");
+                                    flyers = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (flyers < 1 || flyers > 2);
                                 if (army2.detachment == 1)
                                 {
                                     if (flyer.Count < 2)
@@ -17297,9 +17759,13 @@ namespace Final
                             }
                             if (army2.Faction == 3)
                             {
-                                Console.WriteLine("1 - Heldrake");
-                                Console.WriteLine("2 - Chaos Storm Eagle Gunship");
-                                flyers = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Heldrake");
+                                    Console.WriteLine("2 - Chaos Storm Eagle Gunship");
+                                    flyers = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (flyers < 1 || flyers > 2);
                                 if (army2.detachment == 1)
                                 {
                                     if (flyer.Count < 2)
@@ -17369,10 +17835,14 @@ namespace Final
                             }
                             if (army2.Faction == 4)
                             {
-                                Console.WriteLine("1 - Heldrake");
-                                Console.WriteLine("2 - Thousand Sons Chaos Storm Eagle Gunship");
-                                Console.WriteLine("3 - Thousand Sons Hell Blade");
-                                flyers = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Heldrake");
+                                    Console.WriteLine("2 - Thousand Sons Chaos Storm Eagle Gunship");
+                                    Console.WriteLine("3 - Thousand Sons Hell Blade");
+                                    flyers = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (flyers < 1 || flyers > 3);
                                 if (army2.detachment == 1)
                                 {
                                     if (flyer.Count < 2)
@@ -17469,11 +17939,15 @@ namespace Final
                         {
                             if (army3.Faction == 1)
                             {
-                                Console.WriteLine("1 - Crimson Hunter");
-                                Console.WriteLine("2 - Crimson Hunter Exarch");
-                                Console.WriteLine("3 - Hemlock Wraithfighter");
-                                Console.WriteLine("4 - Nightwing");
-                                flyers = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Crimson Hunter");
+                                    Console.WriteLine("2 - Crimson Hunter Exarch");
+                                    Console.WriteLine("3 - Hemlock Wraithfighter");
+                                    Console.WriteLine("4 - Nightwing");
+                                    flyers = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (flyers < 1 || flyers > 4);
                                 if (army3.detachment == 1)
                                 {
                                     if (flyer.Count < 2)
@@ -17591,9 +18065,13 @@ namespace Final
                             }
                             if (army3.Faction == 2)
                             {
-                                Console.WriteLine("1 - Razorwing Jetfighter");
-                                Console.WriteLine("2 - Voidraven Bomber");
-                                flyers = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Razorwing Jetfighter");
+                                    Console.WriteLine("2 - Voidraven Bomber");
+                                    flyers = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (flyers < 1 || flyers > 2);
                                 if (army3.detachment == 1)
                                 {
                                     if (flyer.Count < 2)
@@ -17643,10 +18121,14 @@ namespace Final
                             }
                             if (army3.Faction == 5)
                             {
-                                Console.WriteLine("1 - Doom Scythe");
-                                Console.WriteLine("2 - Night Scythe");
-                                Console.WriteLine("3 - Night Shroud");
-                                flyers = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Doom Scythe");
+                                    Console.WriteLine("2 - Night Scythe");
+                                    Console.WriteLine("3 - Night Shroud");
+                                    flyers = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (flyers < 1 || flyers > 3);
                                 if (army3.detachment == 1)
                                 {
                                     if (flyer.Count < 2)
@@ -17740,11 +18222,15 @@ namespace Final
                             }
                             if (army3.Faction == 6)
                             {
-                                Console.WriteLine("1 - Blitza-bommer");
-                                Console.WriteLine("2 - Burna-bommer");
-                                Console.WriteLine("3 - Dakkajet");
-                                Console.WriteLine("4 - Wazbom Blastajet");
-                                flyers = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Blitza-bommer");
+                                    Console.WriteLine("2 - Burna-bommer");
+                                    Console.WriteLine("3 - Dakkajet");
+                                    Console.WriteLine("4 - Wazbom Blastajet");
+                                    flyers = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (flyers < 1 || flyers > 4);
                                 if (army3.detachment == 1)
                                 {
                                     if (flyer.Count < 2)
@@ -17862,13 +18348,17 @@ namespace Final
                             }
                             if (army3.Faction == 7)
                             {
-                                Console.WriteLine("1 - AX-1-0 Tiger Shark");
-                                Console.WriteLine("2 - AX-5-2 Barracuda");
-                                Console.WriteLine("3 - AX3 Razorshark Strike Fighter");
-                                Console.WriteLine("4 - AX39 Sun Shark Bomber");
-                                Console.WriteLine("5 - DX-6 Remora Stealth Drones");
-                                Console.WriteLine("6 - Tiger Shark");
-                                flyers = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - AX-1-0 Tiger Shark");
+                                    Console.WriteLine("2 - AX-5-2 Barracuda");
+                                    Console.WriteLine("3 - AX3 Razorshark Strike Fighter");
+                                    Console.WriteLine("4 - AX39 Sun Shark Bomber");
+                                    Console.WriteLine("5 - DX-6 Remora Stealth Drones");
+                                    Console.WriteLine("6 - Tiger Shark");
+                                    flyers = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (flyers < 1 || flyers > 6);
                                 if (army3.detachment == 1)
                                 {
                                     if (flyer.Count < 2)
@@ -18034,9 +18524,13 @@ namespace Final
                             }
                             if (army3.Faction == 8)
                             {
-                                Console.WriteLine("1 - Harpy");
-                                Console.WriteLine("2 - Hive Crone");
-                                flyers = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Harpy");
+                                    Console.WriteLine("2 - Hive Crone");
+                                    flyers = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (flyers < 1 || flyers > 2);
                                 if (army3.detachment == 1)
                                 {
                                     if (flyer.Count < 2)
@@ -18106,13 +18600,17 @@ namespace Final
                             }
                             if (army3.Faction == 9)
                             {
-                                Console.WriteLine("1 - Crimson Hunter");
-                                Console.WriteLine("2 - Crimson Hunter Exarch");
-                                Console.WriteLine("3 - Hemlock Wraithfighter");
-                                Console.WriteLine("4 - Nightwing");
-                                Console.WriteLine("5 - Razorwing Jetfighter");
-                                Console.WriteLine("6 - Voidraven Bomber");
-                                flyers = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Crimson Hunter");
+                                    Console.WriteLine("2 - Crimson Hunter Exarch");
+                                    Console.WriteLine("3 - Hemlock Wraithfighter");
+                                    Console.WriteLine("4 - Nightwing");
+                                    Console.WriteLine("5 - Razorwing Jetfighter");
+                                    Console.WriteLine("6 - Voidraven Bomber");
+                                    flyers = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (flyers < 1 || flyers > 6);
                                 if (army3.detachment == 1)
                                 {
                                     if (flyer.Count < 2)
@@ -18284,10 +18782,14 @@ namespace Final
                         {
                             if (army1.Faction == 1)
                             {
-                                Console.WriteLine("1 - Immolator");
-                                Console.WriteLine("2 - Sororitas Rhino");
-                                transports = Convert.ToInt32(Console.ReadLine());
-                                if(troop.Count > transport.Count)
+                                do
+                                {
+                                    Console.WriteLine("1 - Immolator");
+                                    Console.WriteLine("2 - Sororitas Rhino");
+                                    transports = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (transports < 1 || transports > 2);
+                                if (troop.Count > transport.Count)
                                 {
                                     if (transports == 1)
                                     {
@@ -18309,12 +18811,16 @@ namespace Final
                             }
                             if (army1.Faction == 2)
                             {
-                                Console.WriteLine("1 - Drop Pod");
-                                Console.WriteLine("2 - Impulsor");
-                                Console.WriteLine("3 - Land Speeder Storm");
-                                Console.WriteLine("4 - Razorback");
-                                Console.WriteLine("5 - Rhino");
-                                transports = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Drop Pod");
+                                    Console.WriteLine("2 - Impulsor");
+                                    Console.WriteLine("3 - Land Speeder Storm");
+                                    Console.WriteLine("4 - Razorback");
+                                    Console.WriteLine("5 - Rhino");
+                                    transports = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (transports < 1 || transports > 5);
                                 if (troop.Count > transport.Count)
                                 {
                                     if (transports == 1)
@@ -18361,8 +18867,12 @@ namespace Final
                             }
                             if (army1.Faction == 3)
                             {
-                                Console.WriteLine("1 - Coronus Grav-carrier");
-                                transports = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Coronus Grav-carrier");
+                                    transports = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (transports < 1 || transports > 1);
                                 if (troop.Count > transport.Count)
                                 {
                                     if (transports == 1)
@@ -18372,14 +18882,18 @@ namespace Final
                                         army1.PL += 13;
                                         transportp.Add(250);
                                         trpl.Add(12);
-                                    }                                  
+                                    }
                                 }
                             }
                             if (army1.Faction == 4)
                             {
-                                Console.WriteLine("1 - Skorpius Dunerider");
-                                Console.WriteLine("2 - Terrax-pattern Termite");
-                                transports = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Skorpius Dunerider");
+                                    Console.WriteLine("2 - Terrax-pattern Termite");
+                                    transports = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (transports < 1 || transports > 2);
                                 if (troop.Count > transport.Count)
                                 {
                                     if (transports == 1)
@@ -18402,9 +18916,13 @@ namespace Final
                             }
                             if (army1.Faction == 5)
                             {
-                                Console.WriteLine("1 - Chimera");
-                                Console.WriteLine("2 - Taurox");
-                                transports = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Chimera");
+                                    Console.WriteLine("2 - Taurox");
+                                    transports = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (transports < 1 || transports > 2);
                                 if (troop.Count > transport.Count)
                                 {
                                     if (transports == 1)
@@ -18435,8 +18953,13 @@ namespace Final
                             }
                             if (army2.Faction == 2)
                             {
-                                Console.WriteLine("1 - Chaos Rhino");
-                                transports = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Chaos Rhino");
+                                    transports = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (transports < 1 || transports > 1);
+
                                 if (troop.Count > transport.Count)
                                 {
                                     if (transports == 1)
@@ -18451,8 +18974,12 @@ namespace Final
                             }
                             if (army2.Faction == 3)
                             {
-                                Console.WriteLine("1 - Chaos Rhino");
-                                transports = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Chaos Rhino");
+                                    transports = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (transports < 1 || transports > 1);
                                 if (troop.Count > transport.Count)
                                 {
                                     if (transports == 1)
@@ -18467,8 +18994,12 @@ namespace Final
                             }
                             if (army2.Faction == 4)
                             {
-                                Console.WriteLine("1 - Chaos Rhino");
-                                transports = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Chaos Rhino");
+                                    transports = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (transports < 1 || transports > 1);
                                 if (troop.Count > transport.Count)
                                 {
 
@@ -18487,8 +19018,12 @@ namespace Final
                         {
                             if (army3.Faction == 1)
                             {
-                                Console.WriteLine("1 - Wave Serpent");
-                                transports = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Wave Serpent");
+                                    transports = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (transports < 1 || transports > 1);
                                 if (troop.Count > transport.Count)
                                 {
                                     if (transports == 1)
@@ -18503,9 +19038,13 @@ namespace Final
                             }
                             if (army3.Faction == 2)
                             {
-                                Console.WriteLine("1 - Raider");
-                                Console.WriteLine("2 - Venom");
-                                transports = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Raider");
+                                    Console.WriteLine("2 - Venom");
+                                    transports = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (transports < 1 || transports > 2);
                                 if (troop.Count > transport.Count)
                                 {
                                     if (transports == 1)
@@ -18528,9 +19067,13 @@ namespace Final
                             }
                             if (army3.Faction == 3)
                             {
-                                Console.WriteLine("1 - Cult Chimera");
-                                Console.WriteLine("2 - Goliath Truck");
-                                transports = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Cult Chimera");
+                                    Console.WriteLine("2 - Goliath Truck");
+                                    transports = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (transports < 1 || transports > 2);
                                 if (troop.Count > transport.Count)
                                 {
                                     if (transports == 1)
@@ -18553,8 +19096,12 @@ namespace Final
                             }
                             if (army3.Faction == 4)
                             {
-                                Console.WriteLine("1 - Starweaver");
-                                transports = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Starweaver");
+                                    transports = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (transports < 1 || transports > 1);
                                 if (troop.Count > transport.Count)
                                 {
                                     if (transports == 1)
@@ -18569,8 +19116,12 @@ namespace Final
                             }
                             if (army3.Faction == 5)
                             {
-                                Console.WriteLine("1 - Ghost Ark");
-                                transports = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Ghost Ark");
+                                    transports = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (transports < 1 || transports > 1);
                                 if (troop.Count > transport.Count)
                                 {
                                     if (transports == 1)
@@ -18585,8 +19136,12 @@ namespace Final
                             }
                             if (army3.Faction == 6)
                             {
-                                Console.WriteLine("1 - Trukk");
-                                transports = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Trukk");
+                                    transports = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (transports < 1 || transports > 1);
                                 if (troop.Count > transport.Count)
                                 {
                                     if (transports == 1)
@@ -18601,8 +19156,12 @@ namespace Final
                             }
                             if (army3.Faction == 7)
                             {
-                                Console.WriteLine("1 - TY7 Devilfish");
-                                transports = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - TY7 Devilfish");
+                                    transports = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (transports < 1 || transports > 1);
                                 if (troop.Count > transport.Count)
                                 {
                                     if (transports == 1)
@@ -18617,8 +19176,12 @@ namespace Final
                             }
                             if (army3.Faction == 8)
                             {
-                                Console.WriteLine("1 - Tyrannocyte");
-                                transports = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Tyrannocyte");
+                                    transports = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (transports < 1 || transports > 1);
                                 if (troop.Count > transport.Count)
                                 {
                                     if (transports == 1)
@@ -18633,10 +19196,14 @@ namespace Final
                             }
                             if (army3.Faction == 9)
                             {
-                                Console.WriteLine("1 - Wave Serpent");
-                                Console.WriteLine("2 - Raider");
-                                Console.WriteLine("3 - Venom");
-                                transports = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Wave Serpent");
+                                    Console.WriteLine("2 - Raider");
+                                    Console.WriteLine("3 - Venom");
+                                    transports = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (transports < 1 || transports > 3);
                                 if (troop.Count > transport.Count)
                                 {
                                     if (transports == 1)
@@ -18669,16 +19236,19 @@ namespace Final
                         break;
                     case 8:
                         Console.Clear();
-                        Console.WriteLine("What would you like to remove?\n");
-                        Console.WriteLine("1 - Hq\n");
-                        Console.WriteLine("2 - Troop\n");
-                        Console.WriteLine("3 - Elite\n");
-                        Console.WriteLine("4 - Heavy Support\n");
-                        Console.WriteLine("5 - Fast Attack\n");
-                        Console.WriteLine("6 - Flyer\n");
-                        Console.WriteLine("7 - Dedicated Transport\n");
-                        remove = Convert.ToInt32(Console.ReadLine());
-                        Console.Clear();
+                        do
+                        {
+                            Console.WriteLine("What would you like to remove?\n");
+                            Console.WriteLine("1 - Hq\n");
+                            Console.WriteLine("2 - Troop\n");
+                            Console.WriteLine("3 - Elite\n");
+                            Console.WriteLine("4 - Heavy Support\n");
+                            Console.WriteLine("5 - Fast Attack\n");
+                            Console.WriteLine("6 - Flyer\n");
+                            Console.WriteLine("7 - Dedicated Transport\n");
+                            remove = Convert.ToInt32(Console.ReadLine());
+                            Console.Clear();
+                        } while (remove < 1 || remove > 7);
                         if (choice == 1)
                         {
                             if (army1.Faction == 1)
@@ -20112,6 +20682,7 @@ namespace Final
                                         transport.RemoveAt(remove);
                                         army3.Points -= transportp.ElementAt(remove);
                                         army3.PL -= tpl.ElementAt(remove);
+
                                         transportp.RemoveAt(remove);
                                         tpl.RemoveAt(remove);
                                     }
@@ -21123,7 +21694,7 @@ namespace Final
                     case 9:
                         Console.Clear();
                         Console.WriteLine("What would you like to change your army name to?");
-                        if(choice == 1)
+                        if (choice == 1)
                         {
                             army1.name = Console.ReadLine();
                         }
@@ -21138,17 +21709,21 @@ namespace Final
                         break;
                     case 10:
                         Console.Clear();
-                        if(choice == 1)
+                        if (choice == 1)
                         {
-                            if(army1.Faction == 1)
+                            if (army1.Faction == 1)
                             {
-                                Console.WriteLine("1 - Order of Our Martyred Lady");
-                                Console.WriteLine("2 - Order of The Argent Shroud");
-                                Console.WriteLine("3 - Order of the Bloody Rose");
-                                Console.WriteLine("4 - Order of the Ebon Chalice");
-                                Console.WriteLine("5 - Order of the Sacred Rose");
-                                Console.WriteLine("6 - Order of the Valorous Heart");
-                                sub = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Order of Our Martyred Lady");
+                                    Console.WriteLine("2 - Order of The Argent Shroud");
+                                    Console.WriteLine("3 - Order of the Bloody Rose");
+                                    Console.WriteLine("4 - Order of the Ebon Chalice");
+                                    Console.WriteLine("5 - Order of the Sacred Rose");
+                                    Console.WriteLine("6 - Order of the Valorous Heart");
+                                    sub = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (sub < 1 || sub > 6);
                                 if (sub == 1)
                                 {
                                     army1.subFaction = "Order of Our Martyred Lady";
@@ -21176,25 +21751,29 @@ namespace Final
                             }
                             if (army1.Faction == 2)
                             {
-                                Console.WriteLine("1 - Astral Claws");
-                                Console.WriteLine("2 - Black Templars");
-                                Console.WriteLine("3 - Blood Angels");
-                                Console.WriteLine("4 - Blood Ravens");
-                                Console.WriteLine("5 - Carcharodons");
-                                Console.WriteLine("6 - Crimson Fists");
-                                Console.WriteLine("7 - Dark Angels");
-                                Console.WriteLine("8 - Deathwatch");
-                                Console.WriteLine("9 - Flesh Tearers");
-                                Console.WriteLine("10 - Imperial Fists");
-                                Console.WriteLine("11 - Iron Hands");
-                                Console.WriteLine("12 - Minotaurs");
-                                Console.WriteLine("13 - Raven Guard");
-                                Console.WriteLine("14 - Red Scorpions");
-                                Console.WriteLine("15 - Salamanders");
-                                Console.WriteLine("16 - Space Wolves");
-                                Console.WriteLine("17 - Ultramarines");
-                                Console.WriteLine("18 - White Scars");
-                                sub = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Astral Claws");
+                                    Console.WriteLine("2 - Black Templars");
+                                    Console.WriteLine("3 - Blood Angels");
+                                    Console.WriteLine("4 - Blood Ravens");
+                                    Console.WriteLine("5 - Carcharodons");
+                                    Console.WriteLine("6 - Crimson Fists");
+                                    Console.WriteLine("7 - Dark Angels");
+                                    Console.WriteLine("8 - Deathwatch");
+                                    Console.WriteLine("9 - Flesh Tearers");
+                                    Console.WriteLine("10 - Imperial Fists");
+                                    Console.WriteLine("11 - Iron Hands");
+                                    Console.WriteLine("12 - Minotaurs");
+                                    Console.WriteLine("13 - Raven Guard");
+                                    Console.WriteLine("14 - Red Scorpions");
+                                    Console.WriteLine("15 - Salamanders");
+                                    Console.WriteLine("16 - Space Wolves");
+                                    Console.WriteLine("17 - Ultramarines");
+                                    Console.WriteLine("18 - White Scars");
+                                    sub = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (sub < 1 || sub > 18);
                                 if (sub == 1)
                                 {
                                     army1.subFaction = "Astral Claws";
@@ -21270,12 +21849,16 @@ namespace Final
                             }
                             if (army1.Faction == 3)
                             {
-                                Console.WriteLine("1 - Aquilan Shield");
-                                Console.WriteLine("2 - Dread Host");
-                                Console.WriteLine("3 - Emissaries Imperatus");
-                                Console.WriteLine("4 - Shadowkeepers");
-                                Console.WriteLine("5 - Solar Watch");
-                                sub = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Aquilan Shield");
+                                    Console.WriteLine("2 - Dread Host");
+                                    Console.WriteLine("3 - Emissaries Imperatus");
+                                    Console.WriteLine("4 - Shadowkeepers");
+                                    Console.WriteLine("5 - Solar Watch");
+                                    sub = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (sub < 1 || sub > 5);
                                 if (sub == 1)
                                 {
                                     army1.subFaction = "Aquilan Shield";
@@ -21299,14 +21882,18 @@ namespace Final
                             }
                             if (army1.Faction == 4)
                             {
-                                Console.WriteLine("1 - Agripinaa");
-                                Console.WriteLine("2 - Graia");
-                                Console.WriteLine("3 - Lucius");
-                                Console.WriteLine("4 - Mars");
-                                Console.WriteLine("5 - Metalica");
-                                Console.WriteLine("6 - Ryza");
-                                Console.WriteLine("7 - Stygies VIII");
-                                sub = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Agripinaa");
+                                    Console.WriteLine("2 - Graia");
+                                    Console.WriteLine("3 - Lucius");
+                                    Console.WriteLine("4 - Mars");
+                                    Console.WriteLine("5 - Metalica");
+                                    Console.WriteLine("6 - Ryza");
+                                    Console.WriteLine("7 - Stygies VIII");
+                                    sub = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (sub < 1 || sub > 7);
                                 if (sub == 1)
                                 {
                                     army1.subFaction = "Agripinaa";
@@ -21338,16 +21925,20 @@ namespace Final
                             }
                             if (army1.Faction == 5)
                             {
-                                Console.WriteLine("1 - Armageddon");
-                                Console.WriteLine("2 - Cadian");
-                                Console.WriteLine("3 - Catachan");
-                                Console.WriteLine("4 - Krieg");
-                                Console.WriteLine("5 - Mordian");
-                                Console.WriteLine("6 - Tallarn");
-                                Console.WriteLine("7 - Tanith");
-                                Console.WriteLine("8 - Valhallan");
-                                Console.WriteLine("9 - Vostroyan");
-                                sub = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Armageddon");
+                                    Console.WriteLine("2 - Cadian");
+                                    Console.WriteLine("3 - Catachan");
+                                    Console.WriteLine("4 - Krieg");
+                                    Console.WriteLine("5 - Mordian");
+                                    Console.WriteLine("6 - Tallarn");
+                                    Console.WriteLine("7 - Tanith");
+                                    Console.WriteLine("8 - Valhallan");
+                                    Console.WriteLine("9 - Vostroyan");
+                                    sub = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (sub < 1 || sub > 9);
                                 if (sub == 1)
                                 {
                                     army1.subFaction = "Armageddon";
@@ -21386,17 +21977,21 @@ namespace Final
                                 }
                             }
                         }
-                        if(choice == 2)
+                        if (choice == 2)
                         {
                             if (army2.Faction == 1)
                             {
 
 
-                                Console.WriteLine("1 - Khorne");
-                                Console.WriteLine("2 - Nurgle");
-                                Console.WriteLine("3 - Slaanesh");
-                                Console.WriteLine("4 - Tzeentch");
-                                sub = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Khorne");
+                                    Console.WriteLine("2 - Nurgle");
+                                    Console.WriteLine("3 - Slaanesh");
+                                    Console.WriteLine("4 - Tzeentch");
+                                    sub = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (sub < 1 || sub > 4);
                                 if (sub == 1)
                                 {
                                     army2.subFaction = "Khorne";
@@ -21414,16 +22009,20 @@ namespace Final
                                     army2.subFaction = "Tzeentch";
                                 }
                             }
-                            if(army2.Faction == 2)
+                            if (army2.Faction == 2)
                             {
-                                Console.Write("1 - Ferrymen");
-                                Console.Write("2 - Harbingers");
-                                Console.Write("3 - Inexorable");
-                                Console.Write("4 - Mortarion's Anvil");
-                                Console.Write("5 - Mortarion's Chosen Sons");
-                                Console.Write("6 - Poxmongers");
-                                Console.Write("7 - Wretched");
-                                sub = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.Write("1 - Ferrymen");
+                                    Console.Write("2 - Harbingers");
+                                    Console.Write("3 - Inexorable");
+                                    Console.Write("4 - Mortarion's Anvil");
+                                    Console.Write("5 - Mortarion's Chosen Sons");
+                                    Console.Write("6 - Poxmongers");
+                                    Console.Write("7 - Wretched");
+                                    sub = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (sub < 1 || sub > 7);
                                 if (sub == 1)
                                 {
                                     army2.subFaction = "Ferrymen";
@@ -21455,22 +22054,26 @@ namespace Final
                             }
                             if (army2.Faction == 3)
                             {
-                                Console.WriteLine("1 - Alpha Legion");
-                                Console.WriteLine("2 - Black Legion");
-                                Console.WriteLine("3 - Brazen Beasts");
-                                Console.WriteLine("4 - Creations of Bile");
-                                Console.WriteLine("5 - Crimson Slaughter");
-                                Console.WriteLine("6 - Emperor's Children");
-                                Console.WriteLine("7 - Flawless Host");
-                                Console.WriteLine("8 - Iron Warriors");
-                                Console.WriteLine("9 - Night Lords");
-                                Console.WriteLine("10 - Red Corsairs");
-                                Console.WriteLine("11 - Renegade Chapter");
-                                Console.WriteLine("12 - The Purge");
-                                Console.WriteLine("13 - The Scourged");
-                                Console.WriteLine("14 - Word Bearers");
-                                Console.WriteLine("15 - World Eaters");
-                                sub = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Alpha Legion");
+                                    Console.WriteLine("2 - Black Legion");
+                                    Console.WriteLine("3 - Brazen Beasts");
+                                    Console.WriteLine("4 - Creations of Bile");
+                                    Console.WriteLine("5 - Crimson Slaughter");
+                                    Console.WriteLine("6 - Emperor's Children");
+                                    Console.WriteLine("7 - Flawless Host");
+                                    Console.WriteLine("8 - Iron Warriors");
+                                    Console.WriteLine("9 - Night Lords");
+                                    Console.WriteLine("10 - Red Corsairs");
+                                    Console.WriteLine("11 - Renegade Chapter");
+                                    Console.WriteLine("12 - The Purge");
+                                    Console.WriteLine("13 - The Scourged");
+                                    Console.WriteLine("14 - Word Bearers");
+                                    Console.WriteLine("15 - World Eaters");
+                                    sub = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (sub < 1 || sub > 15);
                                 if (sub == 1)
                                 {
                                     army1.subFaction = "Alpha Legion";
@@ -21534,16 +22137,20 @@ namespace Final
                             }
                             if (army2.Faction == 4)
                             {
-                                Console.WriteLine("1 - Cult of Change");
-                                Console.WriteLine("2 - Cult of Duplicity");
-                                Console.WriteLine("3 - Cult of Knowledge");
-                                Console.WriteLine("4 - Cult of Magic");
-                                Console.WriteLine("5 - Cult of Manipulation");
-                                Console.WriteLine("6 - Cult of Mutation");
-                                Console.WriteLine("7 - Cult of Prophecy");
-                                Console.WriteLine("8 - Cult of Scheming");
-                                Console.WriteLine("9 - Cult of Time");
-                                sub = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Cult of Change");
+                                    Console.WriteLine("2 - Cult of Duplicity");
+                                    Console.WriteLine("3 - Cult of Knowledge");
+                                    Console.WriteLine("4 - Cult of Magic");
+                                    Console.WriteLine("5 - Cult of Manipulation");
+                                    Console.WriteLine("6 - Cult of Mutation");
+                                    Console.WriteLine("7 - Cult of Prophecy");
+                                    Console.WriteLine("8 - Cult of Scheming");
+                                    Console.WriteLine("9 - Cult of Time");
+                                    sub = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (sub < 1 || sub > 9);
                                 if (sub == 1)
                                 {
                                     army1.subFaction = "Cult of Change";
@@ -21582,101 +22189,137 @@ namespace Final
                                 }
                             }
                         }
-                        if(choice == 3)
+                        if (choice == 3)
                         {
                             if (army3.Faction == 1)
                             {
-                                Console.WriteLine("1 - Alaitoc");
-                                Console.WriteLine("2 - Biel-Tan");
-                                Console.WriteLine("3 - Iyanden");
-                                Console.WriteLine("4 - Saim-Hann");
-                                Console.WriteLine("5 - Ulthwé");
-                                sub = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Alaitoc");
+                                    Console.WriteLine("2 - Biel-Tan");
+                                    Console.WriteLine("3 - Iyanden");
+                                    Console.WriteLine("4 - Saim-Hann");
+                                    Console.WriteLine("5 - Ulthwé");
+                                    sub = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (sub < 1 || sub > 5);
                             }
                             if (army3.Faction == 2)
                             {
-                                Console.WriteLine("1 - Haemonculus Coven");
-                                Console.WriteLine("2 - Kabal");
-                                Console.WriteLine("3 - Realspace Raid");
-                                Console.WriteLine("4 - Wych Cult");
-                                sub = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Haemonculus Coven");
+                                    Console.WriteLine("2 - Kabal");
+                                    Console.WriteLine("3 - Realspace Raid");
+                                    Console.WriteLine("4 - Wych Cult");
+                                    sub = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (sub < 1 || sub > 4);
                             }
                             if (army3.Faction == 3)
                             {
-                                Console.WriteLine("1 - Cult of the Four-armed Emperor");
-                                Console.WriteLine("2 - The Bladed Cog");
-                                Console.WriteLine("3 - The Hivecult");
-                                Console.WriteLine("4 - The Pauper Princes");
-                                Console.WriteLine("5 - The Rusted Claw");
-                                Console.WriteLine("6 - The Twisted Helix");
-                                sub = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Cult of the Four-armed Emperor");
+                                    Console.WriteLine("2 - The Bladed Cog");
+                                    Console.WriteLine("3 - The Hivecult");
+                                    Console.WriteLine("4 - The Pauper Princes");
+                                    Console.WriteLine("5 - The Rusted Claw");
+                                    Console.WriteLine("6 - The Twisted Helix");
+                                    sub = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (sub < 1 || sub > 6);
                             }
                             if (army3.Faction == 4)
                             {
-                                Console.WriteLine("1 - Dreaming Shadow");
-                                Console.WriteLine("2 - Frozen Stars");
-                                Console.WriteLine("3 - Midnight Sorrow");
-                                Console.WriteLine("4 - Silent Shroud");
-                                Console.WriteLine("5 - Soaring Spite");
-                                Console.WriteLine("6 - Veiled Path");
-                                sub = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Dreaming Shadow");
+                                    Console.WriteLine("2 - Frozen Stars");
+                                    Console.WriteLine("3 - Midnight Sorrow");
+                                    Console.WriteLine("4 - Silent Shroud");
+                                    Console.WriteLine("5 - Soaring Spite");
+                                    Console.WriteLine("6 - Veiled Path");
+                                    sub = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (sub < 1 || sub > 6);
                             }
                             if (army3.Faction == 5)
                             {
-                                Console.WriteLine("1 - Mephrit");
-                                Console.WriteLine("2 - Nephrekh");
-                                Console.WriteLine("3 - Nihilakh");
-                                Console.WriteLine("4 - Novokh");
-                                Console.WriteLine("5 - Sautekh");
-                                Console.WriteLine("6 - Szarekhan");
-                                sub = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Mephrit");
+                                    Console.WriteLine("2 - Nephrekh");
+                                    Console.WriteLine("3 - Nihilakh");
+                                    Console.WriteLine("4 - Novokh");
+                                    Console.WriteLine("5 - Sautekh");
+                                    Console.WriteLine("6 - Szarekhan");
+                                    sub = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (sub < 1 || sub > 6);
                             }
                             if (army3.Faction == 6)
                             {
-                                Console.WriteLine("1 - Bad Moon");
-                                Console.WriteLine("2 - Blood Axes");
-                                Console.WriteLine("3 - Boomboyz");
-                                Console.WriteLine("4 - Deathskulls");
-                                Console.WriteLine("5 - Evil Sunz");
-                                Console.WriteLine("6 - Feral Orks");
-                                Console.WriteLine("7 - Flyboyz");
-                                Console.WriteLine("8 - Freebooterz");
-                                Console.WriteLine("9 - Goff");
-                                Console.WriteLine("10 - Grot Mobs");
-                                Console.WriteLine("11 - Huntas");
-                                Console.WriteLine("12 - Madboyz");
-                                Console.WriteLine("13 - Pyromaniacs");
-                                Console.WriteLine("14 - Snakebite");
-                                Console.WriteLine("15 - Tin 'Eads");
-                                sub = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Bad Moon");
+                                    Console.WriteLine("2 - Blood Axes");
+                                    Console.WriteLine("3 - Boomboyz");
+                                    Console.WriteLine("4 - Deathskulls");
+                                    Console.WriteLine("5 - Evil Sunz");
+                                    Console.WriteLine("6 - Feral Orks");
+                                    Console.WriteLine("7 - Flyboyz");
+                                    Console.WriteLine("8 - Freebooterz");
+                                    Console.WriteLine("9 - Goff");
+                                    Console.WriteLine("10 - Grot Mobs");
+                                    Console.WriteLine("11 - Huntas");
+                                    Console.WriteLine("12 - Madboyz");
+                                    Console.WriteLine("13 - Pyromaniacs");
+                                    Console.WriteLine("14 - Snakebite");
+                                    Console.WriteLine("15 - Tin 'Eads");
+                                    sub = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (sub < 1 || sub > 15);
                             }
                             if (army3.Faction == 7)
                             {
-                                Console.WriteLine("1 - Bork'an Sept");
-                                Console.WriteLine("2 - Dal'yth Sept");
-                                Console.WriteLine("3 - Farsight Enclaves");
-                                Console.WriteLine("4 - Ke'lshan");
-                                Console.WriteLine("5 - Sa'cea Sept");
-                                Console.WriteLine("6 - T'au Sept");
-                                Console.WriteLine("7 - Vior'la Sept");
-                                sub = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Bork'an Sept");
+                                    Console.WriteLine("2 - Dal'yth Sept");
+                                    Console.WriteLine("3 - Farsight Enclaves");
+                                    Console.WriteLine("4 - Ke'lshan");
+                                    Console.WriteLine("5 - Sa'cea Sept");
+                                    Console.WriteLine("6 - T'au Sept");
+                                    Console.WriteLine("7 - Vior'la Sept");
+                                    sub = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (sub < 1 || sub > 7);
                             }
                             if (army3.Faction == 8)
                             {
-                                Console.WriteLine("1 - Behemoth");
-                                Console.WriteLine("2 - Gorgon");
-                                Console.WriteLine("3 - Hydra");
-                                Console.WriteLine("4 - Jormungandr");
-                                Console.WriteLine("5 - Kraken");
-                                Console.WriteLine("6 - Kronos");
-                                Console.WriteLine("7 - Leviathan");
-                                sub = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Behemoth");
+                                    Console.WriteLine("2 - Gorgon");
+                                    Console.WriteLine("3 - Hydra");
+                                    Console.WriteLine("4 - Jormungandr");
+                                    Console.WriteLine("5 - Kraken");
+                                    Console.WriteLine("6 - Kronos");
+                                    Console.WriteLine("7 - Leviathan");
+                                    sub = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (sub < 1 || sub > 7);
                             }
                             if (army3.Faction == 9)
                             {
-                                Console.WriteLine("1 - Reborn Asuryani");
-                                Console.WriteLine("2 - Reborn Drukhari");
-                                sub = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Reborn Asuryani");
+                                    Console.WriteLine("2 - Reborn Drukhari");
+                                    sub = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (sub < 1 || sub > 2);
                             }
                         }
                         break;
