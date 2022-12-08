@@ -1,0 +1,274 @@
+﻿Ok so the unit requirements show if the unit is a special one, aka psyker and
+such, and what special abilities they know.  What needs to get added is the
+ability to add those abilities which u can findon wahapedia, i added the name
+of the set of spells they can each use so you know where to look.  It also
+needs to display in the list that they know the spells
+
+--IMPERIUM
+Adepta Sororitas:
+•	Missionary: Priest, knows War Hymn and 1 Hymn from the Hymns of battle
+•	Dialogus: Priest, knows War Hymn and 1 Hymn from the Hymns of battle
+•	Dogmata: Priest, knows War Hymn and 1 Hymn from the Hymns of battle
+•	Preacher: Priest, knows War Hymn
+
+	-War Hymn
+	-Hymns of Battle:
+		1 - Refrain of Blazing Piety
+		2 - Chorus of Spiritual Fortitude
+		3 - Psalm of Righteous Smiting
+		4 - Litany of Enduring Faith
+		5 - Verse of Holy Piety
+		6 - Catechism of Repugnance
+
+Adeptus Astartes:
+•	Librarian: Psyker, knows Smite and 2 powers from the Librarius discipline
+•	Librarian in Phobos: Psyker, knows Smite and 2 powers from the Obscuration discipline
+•	Librarian in Terminator: Psyker, knows Smite and 2 powers from the Librarius discipline
+•	Primaris Chaplain: Priest, knows Litany of Hate and 1 Litany from the Litanies of battle
+•	Primaris Chaplain on bike: Priest, knows Litany of Hate and 1 Litany from the Litanies of battle
+•	Primaris Librarian: Psyker, knows Smite and 2 powers from the Librarius discipline
+
+	-Librarius Discipline:
+		1 - Veil of Time
+		2 - Might of Heroes
+		3 - Null Zone
+		4 - Psychic Scourge
+		5 - Fury of the Ancients
+		6 - Psychic Fortress
+
+	-Obscuration Discipline:
+		1 - Shrouding
+		2 - Soul Sight
+		3 - Mind Rain
+		4 - Halucination
+		5 - Tenebrous Curse
+		6 - Temporal Corridor
+
+	-Litanies of Battle:
+		1 - Litany of Faith
+		2 - Catechism of Fire
+		3 - Exhortation of Rage
+		4 - Mantra of Strength
+		5 - Recitation of Focus
+		6 - Canticle of Hate
+
+
+Astra Militarum:
+•	Primaris Psyker: Psyker, knows Smite and 2 powers from the Psykana discipline
+•	Aradia Madellan: Psyker, knows Smite and Pyschic Augment
+•	Astropath: Psyker, knows Smite and 1 power from the Psykana discipline
+•	Wyrdvane Psyker: Psyker, knows Smite and 1 power from the Psykana discipline
+
+	-Psykana Disciplines:
+		1 - Terrifying Visions
+		2 - Gaze of the Emperor
+		3 - Psychic Barrier
+		4 - Nightshroud
+		5 - Mental Fortitude
+		6 - Psychic Maelstorm
+
+
+--CHAOS
+Chaos Daemons:
+•	Lord of Change: Psyker, knows Smite and 3 powers from the Pandemoniac discipline
+•	Great Unclean One: Psyker, knows Smite and 2 powers from the Warprot discipline
+•	Keeper of Secrets: Psyker, knows Smite and 2 powers from the Soulstain discipline
+•	Kairos Fateweaver: Psyker, knows Smite and all powers from the Pandemoniac discipline
+•	Herald of Slaanesh: Psyker, knows Smite and 1 power from the Slaanesh discipline
+•	Poxbringer: Psyker, knows Smite and 1 power from the Warprot discipline
+•	The Changeling: Psyker, knows Smite and 1 power from the Pandemoniac discipline
+•	Fluxmaster: Psyker, knows Smite and 2 powers from the Pandemoniac discipline
+•	Fateskimmer: Psyker, knows Smite and 2 powers from the Pandemoniac discipline
+•	Daemon prince (must have ability to give mark of Tzeentch, Nurgle, or Slaanesh): Psyker, knows Smite and one power from Pandemoniac(Tzeentch) Warprot(Nurgle) or Soulstain(Slaanesh) discipline
+•	Syll’Esske: Psyker, knows Smite and 2 powers from the Soulstain discipline
+•	Rotigus: Psyker, knows Smite and 2 powers from the Warprot discipline
+
+	-Pandemoniac Discipline:
+		1 - Boon of Change
+		2 - Bolt of Change
+		3 - Gaze of Fate
+		4 - Treason of Tzeentch
+		5 - Infernal Flames
+		6 - Infernal Gateway
+
+	-Warprot D.:
+		1 - Stream of Corruption
+		2 - Fleshy Abundance
+		3 - Nurgle's Rot
+		4 - Shrivelling Pox
+		5 - Virulent Blessing
+		6 - Malodorus Pall
+
+	-Soulstain D / Slaanesh D:
+		1 - Cacophonic Choir
+		2 - Symphony of Pain
+		3 - Hysterical Frenzy
+		4 - Delightful Agonies
+		5 - Pavane of Slaanesh
+		6 - Phantasmagoria
+
+Death Guard:
+•	Daemon Prince: Psyker, knows Smite and one power from the Contagion discipline
+•	Typhus: Psyker, knows Smite and 2 powers from the Contagion discipline
+
+	-Contagion D:
+		1 - Miasma of Pestilence
+		2 - Gift of Contagion
+		3 - Plague Wind
+		4 - Putrescent Vitality
+		5 - Curse of the Leper
+		6 - Gift of Plauges
+
+Chaos Space Marines:
+•	Chaos Space Marine Sorcerer: Psyker, knows Smite and 2 powers from the Dark Hereticus discipline
+•	Dark Apostle: Priest, knows Dark Xealotry and one prayer from the Prayers to the Dark Gods
+•	Sorcerer Lord in Terminator Armour: Psyker, knows Smite and 2 powers from the Dark Hereticus discipline
+•	Daemon Prince: Psyker, knows Smite and one power from the Dark Hereticus discipline discipline (knows Skeins of Fate with Tzeentch mark, Putrid Miasma with Nurgle, and Delightful Agonies with Slaanesh)
+
+	-Dark Hereticus D:
+		1 - Infernal Gaze
+		2 - Prescience
+		3 - Diabolic Strength
+		4 - Death Hex
+		5 - Gift of Chaos
+		6 - Warptime
+
+	-Prayers to the Dark Gods:
+		1 - Benediction of Darkness
+		2 - Litany of Dispair
+		3 - Omen of Potency
+		4 - Warp-Sight Plea
+		5 - Soultearer Portent
+		6 - Illusory Supplication
+
+Thousand Sons:
+•	Ahriman: Psyker, knows Smite and 3 powers from the Discipline of change and/or Discipline of Vengeance
+•	Exalted Sorcerers: Psyker, knows Smite and 2 powers from the Discipline of change and/or Discipline of Vengeance
+•	Sorcerer Lord in Terminator Armour: Psyker, knows Smite and 2 powers from the Discipline of change and/or Discipline of Vengeance
+•	Daemon Prince: Psyker, knows Smite and 2 powers from the Discipline of change and/or Discipline of Vengeance
+•	Rubric marines: Psyker, knows Smite and one power from the Discipline of Change or Discipline of Vengeance
+
+	-D of Change:
+		11 - Tzeentch's Firestorm
+		12 - Glamour of Tzeentch
+		13 - Doombolt
+		21 - Temporal Manipulation
+		22 - Weaver of Fates
+		23 - Baleful Devolution
+		31 - Cacodaemonic Curse
+		32 - Pyric Flux
+		33 - Perplex
+
+	-D of Vengeance:
+		11 - Gaze of Hate
+		12 - Twist of Fate
+		13 - Dark Blessing
+		21 - Presage
+		22 - Swelled by the Warp
+		23 - Temporal Surge
+		31 - Empyric Guidance
+		32 - Psychic Stalk
+		33 - Desecration of Worlds
+
+--XENOS
+Craftworld:
+•	Spiritseer: Psyker, knows Smite and one power from the Runes of Battle or Runes of Fortune
+•	Farseer: Psyker, knows Smite and 2 powers from Runes of Fortune and/or Runes of Fate
+•	Warlock Skyrunner: Psyker, knows smite and 1 power from runes of Battle
+•	Farseer Skyrunner: Psyker, knows Smite and 2 powers from Runes of Fortune and/or Runes of Fate
+•	Eldrad Ulthran: Psyker, knows Smite and 2 powers from Runes of Fortune and/or Runes of Fate
+
+	-Runes of Battle:
+		1 - Conceal/Reveal
+		2 - Embolden/Horrify
+		3 - Enhance/Drain
+		4 - Protect/Jinx
+		5 - Quicken/Restrain
+		6 - Empower/Enervate
+
+	-Runes of Fortune:
+		1 - Fateful Divergence
+		2 - Witch Strike
+		3 - Ghostwalk
+		4 - Crushing Orb
+		5 - Focus Will
+		6 - Impair Senses
+
+	-Runes of Fate:
+		1 - Guide
+		2 - Doom
+		3 - Fortune
+		4 - Executioner
+		5 - Will of Asuryan
+		6 - Mind War
+
+Genestealer Cult:
+•	Magus: Psyker, knows Smite and 2 powers from the Broodmind discipline
+
+	-Broodmind D:
+		1 - Mass Hypnosis
+		2 - Mind Control
+		3 - Psionic Blast
+		4 - Mental Onslaught
+		5 - Psychic Stimulus
+		6 - Might from Beyond
+
+Harlequins:
+•	Shadowseer: Psyker, knows Smite and 2 powers from the Phantasmancy discipline
+
+	-Phantasmancy D:
+		1 - Twilight Pathways
+		2 - Fog of Dreasm
+		3 - Mirror of Minds
+		4 - Veil of Tears
+		5 - Shard of Light
+		6 - Webway Dance
+
+Orks:
+•	Weirdboy: Psyker, knows Smite and 2 powers from the Power of the Waaagh! Discipline
+
+	-Waagh! D:
+		1 - 'Eadbanger
+		2 - Warpath
+		3 - Da Jump
+		4 - Fists of Gork
+		5 - Da Krunch
+		6 - Jabbin' Fingerz
+
+T’au:
+•	Aun’Va: Serene Unifier, knows 2 invocations from the Invocations of the Ethereals
+•	Aun’Shi: Serene Unifier, knows 3 invocations from the Invocations of the Ethereals
+
+	-Invocations of The Ethereals:
+		1 - Storm of Fire
+		2 - Sense of Stone
+		3 - Zephyr's Grace
+		4 - Power of Tides
+		5 - Unifying Mantra
+		6 - Wisdom of the Guides
+
+Tyranids:
+•	Broodlord: Psyker, knows Smite and 1 power from the Hive Mind discipline
+•	The Swarmlord: Psyker, knows Smite and 2 powers from the Hive Mind discipline
+•	Hive Tyrand: Psyker, knows Smite and 2 powers from the Hive Mind discipline
+
+	-Hive Mind D:
+		1 - Catalyst
+		2 - The Horror
+		3 - Neuroparasite
+		4 - Onslaught
+		5 - Paroxysm
+		6 - Pyschic Scream
+
+Ynnari:
+•	Yvraine: Psyker, knows Smite and 2 powers from the Revenant discipline
+•	Yncarne: Psyker, knows smite and all powers from the Revenant discipline
+
+	-Revenant D:
+		1 - Gaze of Ynnead
+		2 - Storm of Whispers
+		3 - Word of The Phoenix
+		4 - Unbind Sould
+		5 - Shield of Yneead
+		6 - Ancestors' Grace
+

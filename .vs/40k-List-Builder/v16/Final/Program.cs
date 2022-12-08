@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Internal;
 
 namespace Final
 {
@@ -5604,12 +5605,8 @@ namespace Final
                         {
                             if (army1.Faction == 1)
                             {
-                                do
-                                {
-                                    Console.WriteLine("1 - Battle Sister Squad\n");
-                                    troops = Convert.ToInt32(Console.ReadLine());
-                                    Console.Clear();
-                                } while (troops < 1 || troops > 1);
+                                Console.WriteLine("1 - Battle Sister Squad\n");
+                                troops = Convert.ToInt32(Console.ReadLine());
                                 if (army1.detachment == 1)
                                 {
                                     if (troop.Count < 3)
@@ -6112,16 +6109,12 @@ namespace Final
                         {
                             if (army2.Faction == 1)
                             {
-                                do
-                                {
-                                    Console.WriteLine("1 - Horros of Tzeentch");
-                                    Console.WriteLine("2 - Nurglings");
-                                    Console.WriteLine("3 - Daemonettes of Slaanesh");
-                                    Console.WriteLine("4 - Daemons of Khorne Bloodletters");
-                                    Console.WriteLine("5 - Plaguebearers of Nurgle");
-                                    troops = Convert.ToInt32(Console.ReadLine());
-                                    Console.Clear();
-                                } while (troops < 1 || troops > 5);
+                                Console.WriteLine("1 - Horros of Tzeentch");
+                                Console.WriteLine("2 - Nurglings");
+                                Console.WriteLine("3 - Daemonettes of Slaanesh");
+                                Console.WriteLine("4 - Daemons of Khorne Bloodletters");
+                                Console.WriteLine("5 - Plaguebearers of Nurgle");
+                                troops = Convert.ToInt32(Console.ReadLine());
                                 if (army1.detachment == 1)
                                 {
                                     if (troop.Count < 3)
@@ -18958,7 +18951,7 @@ namespace Final
                                     Console.WriteLine("1 - Chaos Rhino");
                                     transports = Convert.ToInt32(Console.ReadLine());
                                     Console.Clear();
-                                } while (transports < 1 || transports > 1);
+                                } while (tranports < 1 || tranports > 1);
 
                                 if (troop.Count > transport.Count)
                                 {
@@ -18979,7 +18972,7 @@ namespace Final
                                     Console.WriteLine("1 - Chaos Rhino");
                                     transports = Convert.ToInt32(Console.ReadLine());
                                     Console.Clear();
-                                } while (transports < 1 || transports > 1);
+                                } while (tranports < 1 || transports > 1);
                                 if (troop.Count > transport.Count)
                                 {
                                     if (transports == 1)
@@ -19235,7 +19228,7 @@ namespace Final
                         }
                         break;
                     case 8:
-                        Console.Clear();
+                        //Console.Clear();
                         do
                         {
                             Console.WriteLine("What would you like to remove?\n");
@@ -20682,7 +20675,6 @@ namespace Final
                                         transport.RemoveAt(remove);
                                         army3.Points -= transportp.ElementAt(remove);
                                         army3.PL -= tpl.ElementAt(remove);
-
                                         transportp.RemoveAt(remove);
                                         tpl.RemoveAt(remove);
                                     }
