@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Internal;
 
 namespace Final
 {
@@ -19,17 +18,17 @@ namespace Final
             do
             {
 
-                Console.WriteLine("Select an Army (1 for imperium, 2 for Chaos, 3 for Xenos).");
+                Console.WriteLine("Select an Army (1 for Imperium, 2 for Chaos, 3 for Xenos).");
                 armyChoice = Convert.ToInt32(Console.ReadLine());
                
-                if( armyChoice <= 3 )
+                if( armyChoice <= 3 && armyChoice > 0)
                 {
                     p.armyUnit(armyChoice);
                 }
                 Console.Clear();
                 Console.WriteLine("Make a choice from 1 - 3");
              
-            } while ( armyChoice > 3);
+            } while ( armyChoice > 3 || armyChoice <= 0);
             
         }
 
@@ -62,6 +61,8 @@ namespace Final
             List<int> hepl = new List<int>();
             List<int> flpl = new List<int>();
             List<int> trpl = new List<int>();
+
+            List<string>spll = new List<string>();
             if (choice == 1)
             {
                
@@ -312,7 +313,124 @@ namespace Final
                                         }
                                         if (hqs == 3)
                                         {
-                                            hq.Add("Missionary with Chainsword");
+                                            //hq.Add("Missionary with Chainsword");
+                                            //add another selection menu, asking user to add 2 spells. if one is already selected, prevent the user from selecting it again
+                                            //here
+                                            int spells = 0;
+                                            string unit = "Missionary with Chainsword\n" +
+                                                "-War Hymn";
+                                            do
+                                            {
+
+                                                Console.WriteLine("Choose 2 spells from the Hymns of Battle\n" +
+                                                    "NOTE: Unit comes with the ability 'War Hymn'\n" +
+                                                    "1 - Refrain of Blazin Piety\n" +
+                                                    "2 - Chorus of Spiritual Fortitude\n" +
+                                                    "3 - Psalm of Rigteous Smiting\n" +
+                                                    "4 - Litany of Enduring Faith\n" +
+                                                    "5 - Verse of Holy Piety\n" +
+                                                    "6 - Cathechism of Repungance\n");
+
+                                                Int32.TryParse(Console.ReadLine(), out int result);
+                                                if (result == 1)
+                                                {
+                                                    if (unit.Contains("-Refrain of Blazing Piety") == false)
+                                                    {
+                                                        //hq.Add("-Refrain of Blazing Piety");
+                                                        unit += "\n-Refrain of Blazing Piety";
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 2)
+                                                {
+                                                    if (unit.Contains("-Chorus of Spiritual Fortitude") == false)
+                                                    {
+                                                        //hq.Add("-Chorus of Spiritual Fortitude");
+                                                        unit += "\n-Chorus of Spiritual Fortitude";
+
+                                                        spells++;                                                        Console.Clear();
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 3)
+                                                {
+                                                    if (unit.Contains("-Psalm of Rigteous Smiting") == false)
+                                                    {
+                                                        //hq.Add("-Psalm of Rigteous Smiting");
+                                                        unit += "\n-Psalm of Rigteous Smiting";
+
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 4)
+                                                {
+                                                    if (unit.Contains("-Litany of Enduring Faith") == false)
+                                                    {
+                                                        //hq.Add("-Litany of Enduring Faith");
+                                                        unit += "\n-Litany of Enduring Faith";
+
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 5)
+                                                {
+                                                    if (unit.Contains("-Verse of Holy Piety") == false)
+                                                    {
+                                                       // hq.Add("-Verse of Holy Piety");
+                                                        unit += "\n-Verse of Holy Piety";
+
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 6)
+                                                {
+                                                    if (unit.Contains("-Catechism of Repugnance") == false)
+                                                    {
+                                                        //hq.Add("-Catechism of Repugnance");
+                                                        unit += "\n-Catechism of Repugnance";
+
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+
+                                            } while (spells != 2);
+                                            hq.Add(unit);
+                                            //too here
                                             army1.Points = army1.Points + 40;
                                             army1.PL = army1.PL + 3;
                                             hqp.Add(40);
@@ -395,7 +513,121 @@ namespace Final
                                         }
                                         if (hqs == 3)
                                         {
-                                            hq.Add("Missionary with Chainsword");
+                                            //hq.Add("Missionary with Chainsword");
+                                            int spells = 0;
+                                            string unit = "Missionary with Chainsword\n" +
+                                                "-War Hymn";
+                                            do
+                                            {
+
+                                                Console.WriteLine("Choose 2 spells from the Hymns of Battle\n" +
+                                                    "NOTE: Unit comes with the ability 'War Hymn'\n" +
+                                                    "1 - Refrain of Blazin Piety\n" +
+                                                    "2 - Chorus of Spiritual Fortitude\n" +
+                                                    "3 - Psalm of Rigteous Smiting\n" +
+                                                    "4 - Litany of Enduring Faith\n" +
+                                                    "5 - Verse of Holy Piety\n" +
+                                                    "6 - Cathechism of Repungance\n");
+
+                                                Int32.TryParse(Console.ReadLine(), out int result);
+                                                if (result == 1)
+                                                {
+                                                    if (unit.Contains("-Refrain of Blazing Piety") == false)
+                                                    {
+                                                        //hq.Add("-Refrain of Blazing Piety");
+                                                        unit += "\n-Refrain of Blazing Piety";
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 2)
+                                                {
+                                                    if (unit.Contains("-Chorus of Spiritual Fortitude") == false)
+                                                    {
+                                                        //hq.Add("-Chorus of Spiritual Fortitude");
+                                                        unit += "\n-Chorus of Spiritual Fortitude";
+
+                                                        spells++; Console.Clear();
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 3)
+                                                {
+                                                    if (unit.Contains("-Psalm of Rigteous Smiting") == false)
+                                                    {
+                                                        //hq.Add("-Psalm of Rigteous Smiting");
+                                                        unit += "\n-Psalm of Rigteous Smiting";
+
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 4)
+                                                {
+                                                    if (unit.Contains("-Litany of Enduring Faith") == false)
+                                                    {
+                                                        //hq.Add("-Litany of Enduring Faith");
+                                                        unit += "\n-Litany of Enduring Faith";
+
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 5)
+                                                {
+                                                    if (unit.Contains("-Verse of Holy Piety") == false)
+                                                    {
+                                                        // hq.Add("-Verse of Holy Piety");
+                                                        unit += "\n-Verse of Holy Piety";
+
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 6)
+                                                {
+                                                    if (unit.Contains("-Catechism of Repugnance") == false)
+                                                    {
+                                                        //hq.Add("-Catechism of Repugnance");
+                                                        unit += "\n-Catechism of Repugnance";
+
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+
+                                            } while (spells != 2);
+                                            hq.Add(unit);
                                             army1.Points = army1.Points + 40;
                                             army1.PL = army1.PL + 3;
                                             hqp.Add(40);
@@ -478,7 +710,121 @@ namespace Final
                                         }
                                         if (hqs == 3)
                                         {
-                                            hq.Add("Missionary with Chainsword");
+                                            //hq.Add("Missionary with Chainsword");
+                                            int spells = 0;
+                                            string unit = "Missionary with Chainsword\n" +
+                                                "-War Hymn";
+                                            do
+                                            {
+
+                                                Console.WriteLine("Choose 2 spells from the Hymns of Battle\n" +
+                                                    "NOTE: Unit comes with the ability 'War Hymn'\n" +
+                                                    "1 - Refrain of Blazin Piety\n" +
+                                                    "2 - Chorus of Spiritual Fortitude\n" +
+                                                    "3 - Psalm of Rigteous Smiting\n" +
+                                                    "4 - Litany of Enduring Faith\n" +
+                                                    "5 - Verse of Holy Piety\n" +
+                                                    "6 - Cathechism of Repungance\n");
+
+                                                Int32.TryParse(Console.ReadLine(), out int result);
+                                                if (result == 1)
+                                                {
+                                                    if (unit.Contains("-Refrain of Blazing Piety") == false)
+                                                    {
+                                                        //hq.Add("-Refrain of Blazing Piety");
+                                                        unit += "\n-Refrain of Blazing Piety";
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 2)
+                                                {
+                                                    if (unit.Contains("-Chorus of Spiritual Fortitude") == false)
+                                                    {
+                                                        //hq.Add("-Chorus of Spiritual Fortitude");
+                                                        unit += "\n-Chorus of Spiritual Fortitude";
+
+                                                        spells++; Console.Clear();
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 3)
+                                                {
+                                                    if (unit.Contains("-Psalm of Rigteous Smiting") == false)
+                                                    {
+                                                        //hq.Add("-Psalm of Rigteous Smiting");
+                                                        unit += "\n-Psalm of Rigteous Smiting";
+
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 4)
+                                                {
+                                                    if (unit.Contains("-Litany of Enduring Faith") == false)
+                                                    {
+                                                        //hq.Add("-Litany of Enduring Faith");
+                                                        unit += "\n-Litany of Enduring Faith";
+
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 5)
+                                                {
+                                                    if (unit.Contains("-Verse of Holy Piety") == false)
+                                                    {
+                                                        // hq.Add("-Verse of Holy Piety");
+                                                        unit += "\n-Verse of Holy Piety";
+
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 6)
+                                                {
+                                                    if (unit.Contains("-Catechism of Repugnance") == false)
+                                                    {
+                                                        //hq.Add("-Catechism of Repugnance");
+                                                        unit += "\n-Catechism of Repugnance";
+
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+
+                                            } while (spells != 2);
+                                            hq.Add(unit);
                                             army1.Points = army1.Points + 40;
                                             army1.PL = army1.PL + 3;
                                             hqp.Add(40);
@@ -625,7 +971,115 @@ namespace Final
                                         }
                                         if (hqs == 7)
                                         {
-                                            hq.Add("Librarian in Terminator Armour");
+                                            //hq.Add("Librarian in Terminator Armour");
+                                            int spells = 0;
+                                            string unit = "Librarian in Terminator Armour\n" +
+                                                "-Smite";
+                                            do
+                                            {
+
+                                                Console.WriteLine("Choose 2 spells from the Librarius Discipline\n" +
+                                                    "NOTE: Unit comes with the ability 'Smite'\n" +
+                                                    "1 - Veil of Time\n" +
+                                                    "2 - Might of Heroes\n" +
+                                                    "3 - Null Zone\n" +
+                                                    "4 - Psychic Scourge\n" +
+                                                    "5 - Fury of the Ancients\n" +
+                                                    "6 - Psychic Fortress\n");
+
+                                                Int32.TryParse(Console.ReadLine(), out int result);
+                                                if (result == 1)
+                                                {
+                                                    if (unit.Contains("-Veil of Time") == false)
+                                                    {
+                                                        unit += "\n-Veil of Time";
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 2)
+                                                {
+                                                    if (unit.Contains("-Might of Heroes") == false)
+                                                    {
+                                                        unit += "\n-Might of Heroes";
+
+                                                        spells++; Console.Clear();
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 3)
+                                                {
+                                                    if (unit.Contains("-Null Zone") == false)
+                                                    {
+                                                        unit += "\n-Null Zone";
+
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 4)
+                                                {
+                                                    if (unit.Contains("-Psychic Scourge") == false)
+                                                    {
+                                                        unit += "\n-Psychic Scourge";
+
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 5)
+                                                {
+                                                    if (unit.Contains("-Fury of the Ancients") == false)
+                                                    {
+                                                        unit += "\n-Fury of the Ancients";
+
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 6)
+                                                {
+                                                    if (unit.Contains("-Psychic Fortress") == false)
+                                                    {
+                                                        unit += "\n-Psychic Fortress";
+
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+
+                                            } while (spells != 2);
+                                            hq.Add(unit);
                                             army1.Points = army1.Points + 105;
                                             army1.PL = army1.PL + 6;
                                             hqp.Add(105);
@@ -820,7 +1274,115 @@ namespace Final
                                         }
                                         if (hqs == 7)
                                         {
-                                            hq.Add("Librarian in Terminator Armour");
+                                            //hq.Add("Librarian in Terminator Armour");
+                                            int spells = 0;
+                                            string unit = "Librarian in Terminator Armour\n" +
+                                                "-Smite";
+                                            do
+                                            {
+
+                                                Console.WriteLine("Choose 2 spells from the Librarius Discipline\n" +
+                                                    "NOTE: Unit comes with the ability 'Smite'\n" +
+                                                    "1 - Veil of Time\n" +
+                                                    "2 - Might of Heroes\n" +
+                                                    "3 - Null Zone\n" +
+                                                    "4 - Psychic Scourge\n" +
+                                                    "5 - Fury of the Ancients\n" +
+                                                    "6 - Psychic Fortress\n");
+
+                                                Int32.TryParse(Console.ReadLine(), out int result);
+                                                if (result == 1)
+                                                {
+                                                    if (unit.Contains("-Veil of Time") == false)
+                                                    {
+                                                        unit += "\n-Veil of Time";
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 2)
+                                                {
+                                                    if (unit.Contains("-Might of Heroes") == false)
+                                                    {
+                                                        unit += "\n-Might of Heroes";
+
+                                                        spells++; Console.Clear();
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 3)
+                                                {
+                                                    if (unit.Contains("-Null Zone") == false)
+                                                    {
+                                                        unit += "\n-Null Zone";
+
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 4)
+                                                {
+                                                    if (unit.Contains("-Psychic Scourge") == false)
+                                                    {
+                                                        unit += "\n-Psychic Scourge";
+
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 5)
+                                                {
+                                                    if (unit.Contains("-Fury of the Ancients") == false)
+                                                    {
+                                                        unit += "\n-Fury of the Ancients";
+
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 6)
+                                                {
+                                                    if (unit.Contains("-Psychic Fortress") == false)
+                                                    {
+                                                        unit += "\n-Psychic Fortress";
+
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+
+                                            } while (spells != 2);
+                                            hq.Add(unit);
                                             army1.Points = army1.Points + 105;
                                             army1.PL = army1.PL + 6;
                                             hqp.Add(105);
@@ -1015,7 +1577,115 @@ namespace Final
                                         }
                                         if (hqs == 7)
                                         {
-                                            hq.Add("Librarian in Terminator Armour");
+                                            //hq.Add("Librarian in Terminator Armour");
+                                            int spells = 0;
+                                            string unit = "Librarian in Terminator Armour\n" +
+                                                "-Smite";
+                                            do
+                                            {
+
+                                                Console.WriteLine("Choose 2 spells from the Librarius Discipline\n" +
+                                                    "NOTE: Unit comes with the ability 'Smite'\n" +
+                                                    "1 - Veil of Time\n" +
+                                                    "2 - Might of Heroes\n" +
+                                                    "3 - Null Zone\n" +
+                                                    "4 - Psychic Scourge\n" +
+                                                    "5 - Fury of the Ancients\n" +
+                                                    "6 - Psychic Fortress\n");
+
+                                                Int32.TryParse(Console.ReadLine(), out int result);
+                                                if (result == 1)
+                                                {
+                                                    if (unit.Contains("-Veil of Time") == false)
+                                                    {
+                                                        unit += "\n-Veil of Time";
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 2)
+                                                {
+                                                    if (unit.Contains("-Might of Heroes") == false)
+                                                    {
+                                                        unit += "\n-Might of Heroes";
+
+                                                        spells++; Console.Clear();
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 3)
+                                                {
+                                                    if (unit.Contains("-Null Zone") == false)
+                                                    {
+                                                        unit += "\n-Null Zone";
+
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 4)
+                                                {
+                                                    if (unit.Contains("-Psychic Scourge") == false)
+                                                    {
+                                                        unit += "\n-Psychic Scourge";
+
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 5)
+                                                {
+                                                    if (unit.Contains("-Fury of the Ancients") == false)
+                                                    {
+                                                        unit += "\n-Fury of the Ancients";
+
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+                                                else if (result == 6)
+                                                {
+                                                    if (unit.Contains("-Psychic Fortress") == false)
+                                                    {
+                                                        unit += "\n-Psychic Fortress";
+
+                                                        spells++;
+                                                        Console.Clear();
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine("Spell is already selected, choose another.\n");
+                                                    }
+                                                }
+
+                                            } while (spells != 2);
+                                            hq.Add(unit);
                                             army1.Points = army1.Points + 105;
                                             army1.PL = army1.PL + 6;
                                             hqp.Add(105);
@@ -5605,8 +6275,12 @@ namespace Final
                         {
                             if (army1.Faction == 1)
                             {
-                                Console.WriteLine("1 - Battle Sister Squad\n");
-                                troops = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Battle Sister Squad\n");
+                                    troops = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (troops < 1 || troops > 1);
                                 if (army1.detachment == 1)
                                 {
                                     if (troop.Count < 3)
@@ -6109,12 +6783,16 @@ namespace Final
                         {
                             if (army2.Faction == 1)
                             {
-                                Console.WriteLine("1 - Horros of Tzeentch");
-                                Console.WriteLine("2 - Nurglings");
-                                Console.WriteLine("3 - Daemonettes of Slaanesh");
-                                Console.WriteLine("4 - Daemons of Khorne Bloodletters");
-                                Console.WriteLine("5 - Plaguebearers of Nurgle");
-                                troops = Convert.ToInt32(Console.ReadLine());
+                                do
+                                {
+                                    Console.WriteLine("1 - Horros of Tzeentch");
+                                    Console.WriteLine("2 - Nurglings");
+                                    Console.WriteLine("3 - Daemonettes of Slaanesh");
+                                    Console.WriteLine("4 - Daemons of Khorne Bloodletters");
+                                    Console.WriteLine("5 - Plaguebearers of Nurgle");
+                                    troops = Convert.ToInt32(Console.ReadLine());
+                                    Console.Clear();
+                                } while (troops < 1 || troops > 5);
                                 if (army1.detachment == 1)
                                 {
                                     if (troop.Count < 3)
@@ -18951,7 +19629,7 @@ namespace Final
                                     Console.WriteLine("1 - Chaos Rhino");
                                     transports = Convert.ToInt32(Console.ReadLine());
                                     Console.Clear();
-                                } while (tranports < 1 || tranports > 1);
+                                } while (transports < 1 || transports > 1);
 
                                 if (troop.Count > transport.Count)
                                 {
@@ -18972,7 +19650,7 @@ namespace Final
                                     Console.WriteLine("1 - Chaos Rhino");
                                     transports = Convert.ToInt32(Console.ReadLine());
                                     Console.Clear();
-                                } while (tranports < 1 || transports > 1);
+                                } while (transports < 1 || transports > 1);
                                 if (troop.Count > transport.Count)
                                 {
                                     if (transports == 1)
@@ -19228,7 +19906,7 @@ namespace Final
                         }
                         break;
                     case 8:
-                        //Console.Clear();
+                        Console.Clear();
                         do
                         {
                             Console.WriteLine("What would you like to remove?\n");
@@ -20675,6 +21353,7 @@ namespace Final
                                         transport.RemoveAt(remove);
                                         army3.Points -= transportp.ElementAt(remove);
                                         army3.PL -= tpl.ElementAt(remove);
+
                                         transportp.RemoveAt(remove);
                                         tpl.RemoveAt(remove);
                                     }
