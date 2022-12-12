@@ -13,3 +13,11 @@ C:\Users\nethe\source\repos\40k-List-Builder\.vs\40k-List-Builder\v16\Final\obj\
 C:\Users\nethe\source\repos\40k-List-Builder\.vs\40k-List-Builder\v16\Final\obj\Debug\Final.csproj.CoreCompileInputs.cache
 C:\Users\nethe\source\repos\40k-List-Builder\.vs\40k-List-Builder\v16\Final\obj\Debug\Final.exe
 C:\Users\nethe\source\repos\40k-List-Builder\.vs\40k-List-Builder\v16\Final\obj\Debug\Final.pdb
+F:\Markie Docs\School\Fall 2022\CSC 470 - Software Engineering\Group Project\40k\.vs\40k-List-Builder\v16\Final\bin\Debug\Final.exe.config
+F:\Markie Docs\School\Fall 2022\CSC 470 - Software Engineering\Group Project\40k\.vs\40k-List-Builder\v16\Final\bin\Debug\Final.exe
+F:\Markie Docs\School\Fall 2022\CSC 470 - Software Engineering\Group Project\40k\.vs\40k-List-Builder\v16\Final\bin\Debug\Final.pdb
+F:\Markie Docs\School\Fall 2022\CSC 470 - Software Engineering\Group Project\40k\.vs\40k-List-Builder\v16\Final\obj\Debug\Final.csproj.AssemblyReference.cache
+F:\Markie Docs\School\Fall 2022\CSC 470 - Software Engineering\Group Project\40k\.vs\40k-List-Builder\v16\Final\obj\Debug\Final.csproj.SuggestedBindingRedirects.cache
+F:\Markie Docs\School\Fall 2022\CSC 470 - Software Engineering\Group Project\40k\.vs\40k-List-Builder\v16\Final\obj\Debug\Final.csproj.CoreCompileInputs.cache
+F:\Markie Docs\School\Fall 2022\CSC 470 - Software Engineering\Group Project\40k\.vs\40k-List-Builder\v16\Final\obj\Debug\Final.exe
+F:\Markie Docs\School\Fall 2022\CSC 470 - Software Engineering\Group Project\40k\.vs\40k-List-Builder\v16\Final\obj\Debug\Final.pdb
