@@ -16,6 +16,7 @@ namespace Final
         internal int PL = 0;
         internal int CP = 0;
         public int Maxpoints;
+        
 
         
     }
